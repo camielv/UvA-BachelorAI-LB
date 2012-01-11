@@ -1,7 +1,6 @@
 # import nltk
 import nltk.tokenize
 
-# Just a test
 corpus = 'blaat bla blaa bla bal bocht hendrik kees'
 bagOfWords = nltk.tokenize.word_tokenize( corpus )
 
