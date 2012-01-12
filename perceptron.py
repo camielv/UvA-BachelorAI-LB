@@ -1,7 +1,6 @@
 # Perceptron
 class Perceptron(object):
- 
-    def __init__(self, weights=None, threshold=0.5):
+     def __init__(self, weights=None, threshold=0.5):
         self.threshold = threshold
         self.weights = weights
  
