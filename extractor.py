@@ -23,7 +23,7 @@ for entry in file:
     
     # Stop at 20 (later remove this)
     i += 1
-    if ( i > 200 ): break
+    if ( i > 100 ): break
 
 number_of_items = i - 1; # -1 because of header  (== len(sentence))
 
@@ -58,9 +58,10 @@ for token in corpus.keys():
 # Probability of sentiment per word calculated, estimate sentence probability of sentiment
 probSent = {}
 for i in range(len(sentence)):
-        probSent[sent] = 1
+        p = 1
         tk_sent = nltk.tokenize.word_tokenize( sentence[i] )
         for token in tk_sent:
-            if probWord[token] != 0:
-                probSent[sent] = probSent[sent] * probWord[token]
-        print sent, 'PROB', probSent[sent]
+            p = p + probWord[token]
+        probSent[i] = p / float(len(tk_sent)) # to be extra certain intdiv does not occur
+        print i, 'PROB', probSent[i]
+    
