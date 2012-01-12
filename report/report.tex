@@ -1,1 +1,69 @@
-testtest
+\documentclass[11pt]{article}
+\usepackage[a4paper,pdftex]{geometry}
+\setlength{\oddsidemargin}{5mm}
+\setlength{\evensidemargin}{5mm}
+\usepackage[english]{babel}
+\usepackage{amsmath,amsfonts,amsthm,amssymb}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{subfig}
+\usepackage{wrapfig}
+\usepackage{comment}
+\usepackage{url}
+\urlstyle{same}
+
+% Page numbering
+\lhead{Dutch Nao Team - Team Description for Robocup 2012}
+\rhead{page \thepage/5}
+\cfoot{}
+\rfoot{\thepage}
+
+% TITLE FORMAT
+\newcommand{\HRule}[1]{\rule{\linewidth}{#1}}
+
+\makeatletter
+\def\printtitle{
+    {\centering \@title\par}}
+\makeatother									
+
+\makeatletter
+\def\printauthor{
+    {\centering \large \@author}}
+\makeatother
+
+% TITLE
+\title{
+\HRule{0.5pt} \\
+\LARGE \textbf{\textsc{Sentiment Analysis}}\\[0.5cm]
+\normalsize \textsc{A Probabilistic Approach}
+\HRule{2pt}\\ [0.5cm]
+\normalsize
+\today\\ [2cm]
+\includegraphics[width=0.8\textwidth]{titelnew.png}\\
+\includegraphics[width=0.4\textwidth]{eo.jpg}
+}
+
+\author{
+\begin{tabular}{c c c c c}
+Sharon Gieske & Steven Laan & Camiel Verschoor & Duncan ten Velthuis & Auke Wiggers\\
+6167667 & 6036031 & 10017321 & 0577642 & 6036163
+\end{tabular}\\[0.5cm]
+Artificial Intelligence\\
+Faculty of Science\\
+Universiteit van Amsterdam\\
+}
+
+% BEGIN DOCUMENT
+\begin{document}
+% TITLE PAGE
+\thispagestyle{empty}
+\printtitle									
+\vfill
+\printauthor
+\newpage
+\setcounter{page}{1}
+\normalsize
+% CONTENT
+\end{document}
+% END DOCUMENT
