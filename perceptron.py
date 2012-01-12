@@ -1,9 +1,9 @@
 # Perceptron
 class Perceptron(object):
-     def __init__(self, weights=None, threshold=0.5):
+    def __init__(self, weights=None, threshold=0.5):
         self.threshold = threshold
         self.weights = weights
- 
+         
     def output(self, input_vector):
         if self._total(input_vector) < self.threshold:
             return 0
@@ -45,6 +45,7 @@ class Perceptron(object):
     def test(self, training_set):
         for xv, t in training_set.items():
             if self.output(xv) != t:
+                print 'Perceptron sucks'
                 return False
         return True
  
