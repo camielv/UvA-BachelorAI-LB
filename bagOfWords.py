@@ -8,7 +8,6 @@ bagOfWords = nltk.tokenize.word_tokenize( corpus )
 # List of vectors
 vecs = []
 
-
 # List of sentences
 sentences = []
 sentences.append('kees blaat hendrik')
@@ -32,4 +31,3 @@ for sentence in sentences:
 # Print matrix
 for vec in vecs:
     print vec
-        

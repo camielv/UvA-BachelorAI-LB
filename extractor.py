@@ -7,13 +7,14 @@ file = csv.reader(open('DataCSV.csv', 'rb'), delimiter=',', quotechar='"')
 
 sentence = {}
 sentiment = {}
+
+# do not include header!
 i = 0
 
 # Collect sentences and sentiments
 for entry in file:
-    # Do not include the header!
     if i == 0:
-        i += 1
+        i+=1
         continue
     
     # The actual message is the 9th attribute, sentiment is the 4th
@@ -24,7 +25,7 @@ for entry in file:
     i += 1
     if ( i > 200 ): break
 
-number_of_items = i - 1; # -1 because of header
+number_of_items = i - 1; # -1 because of header  (== len(sentence))
 
 # Create corpus and count word frequencies
 corpus = {}
@@ -35,12 +36,12 @@ for i in range(number_of_items):
 
     # Iterate over every token
     for token in tk_sentence:
-        if token in corpus.keys():
+        if token in corpus:
             # Check for sentiment
             if sentiment[i] != 0:
                 corpus[token] = corpus[token][0] + 1, corpus[token][1] + 1
             else:
-                corpus[token] = corpus[token][0] + 1, 0
+                corpus[token] = corpus[token][0] + 1, corpus[token][1]
         else:
             # Check for sentiment
             if sentiment[i] != 0:
@@ -48,10 +49,18 @@ for i in range(number_of_items):
             else:
                 corpus[token] = 1, 0
 
-# Corpus created, calculate frequencies
-frequency = {}
+# Corpus created, calculate words probability of sentiment based on frequency
+probWord = {}
 for token in corpus.keys():
-    frequency[token] = float(corpus[token][1]) / corpus[token][0]
-    print token, ' || ',corpus[token][1],' / ',corpus[token][0],' = ', frequency[token], '\n'
+    probWord[token] = float(corpus[token][1]) / corpus[token][0]
+    # print token, ' || ',corpus[token][1],' / ',corpus[token][0],' = ', probWord[token], '\n'
 
-                
+# Probability of sentiment per word calculated, estimate sentence probability of sentiment
+probSent = {}
+for i in range(len(sentence)):
+        probSent[sent] = 1
+        tk_sent = nltk.tokenize.word_tokenize( sentence[i] )
+        for token in tk_sent:
+            if probWord[token] != 0:
+                probSent[sent] = probSent[sent] * probWord[token]
+        print sent, 'PROB', probSent[sent]
