@@ -23,7 +23,7 @@ for entry in file:
     
     # Stop at 20 (later remove this)
     i += 1
-    if ( i == 9000 ): break
+    if ( i == 9999 ): break
 
 number_of_items = i - 1; # -1 because of header  (== len(sentence))
 
@@ -79,7 +79,7 @@ for i in range(len(sentence)):
                 confusion["tn"] += 1
             else:
                 confusion["fn"] += 1
-        print i, 'PROB', probSent[i], 'SENT', sentiment[i]
+        #print i, 'PROB', probSent[i], 'SENT', sentiment[i]
     
 print confusion
 print 'accuracy = ', float(confusion["tp"] + confusion["tn"]) / (confusion["tp"] + confusion["tn"] + confusion["fp"] + confusion["fn"])
