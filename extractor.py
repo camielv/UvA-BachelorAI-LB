@@ -63,5 +63,5 @@ for i in range(len(sentence)):
         for token in tk_sent:
             p = p + probWord[token]
         probSent[i] = p / float(len(tk_sent)) # to be extra certain intdiv does not occur
-        print i, 'PROB', probSent[i]
+        print i, 'PROB', probSent[i], 'SENT', sentiment[i]
     
