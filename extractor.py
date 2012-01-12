@@ -23,7 +23,7 @@ for entry in file:
     
     # Stop at 20 (later remove this)
     i += 1
-    if ( i == 9000 ): break
+    if ( i == 9100 ): break
 
 number_of_items = i - 1; # -1 because of header  (== len(sentence))
 
@@ -63,23 +63,25 @@ confusion["tn"] = 0
 confusion["fp"] = 0
 confusion["fn"] = 0
 
+threshold = 0.31
+
 for i in range(len(sentence)):
         p = 1
         tk_sent = nltk.tokenize.word_tokenize( sentence[i] )
         for token in tk_sent:
             p = p + probWord[token]
         probSent[i] = p / float(len(tk_sent)) # to be extra certain intdiv does not occur
-        if probSent[i] > 0.31:
+        if probSent[i] > threshold:
             if sentiment[i] == 0:
                 confusion["fp"] += 1
             else:
                 confusion["tp"] += 1
-        if probSent[i] < 0.31:
+        if probSent[i] < threshold:
             if sentiment[i] == 0:
                 confusion["tn"] += 1
             else:
                 confusion["fn"] += 1
-        print i, 'PROB', probSent[i], 'SENT', sentiment[i]
+##        print i, 'PROB', probSent[i], 'SENT', sentiment[i]
     
 print confusion
 print 'accuracy = ', float(confusion["tp"] + confusion["tn"]) / (confusion["tp"] + confusion["tn"] + confusion["fp"] + confusion["fn"])
