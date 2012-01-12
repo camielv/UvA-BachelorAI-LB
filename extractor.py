@@ -1,26 +1,29 @@
 # Extractor extracts a column from a csv file
 import csv
 import nltk
+import perceptron
 
 class Main():
 
     # Open a file
     file1 = csv.reader(open('DataCSV.csv', 'rb'), delimiter=',', quotechar='"')     
 
-    # used dictionaries, with enlarged scope.
+    # used dictionaries, with enlarged scope..?
     sentence = {}
     sentiment = {}
     corpus = {}
     probWord = {}
     probSent = {}
-    confusion = {}
+    p = perceptron.Perceptron()    
 
     def __init__(self):
         self.makeCorpus()
         self.calcProbability()
+        self.trainPerceptron()
         self.printResults()
         
     def makeCorpus(self):
+        print 'Creating corpus...'
         self.sentence = {}
         self.sentiment = {}
 
@@ -66,6 +69,7 @@ class Main():
                         self.corpus[token] = 1, 0
 
     def calcProbability(self):
+        print 'Calculating unigram probability.'
         # Corpus created, calculate words probability of sentiment based on frequency
         self.probWord = {}
         for token in self.corpus.keys():
@@ -74,11 +78,6 @@ class Main():
 
         # Probability of sentiment per word calculated, estimate sentence probability of sentiment
         self.probSent = {}
-        self.confusion = {}
-        self.confusion["tp"] = 0
-        self.confusion["tn"] = 0
-        self.confusion["fp"] = 0
-        self.confusion["fn"] = 0
 
         for i in range(len(self.sentence)):
                 p = 1
@@ -86,25 +85,46 @@ class Main():
                 for token in tk_sent:
                     p = p + self.probWord[token]
                 self.probSent[i] = p / float(len(tk_sent)) # to be extra certain intdiv does not occur
-                if self.probSent[i] > 0.31:
-                    if self.sentiment[i] == 0:
-                        self.confusion["fp"] += 1
-                    else:
-                        self.confusion["tp"] += 1
-                if self.probSent[i] < 0.31:
-                    if self.sentiment[i] == 0:
-                        self.confusion["tn"] += 1
-                    else:
-                        self.confusion["fn"] += 1
                 #print i, 'PROB', self.probSent[i], 'SENT', self.sentiment[i]
 
-    def percept(self):
-        self.probSent[]
-        self.sentiment[]
+    def trainPerceptron(self, sizetrain = 6000):
+        print 'Training perceptron.'
+        spsv = self.probSent.values()
+        ssv  = self.sentiment.values()
 
-    def printResults(self):        
-        print self.confusion
-        print 'accuracy = ', float(self.confusion["tp"] + self.confusion["tn"]) / (self.confusion["tp"] + self.confusion["tn"] + self.confusion["fp"] + self.confusion["fn"])
-        print 'precision = ', float(self.confusion["tp"]) / (self.confusion["tp"] + self.confusion["fp"] )
+        
+        trainingSetKeys = zip(spsv[0:sizetrain])
+        trainingSetVals = [x != 0 for x in ssv][0:sizetrain]
+
+        trainingSet = dict()
+        for i in range(sizetrain):
+            trainingSet[trainingSetKeys[i]] = trainingSetVals[i]
+        
+        self.p.train(trainingSet)
+        print 'Found threshold: ', self.p.threshold / self.p.weights[0]
+        
+    def printResults(self):
+        t = self.p.threshold / self.p.weights[0]
+        confusion = {}
+        confusion["tp"] = 0
+        confusion["tn"] = 0
+        confusion["fp"] = 0
+        confusion["fn"] = 0
+        for i in range(len(self.sentence)):
+                if self.probSent[i] > t:
+                    if self.sentiment[i] == 0:
+                        confusion["fp"] += 1
+                    else:
+                        confusion["tp"] += 1
+                if self.probSent[i] < t:
+                    if self.sentiment[i] == 0:
+                        confusion["tn"] += 1
+                    else:
+                        confusion["fn"] += 1
+        print 'Results: '
+        print confusion
+        print 'accuracy = ', float(confusion["tp"] + confusion["tn"]) / (confusion["tp"] + confusion["tn"] + confusion["fp"] + confusion["fn"])
+        print 'precision = ', float(confusion["tp"]) / (confusion["tp"] + confusion["fp"] )
 
 
+m = Main()
