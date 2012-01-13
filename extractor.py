@@ -49,12 +49,12 @@ class Main():
 
             # Assign at random to train, test or validation set
             r = random.Random()
-            if ( r < distribution[0] ):
-                trainSet.append(i)
-            else if ( r < distribution[0] + distribution[1] ):
-                testSet.append(i)
+            if ( r < self.distribution[0] ):
+                self.trainSet.append(i)
+            elif ( r < self.distribution[0] + self.distribution[1] ):
+                self.testSet.append(i)
             else:
-                validationSet.append(i)
+                self.validationSet.append(i)
             
             # Stop at 10000
             i += 1
@@ -65,7 +65,7 @@ class Main():
         # Create corpus and count word frequencies
         self.corpus = {}
 
-        for i in trainSet:
+        for i in self.trainSet:
             # Tokenize the sentence
             tk_sentence = nltk.tokenize.word_tokenize( self.sentence[i] )
 
@@ -95,7 +95,7 @@ class Main():
         # Probability of sentiment per word calculated, estimate sentence probability of sentiment
         self.probSent = {}
 
-        for i in trainSet:
+        for i in self.trainSet:
                 p = 1
                 tk_sent = nltk.tokenize.word_tokenize( self.sentence[i] )
                 for token in tk_sent:
