@@ -10,7 +10,7 @@ class Main():
     # Open a file
     file1 = csv.reader(open('DataCSV.csv', 'rb'), delimiter=',', quotechar='"')     
 
-    # used dictionaries, with enlarged scope..?
+    # Initialize variables
     sentence = {}
     sentiment = {}
     corpus = {}
@@ -20,7 +20,7 @@ class Main():
     trainSet = []
     testSet = []
     validationSet = []
-    distribution = (0.7, 0.1, 0.2) # train, test, validate
+    distribution = (0.7, 0.1, 0.2) # (Train, Test, Validate)
 
     def __init__(self, iterations = 10):
         acc = 0
@@ -108,7 +108,7 @@ class Main():
         self.probWord = {}
         for token in self.corpus.keys():
             self.probWord[token] = float(self.corpus[token][1]) / self.corpus[token][0]
-            # print token, ' || ',corpus[token][1],' / ',corpus[token][0],' = ', probWord[token], '\n'
+#            print token, ' || ',corpus[token][1],' / ',corpus[token][0],' = ', probWord[token], '\n'
 
     def calcProbability(self):
         # Probability of sentiment per word calculated, estimate sentence probability of sentiment
@@ -120,17 +120,16 @@ class Main():
                 for token in tk_sent:
                     p = p + self.probWord[token]
                 self.probSent[i] = p / float(len(tk_sent)) # to be extra certain intdiv does not occur
-                #print i, 'PROB', self.probSent[i], 'SENT', self.sentiment[i]
+#                print i, 'PROB', self.probSent[i], 'SENT', self.sentiment[i]
         
         
     def trainPerceptron(self):
         print 'Training perceptron.'
-        spsv = self.probSent
         ssv  = [x != 0 for x in self.sentiment.values()]
                 
-        trainingSet = dict()
+        trainingSet = {}
         for i in self.trainSet:
-            trainingSet[(spsv[i],)] = ssv[i]
+            trainingSet[(self.probSent[i],)] = ssv[i]
                  
         self.p.train(trainingSet)
         print 'Found threshold: ', self.p.threshold / self.p.weights[0]
@@ -145,11 +144,12 @@ class Main():
                 try:
                     p = p + self.probWord[token]
                 except:
-                    # if word does not occur in corpus, ignore (can try katz backoff later?)
+                    # If word does not occur in corpus, ignore for now
+                    # (can try katz backoff later?)
                     pass
-            # store the probability in  dictionary     
+            # Store the probability in  dictionary     
             self.probSent[j] = p / float(len(tk_sent)) # to be extra certain intdiv does not occur
-            #print i, 'PROB', self.probSent[i], 'SENT', self.sentiment[i]
+#            print i, 'PROB', self.probSent[i], 'SENT', self.sentiment[i]
 
     def printResults(self):
         t = self.p.threshold / self.p.weights[0]
@@ -169,12 +169,12 @@ class Main():
                         confusion["tn"] += 1
                     else:
                         confusion["fn"] += 1
-        #print 'Results for test set: '
-        #print confusion
+#        print 'Results for test set: '
+#        print confusion
         acc = float(confusion["tp"] + confusion["tn"]) / (confusion["tp"] + confusion["tn"] + confusion["fp"] + confusion["fn"])
-        #print 'accuracy = ', acc
+#        print 'accuracy = ', acc
         pre = float(confusion["tp"]) / (confusion["tp"] + confusion["fp"] )
-        #print 'precision = ', pre
+#        print 'precision = ', pre
         return (acc, pre)        
 
 m = Main(10)
