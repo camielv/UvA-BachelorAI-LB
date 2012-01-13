@@ -21,8 +21,7 @@ class Main():
     validationSet = []
     distribution = (0.7, 0.1, 0.2) # train, test, validate
 
-    def __init__(self, sizetrain = 8000):
-        self.sizetrain = sizetrain
+    def __init__(self):
         self.makeCorpus( )
         self.calcProbability( )
         self.trainPerceptron( )
@@ -48,13 +47,11 @@ class Main():
             self.sentiment[i - 1] = float(entry[4])
 
             # Assign at random to train, test or validation set
-            r = random.Random()
+            r = random.random()
             if ( r < self.distribution[0] ):
-                self.trainSet.append(i)
-            elif ( r < self.distribution[0] + self.distribution[1] ):
-                self.testSet.append(i)
+                self.trainSet.append(i-1)
             else:
-                self.validationSet.append(i)
+                self.testSet.append(i-1)
             
             # Stop at 10000
             i += 1
@@ -64,22 +61,23 @@ class Main():
 
         # Create corpus and count word frequencies
         self.corpus = {}
-
-        for i in self.trainSet:
+        
+        for j in self.trainSet:
             # Tokenize the sentence
-            tk_sentence = nltk.tokenize.word_tokenize( self.sentence[i] )
+            tk_sentence = nltk.tokenize.word_tokenize( self.sentence[j] )
+
+            # Check for sentiment 
+            sent = self.sentiment[j]
 
             # Iterate over every token
             for token in tk_sentence:
                 if token in self.corpus:
-                    # Check for sentiment
-                    if self.sentiment[i] != 0:
+                    if sent != 0:
                         self.corpus[token] = self.corpus[token][0] + 1, self.corpus[token][1] + 1
                     else:
                         self.corpus[token] = self.corpus[token][0] + 1, self.corpus[token][1]
                 else:
-                    # Check for sentiment
-                    if self.sentiment[i] != 0:
+                    if sent != 0:
                         self.corpus[token] = 1, 1
                     else:
                         self.corpus[token] = 1, 0
@@ -102,28 +100,26 @@ class Main():
                     p = p + self.probWord[token]
                 self.probSent[i] = p / float(len(tk_sent)) # to be extra certain intdiv does not occur
                 #print i, 'PROB', self.probSent[i], 'SENT', self.sentiment[i]
-
+        
+        
     def trainPerceptron(self):
         print 'Training perceptron.'
-        spsv = self.probSent.values()
-        ssv  = self.sentiment.values()
-
-        trainingSetKeys = zip(spsv[0:self.sizetrain])
-        trainingSetVals = [x != 0 for x in ssv][0:self.sizetrain]
-
+        spsv = self.probSent
+        ssv  = [x != 0 for x in self.sentiment.values()]
+                
         trainingSet = dict()
-        for i in range(self.sizetrain):
-            trainingSet[trainingSetKeys[i]] = trainingSetVals[i]
-        
+        for i in self.trainSet:
+            trainingSet[(spsv[i],)] = ssv[i]
+                 
         self.p.train(trainingSet)
         print 'Found threshold: ', self.p.threshold / self.p.weights[0]
 
         print 'Validating perceptron.'
 
         # Calculate probability for test sentences
-        for i in range(self.sizetrain, len(self.sentence)):
+        for j in self.testSet:
             p = 1
-            tk_sent = nltk.tokenize.word_tokenize( self.sentence[i] )
+            tk_sent = nltk.tokenize.word_tokenize( self.sentence[j] )
             for token in tk_sent:
                 try:
                     p = p + self.probWord[token]
@@ -131,10 +127,9 @@ class Main():
                     # if word does not occur in corpus, ignore (can try katz backoff later?)
                     pass
             # store the probability in  dictionary     
-            self.probSent[i] = p / float(len(tk_sent)) # to be extra certain intdiv does not occur
+            self.probSent[j] = p / float(len(tk_sent)) # to be extra certain intdiv does not occur
             #print i, 'PROB', self.probSent[i], 'SENT', self.sentiment[i]
 
-        
     def printResults(self):
         t = self.p.threshold / self.p.weights[0]
         confusion = {}
@@ -142,7 +137,7 @@ class Main():
         confusion["tn"] = 0
         confusion["fp"] = 0
         confusion["fn"] = 0
-        for i in range(self.sizetrain, len(self.sentence)):
+        for i in self.testSet:
                 if self.probSent[i] > t:
                     if self.sentiment[i] == 0:
                         confusion["fp"] += 1
@@ -158,4 +153,4 @@ class Main():
         print 'accuracy = ', float(confusion["tp"] + confusion["tn"]) / (confusion["tp"] + confusion["tn"] + confusion["fp"] + confusion["fn"])
         print 'precision = ', float(confusion["tp"]) / (confusion["tp"] + confusion["fp"] )
 
-m = Main(8000)
+m = Main()
