@@ -126,5 +126,4 @@ class Main():
         print 'accuracy = ', float(confusion["tp"] + confusion["tn"]) / (confusion["tp"] + confusion["tn"] + confusion["fp"] + confusion["fn"])
         print 'precision = ', float(confusion["tp"]) / (confusion["tp"] + confusion["fp"] )
 
-
 m = Main()
