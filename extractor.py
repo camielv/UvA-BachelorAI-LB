@@ -3,6 +3,7 @@ import csv
 import nltk
 import perceptron
 import random
+import time
 
 class Main():
 
@@ -21,14 +22,31 @@ class Main():
     validationSet = []
     distribution = (0.7, 0.1, 0.2) # train, test, validate
 
-    def __init__(self):
-        self.makeCorpus( )
-        self.calcProbability( )
-        self.trainPerceptron( )
-        self.printResults( )
+    def __init__(self, iterations = 10):
+        acc = 0
+        pre = 0
+        t = time.time()
+        self.initializeCorpus()
+        for i in range( iterations ):
+            self.corpus = {}
+            self.probWord = {}
+            self.probSent = {}
+            self.p.reset()
+            self.trainSet = []
+            self.testSet = []
+            self.validationSet = []
+                    
+            self.makeCorpus( )
+            self.calcProbability( )
+            self.trainPerceptron( )
+            accpre = self.printResults( )
+            acc += accpre[0]
+            pre += accpre[1]
+        print 'Accuracy , averaged: ', acc / float(iterations)
+        print 'Precision, averaged: ', pre / float(iterations)
+        print 'Time taken for', iterations, 'iterations: ', time.time()- t
         
-    def makeCorpus(self):
-        print 'Creating corpus...'
+    def initializeCorpus(self):
         self.sentence = {}
         self.sentiment = {}
 
@@ -45,20 +63,21 @@ class Main():
             # The actual message is the 9th attribute, sentiment is the 4th
             self.sentence[i - 1] = entry[9]
             self.sentiment[i - 1] = float(entry[4])
-
-            # Assign at random to train, test or validation set
-            r = random.random()
-            if ( r < self.distribution[0] ):
-                self.trainSet.append(i-1)
-            else:
-                self.testSet.append(i-1)
             
             # Stop at 10000
             i += 1
             if ( i == 10000 ): break
 
-        number_of_items = i - 1; # -1 because of header  (== len(sentence))
-
+    def makeCorpus(self):    
+        print 'Creating corpus...'
+        for i in range(1,10000):
+            # Assign at random to train, test or validation set
+                r = random.random()
+                if ( r < self.distribution[0] ):
+                    self.trainSet.append(i-1)
+                else:
+                    self.testSet.append(i-1)
+            
         # Create corpus and count word frequencies
         self.corpus = {}
         
@@ -148,9 +167,12 @@ class Main():
                         confusion["tn"] += 1
                     else:
                         confusion["fn"] += 1
-        print 'Results for test set: '
-        print confusion
-        print 'accuracy = ', float(confusion["tp"] + confusion["tn"]) / (confusion["tp"] + confusion["tn"] + confusion["fp"] + confusion["fn"])
-        print 'precision = ', float(confusion["tp"]) / (confusion["tp"] + confusion["fp"] )
+        #print 'Results for test set: '
+        #print confusion
+        acc = float(confusion["tp"] + confusion["tn"]) / (confusion["tp"] + confusion["tn"] + confusion["fp"] + confusion["fn"])
+        #print 'accuracy = ', acc
+        pre = float(confusion["tp"]) / (confusion["tp"] + confusion["fp"] )
+        #print 'precision = ', pre
+        return (acc, pre)        
 
-m = Main()
+m = Main(10)
