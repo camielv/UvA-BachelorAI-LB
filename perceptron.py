@@ -41,6 +41,9 @@ class Perceptron(object):
                 break
             
         return n
+    def reset(self):
+        self.weights = None
+        self.threshold = 0.5
  
     def test(self, training_set):
         for xv, t in training_set.items():
