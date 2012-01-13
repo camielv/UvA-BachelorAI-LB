@@ -48,13 +48,13 @@ class Main():
             self.sentiment[i - 1] = float(entry[4])
 
             # Assign at random to train, test or validation set
-            r = random.Random()
+            r = random.random()
             if ( r < self.distribution[0] ):
-                self.trainSet.append(i)
+                self.trainSet.append(i-1)
             elif ( r < self.distribution[0] + self.distribution[1] ):
-                self.testSet.append(i)
+                self.testSet.append(i-1)
             else:
-                self.validationSet.append(i)
+                self.validationSet.append(i-1)
             
             # Stop at 10000
             i += 1
@@ -105,15 +105,16 @@ class Main():
 
     def trainPerceptron(self):
         print 'Training perceptron.'
-        spsv = self.probSent.values()
-        ssv  = self.sentiment.values()
+#        spsv = self.probSent.values()
+#        ssv  = self.sentiment.values()
 
-        trainingSetKeys = zip(spsv[0:self.sizetrain])
-        trainingSetVals = [x != 0 for x in ssv][0:self.sizetrain]
+#        trainingSetKeys = zip(spsv[0:self.sizetrain])
+#        trainingSetVals = [x != 0 for x in ssv][0:self.sizetrain]
 
-        trainingSet = dict()
-        for i in range(self.sizetrain):
-            trainingSet[trainingSetKeys[i]] = trainingSetVals[i]
+        # Create trainingSet
+        trainingSet = {}
+        for i in self.trainSet:
+            trainingSet[ (self.probSent[i],) ] = self.sentiment[i]
         
         self.p.train(trainingSet)
         print 'Found threshold: ', self.p.threshold / self.p.weights[0]
