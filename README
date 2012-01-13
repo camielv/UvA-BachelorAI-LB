@@ -6,9 +6,10 @@ Supervisor: Ivo Langbroek
 Group members:
 Auke Wiggers
 Camiel Verschoor
+Duncan ten Velthuis
 Sharon Gieske
 Steven Laan
 
 Description:
 
-Find the sentiment in tweets and other social media, like blogs and stuff
+The goal of this assignment is the automatic sentiment analysis of several online messages, such as tweets, blog posts, etc. 
