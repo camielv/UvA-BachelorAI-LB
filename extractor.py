@@ -2,6 +2,7 @@
 import csv
 import nltk
 import perceptron
+import random
 
 class Main():
 
@@ -15,7 +16,10 @@ class Main():
     probWord = {}
     probSent = {}
     p = perceptron.Perceptron()    
-    sizetrain = 6000
+    trainSet = []
+    testSet = []
+    validationSet = []
+    distribution = (0.7, 0.1, 0.2) # train, test, validate
 
     def __init__(self, sizetrain = 8000):
         self.sizetrain = sizetrain
@@ -29,11 +33,12 @@ class Main():
         self.sentence = {}
         self.sentiment = {}
 
-        # do not include header!
+        # Initialize counter
         i = 0
 
         # Collect sentences and sentiments
         for entry in self.file1:
+            # Do not include header
             if i == 0:
                 i+=1
                 continue
@@ -41,6 +46,15 @@ class Main():
             # The actual message is the 9th attribute, sentiment is the 4th
             self.sentence[i - 1] = entry[9]
             self.sentiment[i - 1] = float(entry[4])
+
+            # Assign at random to train, test or validation set
+            r = random.Random()
+            if ( r < distribution[0] ):
+                trainSet.append(i)
+            else if ( r < distribution[0] + distribution[1] ):
+                testSet.append(i)
+            else:
+                validationSet.append(i)
             
             # Stop at 10000
             i += 1
@@ -51,7 +65,7 @@ class Main():
         # Create corpus and count word frequencies
         self.corpus = {}
 
-        for i in range(self.sizetrain):
+        for i in trainSet:
             # Tokenize the sentence
             tk_sentence = nltk.tokenize.word_tokenize( self.sentence[i] )
 
@@ -81,7 +95,7 @@ class Main():
         # Probability of sentiment per word calculated, estimate sentence probability of sentiment
         self.probSent = {}
 
-        for i in range(self.sizetrain):
+        for i in trainSet:
                 p = 1
                 tk_sent = nltk.tokenize.word_tokenize( self.sentence[i] )
                 for token in tk_sent:
