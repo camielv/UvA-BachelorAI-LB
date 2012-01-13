@@ -47,7 +47,7 @@ class Main():
             self.sentence[i - 1] = entry[9]
             self.sentiment[i - 1] = float(entry[4])
 
-            # Assign at random to train, test or validate set
+            # Assign at random to train, test or validation set
             r = random.Random()
             if ( r < distribution[0] ):
                 trainSet.append(i)
