@@ -28,6 +28,8 @@ class Main():
         t = time.time()
         self.initializeCorpus()
         for i in range( iterations ):
+            print "--- iteration", i + 1, "of", iterations, "---"
+        
             self.corpus = {}
             self.probWord = {}
             self.probSent = {}
