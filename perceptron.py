@@ -41,6 +41,7 @@ class Perceptron(object):
                 break
             
         return n
+    
     def reset(self):
         self.weights = None
         self.threshold = 0.5

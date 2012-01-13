@@ -1,0 +1,8 @@
+Even uitleg over hoe ik Python files comment.
+
+Is misschien wel handig als we allemaal hetzelfde doen.
+
+Ik zet comments boven het stukje code waar ze bij horen. Ik begin een comment met een hoofdletter :)
+
+Als een stukje code uitgecomment is, staat het hekje aan het begin van de regel (makkelijk te herkennen)
+
