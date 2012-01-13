@@ -10,26 +10,39 @@ class Main():
     # Open a file
     file1 = csv.reader(open('DataCSV.csv', 'rb'), delimiter=',', quotechar='"')     
 
-    # Initialize variables
+    # Initialize dictionaries
     sentence = {}
     sentiment = {}
     corpus = {}
     probWord = {}
     probSent = {}
+
+    # Perceptron used for machine learning
     p = perceptron.Perceptron()    
+
+    # Initialize lists
     trainSet = []
     testSet = []
     validationSet = []
-    distribution = (0.7, 0.1, 0.2) # (Train, Test, Validate)
+
+    # The distribution of all the data over train-, test- and validationset 
+    distribution = (0.7, 0.1, 0.2)
 
     def __init__(self, iterations = 10):
+        # Reset totals
         acc = 0
         pre = 0
+
+        # Get current time
         t = time.time()
+
+        # Load the sentences and sentiments from file
         self.initializeCorpus()
+        
         for i in range( iterations ):
             print "--- iteration", i + 1, "of", iterations, "---"
-        
+
+            # Reset dictionaries
             self.corpus = {}
             self.probWord = {}
             self.probSent = {}
@@ -37,13 +50,20 @@ class Main():
             self.trainSet = []
             self.testSet = []
             self.validationSet = []
-                    
-            self.makeCorpus( )
-            self.calcProbability( )
-            self.trainPerceptron( )
-            accpre = self.printResults( )
-            acc += accpre[0]
-            pre += accpre[1]
+
+            # Go through the steps
+            self.makeCorpus()
+            self.calcProbability()
+            self.trainPerceptron()
+
+            # Retrieve results
+            result = self.printResults()
+
+            # Add to the totals
+            acc += result[0]
+            pre += result[1]
+
+        # Average results and print
         print 'Accuracy , averaged: ', acc / float(iterations)
         print 'Precision, averaged: ', pre / float(iterations)
         print 'Time taken for', iterations, 'iterations: ', time.time()- t
