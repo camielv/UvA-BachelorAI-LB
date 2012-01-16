@@ -25,8 +25,6 @@ class Perceptron(object):
             # Increment iterations
             n += 1
             updated = False
-
-            print n
             
             # Iterate over all training elements
             for (xv, t) in training_set.items():
@@ -39,7 +37,6 @@ class Perceptron(object):
 
             # Terminate after end_after iterations
             if end_after is not None and n >= end_after:
-                updated = False
                 break
             
         return n
