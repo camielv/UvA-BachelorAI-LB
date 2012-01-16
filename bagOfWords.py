@@ -247,8 +247,7 @@ class Main():
         # Print results                   
         print 'Results for test set: '
         print confusion
-		
-        try:
+		try:
             acc = float(confusion["tp"] + confusion["tn"]) / (confusion["tp"] + confusion["tn"] + confusion["fp"] + confusion["fn"])
         except:
             acc = 0
