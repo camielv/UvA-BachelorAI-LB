@@ -4,11 +4,12 @@ import nltk
 import perceptron
 import random
 import time
+import re
 
 class Main():
 
     # Open a file
-    file1 = csv.reader(open('DataCSV.csv', 'rb'), delimiter=',', quotechar='"')     
+    file1 = csv.reader(open('DataCSV.csv', 'rb'), delimiter=',', quotechar='"')
 
     # Initialize dictionaries
     sentence = {}
@@ -18,15 +19,18 @@ class Main():
     probSent = {}
 
     # Perceptron used for machine learning
-    p = perceptron.Perceptron()    
+    p = perceptron.Perceptron()
 
     # Initialize lists
     trainSet = []
     testSet = []
     validationSet = []
 
-    # The distribution of all the data over train-, test- and validationset 
+    # The distribution of all the data over train-, test- and validationset
     distribution = (0.7, 0.1, 0.2)
+
+    # The number of sentences
+    num_sentences = 0
 
     def __init__(self, iterations = 10):
         # Reset totals
@@ -36,14 +40,18 @@ class Main():
         # Get current time
         t = time.time()
 
+        #ngrams
+        n = 3
+        
+        corpus = {}
+
         # Load the sentences and sentiments from file
-        self.initializeCorpus()
+        self.initializeCorpus( n )
         
         for i in range( iterations ):
             print "--- iteration", i + 1, "of", iterations, "---"
-
+            
             # Reset dictionaries
-            self.corpus = {}
             self.probWord = {}
             self.probSent = {}
             self.p.reset()
@@ -52,9 +60,8 @@ class Main():
             self.validationSet = []
 
             # Go through the steps
-            self.makeCorpus()
-            self.calcProbability()
-            self.trainPerceptron()
+            self.makeCorpus( n )
+            self.trainPerceptron( n )
 
             # Retrieve results
             result = self.printResults()
@@ -68,12 +75,16 @@ class Main():
         print 'Precision, averaged: ', pre / float(iterations)
         print 'Time taken for', iterations, 'iterations: ', time.time()- t
         
-    def initializeCorpus(self):
+    def initializeCorpus(self, n, blogs=False):
         self.sentence = {}
         self.sentiment = {}
 
         # Initialize counter
         i = 0
+
+        # Create corpus and count word frequencies
+        self.corpus = {}
+        print 'Creating corpus with ', n , '- grams.'
 
         # Collect sentences and sentiments
         for entry in self.file1:
@@ -81,37 +92,27 @@ class Main():
             if i == 0:
                 i+=1
                 continue
+
+            # Check for blogposts
+            if not blogs:
+                if int(entry[3]) != 3:
+                    continue
             
             # The actual message is the 9th attribute, sentiment is the 4th
-            self.sentence[i - 1] = entry[9]
-            self.sentiment[i - 1] = float(entry[4])
-            
-            # Stop at 10000
-            i += 1
-            if ( i == 10000 ): break
+            curSent = re.sub('\||#|:|;|RT|@\w+|\**', '', entry[9])
+            sent = float(entry[4])
 
-    def makeCorpus(self):    
-        print 'Creating corpus...'
-        for i in range(1,10000):
-            # Assign at random to train, test or validation set
-                r = random.random()
-                if ( r < self.distribution[0] ):
-                    self.trainSet.append(i-1)
-                else:
-                    self.testSet.append(i-1)
+            self.sentence[i - 1] = curSent
+            self.sentiment[i - 1] = sent
             
-        # Create corpus and count word frequencies
-        self.corpus = {}
-        
-        for j in self.trainSet:
             # Tokenize the sentence
-            tk_sentence = nltk.tokenize.word_tokenize( self.sentence[j] )
-
-            # Check for sentiment 
-            sent = self.sentiment[j]
-
-            # Iterate over every token
-            for token in tk_sentence:
+            tk_sent = nltk.tokenize.word_tokenize( curSent )
+       
+            # Iterate over every n tokens
+            for j in range(len(tk_sent)-(n-1)):
+                # token is now a uni/bi/tri/n-gram instead of a token
+                token = tuple(tk_sent[j:j+n])
+                
                 if token in self.corpus:
                     if sent != 0:
                         self.corpus[token] = self.corpus[token][0] + 1, self.corpus[token][1] + 1
@@ -122,30 +123,44 @@ class Main():
                         self.corpus[token] = 1, 1
                     else:
                         self.corpus[token] = 1, 0
+               
+            # Stop at 10000
+            i += 1
+            if ( i == 10000 ):
+                break
 
-        print 'Calculating unigram probability.'
-        # Corpus created, calculate words probability of sentiment based on frequency
+        # Set the number of sentences
+        self.num_sentences = i
+        print 'Number of sentences =', self.num_sentences
+        
+    def makeCorpus(self, n):
+        for i in range(1,self.num_sentences):
+            # Assign at random to train, test or validation set
+                r = random.random()
+                if ( r < self.distribution[0] ):
+                    self.trainSet.append(i-1)
+                else:
+                    self.testSet.append(i-1)
+            
+        print 'Calculating unigram probability'
         self.probWord = {}
-        for token in self.corpus.keys():
-            self.probWord[token] = float(self.corpus[token][1]) / self.corpus[token][0]
-#            print token, ' || ',corpus[token][1],' / ',corpus[token][0],' = ', probWord[token], '\n'
-
-    def calcProbability(self):
-        # Probability of sentiment per word calculated, estimate sentence probability of sentiment
-        self.probSent = {}
-
+        # Corpus created, calculate words probability of sentiment based on frequency
         for i in self.trainSet:
-                p = 1
-                tk_sent = nltk.tokenize.word_tokenize( self.sentence[i] )
-                for token in tk_sent:
-                    p = p + self.probWord[token]
-                self.probSent[i] = p / float(len(tk_sent)) # to be extra certain intdiv does not occur
-#                print i, 'PROB', self.probSent[i], 'SENT', self.sentiment[i]
+            tk_sent = nltk.tokenize.word_tokenize( self.sentence[i] )
+            p = 0
+
+            # Iterate over every n tokens
+            for j in range(len(tk_sent)-(n-1)):
+                # token is now a uni/bi/tri/n-gram instead of a token
+                token = tuple(tk_sent[j:j+n])
+                self.probWord[token] = float(self.corpus[token][1]) / self.corpus[token][0]
+                # print token, ' || ',corpus[token][1],' / ',corpus[token][0],' = ', probWord[token], '\n'
+                p = p + self.probWord[token]
+            self.probSent[i] = p / float(len(tk_sent)) # to be extra certain intdiv does not occur
         
-        
-    def trainPerceptron(self):
-        print 'Training perceptron.'
-        ssv  = [x != 0 for x in self.sentiment.values()]
+    def trainPerceptron(self, n):
+        print 'Training perceptron'
+        ssv = [x != 0 for x in self.sentiment.values()]
                 
         trainingSet = {}
         for i in self.trainSet:
@@ -154,22 +169,25 @@ class Main():
         self.p.train(trainingSet)
         print 'Found threshold: ', self.p.threshold / self.p.weights[0]
 
-        print 'Validating perceptron.'
+        print 'Testing perceptron'
 
         # Calculate probability for test sentences
-        for j in self.testSet:
-            p = 1
-            tk_sent = nltk.tokenize.word_tokenize( self.sentence[j] )
-            for token in tk_sent:
+        for i in self.testSet:
+            p = 0
+            tk_sent = nltk.tokenize.word_tokenize( self.sentence[i] )
+            # Iterate over every n tokens
+            for j in range(len(tk_sent)-(n-1)):
+                # token is now a uni/bi/tri/n-gram instead of a token
+                token = tuple(tk_sent[j:j+n])
                 try:
                     p = p + self.probWord[token]
                 except:
                     # If word does not occur in corpus, ignore for now
                     # (can try katz backoff later?)
                     pass
-            # Store the probability in  dictionary     
-            self.probSent[j] = p / float(len(tk_sent)) # to be extra certain intdiv does not occur
-#            print i, 'PROB', self.probSent[i], 'SENT', self.sentiment[i]
+            # Store the probability in dictionary
+            self.probSent[i] = p / float(len(tk_sent)) # to be extra certain intdiv does not occur
+            # print i, 'PROB', self.probSent[i], 'SENT', self.sentiment[i]
 
     def printResults(self):
         t = self.p.threshold / self.p.weights[0]
@@ -189,12 +207,12 @@ class Main():
                         confusion["tn"] += 1
                     else:
                         confusion["fn"] += 1
-#        print 'Results for test set: '
-#        print confusion
+# print 'Results for test set: '
+# print confusion
         acc = float(confusion["tp"] + confusion["tn"]) / (confusion["tp"] + confusion["tn"] + confusion["fp"] + confusion["fn"])
-#        print 'accuracy = ', acc
+# print 'accuracy = ', acc
         pre = float(confusion["tp"]) / (confusion["tp"] + confusion["fp"] )
-#        print 'precision = ', pre
-        return (acc, pre)        
+# print 'precision = ', pre
+        return (acc, pre)
 
 m = Main(10)

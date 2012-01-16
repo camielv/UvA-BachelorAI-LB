@@ -25,23 +25,25 @@ class Perceptron(object):
             # Increment iterations
             n += 1
             updated = False
-
+            
             # Iterate over all training elements
-            for xv, t in training_set.items():
+            for (xv, t) in training_set.items():
                 y = self.output( xv )
                 if y != t:
                     # If output doesn't match, update weights
                     self._update_weights(alpha, t, y, xv)
                     self._update_threshold(alpha, t, y)
+                
 
-                    updated = True
-                    
             # Terminate after end_after iterations
             if end_after is not None and n >= end_after:
                 break
             
         return n
     
+    def set_weights(self,new_weights):
+        self.weights = new_weights
+
     def reset(self):
         # Reset weights and threshold
         self.weights = None
@@ -50,7 +52,6 @@ class Perceptron(object):
     def test(self, training_set):
         for xv, t in training_set.items():
             if self.output(xv) != t:
-                print 'Perceptron sucks'
                 return False
         return True
  
