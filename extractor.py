@@ -93,7 +93,7 @@ class Main():
                 i+=1
                 continue
 
-            # Check for blogs
+            # Check for blog posts
             if not blogs:
                 if int(entry[3]) != 3:
                     continue

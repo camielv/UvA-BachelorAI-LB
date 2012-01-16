@@ -42,8 +42,9 @@ class Perceptron(object):
         return n
     
     def set_weights(self,new_weights):
+		# Set the weights to a given list
         self.weights = new_weights
-		
+
     def reset(self):
         # Reset weights and threshold
         self.weights = None
