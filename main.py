@@ -5,6 +5,7 @@ import perceptron
 import random
 import time
 import re
+from svmutil import *
 
 class Main():
 
@@ -37,8 +38,9 @@ class Main():
     def __init__(self):
         
         # Use a machine learning method
-        self.singleInputPerceptron()
+#        self.singleInputPerceptron()
 #        self.multiInputPerceptron()
+        self.supportVectorMachine()
 
     def singleInputPerceptron(self, iterations=10):
         # Reset totals
@@ -82,7 +84,6 @@ class Main():
         print 'Time taken for', iterations, 'iterations: ', time.time()- t
 
     def multiInputPerceptron(self):
-
         # Load the sentences and sentiments from file
         self.initializeCorpus( 1 )
         
@@ -98,6 +99,68 @@ class Main():
 
         print 'Time taken: ', time.time() - t
 
+    def supportVectorMachine(self,c=10):
+        # Get current time
+        t = time.time()
+        
+        self.initializeCorpus( 1 )
+        self.makeCorpus( 1 )
+        self.createWordVectors()
+
+        # Python magic, in order to get an vector with range [-1,1]
+#        temp = [ x != 0 for x in self.sentiment.values()]
+#        temp = [ x + x for x in temp]
+#        temp = [ int(x - 1) for x in temp]
+
+        
+        # Create file with data
+        f = open('./SVM_data.txt', 'w')
+
+        # Create the classes vector
+        for i in self.trainSet:
+            if self.sentiment[i] != 0:
+                f.write('+1')
+            else:
+                f.write('-1')
+            
+            k = 0
+            for j in self.wordVectors[i]:
+                f.write(' {0}:{1}'.format(k,int(j)))
+                k += 1
+            f.write('\n')
+        f.closed
+        
+        # Train the model
+        print 'Creating SVM problem'
+        y, x = svm_read_problem('./SVM_data.txt')
+        print 'Training SVM' 
+        m = svm_train(y,x, '-c 4')
+
+        
+
+        # Testing the model
+        print 'Testing the SVM'
+        f = open('./SVM_test.txt', 'w')
+        # Create the classes vector
+        for i in self.testSet:
+            if self.sentiment[i] != 0:
+                f.write('+1')
+            else:
+                f.write('-1')
+            
+            k = 0
+            for j in self.wordVectors[i]:
+                f.write(' {0}:{1}'.format(k,int(j)))
+                k += 1
+            f.write('\n')
+        f.closed
+
+        y1,x1 = svm_read_problem('./SVM_test.txt')
+        p_label, p_acc, p_val = svm_predict(y1, x1, m)
+        print 'Label {0} : acc {1}'.format(p_label,p_acc)
+        print 'Done'
+        print 'Time taken: ', time.time() - t
+        
     def initializeCorpus(self, n, tweet_only=True):
         self.sentence = {}
         self.sentiment = {}
@@ -149,7 +212,7 @@ class Main():
                
             # Stop at 10000
             i += 1
-            if ( i == 10000 ):
+            if ( i == 200 ):
                 break
             
         # Set the number of sentences
@@ -215,7 +278,7 @@ class Main():
     def trainMultiInputPerceptron(self):
         ssv  = [x != 0 for x in self.sentiment.values()]
 
-        print "Number of inputs = ", len(self.bagOfWords)
+        print 'Number of inputs = ', len(self.bagOfWords)
 
         # Create trainingset for perceptron
         trainingSet = {}
@@ -223,7 +286,7 @@ class Main():
             trainingSet[tuple(self.wordVectors[i])] = ssv[i]
 
         # Initialise weights on word probability
-        print "Setting weights"
+        print 'Setting weights'
         self.p.set_weights([self.probWord[token] for token in self.bagOfWords])
         
         # Train the perceptron
@@ -233,12 +296,12 @@ class Main():
     def testMultiInputPerceptron(self):
         # Initialize confusion matrix
         confusion = {}
-        confusion["tp"] = 0
-        confusion["tn"] = 0
-        confusion["fp"] = 0
-        confusion["fn"] = 0
+        confusion['tp'] = 0
+        confusion['tn'] = 0
+        confusion['fp'] = 0
+        confusion['fn'] = 0
 
-        print "Testing perceptron"
+        print 'Testing perceptron'
         
         for i in self.testSet:
             # Tokenize sentence
@@ -252,25 +315,25 @@ class Main():
 
             if out:
                 if self.sentiment[i] == 0:
-                    confusion["fp"] += 1
+                    confusion['fp'] += 1
                 else:
-                    confusion["tp"] += 1
+                    confusion['tp'] += 1
             else:
                 if self.sentiment[i] == 0:
-                    confusion["tn"] += 1
+                    confusion['tn'] += 1
                 else:
-                    confusion["fn"] += 1
+                    confusion['fn'] += 1
 
         # Print results                   
         print 'Results for test set: '
         print confusion
         try:
-            acc = float(confusion["tp"] + confusion["tn"]) / (confusion["tp"] + confusion["tn"] + confusion["fp"] + confusion["fn"])
+            acc = float(confusion['tp'] + confusion['tn']) / (confusion['tp'] + confusion['tn'] + confusion['fp'] + confusion['fn'])
         except:
             acc = 0
         print 'accuracy = ', acc
         try:
-            pre = float(confusion["tp"]) / (confusion["tp"] + confusion["fp"] )
+            pre = float(confusion['tp']) / (confusion['tp'] + confusion['fp'] )
         except:
             pre = 0
         print 'precision = ', pre
@@ -278,31 +341,53 @@ class Main():
     def printResults(self):
         t = self.p.threshold / self.p.weights[0]
         confusion = {}
-        confusion["tp"] = 0
-        confusion["tn"] = 0
-        confusion["fp"] = 0
-        confusion["fn"] = 0
+        confusion['tp'] = 0
+        confusion['tn'] = 0
+        confusion['fp'] = 0
+        confusion['fn'] = 0
         for i in self.testSet:
                 if self.probSent[i] > t:
                     if self.sentiment[i] == 0:
-                        confusion["fp"] += 1
+                        confusion['fp'] += 1
                     else:
-                        confusion["tp"] += 1
+                        confusion['tp'] += 1
                 if self.probSent[i] < t:
                     if self.sentiment[i] == 0:
-                        confusion["tn"] += 1
+                        confusion['tn'] += 1
                     else:
-                        confusion["fn"] += 1
+                        confusion['fn'] += 1
 #        print 'Results for test set: '
 #        print confusion
-        acc = float(confusion["tp"] + confusion["tn"]) / (confusion["tp"] + confusion["tn"] + confusion["fp"] + confusion["fn"])
+        acc = float(confusion['tp'] + confusion['tn']) / (confusion['tp'] + confusion['tn'] + confusion['fp'] + confusion['fn'])
 #        print 'accuracy = ', acc
-        pre = float(confusion["tp"]) / (confusion["tp"] + confusion["fp"] )
+        pre = float(confusion['tp']) / (confusion['tp'] + confusion['fp'] )
 #        print 'precision = ', pre
         return (acc, pre)        
 
     def createWordVectors(self):
+        # Create the bag of words
+        print 'Creating the bag of words'
         for i in self.trainSet:
+            # Tokenize sentence
+            tk_sentence = nltk.tokenize.word_tokenize( self.sentence[i] )
+
+            # Check all tokens
+            for token in tk_sentence:
+                if token not in self.bagOfWords:
+                    self.bagOfWords.append(token)
+            
+        # Create the word vectors
+        print 'Creating word vectors'
+        for i in self.trainSet:
+            # Tokenize sentence
+            tk_sentence = nltk.tokenize.word_tokenize( self.sentence[i] )
+
+            # Create word vector
+            vec = [ (x in tk_sentence) for x in self.bagOfWords]
+            
+            self.wordVectors[i] = vec
+            
+        for i in self.testSet:
             # Tokenize sentence
             tk_sentence = nltk.tokenize.word_tokenize( self.sentence[i] )
 
