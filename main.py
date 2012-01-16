@@ -37,7 +37,7 @@ class Main():
 
     def __init__(self):
         
-        # Use a machine learning method
+        # Choose machine learning method
 #        self.singleInputPerceptron()
 #        self.multiInputPerceptron()
         self.supportVectorMachine()
