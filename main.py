@@ -38,9 +38,9 @@ class Main():
     def __init__(self):
         
         # Choose machine learning method
-#        self.singleInputPerceptron()
+        self.singleInputPerceptron()
 #        self.multiInputPerceptron()
-        self.supportVectorMachine()
+#        self.supportVectorMachine()
 
     def singleInputPerceptron(self, iterations=10):
         # Reset totals
@@ -54,7 +54,7 @@ class Main():
         n = 3
         
         # Load the sentences and sentiments from file
-        self.initializeCorpus( n )
+        self.initializeCorpus( n, 10000 )
         
         for i in range( iterations ):
             print "--- iteration", i + 1, "of", iterations, "---"
@@ -103,20 +103,15 @@ class Main():
         # Get current time
         t = time.time()
         
-        self.initializeCorpus( 1 )
+        self.initializeCorpus( 1, 400 )
         self.makeCorpus( 1 )
         self.createWordVectors()
-
-        # Python magic, in order to get an vector with range [-1,1]
-#        temp = [ x != 0 for x in self.sentiment.values()]
-#        temp = [ x + x for x in temp]
-#        temp = [ int(x - 1) for x in temp]
-
-        
+      
         # Create file with data
         f = open('./SVM_data.txt', 'w')
 
         # Create the classes vector
+        n = 0
         for i in self.trainSet:
             if self.sentiment[i] != 0:
                 f.write('+1')
@@ -128,40 +123,80 @@ class Main():
                 f.write(' {0}:{1}'.format(k,int(j)))
                 k += 1
             f.write('\n')
-        f.closed
+            n += 1
+        f.close()
+        print n, 'lines written'
         
         # Train the model
         print 'Creating SVM problem'
         y, x = svm_read_problem('./SVM_data.txt')
         print 'Training SVM' 
-        m = svm_train(y,x, '-c 4')
+        m = svm_train(y,x, '-c 10')
 
         
 
         # Testing the model
         print 'Testing the SVM'
         f = open('./SVM_test.txt', 'w')
+
+        real_answer = []
+        
         # Create the classes vector
         for i in self.testSet:
+            
             if self.sentiment[i] != 0:
                 f.write('+1')
+                real_answer.append(1)
             else:
                 f.write('-1')
+                real_answer.append(-1)
             
             k = 0
             for j in self.wordVectors[i]:
                 f.write(' {0}:{1}'.format(k,int(j)))
                 k += 1
             f.write('\n')
-        f.closed
+        f.close()
 
         y1,x1 = svm_read_problem('./SVM_test.txt')
         p_label, p_acc, p_val = svm_predict(y1, x1, m)
-        print 'Label {0} : acc {1}'.format(p_label,p_acc)
-        print 'Done'
+        print 'Accuracy and mean squared error: {1}'.format(p_label,p_acc)
         print 'Time taken: ', time.time() - t
+
+        print 'Validating results'
+        confusion = {}
+        confusion['tp'] = 0
+        confusion['tn'] = 0
+        confusion['fp'] = 0
+        confusion['fn'] = 0
         
-    def initializeCorpus(self, n, tweet_only=True):
+        for x,y in zip(p_label,real_answer):
+            if x == 1:
+                if y == -1:
+                    confusion['fp'] += 1
+                else:
+                    confusion['tp'] += 1
+            else:
+                if y == -1:
+                    confusion['tn'] += 1
+                else:
+                    confusion['fn'] += 1
+
+        # Print results                   
+        print 'Results for test set: '
+        print confusion
+        try:
+            acc = float(confusion['tp'] + confusion['tn']) / (confusion['tp'] + confusion['tn'] + confusion['fp'] + confusion['fn'])
+        except:
+            acc = 0
+        print 'accuracy = ', acc
+        try:
+            pre = float(confusion['tp']) / (confusion['tp'] + confusion['fp'] )
+        except:
+            pre = 0
+        print 'precision = ', pre
+        
+    def initializeCorpus(self, n, max_num=10000,tweet_only=True):
         self.sentence = {}
         self.sentiment = {}
 
@@ -212,7 +247,7 @@ class Main():
                
             # Stop at 10000
             i += 1
-            if ( i == 200 ):
+            if ( i == max_num ):
                 break
             
         # Set the number of sentences
