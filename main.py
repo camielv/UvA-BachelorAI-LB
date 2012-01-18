@@ -50,7 +50,7 @@ class Main():
         t = time.time()
 
         # The n for the n-grams
-        n = 3
+        n = 1
         
         # Load the sentences and sentiments from file
         self.initializeCorpus( n, 10000 )
@@ -195,7 +195,7 @@ class Main():
             pre = 0
         print 'precision = ', pre
         
-    def initializeCorpus(self, n, max_num=10000,tweet_only=True):
+    def initializeCorpus(self, n, max_num=10000,tweet_only=True, mening = True):
         self.sentence = {}
         self.sentiment = {}
 
@@ -217,14 +217,18 @@ class Main():
             if tweet_only:
                 if int(entry[3]) != 3:
                     continue
-            
+
             # The actual message is the 9th attribute, sentiment is the 4th
             curSent = re.sub('\||#|:|;|RT|@\w+|\**', '', entry[9])
             sent = float(entry[4])
 
             self.sentence[i - 1] = curSent
             self.sentiment[i - 1] = sent
-            
+
+            # If only looking at messages containing opinions
+            if self.sentiment[i-1] == 0 and mening:
+                continue
+                        
             # Tokenize the sentence
             tk_sent = nltk.tokenize.word_tokenize( curSent )
        
@@ -232,18 +236,32 @@ class Main():
             for j in range(len(tk_sent)-(n-1)):
                 # token is now a uni/bi/tri/n-gram instead of a token
                 token = tuple(tk_sent[j:j+n])
-                
-                if token in self.corpus:
-                    if sent != 0:
-                        self.corpus[token] = self.corpus[token][0] + 1, self.corpus[token][1] + 1
+
+                # if classifying positive/negative
+                if mening:
+                    if token in self.corpus:
+                        if sent > 0:
+                            self.corpus[token] = self.corpus[token][0] + 1, self.corpus[token][1] + 1
+                        else:
+                            self.corpus[token] = self.corpus[token][0] + 1, self.corpus[token][1]
                     else:
-                        self.corpus[token] = self.corpus[token][0] + 1, self.corpus[token][1]
+                        if sent > 0:
+                            self.corpus[token] = 1, 1
+                        else:
+                            self.corpus[token] = 1, 0
+                # if classifying opinion/non-opinion
                 else:
-                    if sent != 0:
-                        self.corpus[token] = 1, 1
+                    if token in self.corpus:
+                        if sent != 0:
+                            self.corpus[token] = self.corpus[token][0] + 1, self.corpus[token][1] + 1
+                        else:
+                            self.corpus[token] = self.corpus[token][0] + 1, self.corpus[token][1]
                     else:
-                        self.corpus[token] = 1, 0
-               
+                        if sent != 0:
+                            self.corpus[token] = 1, 1
+                        else:
+                            self.corpus[token] = 1, 0
+                   
             # Stop at 10000
             i += 1
             if ( i == max_num ):
@@ -253,7 +271,7 @@ class Main():
         self.num_sentences = i
         print 'Number of sentences =', self.num_sentences
         
-    def makeCorpus(self, n):
+    def makeCorpus(self, n, mening = True):
         for i in range(1,self.num_sentences):
             # Assign at random to train, test or validation set
             r = random.random()
@@ -262,7 +280,7 @@ class Main():
             else:
                 self.testSet.append(i-1)
             
-        print 'Calculating unigram probability'
+        print 'Calculating n-gram probability'
         self.probWord = {}
         # Corpus created, calculate words probability of sentiment based on frequency
         for i in self.trainSet:
@@ -278,10 +296,15 @@ class Main():
                 p = p + self.probWord[token]
             self.probSent[i] = p / float(len(tk_sent)) # to be extra certain intdiv does not occur
         
-    def trainSingleInputPerceptron(self, n):
+    def trainSingleInputPerceptron(self, n, mening = True):
         print 'Training perceptron'
-        ssv = [x != 0 for x in self.sentiment.values()]
 
+        if mening:
+            ssv = [x > 0 for x in self.sentiment.values()]
+        else:
+            ssv = [x != 0 for x in self.sentiment.values()]
+        
+    
         # Set format is {id : ( (x1,x2,..), y ) }
         trainingSet = {}
         for i in self.trainSet:
@@ -372,7 +395,7 @@ class Main():
             pre = 0
         print 'precision = ', pre
 
-    def printResults(self):
+    def printResults(self, mening = True):
         # Dictionary to keep track of false negatives/positives
         wrongness = dict()
 
@@ -386,6 +409,22 @@ class Main():
 
         # Create a confusion matrix based on this threshold
         for i in self.testSet:
+            if mening:
+                if self.probSent[i] > t:
+                    if self.sentiment[i] < 0:
+                        confusion['fp'] += 1
+                        wrongness[i] = (self.sentence[i], self.probSent[i], self.sentiment[i], self.probSent[i]- self.sentiment[i])
+                    else:
+                        confusion['tp'] += 1
+                if self.probSent[i] < t:
+                    if self.sentiment[i] < 0:
+                        confusion['tn'] += 1
+                    else:
+                        confusion['fn'] += 1
+                        wrongness[i] = (self.sentence[i], self.probSent[i], self.sentiment[i], self.probSent[i]- self.sentiment[i])
+
+
+            else:
                 if self.probSent[i] > t:
                     if self.sentiment[i] == 0:
                         confusion['fp'] += 1
@@ -398,8 +437,8 @@ class Main():
                     else:
                         confusion['fn'] += 1
                         wrongness[i] = (self.sentence[i], self.probSent[i], self.sentiment[i], self.probSent[i]- self.sentiment[i])
-#        print 'Results for test set: '
-#        print confusion
+        print 'Results for test set: '
+        print confusion
         acc = float(confusion['tp'] + confusion['tn']) / (confusion['tp'] + confusion['tn'] + confusion['fp'] + confusion['fn'])
 #        print 'accuracy = ', acc
         pre = float(confusion['tp']) / (confusion['tp'] + confusion['fp'] )
