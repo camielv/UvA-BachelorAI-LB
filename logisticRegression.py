@@ -32,8 +32,8 @@ class LogisticRegression(object):
             newTheta[i] = theta[i] - a * temp
         return newTheta
     
-    def train(self, samples):
-        for i in range(1000):
+    def train(self, samples, iterations=10000):
+        for i in range(iterations):
             self.theta = self._gradientDescent(self.theta, samples, self.alpha)
             print "Cost: ", self._costFunction(self.theta, samples)
         return self.theta
