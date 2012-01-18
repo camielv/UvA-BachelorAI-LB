@@ -2,6 +2,7 @@
 import csv
 import nltk
 import perceptron
+import logisticRegression
 import random
 import time
 import re
@@ -38,11 +39,26 @@ class Main():
     def __init__(self):
         
         # Choose machine learning method
-        self.singleInputPerceptron()
+#        self.singleInputPerceptron()
 #        self.multiInputPerceptron()
 #        self.supportVectorMachine()
+		self.logisticRegression()
+	
+	def logisticRegression(self):
+        # Reset totals
+        acc = 0
+        pre = 0
 
-    def singleInputPerceptron(self, iterations=10):
+        # Get current time
+        t = time.time()
+
+        # The n for the n-grams
+        n = 3
+        
+        # Load the sentences and sentiments from file
+        self.initializeCorpus( n, 10000 )
+
+	def singleInputPerceptron(self, iterations=10):
         # Reset totals
         acc = 0
         pre = 0
