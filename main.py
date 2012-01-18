@@ -374,6 +374,8 @@ class Main():
         print 'precision = ', pre
 
     def printResults(self):
+        wrongness = dict()
+        
         t = self.p.threshold / self.p.weights[0]
         confusion = {}
         confusion['tp'] = 0
@@ -384,7 +386,7 @@ class Main():
                 if self.probSent[i] > t:
                     if self.sentiment[i] == 0:
                         confusion['fp'] += 1
-                        #print self.sentence[i], ' Distance = ', self.probSent[i], '-', self.sentiment[i], ' = ', self.probSent[i]- self.sentiment[i]
+                        wrongness[i] = (self.sentence[i], self.probSent[i], self.sentiment[i], self.probSent[i]- self.sentiment[i])
                     else:
                         confusion['tp'] += 1
                 if self.probSent[i] < t:
@@ -392,13 +394,19 @@ class Main():
                         confusion['tn'] += 1
                     else:
                         confusion['fn'] += 1
-                        #print self.sentence[i], ' Distance = ', self.probSent[i], '-', self.sentiment[i], ' = ', self.probSent[i]- self.sentiment[i]
+                        wrongness[i] = (self.sentence[i], self.probSent[i], self.sentiment[i], self.probSent[i]- self.sentiment[i])
 #        print 'Results for test set: '
 #        print confusion
         acc = float(confusion['tp'] + confusion['tn']) / (confusion['tp'] + confusion['tn'] + confusion['fp'] + confusion['fn'])
 #        print 'accuracy = ', acc
         pre = float(confusion['tp']) / (confusion['tp'] + confusion['fp'] )
 #        print 'precision = ', pre
+
+        inp = open('wrongness.txt', 'w')
+        for q in wrongness:
+            inputding = 'Dist = ' + str(wrongness[q][1]) + ' - ' + str(wrongness[q][2]) + ' = ' + str(wrongness[q][3]) + '  ' + str(wrongness[q][0] + '\n') 
+            inp.write(inputding)
+        inp.close()
         return (acc, pre)        
 
     def createWordVectors(self):
