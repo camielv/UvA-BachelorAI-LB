@@ -5,7 +5,7 @@ import perceptron
 import random
 import time
 import re
-from svmutil import *
+#from svmutil import *
 
 class Main():
 
@@ -285,7 +285,7 @@ class Main():
                 
         trainingSet = {}
         for i in self.trainSet:
-            trainingSet[(self.probSent[i],)] = ssv[i]
+            trainingSet[i] = ((self.probSent[i],), ssv[i])
                  
         self.p.train(trainingSet)
         print 'Found threshold: ', self.p.threshold / self.p.weights[0]
@@ -318,7 +318,7 @@ class Main():
         # Create trainingset for perceptron
         trainingSet = {}
         for i in self.trainSet:
-            trainingSet[tuple(self.wordVectors[i])] = ssv[i]
+            trainingSet[i] = (tuple(self.wordVectors[i]), ssv[i])
 
         # Initialise weights on word probability
         print 'Setting weights'
@@ -384,6 +384,7 @@ class Main():
                 if self.probSent[i] > t:
                     if self.sentiment[i] == 0:
                         confusion['fp'] += 1
+                        #print self.sentence[i], ' Distance = ', self.probSent[i], '-', self.sentiment[i], ' = ', self.probSent[i]- self.sentiment[i]
                     else:
                         confusion['tp'] += 1
                 if self.probSent[i] < t:
@@ -391,6 +392,7 @@ class Main():
                         confusion['tn'] += 1
                     else:
                         confusion['fn'] += 1
+                        #print self.sentence[i], ' Distance = ', self.probSent[i], '-', self.sentiment[i], ' = ', self.probSent[i]- self.sentiment[i]
 #        print 'Results for test set: '
 #        print confusion
         acc = float(confusion['tp'] + confusion['tn']) / (confusion['tp'] + confusion['tn'] + confusion['fp'] + confusion['fn'])
