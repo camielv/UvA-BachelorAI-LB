@@ -9,7 +9,6 @@ import re
 #from svmutil import *
 
 class Main():
-
     # Open a file
     file1 = csv.reader(open('DataCSV.csv', 'rb'), delimiter=',', quotechar='"')     
 
@@ -298,16 +297,16 @@ class Main():
     def trainSingleInputPerceptron(self, n):
         print 'Training perceptron'
         ssv = [x != 0 for x in self.sentiment.values()]
-                
+
+        # Set format is {id : ( (x1,x2,..), y ) }
         trainingSet = {}
         for i in self.trainSet:
             trainingSet[i] = ((self.probSent[i],), ssv[i])
-                 
+
+        # Train a perceptron according to this training set         
         self.p.train(trainingSet)
         print 'Found threshold: ', self.p.threshold / self.p.weights[0]
-
         print 'Testing perceptron'
-
         # Calculate probability for test sentences
         for i in self.testSet:
             p = 0
@@ -390,17 +389,23 @@ class Main():
         print 'precision = ', pre
 
     def printResults(self):
+        # Dictionary to keep track of false negatives/positives
+        wrongness = dict()
+
+        # Take found threshold by p.train
         t = self.p.threshold / self.p.weights[0]
         confusion = {}
         confusion['tp'] = 0
         confusion['tn'] = 0
         confusion['fp'] = 0
         confusion['fn'] = 0
+
+        # Create a confusion matrix based on this threshold
         for i in self.testSet:
                 if self.probSent[i] > t:
                     if self.sentiment[i] == 0:
                         confusion['fp'] += 1
-                        #print self.sentence[i], ' Distance = ', self.probSent[i], '-', self.sentiment[i], ' = ', self.probSent[i]- self.sentiment[i]
+                        wrongness[i] = (self.sentence[i], self.probSent[i], self.sentiment[i], self.probSent[i]- self.sentiment[i])
                     else:
                         confusion['tp'] += 1
                 if self.probSent[i] < t:
@@ -408,13 +413,21 @@ class Main():
                         confusion['tn'] += 1
                     else:
                         confusion['fn'] += 1
-                        #print self.sentence[i], ' Distance = ', self.probSent[i], '-', self.sentiment[i], ' = ', self.probSent[i]- self.sentiment[i]
+                        wrongness[i] = (self.sentence[i], self.probSent[i], self.sentiment[i], self.probSent[i]- self.sentiment[i])
 #        print 'Results for test set: '
 #        print confusion
         acc = float(confusion['tp'] + confusion['tn']) / (confusion['tp'] + confusion['tn'] + confusion['fp'] + confusion['fn'])
 #        print 'accuracy = ', acc
         pre = float(confusion['tp']) / (confusion['tp'] + confusion['fp'] )
 #        print 'precision = ', pre
+
+        # store false negatives/positives in a file
+        inp = open('wrongness.txt', 'w')
+        for q in wrongness:
+            inputding = 'Dist = ' + str(wrongness[q][1]) + ' - ' + str(wrongness[q][2]) + ' = ' + str(wrongness[q][3]) + '  ' + str(wrongness[q][0] + '\n') 
+            inp.write(inputding)
+        inp.close()
+
         return (acc, pre)        
 
     def createWordVectors(self):
