@@ -13,7 +13,7 @@ class Perceptron(object):
     def train(self, training_set, alpha=0.1, end_after=100):
         # Initialise weights
         if self.weights is None:
-            self.weights = [0 for _ in range(len(training_set.keys()[0]))]
+            self.weights = [0 for _ in range(len(training_set.values()[0][0]))]
 
         # Number of iterations
         n = 0
@@ -27,7 +27,7 @@ class Perceptron(object):
             updated = False
             
             # Iterate over all training elements
-            for (xv, t) in training_set.items():
+            for (xv, t) in training_set.values():
                 y = self.output( xv )
                 if y != t:
                     # If output doesn't match, update weights
