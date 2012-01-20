@@ -11,6 +11,7 @@
 \usepackage{wrapfig}
 \usepackage{comment}
 \usepackage{url}
+\usepackage{qtree}
 \usepackage{lastpage}
 \urlstyle{same}
 
@@ -77,12 +78,45 @@ Universiteit van Amsterdam\\
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate molestie mi ac dignissim. Proin tristique convallis volutpat. Nunc semper erat id tortor fermentum ullamcorper. Donec sed erat quis erat condimentum pellentesque. Donec sed tristique quam. Proin dictum convallis velit a porttitor. Curabitur in tellus tortor. Proin aliquet blandit sagittis. Curabitur vitae mauris ac leo dignissim rhoncus nec ut orci. Praesent vulputate mollis auctor. Aenean in felis diam, quis dictum metus.
 
 \section{Method}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate molestie mi ac dignissim. Proin tristique convallis volutpat. Nunc semper erat id tortor fermentum ullamcorper. Donec sed erat quis erat condimentum pellentesque. Donec sed tristique quam. Proin dictum convallis velit a porttitor. Curabitur in tellus tortor. Proin aliquet blandit sagittis. Curabitur vitae mauris ac leo dignissim rhoncus nec ut orci. Praesent vulputate mollis auctor. Aenean in felis diam, quis dictum metus.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate molestie mi ac dignissim. Proin tristique convallis volutpat. Nunc semper erat id tortor fermentum ullamcorper. Donec sed erat quis erat condimentum pellentesque. Donec sed tristique quam. Proin dictum convallis velit a porttitor. Curabitur in tellus tortor. Proin aliquet blandit sagittis. Curabitur vitae mauris ac leo dignissim rhoncus nec ut orci. Praesent vulputate mollis auctor. Aenean in felis diam, quis dictum metus.
+\subsection{Global Approach}
+First we'll explain our general approach. The idea is to use a binary classifier, i.e. either true or false, multiple times. This way we can first decide whether a message is neutral and then we can decide between the non-neutral messages whether it is a positive or negative message. Maybe a tree structure shows the used approach more clearly:
+\begin{figure}[h]
+\Tree [.{All messages} {Neutral Messages} [.{Non-Neutral Messages} {Positive Messages} {Negative Messages} ] ]
+\end{figure}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate molestie mi ac dignissim. Proin tristique convallis volutpat. Nunc semper erat id tortor fermentum ullamcorper. Donec sed erat quis erat condimentum pellentesque. Donec sed tristique quam. Proin dictum convallis velit a porttitor. Curabitur in tellus tortor. Proin aliquet blandit sagittis. Curabitur vitae mauris ac leo dignissim rhoncus nec ut orci. Praesent vulputate mollis auctor. Aenean in felis diam, quis dictum metus.
+As you can see, with this approach we need only to distinguish between two classes at a time. This is very convenient, because there are a lot of techniques that can discriminate between two classes, whereas multi-class-classifiers are less common.
 
+\subsection{Binary Classification}
+In this section, we'll describe the method that we use to classify a message. The approach consists of a few steps:
+\begin{enumerate}
+\item The counting of word frequencies
+\item Calculation of word probabilities
+\item Calculation of message probabilities
+\item Finding a good threshold
+\end{enumerate}
+
+First we count the frequency of each word, i.e. we count how many times it occures in the training set. We also keep track of how many times this word was encountered in either class. For example, if we want to decide whether messages are neutral or not, we keep track of how many times each word has been seen in a neutral message. The number of times the word occurs in the opposite class, is ofcourse equivalent to the total number of encouners, minus the encouters in the first class.
+
+When the frequencies of all words\footnote{All words in the training set} are found, we can calculate a probability for each word, which gives us an idea of how likely it is to be encountered in a certain class. The formula for this probability is the following:
+
+\begin{equation}
+P(word) = \frac{ \sum word \in C_1}{\sum word \in C_1\cup C_2}
+\end{equation}
+
+So the probability that a word is in $C_1$, the first class, is the number of times it has been encountered in a sentence, which was tagged to be in $C_1$, divided by the total number of encounters.
+
+Now that all words have probabilities assigned to them, or at least all words in the training set, we can calculate the probabilities of the sentences.
+
+\begin{equation}
+P(s) = \frac{1}{n} \sum_{w \in s} P(w)
+\end{equation}
+
+Where $s$ is the sentence, $n$ the number of words in the sentence and $w$ a word in the sentence. As follows from the formula, we take the weighted sum of the word probabilities.
+
+Now that every sentence has an associated probability, the real machine learning can begin. The goal is to find a treshold for the probabilities, i.e.\ when a sentence probability is higher than a certain amount, we classify it as $C_1$,  otherwise, we classify it as belonging to $C_2$.
+
+We tried several approaches to accomplish this task.
 
 \section{Results}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate molestie mi ac dignissim. Proin tristique convallis volutpat. Nunc semper erat id tortor fermentum ullamcorper. Donec sed erat quis erat condimentum pellentesque. Donec sed tristique quam. Proin dictum convallis velit a porttitor. Curabitur in tellus tortor. Proin aliquet blandit sagittis. Curabitur vitae mauris ac leo dignissim rhoncus nec ut orci. Praesent vulputate mollis auctor. Aenean in felis diam, quis dictum metus.
