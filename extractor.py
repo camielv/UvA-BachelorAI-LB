@@ -200,13 +200,15 @@ class Main():
                 if self.probSent[i] > t:
                     if self.sentiment[i] == 0:
                         confusion["fp"] += 1
+                        print self.sentence[i]
                     else:
                         confusion["tp"] += 1
                 if self.probSent[i] < t:
                     if self.sentiment[i] == 0:
                         confusion["tn"] += 1
                     else:
-                        confusion["fn"] += 1
+                        confusion["fn"] += 1,
+                        print self.sentence[i]
 # print 'Results for test set: '
 # print confusion
         acc = float(confusion["tp"] + confusion["tn"]) / (confusion["tp"] + confusion["tn"] + confusion["fp"] + confusion["fn"])

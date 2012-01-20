@@ -1,0 +1,9 @@
+# Notulen Week 2 18 Januari
+1. Perceptron aanpassen (dict met value tuple of tuples met zin-id als key)
+2. Kijken welke zinnen grootste fout hebben (distance from real value) en zien waar dit aan ligt
+3. Logistische regressie testen
+4. Testen op nieuwe domein
+5. Metakans, backoff, trigram geen kans dan kijken naar de bigrammen.
+6. Stemming (Duncan)!
+7. Hierarchie binaire classificatie toepassen
+
