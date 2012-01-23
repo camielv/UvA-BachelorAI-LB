@@ -8,6 +8,7 @@ import re
 #from svmutil import *
 
 class Main():
+
     # Open a file
     file1 = csv.reader(open('DataCSV.csv', 'rb'), delimiter=',', quotechar='"')     
 
@@ -29,7 +30,7 @@ class Main():
     bagOfWords = []
 
     # The distribution of all the data over train-, test- and validationset 
-    distribution = (0.7, 0.1, 0.2)
+    distribution = (0.7, 0.3)
 
     # The number of sentences
     num_sentences = 0
@@ -41,6 +42,11 @@ class Main():
 #        self.multiInputPerceptron()
 #        self.supportVectorMachine()
 
+'''
+    Machine learning methods:
+
+'''
+
     def singleInputPerceptron(self, iterations=10):
         # Reset totals
         acc = 0
@@ -50,7 +56,7 @@ class Main():
         t = time.time()
 
         # The n for the n-grams
-        n = 1
+        n = 3
         
         # Load the sentences and sentiments from file
         self.initializeCorpus( n, 10000 )
@@ -194,8 +200,12 @@ class Main():
         except:
             pre = 0
         print 'precision = ', pre
+
+'''
+    Corpus methods
+'''
         
-    def initializeCorpus(self, n, max_num=10000,tweet_only=True, mening = True):
+    def initializeCorpus(self, n, max_num=10000,tweet_only=True):
         self.sentence = {}
         self.sentiment = {}
 
@@ -217,18 +227,14 @@ class Main():
             if tweet_only:
                 if int(entry[3]) != 3:
                     continue
-
+            
             # The actual message is the 9th attribute, sentiment is the 4th
             curSent = re.sub('\||#|:|;|RT|@\w+|\**', '', entry[9])
             sent = float(entry[4])
 
             self.sentence[i - 1] = curSent
             self.sentiment[i - 1] = sent
-
-            # If only looking at messages containing opinions
-            if self.sentiment[i-1] == 0 and mening:
-                continue
-                        
+            
             # Tokenize the sentence
             tk_sent = nltk.tokenize.word_tokenize( curSent )
        
@@ -236,32 +242,18 @@ class Main():
             for j in range(len(tk_sent)-(n-1)):
                 # token is now a uni/bi/tri/n-gram instead of a token
                 token = tuple(tk_sent[j:j+n])
-
-                # if classifying positive/negative
-                if mening:
-                    if token in self.corpus:
-                        if sent > 0:
-                            self.corpus[token] = self.corpus[token][0] + 1, self.corpus[token][1] + 1
-                        else:
-                            self.corpus[token] = self.corpus[token][0] + 1, self.corpus[token][1]
+                
+                if token in self.corpus:
+                    if sent != 0:
+                        self.corpus[token] = self.corpus[token][0] + 1, self.corpus[token][1] + 1
                     else:
-                        if sent > 0:
-                            self.corpus[token] = 1, 1
-                        else:
-                            self.corpus[token] = 1, 0
-                # if classifying opinion/non-opinion
+                        self.corpus[token] = self.corpus[token][0] + 1, self.corpus[token][1]
                 else:
-                    if token in self.corpus:
-                        if sent != 0:
-                            self.corpus[token] = self.corpus[token][0] + 1, self.corpus[token][1] + 1
-                        else:
-                            self.corpus[token] = self.corpus[token][0] + 1, self.corpus[token][1]
+                    if sent != 0:
+                        self.corpus[token] = 1, 1
                     else:
-                        if sent != 0:
-                            self.corpus[token] = 1, 1
-                        else:
-                            self.corpus[token] = 1, 0
-                   
+                        self.corpus[token] = 1, 0
+               
             # Stop at 10000
             i += 1
             if ( i == max_num ):
@@ -271,7 +263,7 @@ class Main():
         self.num_sentences = i
         print 'Number of sentences =', self.num_sentences
         
-    def makeCorpus(self, n, mening = True):
+    def makeCorpus(self, n):
         for i in range(1,self.num_sentences):
             # Assign at random to train, test or validation set
             r = random.random()
@@ -280,7 +272,7 @@ class Main():
             else:
                 self.testSet.append(i-1)
             
-        print 'Calculating n-gram probability'
+        print 'Calculating unigram probability'
         self.probWord = {}
         # Corpus created, calculate words probability of sentiment based on frequency
         for i in self.trainSet:
@@ -295,25 +287,25 @@ class Main():
                 # print token, ' || ',corpus[token][1],' / ',corpus[token][0],' = ', probWord[token], '\n'
                 p = p + self.probWord[token]
             self.probSent[i] = p / float(len(tk_sent)) # to be extra certain intdiv does not occur
-        
-    def trainSingleInputPerceptron(self, n, mening = True):
-        print 'Training perceptron'
 
-        if mening:
-            ssv = [x > 0 for x in self.sentiment.values()]
-        else:
-            ssv = [x != 0 for x in self.sentiment.values()]
+'''
+    Train + test of methods:
+'''
+
         
-    
-        # Set format is {id : ( (x1,x2,..), y ) }
+    def trainSingleInputPerceptron(self, n):
+        print 'Training perceptron'
+        ssv = [x != 0 for x in self.sentiment.values()]
+                
         trainingSet = {}
         for i in self.trainSet:
             trainingSet[i] = ((self.probSent[i],), ssv[i])
-
-        # Train a perceptron according to this training set         
+                 
         self.p.train(trainingSet)
         print 'Found threshold: ', self.p.threshold / self.p.weights[0]
+
         print 'Testing perceptron'
+
         # Calculate probability for test sentences
         for i in self.testSet:
             p = 0
@@ -395,40 +387,18 @@ class Main():
             pre = 0
         print 'precision = ', pre
 
-    def printResults(self, mening = True):
-        # Dictionary to keep track of false negatives/positives
-        wrongness = dict()
-
-        # Take found threshold by p.train
+    def printResults(self):
         t = self.p.threshold / self.p.weights[0]
         confusion = {}
         confusion['tp'] = 0
         confusion['tn'] = 0
         confusion['fp'] = 0
         confusion['fn'] = 0
-
-        # Create a confusion matrix based on this threshold
         for i in self.testSet:
-            if mening:
-                if self.probSent[i] > t:
-                    if self.sentiment[i] < 0:
-                        confusion['fp'] += 1
-                        wrongness[i] = (self.sentence[i], self.probSent[i], self.sentiment[i], self.probSent[i]- self.sentiment[i])
-                    else:
-                        confusion['tp'] += 1
-                if self.probSent[i] < t:
-                    if self.sentiment[i] < 0:
-                        confusion['tn'] += 1
-                    else:
-                        confusion['fn'] += 1
-                        wrongness[i] = (self.sentence[i], self.probSent[i], self.sentiment[i], self.probSent[i]- self.sentiment[i])
-
-
-            else:
                 if self.probSent[i] > t:
                     if self.sentiment[i] == 0:
                         confusion['fp'] += 1
-                        wrongness[i] = (self.sentence[i], self.probSent[i], self.sentiment[i], self.probSent[i]- self.sentiment[i])
+                        #print self.sentence[i], ' Distance = ', self.probSent[i], '-', self.sentiment[i], ' = ', self.probSent[i]- self.sentiment[i]
                     else:
                         confusion['tp'] += 1
                 if self.probSent[i] < t:
@@ -436,21 +406,13 @@ class Main():
                         confusion['tn'] += 1
                     else:
                         confusion['fn'] += 1
-                        wrongness[i] = (self.sentence[i], self.probSent[i], self.sentiment[i], self.probSent[i]- self.sentiment[i])
-        print 'Results for test set: '
-        print confusion
+                        #print self.sentence[i], ' Distance = ', self.probSent[i], '-', self.sentiment[i], ' = ', self.probSent[i]- self.sentiment[i]
+#        print 'Results for test set: '
+#        print confusion
         acc = float(confusion['tp'] + confusion['tn']) / (confusion['tp'] + confusion['tn'] + confusion['fp'] + confusion['fn'])
 #        print 'accuracy = ', acc
         pre = float(confusion['tp']) / (confusion['tp'] + confusion['fp'] )
 #        print 'precision = ', pre
-
-        # store false negatives/positives in a file
-        inp = open('wrongness.txt', 'w')
-        for q in wrongness:
-            inputding = 'Dist = ' + str(wrongness[q][1]) + ' - ' + str(wrongness[q][2]) + ' = ' + str(wrongness[q][3]) + '  ' + str(wrongness[q][0] + '\n') 
-            inp.write(inputding)
-        inp.close()
-
         return (acc, pre)        
 
     def createWordVectors(self):
