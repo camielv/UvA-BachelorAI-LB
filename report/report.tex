@@ -96,7 +96,7 @@ In this section, we'll describe the method that we use to classify a message. Th
 \item Finding a good threshold
 \end{enumerate}
 
-First we count the frequency of each word, i.e. we count how many times it occures in the training set. We also keep track of how many times this word was encountered in either class. For example, if we want to decide whether messages are neutral or not, we keep track of how many times each word has been seen in a neutral message. The number of times the word occurs in the opposite class, is ofcourse equivalent to the total number of encouners, minus the encouters in the first class.
+First we count the frequency of each word, i.e. we count how many times it occurs in the training set. We also keep track of how many times this word was encountered in either class. For example, if we want to decide whether messages are neutral or not, we keep track of how many times each word has been seen in a neutral message. The number of times the word occurs in the opposite class, is equivalent to the total number of encounters, minus the encounters in the first class.
 
 When the frequencies of all words\footnote{All words in the training set} are found, we can calculate a probability for each word, which gives us an idea of how likely it is to be encountered in a certain class. The formula for this probability is the following:
 
@@ -114,7 +114,7 @@ P(s) = \frac{1}{n} \sum_{w \in s} P(w)
 
 Where $s$ is the sentence, $n$ the number of words in the sentence and $w$ a word in the sentence. As follows from the formula, we take the weighted sum of the word probabilities.
 
-Now that every sentence has an associated probability, the real machine learning can begin. The goal is to find a treshold for the probabilities, i.e.\ when a sentence probability is higher than a certain amount, we classify it as $C_1$,  otherwise, we classify it as belonging to $C_2$.
+Now that every sentence has an associated probability, the real machine learning can begin. The goal is to find a threshold for the probabilities, i.e.\ when a sentence probability is higher than a certain amount, we classify it as $C_1$,  otherwise, we classify it as belonging to $C_2$.
 
 We tried several approaches to accomplish this task.
 
