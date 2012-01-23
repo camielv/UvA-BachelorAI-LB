@@ -327,12 +327,14 @@ class Main():
     '''        
     def trainSingleInputPerceptron(self, n):
         print 'Training perceptron'
-        # Create a list with false if non-opinion and true of opinion present
+        # Create a list with 1 if opinion and 0 if non-opinion
         ssvNeu = [x != 0 for x in self.sentiment.values()]
         
-        # Create a list with 1 if positive and -1 if negative, 0 if neutral
-        ssvPos= [ (-1 if x < 0 else (1 if x > 0 else x)) for x in self.sentiment.values()]
-
+        # Create a list with 1 if positive and 0 if negative
+        ssvPos= [0 if x < 0 else 1 for x in self.sentiment.values()]
+        print self.sentiment.values()[0:10]
+        print ssvPos[0:10]
+        
         # trainingset for opinion vs non-opinion classifier                
         trainingSet1 = {}
         trainingSet2 = {}
@@ -465,7 +467,7 @@ class Main():
                         confusion['Neutral']['fn'] += 1
                 
                 # only test pos/neg for sentimental sentences
-                if self.sentiment != 0:
+                if self.sentiment[i] != 0:
                     if self.probSent['Positive'][i] >= thresholds[1]:
                         if self.sentiment[i] < 0 :
                             confusion['Positive']['fp'] += 1
