@@ -32,13 +32,15 @@ class Main():
 
     # The number of sentences
     num_sentences = 0
+    
+    # The n for the n-grams
+    n = 2
 
-    def __init__(self):
+    def __init__(self, n=1):
         
-        # Choose machine learning method
+        # Machine learning method: perceptron
         self.singleInputPerceptron()
-#        self.multiInputPerceptron()
-#        self.supportVectorMachine()
+        self.n = n
 
     '''
         Machine learning methods:
@@ -56,12 +58,9 @@ class Main():
         
         # Get current time
         now = time.time()
-
-        # The n for the n-grams
-        n = 3
         
         # Load the sentences and sentiments from file
-        self.initializeCorpus( n, total_messages )
+        self.initializeCorpus( self.n, total_messages )
         
         for i in range( iterations ):
             print "--- iteration", i + 1, "of", iterations, "---"
@@ -76,10 +75,10 @@ class Main():
             self.p2.reset()
 
             # Random selection of training and test data
-            self.makeCorpus( n, distribution = (0.7, 0.3) )
+            self.makeCorpus( self.n, distribution = (0.7, 0.3) )
 
             # Go through the steps to seperate opinion from nonopinion
-            t = self.trainSingleInputPerceptron( n )
+            t = self.trainSingleInputPerceptron( self.n )
             # then seperate positive from negative in the test set of the previous step
             
             # Retrieve results
@@ -107,120 +106,6 @@ class Main():
         
         print 'Time taken for', iterations, 'iterations: ', time.time()- now
             
-
-    def multiInputPerceptron(self):
-        # Load the sentences and sentiments from file
-        self.initializeCorpus( 1 )
-        
-        # Get current time
-        t = time.time()
-        
-        # Go through the steps
-        self.makeCorpus( 1 )
-        self.createWordVectors()
-        self.calcProbability()
-        self.trainMultiInputPerceptron()
-        self.testMultiInputPerceptron()
-
-        print 'Time taken: ', time.time() - t
-
-    def supportVectorMachine(self,c=10):
-        # Get current time
-        t = time.time()
-        
-        self.initializeCorpus( 1, 400 )
-        self.makeCorpus( 1 )
-        self.createWordVectors()
-      
-        # Create file with data
-        f = open('./SVM_data.txt', 'w')
-
-        # Create the classes vector
-        n = 0
-        for i in self.trainSet:
-            if self.sentiment[i] != 0:
-                f.write('+1')
-            else:
-                f.write('-1')
-            
-            k = 0
-            for j in self.wordVectors[i]:
-                f.write(' {0}:{1}'.format(k,int(j)))
-                k += 1
-            f.write('\n')
-            n += 1
-        f.close()
-        print n, 'lines written'
-        
-        # Train the model
-        print 'Creating SVM problem'
-        y, x = svm_read_problem('./SVM_data.txt')
-        print 'Training SVM' 
-        m = svm_train(y,x, '-c 10')
-
-        
-
-        # Testing the model
-        print 'Testing the SVM'
-        f = open('./SVM_test.txt', 'w')
-
-        real_answer = []
-        
-        # Create the classes vector
-        for i in self.testSet:
-            
-            if self.sentiment[i] != 0:
-                f.write('+1')
-                real_answer.append(1)
-            else:
-                f.write('-1')
-                real_answer.append(-1)
-            
-            k = 0
-            for j in self.wordVectors[i]:
-                f.write(' {0}:{1}'.format(k,int(j)))
-                k += 1
-            f.write('\n')
-        f.close()
-
-        y1,x1 = svm_read_problem('./SVM_test.txt')
-        p_label, p_acc, p_val = svm_predict(y1, x1, m)
-        print 'Accuracy and mean squared error: {1}'.format(p_label,p_acc)
-        print 'Time taken: ', time.time() - t
-
-        print 'Validating results'
-        confusion = {}
-        confusion['tp'] = 0
-        confusion['tn'] = 0
-        confusion['fp'] = 0
-        confusion['fn'] = 0
-        
-        for x,y in zip(p_label,real_answer):
-            if x == 1:
-                if y == -1:
-                    confusion['fp'] += 1
-                else:
-                    confusion['tp'] += 1
-            else:
-                if y == -1:
-                    confusion['tn'] += 1
-                else:
-                    confusion['fn'] += 1
-
-        # Print results                   
-        print 'Results for test set: '
-        print confusion
-        try:
-            acc = float(confusion['tp'] + confusion['tn']) / (confusion['tp'] + confusion['tn'] + confusion['fp'] + confusion['fn'])
-        except:
-            acc = 0
-        print 'accuracy = ', acc
-        try:
-            pre = float(confusion['tp']) / (confusion['tp'] + confusion['fp'] )
-        except:
-            pre = 0
-        print 'precision = ', pre
-
     '''
         Corpus methods
     '''        
@@ -314,10 +199,12 @@ class Main():
                 # increment chances according to occurrence                
                 pNeutral  += self.probWord['Neutral'][token]
 
-                # Chance of being positive (not-negative) is positives - negatives / total
-                self.probWord['Positive'][token]  = float(self.corpus[token][1] - self.corpus[token][2]) / self.corpus[token][0]
-                pPositive += self.probWord['Positive'][token]
-
+                # skip sentence if not sentimental
+                if self.sentiment[i] != 0 :
+                    # Chance of being positive (not-negative) is positives / ( positives + negatives )
+                    self.probWord['Positive'][token]  = float(self.corpus[token][1]) / (self.corpus[token][2] + self.corpus[token][1])
+                    pPositive += self.probWord['Positive'][token]
+            
             # Calculate sentence probability for both classes, float division necessary here
             self.probSent['Neutral'][i] = pNeutral / float(len(tk_sent)) 
             self.probSent['Positive'][i] = pPositive / float(len(tk_sent))
@@ -330,10 +217,8 @@ class Main():
         # Create a list with 1 if opinion and 0 if non-opinion
         ssvNeu = [x != 0 for x in self.sentiment.values()]
         
-        # Create a list with 1 if positive and 0 if negative
+        # Create a list with 1 if positive and 0 if negative sentiment
         ssvPos= [0 if x < 0 else 1 for x in self.sentiment.values()]
-        print self.sentiment.values()[0:10]
-        print ssvPos[0:10]
         
         # trainingset for opinion vs non-opinion classifier                
         trainingSet1 = {}
@@ -372,10 +257,13 @@ class Main():
 
                 try:
                     pNeutral = pNeutral + self.probWord['Neutral'][token]
-                    pPositive = pPositive + self.probWord['Positive'][token]
                 except:
                     # If word does not occur in corpus, ignore for now
                     # (can try smaller n-grams later?)
+                    pass
+                try:
+                    pPositive = pPositive + self.probWord['Positive'][token]
+                except:
                     pass
 
             # Store the probability in dictionary
