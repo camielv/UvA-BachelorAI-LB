@@ -146,26 +146,26 @@ class Main():
             # Create temporary dictionary of dictionaries of lists
             temp_ngram = {}
 
-            for i in range( 1, n + 1 ):
-                temp_ngram[i] = {}
-                for j in range( 1, i + 1 ):
-                    temp_ngram[i][j] = []
+            for k in range( 1, n + 1 ):
+                temp_ngram[k] = {}
+                for j in range( 1, k + 1 ):
+                    temp_ngram[k][j] = []
 
             count = 0;
             # Iterate over every word
             for word in tk_sent:
                 count += 1
                 # Loop over every n-gram
-                for i in range( 1, n + 1 ):
+                for k in range( 1, n + 1 ):
                     # Loop over every temporary instantion of an n gram
-                    for j in range( 1, i + 1 ):
+                    for j in range( 1, k + 1 ):
                         # Add this word
                         if count >= j:
-                            temp_ngram[i][j].append(word)
+                            temp_ngram[k][j].append(word)
                         
-                        if len( temp_ngram[i][j] ) == i:
+                        if len( temp_ngram[k][j] ) == k:
                             # We found a n-gram
-                            token = tuple(temp_ngram[i][j])
+                            token = tuple(temp_ngram[k][j])
 
                             # format: corpus[<combination of n tokens>]{neutrals, positives, negatives}
                             if token in self.corpus:
@@ -209,19 +209,39 @@ class Main():
             tk_sent = nltk.tokenize.word_tokenize( self.sentence[i] )
             pNeutral  = 0
             pPositive = 0
-            # Iterate over every n tokens
-            for j in range(len(tk_sent)-(n-1)):
-                # token is now a uni/bi/tri/n-gram instead of a token
-                token = tuple(tk_sent[j:j+n])
+            
+            # Create temporary dictionary of dictionaries of lists
+            temp_ngram = {}
 
-                # Chance of being neutral (not-opinion) is sum of positive and negative uses / total 
-                self.probWord['Neutral'][token] = float(self.corpus[token][1] + self.corpus[token][2]) / self.corpus[token][0]
-                # increment chances according to occurrence                
-                pNeutral  += self.probWord['Neutral'][token]
+            for k in range( 1, n + 1 ):
+                temp_ngram[k] = {}
+                for j in range( 1, k + 1 ):
+                    temp_ngram[k][j] = []
 
-                # Chance of being positive (not-negative) is positives - negatives / total
-                self.probWord['Positive'][token]  = float(self.corpus[token][1] - self.corpus[token][2]) / self.corpus[token][0]
-                pPositive += self.probWord['Positive'][token]
+            count = 0;
+            # Iterate over every word
+            for word in tk_sent:
+                count += 1
+                # Loop over every n-gram
+                for k in range( 1, n + 1 ):
+                    # Loop over every temporary instantion of an n gram
+                    for j in range( 1, k + 1 ):
+                        # Add this word
+                        if count >= j:
+                            temp_ngram[k][j].append(word)
+                        
+                        if len( temp_ngram[k][j] ) == k:
+                            # We found a n-gram
+                            token = tuple(temp_ngram[k][j])
+
+                            # Chance of being neutral (not-opinion) is sum of positive and negative uses / total 
+                            self.probWord['Neutral'][token] = float(self.corpus[token][1] + self.corpus[token][2]) / self.corpus[token][0]
+                            # increment chances according to occurrence                
+                            pNeutral  += self.probWord['Neutral'][token]
+
+                            # Chance of being positive (not-negative) is positives - negatives / total
+                            self.probWord['Positive'][token]  = float(self.corpus[token][1] - self.corpus[token][2]) / self.corpus[token][0]
+                            pPositive += self.probWord['Positive'][token]
 
             # Calculate sentence probability for both classes, float division necessary here
             self.probSent['Neutral'][i] = pNeutral / float(len(tk_sent)) 
