@@ -23,7 +23,7 @@ class LanguageProcessor():
         self.__sentence = dict()
         self.__sentiment = dict()
         self.__initializeCorpus(file1, n, max_num, tweet_only)
-
+        
     def __initializeCorpus( self, file1, n, max_num = 10000, tweet_only = True ):
         # Initialize counter
         i = 0
@@ -42,21 +42,18 @@ class LanguageProcessor():
                     continue
 
             # The actual message is the 9th attribute, sentiment is the 4th
-            curSent = self.__clean(entry[9])
+            curSent = self.__tokenize( self.__clean(entry[9]))
             sent = float(entry[4])
             
             self.__sentence[i - 1] = curSent
             self.__sentiment[i - 1] = sent
 
-            # Tokenize the sentence
-            tk_sent = self.__tokenize( curSent )
-            
             # Iterate over every n tokens
-            for j in range(len(tk_sent)-(n-1)):
+            for j in range(len( curSent )-(n-1)):
                 # token is now a uni/bi/tri/n-gram instead of a token
-                token = tuple(tk_sent[j:j+n])
+                token = tuple(curSent[j:j+n])
                 
-                # format: corpus[<combination of n tokens>]{neutrals, positives, negatives}
+                # format: corpus[<combination of n tokens>] = {neutrals, positives, negatives}
                 if token in self.__corpus:
                     if sent > 0:
                         self.__corpus[token] = self.__corpus[token][0] + 1, self.__corpus[token][1] + 1, self.__corpus[token][2]
@@ -78,12 +75,12 @@ class LanguageProcessor():
         # Set the number of sentences
         self.__num_sentences = i
         print 'Number of sentences =', self.__num_sentences
-
-    def makeCorpus(self, n, distribution):
+        
+    def makeCorpus(self, n = 3, distribution = (0.7, 0.3 ) ):
         self.__trainSet = list()
         self.__testSet = list()
-        self.__probWord = dict()
-        self.__probSent = dict()
+        self.__probWord = {'Opinion':dict(), 'PosNeg':dict()}
+        self.__probSent = {'Opinion':dict(), 'PosNeg':dict()}
 
         for i in range( 1, self.__num_sentences ):
             # Assign at random to train, test or validation set
@@ -96,56 +93,70 @@ class LanguageProcessor():
         print 'Calculating n-gram probability'
         # Corpus created, calculate words probability of sentiment based on frequency
         for i in self.__trainSet:
-            tk_sent = self.__tokenize( self.__sentence[i] )
-            p = 0
+            tk_sent = self.__sentence[i]
+            pOpinion = 0
+            pPosNeg  = 0
 
             # Iterate over every n tokens
             for j in range(len(tk_sent)-(n-1)):
                 # token is now a uni/bi/tri/n-gram instead of a token
                 token = tuple(tk_sent[j:j+n])
-                self.__probWord[token] = float(self.__corpus[token][1]) / self.__corpus[token][0]
-                # print token, ' || ',corpus[token][1],' / ',corpus[token][0],' = ', probWord[token], '\n'
-                p = p + self.__probWord[token]
-            self.__probSent[i] = p / float(len(tk_sent)) # to be extra certain intdiv does not occur
+                self.__probWord['Opinion'][token] = float( self.__corpus[token][1] + self.__corpus[token][2]) / self.__corpus[token][0]
+                pOpinion = pOpinion + self.__probWord['Opinion'][token]
+
+                # if token contains sentiment, sentence may contain sentiment as well
+                if self.__corpus[token][1] or self.__corpus[token][2]:
+                    self.__probWord['PosNeg'][token]  = float( self.__corpus[token][1] ) / ( self.__corpus[token][1] + self.__corpus[token][2] )
+                    pPosNeg = pPosNeg + self.__probWord['PosNeg'][token]
+                
+            self.__probSent['Opinion'][i] = pOpinion / float(len(tk_sent)) # to be extra certain intdiv does not occur
+            self.__probSent['PosNeg'][i]  = pPosNeg  / float(len(tk_sent))
         
         # Calculate probabilities for testset
         for i in self.__testSet:
-            tk_sent = self.__tokenize( self.__sentence[i] )
-            p = 0
+            tk_sent = self.__sentence[i]
+            pOpinion = 0
+            pPosNeg  = 0
+            
             # Iterate over every n tokens
             for j in range(len(tk_sent)-(n-1)):
                 # token is now a uni/bi/tri/n-gram instead of a token
                 token = tuple(tk_sent[j:j+n])
                 try:
-                    p = p + self.__probWord[token]
+                    pOpinion = pOpinion + self.__probWord['Opinion'][token]
                 except:
                     # If word does not occur in corpus, ignore for now
                     # (can try katz backoff later?)
                     pass
+                try:
+                    pPosNeg  = pPosNeg  + self.__probWord['PosNeg'][token]
+                except:
+                    pass
+            
             # Store the probability in dictionary
-            self.__probSent[i] = p / float(len(tk_sent)) # to be extra certain intdiv does not occur
-            # print i, 'PROB', self.probSent[i], 'SENT', self.sentiment[i]
-
+            self.__probSent['Opinion'][i] = pOpinion / float(len(tk_sent)) # to be extra certain intdiv does not occur
+            self.__probSent['PosNeg'][i] = pPosNeg   / float(len(tk_sent))
         return (self.__trainSet, self.__testSet, self.__probWord, self.__probSent)
 
     def __clean( self, sentence ):
-        #print sentence
+        # print sentence
         sentence = sentence.replace( ':-)', " blijesmiley " )
         sentence = sentence.replace( ':)', " blijesmiley " )
         sentence = sentence.replace( ':(', " zieligesmiley " )
+        sentence = sentence.replace( ':s', ' awkwardsmiley ' )
         sentence = sentence.replace( '!', " ! " )
         sentence = sentence.replace( '?', " ? " )
 
-        # Delete expressions
-        sentence = re.sub( r'\.|\,|\[|\]|&#39;s|\||#|:|;|RT|\(|\)|@\w+|\**', '', sentence )
+        # Delete expressions, such as links, hashtags, twitteraccountnames 
+        sentence = re.sub( r'http\/\/t\.co\/\w+|\.|\,|\[|\]|&#39;s|\||#|:|;|RT|\(|\)|@\w+|\**', '', sentence )
         sentence = re.sub( ' +',' ', sentence )
         return sentence
         # print sentence
         # Werkt nog niet cleanup is nog niet goed genoeg
-        #return self.__stemmer.stem( sentence )
+        return self.__stemmer.stem( sentence )
 
     def __tokenize( self, sentence ):
-        return sentence.split( ' ' )
+        return re.findall('\w+|\?|\!', sentence)
 
     # Get Functions
     def getCorpus( self ):
