@@ -13,7 +13,8 @@ class LanguageProcessor():
     __sentiment = dict()
     __probWord = dict()
     __probSent = dict()
-
+    __bagOfWords = dict()
+    __emptyBag = dict()
     __num_sentences = 0
 
     __stemmer = nltk.stem.SnowballStemmer("dutch")
@@ -29,13 +30,14 @@ class LanguageProcessor():
         i = 0
         print 'Creating corpus with ', n , '- grams.'
 
+
         # Collect sentences and sentiments
         for entry in file1:
             # Do not include header
             if i == 0:
                 i+=1
                 continue
-
+            
             # Check for tweets
             if tweet_only:
                 if int( entry[3] ) != 3:
@@ -48,11 +50,16 @@ class LanguageProcessor():
             self.__sentence[i - 1] = curSent
             self.__sentiment[i - 1] = sent
 
+            # init for bag of n words
+
+            
             # Iterate over every n tokens
             for j in range(len( curSent )-(n-1)):
                 # token is now a uni/bi/tri/n-gram instead of a token
                 token = tuple(curSent[j:j+n])
+
                 
+                self.__emptyBag[token] = 0 
                 # format: corpus[<combination of n tokens>] = {neutrals, positives, negatives}
                 if token in self.__corpus:
                     if sent > 0:
@@ -72,9 +79,32 @@ class LanguageProcessor():
             i += 1
             if ( i == max_num ):
                 break
+            
         # Set the number of sentences
         self.__num_sentences = i
         print 'Number of sentences =', self.__num_sentences
+
+    def makeBagOfWords(self, n=3, distribution = (0.7, 0.3) ):
+        self.__trainSet = list()
+        self.__testSet = list()
+
+        for i in range( 1, self.__num_sentences ):
+
+            # initialize bagofwords
+            self.__bagOfWords[i] = self.__emptyBag
+            # Assign at random to train, test or validation set
+            r = random.random()
+            if ( r < distribution[0] ):
+                self.__trainSet.append(i-1)
+            else:
+                self.__testSet.append(i-1)
+
+        for i in self.__trainSet:
+            tk_sent = self.__sentence[i]
+            for j in range(len(tk_sent) - (n-1)):
+                token = tuple(tk_sent[j:j+n])
+                bagOfWords[i][token] = 1
+
         
     def makeCorpus(self, n = 3, distribution = (0.7, 0.3 ) ):
         self.__trainSet = list()
@@ -108,10 +138,16 @@ class LanguageProcessor():
                 if self.__corpus[token][1] or self.__corpus[token][2]:
                     self.__probWord['PosNeg'][token]  = float( self.__corpus[token][1] ) / ( self.__corpus[token][1] + self.__corpus[token][2] )
                     pPosNeg = pPosNeg + self.__probWord['PosNeg'][token]
-                
-            self.__probSent['Opinion'][i] = pOpinion / float(len(tk_sent)) # to be extra certain intdiv does not occur
-            self.__probSent['PosNeg'][i]  = pPosNeg  / float(len(tk_sent))
+            try:    
+                self.__probSent['Opinion'][i] = pOpinion / float(len(tk_sent)-2) # to be extra certain intdiv does not occur
+                self.__probSent['PosNeg'][i]  = pPosNeg  / float(len(tk_sent)-2)
         
+            except:
+                print self.__sentence[i]
+                self.__probSent['Opinion'][i] = pOpinion  # to be extra certain intdiv does not occur
+                self.__probSent['PosNeg'][i]  = pPosNeg  
+        
+            
         # Calculate probabilities for testset
         for i in self.__testSet:
             tk_sent = self.__sentence[i]
@@ -134,8 +170,14 @@ class LanguageProcessor():
                     pass
             
             # Store the probability in dictionary
-            self.__probSent['Opinion'][i] = pOpinion / float(len(tk_sent)) # to be extra certain intdiv does not occur
-            self.__probSent['PosNeg'][i] = pPosNeg   / float(len(tk_sent))
+            try:
+                self.__probSent['Opinion'][i] = pOpinion / float(len(tk_sent)-2) # to be extra certain intdiv does not occur
+                self.__probSent['PosNeg'][i] = pPosNeg   / float(len(tk_sent)-2)
+            except:
+                print self.__sentence[i]
+                self.__probSent['Opinion'][i] = pOpinion # to be extra certain intdiv does not occur
+                self.__probSent['PosNeg'][i] = pPosNeg   
+                
         return (self.__trainSet, self.__testSet, self.__probWord, self.__probSent)
 
     def __clean( self, sentence ):
