@@ -46,7 +46,7 @@ class Main():
         Machine learning methods:
 
     '''
-    def singleInputPerceptron(self, iterations=1, total_messages = 10000):
+    def singleInputPerceptron(self, iterations=10, total_messages = 10000):
         # Reset totals
         accNeu = 0
         preNeu = 0
@@ -250,17 +250,22 @@ class Main():
                             
             pNeutral  = 0
             pPositive = 0
-                         
-            for j in range(len(tk_sent) - (n-1)):
-                token = tuple(tk_sent[j:j+n])
+            if len(tk_sent) >= 3:             
+                for j in range(len(tk_sent) - (n-1)):
+                    token = tuple(tk_sent[j:j+n])
 
-                # increment chances according to occurrence                
-                pNeutral  += self.probWord['Neutral'][token]                
-                pPositive += self.probWord['Positive'][token]
+                    # increment chances according to occurrence                
+                    pNeutral  += self.probWord['Neutral'][token]                
+                    pPositive += self.probWord['Positive'][token]
+                self.probSent['Neutral'][i] = pNeutral / float(len(tk_sent)-2)
+                self.probSent['Positive'][i] = pPositive / float(len(tk_sent)-2)
+            else:
+                token = tuple(tk_sent)
+                pNeutral = self.probWord['Neutral'][token]
+                pPositive = self.probWord['Positive'][token]
+                self.probSent['Neutral'][i] = pNeutral
+                self.probSent['Positive'][i] = pPositive
                 
-            self.probSent['Neutral'][i] = pNeutral / float(len(tk_sent))
-            self.probSent['Positive'][i] = pPositive / float(len(tk_sent))
-
     '''
         Train + test of methods:
     '''        
@@ -322,18 +327,20 @@ class Main():
                 token = tuple(tk_sent[j:j+n])
 
                 try:
-                    pNeutral = pNeutral + self.probWord['Neutral'][token]
-                    pPositive = pPositive + self.probWord['Positive'][token]
+                    pNeutral += self.probWord['Neutral'][token]
+                    pPositive += self.probWord['Positive'][token]
                 except:
                     # If word does not occur in corpus, ignore for now
                     # (can try smaller n-grams later?)
                     pass
 
             # Store the probability in dictionary
-            if pNeutral / float(len(tk_sent)) > 1:
-                print self.sentence[i]
-            self.probSent['Neutral'][i] = pNeutral / float(len(tk_sent)) 
-            self.probSent['Positive'][i] = pPositive / float(len(tk_sent))
+            if len(tk_sent) >= 3:
+                self.probSent['Neutral'][i] = pNeutral / float(len(tk_sent) - 2) 
+                self.probSent['Positive'][i] = pPositive / float(len(tk_sent) - 2)
+            else:
+                self.probSent['Neutral'][i] = pNeutral
+                self.probSent['Positive'][i] = pPositive
         return (opinionthreshold, positivethreshold)
     
     def printResults(self, thresholds):
