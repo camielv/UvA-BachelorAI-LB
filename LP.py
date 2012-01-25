@@ -1,4 +1,5 @@
 # Language Processor
+import nltk
 import re
 import random
 
@@ -14,6 +15,8 @@ class LanguageProcessor():
     __probSent = dict()
 
     __num_sentences = 0
+
+    __stemmer = nltk.stem.SnowballStemmer("dutch")
 
     def __init__(self, file1, n = 3, max_num = 10000, tweet_only = True):
         self.__corpus = dict()
@@ -105,9 +108,28 @@ class LanguageProcessor():
                 p = p + self.__probWord[token]
             self.__probSent[i] = p / float(len(tk_sent)) # to be extra certain intdiv does not occur
         
+        # Calculate probabilities for testset
+        for i in self.__testSet:
+            tk_sent = self.__tokenize( self.__sentence[i] )
+            p = 0
+            # Iterate over every n tokens
+            for j in range(len(tk_sent)-(n-1)):
+                # token is now a uni/bi/tri/n-gram instead of a token
+                token = tuple(tk_sent[j:j+n])
+                try:
+                    p = p + self.__probWord[token]
+                except:
+                    # If word does not occur in corpus, ignore for now
+                    # (can try katz backoff later?)
+                    pass
+            # Store the probability in dictionary
+            self.__probSent[i] = p / float(len(tk_sent)) # to be extra certain intdiv does not occur
+            # print i, 'PROB', self.probSent[i], 'SENT', self.sentiment[i]
+
         return (self.__trainSet, self.__testSet, self.__probWord, self.__probSent)
 
     def __clean( self, sentence ):
+        #print sentence
         sentence = sentence.replace( ':-)', " blijesmiley " )
         sentence = sentence.replace( ':)', " blijesmiley " )
         sentence = sentence.replace( ':(', " zieligesmiley " )
@@ -116,7 +138,11 @@ class LanguageProcessor():
 
         # Delete expressions
         sentence = re.sub( r'\.|\,|\[|\]|&#39;s|\||#|:|;|RT|\(|\)|@\w+|\**', '', sentence )
-        return re.sub( ' +',' ', sentence )
+        sentence = re.sub( ' +',' ', sentence )
+        return sentence
+        # print sentence
+        # Werkt nog niet cleanup is nog niet goed genoeg
+        #return self.__stemmer.stem( sentence )
 
     def __tokenize( self, sentence ):
         return sentence.split( ' ' )
