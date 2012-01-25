@@ -181,11 +181,20 @@ class LanguageProcessor():
         return (self.__trainSet, self.__testSet, self.__probWord, self.__probSent)
 
     def __clean( self, sentence ):
-        # print sentence
+        # print sentenc
         sentence = sentence.replace( ':-)', " blijesmiley " )
         sentence = sentence.replace( ':)', " blijesmiley " )
         sentence = sentence.replace( ':(', " zieligesmiley " )
+        sentence = sentence.replace( ':-(', " zieligesmiley " )
         sentence = sentence.replace( ':s', ' awkwardsmiley ' )
+        sentence = sentence.replace( ':-s', ' awkwardsmiley ' )
+        sentence = sentence.replace( ':p', ' tongsmiley ' )
+        sentence = sentence.replace( ':-p', ' tongsmiley ' )
+        sentence = sentence.replace( ':@', ' angrysmiley ' )
+        sentence = sentence.replace( ':-@', ' angrysmiley ' )
+        sentence = sentence.replace( '(6)', ' devilsmiley ' )
+        sentence = sentence.replace( '(a)', ' angelsmiley ' )
+        sentence = sentence.replace( '(A)', ' angelsmiley ' )
         sentence = sentence.replace( '!', " ! " )
         sentence = sentence.replace( '?', " ? " )
 
