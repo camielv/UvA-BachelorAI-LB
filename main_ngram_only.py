@@ -244,8 +244,8 @@ class Main():
                             self.probWord['Neutral'][token] = float(self.corpus[token][1] + self.corpus[token][2]) / self.corpus[token][0]
                 
                             # Chance of being positive (not-negative) is positives - negatives / total
-                            self.probWord['Positive'][token]  = float(self.corpus[token][1] - self.corpus[token][2]) / self.corpus[token][0]
-                            
+                            if self.corpus[token][1] or self.corpus[token][2]:
+                                self.probWord['Positive'][token]  = float(self.corpus[token][1]) / (self.corpus[token][2] + self.corpus[token][1])
                             temp_ngram[k][j] = []
                             
             pNeutral  = 0
@@ -255,14 +255,31 @@ class Main():
                     token = tuple(tk_sent[j:j+n])
 
                     # increment chances according to occurrence                
-                    pNeutral  += self.probWord['Neutral'][token]                
-                    pPositive += self.probWord['Positive'][token]
+                    pNeutral  += self.probWord['Neutral'][token]
+                    try:
+                        pPositive += self.probWord['Positive'][token]
+                    except:
+                        try:
+                            pPositive += self.probWord['Positive'][token[0:2]] * self.probWord['Positive'][token[1:3]] 
+                        except:
+                            try:
+                                pPositive += self.probWord['Positive'][token[0]] * self.probWord['Positive'][token[1]] * self.probWord['Positive'][token[2]] 
+                            except:
+                                pPositive += 0
+                        
                 self.probSent['Neutral'][i] = pNeutral / float(len(tk_sent)-2)
                 self.probSent['Positive'][i] = pPositive / float(len(tk_sent)-2)
             else:
                 token = tuple(tk_sent)
-                pNeutral = self.probWord['Neutral'][token]
-                pPositive = self.probWord['Positive'][token]
+
+                try:
+                    pPositive += self.probWord['Positive'][token[0:2]]
+                except:
+                    try:
+                        pPositive += self.probWord['Positive'][token[0]] * self.probWord['Positive'][token[1]]
+                    except:
+                        pPositive += 0
+                
                 self.probSent['Neutral'][i] = pNeutral
                 self.probSent['Positive'][i] = pPositive
                 
