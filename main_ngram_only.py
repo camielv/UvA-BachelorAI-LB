@@ -6,6 +6,8 @@ import random
 import time
 import re
 #from svmutil import *
+import numpy as np
+#import matplotlib.pyplot as plt
 
 class Main():
 
@@ -44,7 +46,7 @@ class Main():
         Machine learning methods:
 
     '''
-    def singleInputPerceptron(self, iterations=10, total_messages = 10000):
+    def singleInputPerceptron(self, iterations=1, total_messages = 10000):
         # Reset totals
         accNeu = 0
         preNeu = 0
@@ -139,9 +141,28 @@ class Main():
 
             self.sentence[i - 1] = curSent
             self.sentiment[i - 1] = sent
+            # Stop at 10000
+            i += 1
+            if ( i == max_num ):
+                break
+        # Set the number of sentences
+        self.num_sentences = i
+        print 'Number of sentences =', self.num_sentences
+        
+
             
+    def makeCorpus( self, n, distribution ):
+        for i in range(1,self.num_sentences):
+            # Assign at random to train, test or validation set
+            r = random.random()
+            if ( r < distribution[0] ):
+                self.trainSet.append(i-1)
+            else:
+                self.testSet.append(i-1)
+    
+        for i in self.trainSet:
             # Tokenize the sentence
-            tk_sent = nltk.tokenize.word_tokenize( curSent )
+            tk_sent = nltk.tokenize.word_tokenize( self.sentence[i] )
        
             # Create temporary dictionary of dictionaries of lists
             temp_ngram = {}
@@ -169,47 +190,32 @@ class Main():
 
                             # format: corpus[<combination of n tokens>]{neutrals, positives, negatives}
                             if token in self.corpus:
-                                if sent > 0:
+                                if self.sentiment[i] > 0:
                                     self.corpus[token] = self.corpus[token][0] + 1, self.corpus[token][1] + 1, self.corpus[token][2]
-                                elif sent == 0:
+                                elif self.sentiment[i] == 0:
                                     self.corpus[token] = self.corpus[token][0] + 1, self.corpus[token][1], self.corpus[token][2]
                                 else:
                                     self.corpus[token] = self.corpus[token][0] + 1, self.corpus[token][1], self.corpus[token][2] + 1
                             else:
-                                if sent > 0:
+                                if self.sentiment[i] > 0:
                                     self.corpus[token] = 1, 1, 0
-                                elif sent == 0:
+                                elif self.sentiment[i] == 0:
                                     self.corpus[token] = 1, 0, 0
                                 else:
                                     self.corpus[token] = 1, 0, 1
-               
-            # Stop at 10000
-            i += 1
-            if ( i == max_num ):
-                break
-        # Set the number of sentences
-        self.num_sentences = i
-        print 'Number of sentences =', self.num_sentences
-        
-    def makeCorpus( self, n, distribution ):
-        for i in range(1,self.num_sentences):
-            # Assign at random to train, test or validation set
-            r = random.random()
-            if ( r < distribution[0] ):
-                self.trainSet.append(i-1)
-            else:
-                self.testSet.append(i-1)
+                                    
+                            temp_ngram[k][j] = []
+
             
         print 'Calculating unigram probability'
+
+
 
         self.probWord = {'Neutral':{}, 'Positive':{}}
         self.probSent = {'Neutral':{}, 'Positive':{}}
         # Corpus created, calculate words probability of sentiment based on frequency
         for i in self.trainSet:
             tk_sent = nltk.tokenize.word_tokenize( self.sentence[i] )
-            pNeutral  = 0
-            pPositive = 0
-            
             # Create temporary dictionary of dictionaries of lists
             temp_ngram = {}
 
@@ -233,32 +239,38 @@ class Main():
                         if len( temp_ngram[k][j] ) == k:
                             # We found a n-gram
                             token = tuple(temp_ngram[k][j])
-
+                            
                             # Chance of being neutral (not-opinion) is sum of positive and negative uses / total 
                             self.probWord['Neutral'][token] = float(self.corpus[token][1] + self.corpus[token][2]) / self.corpus[token][0]
-                            # increment chances according to occurrence                
-                            pNeutral  += self.probWord['Neutral'][token]
-
+                
                             # Chance of being positive (not-negative) is positives - negatives / total
                             self.probWord['Positive'][token]  = float(self.corpus[token][1] - self.corpus[token][2]) / self.corpus[token][0]
-                            pPositive += self.probWord['Positive'][token]
+                            
+                            temp_ngram[k][j] = []
+                            
+            pNeutral  = 0
+            pPositive = 0
+                         
+            for j in range(len(tk_sent) - (n-1)):
+                token = tuple(tk_sent[j:j+n])
 
-            # Calculate sentence probability for both classes, float division necessary here
-            self.probSent['Neutral'][i] = pNeutral / float(len(tk_sent)) 
+                # increment chances according to occurrence                
+                pNeutral  += self.probWord['Neutral'][token]                
+                pPositive += self.probWord['Positive'][token]
+                
+            self.probSent['Neutral'][i] = pNeutral / float(len(tk_sent))
             self.probSent['Positive'][i] = pPositive / float(len(tk_sent))
 
     '''
         Train + test of methods:
     '''        
-    def trainSingleInputPerceptron(self, n):
+    def trainSingleInputPerceptron(self, n, print_scatter=False):
         print 'Training perceptron'
         # Create a list with 1 if opinion and 0 if non-opinion
         ssvNeu = [x != 0 for x in self.sentiment.values()]
         
         # Create a list with 1 if positive and 0 if negative
         ssvPos= [0 if x < 0 else 1 for x in self.sentiment.values()]
-        print self.sentiment.values()[0:10]
-        print ssvPos[0:10]
         
         # trainingset for opinion vs non-opinion classifier                
         trainingSet1 = {}
@@ -281,6 +293,20 @@ class Main():
         print 'Found threshold for opinion-vs-nonopinion classifier: ', opinionthreshold
         print 'Found threshold for positive-vs-negative classifier: ', positivethreshold
 
+        if print_scatter:
+            temp_sentiment = []
+            for i in self.trainSet:
+                temp_sentiment.append( self.sentiment[i] )
+            print len(temp_sentiment), ' =?= ', len(self.probSent['Neutral'])
+            '''
+            fig = plt.figure()
+            ax = fig.add_subplot(111)
+            ax.scatter(self.probSent['Neutral'].values(),temp_sentiment)
+            ax.axvline(x=opinionthreshold, color='r')
+            ax.set_xlabel('Sentence Probability')
+            ax.set_ylabel('Sentiment')
+            plt.show()
+            '''
         print 'Testing thresholds'
 
         # Calculate probability for test sentences
@@ -304,6 +330,8 @@ class Main():
                     pass
 
             # Store the probability in dictionary
+            if pNeutral / float(len(tk_sent)) > 1:
+                print self.sentence[i]
             self.probSent['Neutral'][i] = pNeutral / float(len(tk_sent)) 
             self.probSent['Positive'][i] = pPositive / float(len(tk_sent))
         return (opinionthreshold, positivethreshold)
@@ -342,11 +370,17 @@ class Main():
                             confusion['Positive']['fn'] += 1
                         
         accNeu = float(confusion['Neutral']['tp'] + confusion['Neutral']['tn']) / (confusion['Neutral']['tp'] + confusion['Neutral']['tn'] + confusion['Neutral']['fp'] + confusion['Neutral']['fn'])
-        preNeu = float(confusion['Neutral']['tp']) / (confusion['Neutral']['tp'] + confusion['Neutral']['fp'] )
+        try:
+            preNeu = float(confusion['Neutral']['tp']) / (confusion['Neutral']['tp'] + confusion['Neutral']['fp'] )
+        except:
+            preNeu = 0
         recNeu = float(confusion['Neutral']['tp']) / (confusion['Neutral']['tp'] + confusion['Neutral']['fn'] )
 
         accPos = float(confusion['Positive']['tp'] + confusion['Positive']['tn']) / (confusion['Positive']['tp'] + confusion['Positive']['tn'] + confusion['Positive']['fp'] + confusion['Positive']['fn'])
-        prePos = float(confusion['Positive']['tp']) / (confusion['Positive']['tp'] + confusion['Positive']['fp'] )
+        try:
+            prePos = float(confusion['Positive']['tp']) / (confusion['Positive']['tp'] + confusion['Positive']['fp'] )
+        except:
+            prePos = 0
         recPos = float(confusion['Positive']['tp']) / (confusion['Positive']['tp'] + confusion['Positive']['fn'] )
 
         print confusion
