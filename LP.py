@@ -130,3 +130,6 @@ class LanguageProcessor():
 
     def getSentiment( self ):
         return self.__sentiment
+
+    def getNum_sentences( self ):
+        return self.__num_sentences
