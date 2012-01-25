@@ -32,7 +32,7 @@ def main( iterations = 10 ):
             if sentiment[i]:
                 j+=1
                 trainingSet2[j] = ((probSent['PosNeg'][i],), ssv2[i])
-        p1.train(trainingSet1)
+        p1.train(trainingSet1)  
         p2.train(trainingSet2)
 
         thresholds = (p1.threshold / p1.weights[0], p2.threshold / p2.weights[0])
@@ -43,7 +43,6 @@ def main( iterations = 10 ):
         Opinion[o] /= iterations
     print Opinion
         
-
 def printResults(testSet, thresholds, sentiment, probSent):
         # dictionary containing number of true postives etc. for classifiers Positive and Neutral 
         confusion = {}
