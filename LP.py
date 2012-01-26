@@ -14,12 +14,11 @@ class LanguageProcessor():
     __probWord = dict()
     __probSent = dict()
     __bagOfWords = dict()
-    __emptyBag = dict()
     __num_sentences = 0
 
     __stemmer = nltk.stem.SnowballStemmer("dutch")
 
-    def __init__(self, file1, n = 3, max_num = 10000, tweet_only = True):
+    def __init__(self, file1, n = 3, max_num = 1000, tweet_only = True):
         self.__corpus = dict()
         self.__sentence = dict()
         self.__sentiment = dict()
@@ -29,7 +28,7 @@ class LanguageProcessor():
         # Initialize counter
         i = 0
         print 'Creating corpus with ', n , '- grams.'
-
+        self.__emtpyBag = dict()
 
         # Collect sentences and sentiments
         for entry in file1:
@@ -50,15 +49,91 @@ class LanguageProcessor():
             self.__sentence[i - 1] = curSent
             self.__sentiment[i - 1] = sent
 
-            # init for bag of n words
+            # Stop at 10000
+            i += 1
+            if ( i == max_num ):
+                break
+            
+        # Set the number of sentences
+        self.__num_sentences = i-1
+        print 'Number of sentences =', self.__num_sentences
+        
+    def makeBagOfWords(self, n=3 , max_num = 10000 ):
+
+        for i in range(0,self.__num_sentences):
+            # Assign at random to train, test or validation set
+            r = random.random()
+            if ( r < 0.7 ):
+                self.__trainSet.append(i)
+            else:
+                self.__testSet.append(i)
+
+        emptyBag = dict()
+
+        # create a corpus
+        corpus = dict()
+        for i in self.__trainSet:
+            # Iterate over every n tokens
+            for j in range( len(self.__sentence[i]) - (n-1) ):
+                # token is now a uni/bi/tri/n-gram instead of a token
+                token = tuple( self.__sentence[i][j:j+n] )
+                if token in corpus:
+                    corpus[token] += 1
+                    # only add if corpus[token] is already larger than 1 (freq>1)
+                    if corpus[token] > 1:
+                        emptyBag[token] = 0
+                else:
+                    corpus[token] = 0
+                                
+        bagOfWordsTrain = dict()
+        bagOfWordsTest = dict()
+
+        # for every training element
+        for i in self.__trainSet:
+            # split the sentence
+            tk_sent = self.__sentence[i]
 
             
-            # Iterate over every n tokens
-            for j in range(len( curSent )-(n-1)):
-                # token is now a uni/bi/tri/n-gram instead of a token
-                token = tuple(curSent[j:j+n])
+            bagOfWordsTrain[i] = emptyBag
 
+            # add 1 to bagofwords[token] if token is present
+            for j in range(len(tk_sent) - (n-1)):
+                token = tuple(tk_sent[j:j+n])
+                if token in emptyBag:
+                    bagOfWordsTrain[i][token] = 1
+
+        # for every test element
+        for i in self.__testSet:
+            tk_sent = self.__sentence[i]
+            bagOfWordsTest[i] = emptyBag
+            for j in range(len(tk_sent) - (n-1)):
+                token = tuple(tk_sent[j:j+n])
+                # if token in bag of words vector
+                if token in emptyBag:
+                    bagOfWordsTest[i][token] = 1
                 
+        return (bagOfWordsTrain, bagOfWordsTest, self.__trainSet, self.__testSet)
+        
+    def makeCorpus(self, n = 3, distribution = (0.7, 0.3 ) ):
+        self.__trainSet = list()
+        self.__testSet = list()
+        self.__probWord = {'Opinion':dict(), 'PosNeg':dict()}
+        self.__probSent = {'Opinion':dict(), 'PosNeg':dict()}
+
+        for i in range(1,max_num):
+            # Assign at random to train, test or validation set
+            r = random.random()
+            if ( r < 0.7 ):
+                self.__trainSet.append(i-1)
+            else:
+                self.__testSet.append(i-1)
+
+        for i in self.__trainSet:
+            # Iterate over every n tokens
+            for j in range( len(self.__sentence[i]) - (n-1) ):
+                # token is now a uni/bi/tri/n-gram instead of a token
+                token = tuple( self.__sentence[i][j:j+n] )
+
                 self.__emptyBag[token] = 0 
                 # format: corpus[<combination of n tokens>] = {neutrals, positives, negatives}
                 if token in self.__corpus:
@@ -75,42 +150,6 @@ class LanguageProcessor():
                         self.__corpus[token] = 1, 0, 0
                     else:
                         self.__corpus[token] = 1, 0, 1
-            # Stop at 10000
-            i += 1
-            if ( i == max_num ):
-                break
-            
-        # Set the number of sentences
-        self.__num_sentences = i
-        print 'Number of sentences =', self.__num_sentences
-
-    def makeBagOfWords(self, n=3, distribution = (0.7, 0.3) ):
-        self.__trainSet = list()
-        self.__testSet = list()
-
-        for i in range( 1, self.__num_sentences ):
-
-            # initialize bagofwords
-            self.__bagOfWords[i] = self.__emptyBag
-            # Assign at random to train, test or validation set
-            r = random.random()
-            if ( r < distribution[0] ):
-                self.__trainSet.append(i-1)
-            else:
-                self.__testSet.append(i-1)
-
-        for i in self.__trainSet:
-            tk_sent = self.__sentence[i]
-            for j in range(len(tk_sent) - (n-1)):
-                token = tuple(tk_sent[j:j+n])
-                bagOfWords[i][token] = 1
-
-        
-    def makeCorpus(self, n = 3, distribution = (0.7, 0.3 ) ):
-        self.__trainSet = list()
-        self.__testSet = list()
-        self.__probWord = {'Opinion':dict(), 'PosNeg':dict()}
-        self.__probSent = {'Opinion':dict(), 'PosNeg':dict()}
 
         for i in range( 1, self.__num_sentences ):
             # Assign at random to train, test or validation set
@@ -181,23 +220,17 @@ class LanguageProcessor():
         return (self.__trainSet, self.__testSet, self.__probWord, self.__probSent)
 
     def __clean( self, sentence ):
-        # print sentenc
+        # print sentence
         sentence = sentence.replace( ':-)', " blijesmiley " )
         sentence = sentence.replace( ':)', " blijesmiley " )
         sentence = sentence.replace( ':(', " zieligesmiley " )
-        sentence = sentence.replace( ':-(', " zieligesmiley " )
         sentence = sentence.replace( ':s', ' awkwardsmiley ' )
-        sentence = sentence.replace( ':-s', ' awkwardsmiley ' )
-        sentence = sentence.replace( ':p', ' tongsmiley ' )
-        sentence = sentence.replace( ':-p', ' tongsmiley ' )
-        sentence = sentence.replace( ':@', ' angrysmiley ' )
-        sentence = sentence.replace( ':-@', ' angrysmiley ' )
-        sentence = sentence.replace( '(6)', ' devilsmiley ' )
-        sentence = sentence.replace( '(a)', ' angelsmiley ' )
-        sentence = sentence.replace( '(A)', ' angelsmiley ' )
         sentence = sentence.replace( '!', " ! " )
         sentence = sentence.replace( '?', " ? " )
-
+        
+        # delete non-expressive words
+        #sentence = re.sub('en|de|het|ik|jij|zij|wij|deze|dit|die|dat|is|je|na|zijn|uit|tot|te|sl|hierin|naar|onder', '', sentence)
+        
         # Delete expressions, such as links, hashtags, twitteraccountnames 
         sentence = re.sub( r'http\/\/t\.co\/\w+|\.|\,|\[|\]|&#39;s|\||#|:|;|RT|\(|\)|@\w+|\**', '', sentence )
         sentence = re.sub( ' +',' ', sentence )
