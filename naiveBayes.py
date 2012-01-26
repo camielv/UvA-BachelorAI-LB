@@ -4,7 +4,7 @@ import random
 import time
 import re
 import numpy as np
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 
 class Main():
 
@@ -43,6 +43,8 @@ class Main():
         # Load the sentences and sentiments from file
         self.initializeCorpus( n, total_messages )
 
+
+        allconfusion = [[0,0,0],[0,0,0],[0,0,0]]
         for i in range( iterations ):
             print "--- iteration", i + 1, "of", iterations, "---"
             
@@ -88,10 +90,47 @@ class Main():
                 confusion[int(sent+1)][int(clas+1)] += 1
                 
             print confusion
+            for n in range(3):
+                for m in range(3):
+                    allconfusion[n][m] += confusion[n][m]
 
         # Calculate mean
         print 'Average:'
-                  
+        total = 0
+        for n in range(3):
+            for m in range(3):
+                allconfusion[n][m] /= iterations
+                total += allconfusion[n][m]
+
+        #acc = (allconfusion[0][0] + allconfusion[1][1] + allconfusion[2][2]) / float(total)
+        # for every real class
+        s = 0
+        for n in range(3):
+            row_sum = sum(allconfusion[n])
+            s+= row_sum
+            
+        for n in range(3):
+            row_sum = sum(allconfusion[n])
+            col_sum = 0
+            for m in range(3):
+                col_sum += confusion[m][n]
+                
+            truepositives = float(allconfusion[n][n])
+            truenegatives = s - row_sum - col_sum + truepositives
+            falsepositives = col_sum - truepositives
+            falsenegatives = row_sum - truepositives
+
+            print 'For class ', n , ':'
+            
+            rec = truepositives / (truepositives + falsenegatives )
+            pre = truepositives / ( truepositives + falsepositives )
+            acc = (truepositives + truenegatives) / s
+ 
+            print 'Recall', rec
+            print 'Precision', pre
+            print 'Accuracy', acc
+        print allconfusion
+
         print 'Time taken for', iterations, 'iterations: ', time.time()- now
             
     '''
