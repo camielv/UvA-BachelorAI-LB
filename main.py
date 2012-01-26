@@ -5,7 +5,7 @@ import perceptron
 import random
 import time
 import re
-#from svmutil import *
+from svmutil import *
 
 class Main():
 
@@ -40,8 +40,8 @@ class Main():
         # Choose machine learning method
        # self.singleInputPerceptron()
 #        self.multiInputPerceptron()
-#        self.supportVectorMachine()
-        self.testtokenize()
+        self.supportVectorMachine()
+        #self.testtokenize()
 #'''
  #   Machine learning methods:
 
@@ -274,10 +274,6 @@ class Main():
         # Initialize counter
         i = 0
 
-        # Create corpus and count word frequencies
-        self.corpus = {}
-        print 'Creating corpus with ', n , '- grams.'
-
         # Collect sentences and sentiments
         for entry in self.file1:
             # Do not include header
@@ -298,30 +294,7 @@ class Main():
             self.sentence[i - 1] = curSent
             self.sentiment[i - 1] = sent
             
-            # Tokenize the sentence
-            tk_sent = nltk.tokenize.word_tokenize( curSent )
-       
-            # Iterate over every n tokens
-            for j in range(len(tk_sent)-(n-1)):
-                # token is now a uni/bi/tri/n-gram instead of a token
-                token = tuple(tk_sent[j:j+n])
-
-                # format: corpus[<combination of n tokens>]{neutrals, positives, negatives}
-                if token in self.corpus:
-                    if sent > 0:
-                        self.corpus[token] = self.corpus[token][0] + 1, self.corpus[token][1] + 1, self.corpus[token][2]
-                    elif sent == 0:
-                        self.corpus[token] = self.corpus[token][0] + 1, self.corpus[token][1], self.corpus[token][2]
-                    else:
-                        self.corpus[token] = self.corpus[token][0] + 1, self.corpus[token][1], self.corpus[token][2] + 1
-                else:
-                    if sent > 0:
-                        self.corpus[token] = 1, 1, 0
-                    elif sent == 0:
-                        self.corpus[token] = 1, 0, 0
-                    else:
-                        self.corpus[token] = 1, 0, 1
-               
+            
             # Stop at 10000
             i += 1
             if ( i == max_num ):
@@ -331,6 +304,9 @@ class Main():
         print 'Number of sentences =', self.num_sentences
         
     def makeCorpus(self, n):
+        # Create corpus and count word frequencies
+        self.corpus = {}
+        print 'Creating corpus with ', n , '- grams.'
         for i in range(1,self.num_sentences):
             # Assign at random to train, test or validation set
             r = random.random()
@@ -338,6 +314,33 @@ class Main():
                 self.trainSet.append(i-1)
             else:
                 self.testSet.append(i-1)
+
+        self.corpus = dict()
+        for i in self.trainSet:
+            # Tokenize the sentence
+            tk_sent = nltk.tokenize.word_tokenize( self.sentence[i] )
+       
+            # Iterate over every n tokens
+            for j in range(len(tk_sent)-(n-1)):
+                # token is now a uni/bi/tri/n-gram instead of a token
+                token = tuple(tk_sent[j:j+n])
+
+                # format: corpus[<combination of n tokens>]{neutrals, positives, negatives}
+                if token in self.corpus:
+                    if self.sentiment[i] > 0:
+                        self.corpus[token] = self.corpus[token][0] + 1, self.corpus[token][1] + 1, self.corpus[token][2]
+                    elif self.sentiment[i] == 0:
+                        self.corpus[token] = self.corpus[token][0] + 1, self.corpus[token][1], self.corpus[token][2]
+                    else:
+                        self.corpus[token] = self.corpus[token][0] + 1, self.corpus[token][1], self.corpus[token][2] + 1
+                else:
+                    if self.sentiment[i] > 0:
+                        self.corpus[token] = 1, 1, 0
+                    elif self.sentiment[i] == 0:
+                        self.corpus[token] = 1, 0, 0
+                    else:
+                        self.corpus[token] = 1, 0, 1
+               
             
         print 'Calculating unigram probability'
         self.probWord = {}
@@ -355,9 +358,9 @@ class Main():
                 p = p + self.probWord[token]
             self.probSent[i] = p / float(len(tk_sent)) # to be extra certain intdiv does not occur
 
-#'''
- #   Train + test of methods:
-#'''
+    #'''
+     #   Train + test of methods:
+    #'''
 
         
     def trainSingleInputPerceptron(self, n):
