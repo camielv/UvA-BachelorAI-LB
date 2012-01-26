@@ -14,9 +14,9 @@ class Main():
     # Initialize dictionaries
     sentence = {}
     sentiment = {}
+    probSent = {}
     corpus = {}
     probWord = {}
-    probSent = {}
     naiveBayes = {}
     
     # Initialize lists
@@ -27,7 +27,7 @@ class Main():
     num_sentences = 0
 
     def __init__(self):
-        self.naiveBayesClassifier(10)
+        self.naiveBayesClassifier(2)
 
     '''
         Machine learning methods:
@@ -49,14 +49,11 @@ class Main():
             print "--- iteration", i + 1, "of", iterations, "---"
             
             # Reset variables
-            self.probWord = {}
-            self.probSent = {}
             self.trainSet = []
             self.testSet = []
             self.priorNeutral  = 0
             self.priorPositive = 0
             self.priorNegative = 0
-
 
             # Random selection of training and test data
             self.makeCorpus( n, distribution = (0.7, 0.3) )
@@ -65,7 +62,7 @@ class Main():
             # Testing
             temp_set = [],[]
             for j in self.testSet:
-                tk_sent = nltk.tokenize.word_tokenize( self.sentence[j] )
+                tk_sent = self.sentence[j]
             
                 # If sentence is longer than 3
                 if len(tk_sent) >= 3:
@@ -99,7 +96,7 @@ class Main():
         total = 0
         for n in range(3):
             for m in range(3):
-                allconfusion[n][m] /= iterations
+                allconfusion[n][m] /= float(iterations)
                 total += allconfusion[n][m]
 
         #acc = (allconfusion[0][0] + allconfusion[1][1] + allconfusion[2][2]) / float(total)
@@ -132,6 +129,37 @@ class Main():
         print allconfusion
 
         print 'Time taken for', iterations, 'iterations: ', time.time()- now
+
+    '''
+        Cleaning methods
+    '''
+    def clean( self, sentence ):
+        # print sentence
+        sentence = sentence.replace( ':-)', " blijesmiley " )
+        sentence = sentence.replace( ':)', " blijesmiley " )
+        sentence = sentence.replace( ':(', " zieligesmiley " )
+        sentence = sentence.replace( ':s', ' awkwardsmiley ' )
+        sentence = sentence.replace( '!', " ! " )
+        sentence = sentence.replace( '?', " ? " )
+        
+        # delete non-expressive words
+        #sentence = re.sub('en|de|het|ik|jij|zij|wij|deze|dit|die|dat|is|je|na|zijn|uit|tot|te|sl|hierin|naar|onder', '', sentence)
+        
+        # Delete expressions, such as links, hashtags, twitteraccountnames 
+        sentence = re.sub( r'\:P|\:p|http\/\/t\.co\/\w+|\.|\,|\[|\]|&#39;s|\||#|:|;|RT|\(|\)|@\w+|\**', '', sentence )
+        sentence = re.sub( ' +',' ', sentence )
+        
+        # remove double letters
+        #for x in 'abcdefghijklmnopqrstuvwxyz':
+        #    sentence = re.sub(x+'+', x, sentence )
+
+        return sentence
+        # print sentence
+        # Werkt nog niet cleanup is nog niet goed genoeg
+        return self.__stemmer.stem( sentence )
+
+    def tokenize( self, sentence ):  
+        return re.findall('\w+|\?|\!', sentence)
             
     '''
         Corpus methods
@@ -160,7 +188,7 @@ class Main():
                     continue
             
             # The actual message is the 9th attribute, sentiment is the 4th
-            curSent = re.sub('\||#|:|;|RT|@\w+|\**', '', entry[9])
+            curSent = self.tokenize( self.clean( entry[9] ) )
             sent = float(entry[4])
 
             self.sentence[i - 1] = curSent
@@ -174,6 +202,7 @@ class Main():
         print 'Number of sentences =', self.num_sentences
             
     def makeCorpus( self, n, distribution ):
+        
         for i in range(1,self.num_sentences):
             # Assign at random to train, test or validation set
             r = random.random()
@@ -181,10 +210,11 @@ class Main():
                 self.trainSet.append(i-1)
             else:
                 self.testSet.append(i-1)
-        
+
+        self.naiveBays = dict()
         # Count for every class the occurences
         for i in self.trainSet:
-            tk_sent = nltk.tokenize.word_tokenize( self.sentence[i] )
+            tk_sent = self.sentence[i]
             
             # If sentence is longer than 3
             if len(tk_sent) >= 3:
@@ -215,7 +245,7 @@ class Main():
             sums[1] += self.naiveBayes[token][1]
             sums[2] += self.naiveBayes[token][2]
         totalSum = sum(sums)
-        self.priorNeutral    = float(sums[0]) / totalSum
+        self.priorNeutral  = float(sums[0]) / totalSum
         self.priorPositive = float(sums[1]) / totalSum #(sums[1] + sums[2])
         self.priorNegative = float(sums[2]) / totalSum #(sums[1] + sums[2])
 
@@ -226,7 +256,7 @@ class Main():
         
         # Corpus created, calculate words probability of sentiment based on frequency
         for i in self.trainSet:
-            tk_sent = nltk.tokenize.word_tokenize( self.sentence[i] )
+            tk_sent = self.sentence[i]
             
             # Iterate over every n tokens
             if len(tk_sent) >= 3:
@@ -244,10 +274,10 @@ class Main():
 
     def testNaiveBayes(self, n=3):
         for i in self.testSet:
-            tk_sent = nltk.tokenize.word_tokenize( self.sentence[i] )
+            tk_sent = self.sentence[i]
             
-            # If sentence is longer than 3
-            if len(tk_sent) >= 3:
+            # If sentence is longer than n
+            if len(tk_sent) >= n:
                 pNeutral  = self.priorNeutral
                 pNegative = self.priorNegative
                 pPositive = self.priorPositive
