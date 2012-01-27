@@ -45,7 +45,7 @@ class DataAnalyser():
         sentence = sentence.replace( '!', " ! " )
         sentence = sentence.replace( '?', " ? " )
         sentence = re.sub( r'http\/\/t\.co\/\w+|\.|\,|\[|\]|&#39;s|\||#|:|;|RT|\(|\)|@\w+|\**', '', sentence )
-        sentence = re.sub('de|het|een|van|op|in|http|bij|die|ik|De|d|tco|dat|over|voor', '', sentence)
+        sentence = re.sub('de|het|een|van|op|in|http|bij|die|ik|De|tco|dat|over|voor|aan|om', '', sentence)
 
         sentence = re.sub( ' +',' ', sentence )
         sentence = re.sub(r'''(?ix)\b(?=haha)\S*(\S+)(?<=\bhaha)\1*\b''', 'haha', sentence)
@@ -53,6 +53,48 @@ class DataAnalyser():
 
     def __tokenize( self, sentence ):
         return re.findall('\w+|\?|\!', sentence)
+
+    def saveFile(self):
+        filename = "Analysis.txt"
+        print "Saving to file \"" + filename + "\"..."
+        doc = open(filename, "w")
+        doc.write("...ANALYSIS OF DATASET...\n\n")
+
+        tokens_neutral = sum( self.__neutral.values() )
+        tokens_positive = sum( self.__positive.values() )
+        tokens_negative = sum( self.__negative.values() )
+
+        diff_neutral = len( self.__neutral )
+        diff_positive = len( self.__positive )
+        diff_negative = len( self.__negative )
+
+        doc.write( "...All Tokens...\n" )
+        doc.write( "Total tokens: " + str(tokens_neutral + tokens_positive + tokens_negative) + "\n" )
+        doc.write( "Neutral tokens: " + str(tokens_neutral) + "\n" )
+        doc.write( "Positive tokens: " + str(tokens_negative) + "\n" )
+        doc.write( "Negative tokens: " + str(tokens_negative) + "\n\n" )
+
+        doc.write( "...Different Tokens...\n" )
+        doc.write( "Total tokens: " + str(diff_neutral + diff_positive + diff_negative) + "\n" )
+        doc.write( "Neutral tokens: " + str(diff_neutral) + "\n" )
+        doc.write( "Positive tokens: " + str(diff_negative) + "\n" )
+        doc.write( "Negative tokens: " + str(diff_negative) + "\n\n" )
+        doc.write( "...Results...\n" )
+        sort_neutral = sorted(self.__neutral.iteritems(), key=operator.itemgetter(1), reverse = True)
+        sort_positive = sorted(self.__positive.iteritems(), key=operator.itemgetter(1), reverse = True)
+        sort_negative = sorted(self.__negative.iteritems(), key=operator.itemgetter(1), reverse = True)
+
+        for i in range( len( sort_neutral) ):
+            doc.write( "...#" + str(i + 1) + "...\n" )
+            if( i < len(sort_neutral) ):
+                doc.write( "Neutral: " + str(sort_neutral[i]) + "\n")
+            if( i < len(sort_positive) ):
+                doc.write( "Positive: " + str(sort_positive[i]) + "\n")
+            if( i < len(sort_negative) ):
+                doc.write( "Negative: " + str(sort_negative[i]) + "\n")
+            doc.write( "\n" ) 
+        doc.close()
+        print "Done..."
 
     def printit(self, iterations):
         tokens_neutral = sum( self.__neutral.values() )
@@ -87,8 +129,8 @@ class DataAnalyser():
                 print 'Positive: ', sort_positive[i]
             if( i < len(sort_negative) ):
                 print 'Negative: ', sort_negative[i]
-            print "\n"
+            print "" 
 
 dataset = csv.reader( open( 'DataCSV.csv', 'rb' ), delimiter=',', quotechar='"' )  
 analysis = DataAnalyser( dataset )
-analysis.printit(20)
+analysis.saveFile()
