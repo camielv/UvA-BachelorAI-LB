@@ -1,0 +1,4691 @@
+...ANALYSIS OF DATASET...
+
+...All Tokens...
+Total tokens: 9448
+Neutral tokens: 7918
+Positive tokens: 184
+Negative tokens: 184
+
+...Different Tokens...
+Total tokens: 1976
+Neutral tokens: 1350
+Positive tokens: 133
+Negative tokens: 133
+
+...Results...
+...#1...
+Neutral: ('!', 496)
+Positive: ('!', 220)
+Negative: ('vrienn', 7)
+
+...#2...
+Neutral: ('Amstel', 304)
+Positive: ('Amstel', 46)
+Negative: ('!', 6)
+
+...#3...
+Neutral: ('Vrienn', 226)
+Positive: ('vrienn', 36)
+Negative: ('niet', 5)
+
+...#4...
+Neutral: ('vval', 194)
+Positive: ('Vrienn', 34)
+Negative: ('Amstel', 4)
+
+...#5...
+Neutral: ('naar', 167)
+Positive: ('naar', 28)
+Negative: ('met', 4)
+
+...#6...
+Neutral: ('en', 154)
+Positive: ('live', 27)
+Negative: ('amstel', 4)
+
+...#7...
+Neutral: ('vrienn', 152)
+Positive: ('z', 26)
+Negative: ('live', 4)
+
+...#8...
+Neutral: ('?', 144)
+Positive: ('amstel', 24)
+Negative: ('mail', 3)
+
+...#9...
+Neutral: ('Live', 120)
+Positive: ('week', 21)
+Negative: ('ze', 3)
+
+...#10...
+Neutral: ('live', 111)
+Positive: ('Live', 20)
+Negative: ('Live', 3)
+
+...#11...
+Neutral: ('kaarten', 99)
+Positive: ('blijesmiley', 14)
+Negative: ('waar', 3)
+
+...#12...
+Neutral: ('amstel', 91)
+Positive: ('gewonnen', 13)
+Negative: ('is', 3)
+
+...#13...
+Neutral: ('Ahoy', 79)
+Positive: ('heb', 13)
+Negative: ('krijgen', 2)
+
+...#14...
+Neutral: ('met', 62)
+Positive: ('met', 12)
+Negative: ('bestellg', 2)
+
+...#15...
+Neutral: ('via', 62)
+Positive: ('al', 12)
+Negative: ('besteld', 2)
+
+...#16...
+Neutral: ('je', 61)
+Positive: ('en', 11)
+Negative: ('betaald', 2)
+
+...#17...
+Neutral: ('er', 56)
+Positive: ('D', 11)
+Negative: ('?', 2)
+
+...#18...
+Neutral: ('VVAL', 56)
+Positive: ('nu', 11)
+Negative: ('mee', 2)
+
+...#19...
+Neutral: ('g', 55)
+Positive: ('er', 10)
+Negative: ('we', 2)
+
+...#20...
+Neutral: ('nog', 52)
+Positive: ('volgen', 10)
+Negative: ('g', 2)
+
+...#21...
+Neutral: ('januari', 52)
+Positive: ('kaarten', 9)
+Negative: ('door', 2)
+
+...#22...
+Neutral: ('is', 52)
+Positive: ('vval', 8)
+Negative: ('kaartjes', 2)
+
+...#23...
+Neutral: ('gratis', 49)
+Positive: ('leuk', 8)
+Negative: ('nu', 2)
+
+...#24...
+Neutral: ('volgen', 49)
+Positive: ('nog', 7)
+Negative: ('3912', 2)
+
+...#25...
+Neutral: ('te', 47)
+Positive: ('januari', 7)
+Negative: ('naar', 2)
+
+...#26...
+Neutral: ('ANWB', 47)
+Positive: ('kaartjes', 7)
+Negative: ('ticketloket', 2)
+
+...#27...
+Neutral: ('we', 47)
+Positive: ('Ik', 7)
+Negative: ('Krijg', 1)
+
+...#28...
+Neutral: ('parkeer', 47)
+Positive: ('Volgen', 7)
+Negative: ('beetje', 1)
+
+...#29...
+Neutral: ('week', 47)
+Positive: ('ga', 6)
+Negative: ('Pfff', 1)
+
+...#30...
+Neutral: ('2', 44)
+Positive: ('En', 6)
+Negative: ('ga', 1)
+
+...#31...
+Neutral: ('Van', 40)
+Positive: ('2', 6)
+Negative: ('als', 1)
+
+...#32...
+Neutral: ('2013', 40)
+Positive: ('LIVE', 6)
+Negative: ('hoofdprijs', 1)
+
+...#33...
+Neutral: ('volgers', 36)
+Positive: ('AMSTEL', 6)
+Negative: ('We', 1)
+
+...#34...
+Neutral: ('samenrijnnl', 36)
+Positive: ('te', 5)
+Negative: ('21', 1)
+
+...#35...
+Neutral: ('zaterdag', 36)
+Positive: ('geweest', 5)
+Negative: ('hadn', 1)
+
+...#36...
+Neutral: ('LIVE', 34)
+Positive: ('Ahoy', 5)
+Negative: ('28', 1)
+
+...#37...
+Neutral: ('ook', 33)
+Positive: ('niet', 5)
+Negative: ('gestuurd', 1)
+
+...#38...
+Neutral: ('6NyfwK5f', 33)
+Positive: ('27', 5)
+Negative: ('jan', 1)
+
+...#39...
+Neutral: ('zondag', 33)
+Positive: ('VRIENDEN', 5)
+Negative: ('sorry', 1)
+
+...#40...
+Neutral: ('vrijdag', 31)
+Positive: ('is', 5)
+Negative: ('jullie', 1)
+
+...#41...
+Neutral: ('ga', 30)
+Positive: ('zondag', 5)
+Negative: ('2011', 1)
+
+...#42...
+Neutral: ('dan', 30)
+Positive: ('maar', 4)
+Negative: ('tickets', 1)
+
+...#43...
+Neutral: ('kaartjes', 30)
+Positive: ('dit', 4)
+Negative: ('nog', 1)
+
+...#44...
+Neutral: ('mee', 29)
+Positive: ('ze', 4)
+Negative: ('Keer', 1)
+
+...#45...
+Neutral: ('weer', 28)
+Positive: ('22', 4)
+Negative: ('maar', 1)
+
+...#46...
+Neutral: ('reeks', 27)
+Positive: ('2013', 4)
+Negative: ('12', 1)
+
+...#47...
+Neutral: ('niet', 27)
+Positive: ('dan', 4)
+Negative: ('gek', 1)
+
+...#48...
+Neutral: ('kroonluchter', 27)
+Positive: ('Vrijdag', 4)
+Negative: ('onneembare', 1)
+
+...#49...
+Neutral: ('hebben', 27)
+Positive: ('C1000', 4)
+Negative: ('leeftijdsgrens', 1)
+
+...#50...
+Neutral: ('Nog', 25)
+Positive: ('weer', 4)
+Negative: ('vestg', 1)
+
+...#51...
+Neutral: ('K', 25)
+Positive: ('g', 4)
+Negative: ('Meeuwis', 1)
+
+...#52...
+Neutral: ('22', 25)
+Positive: ('echt', 4)
+Negative: ('Gaapverwekkend', 1)
+
+...#53...
+Neutral: ('Op', 24)
+Positive: ('kan', 4)
+Negative: ('januari', 1)
+
+...#54...
+Neutral: ('gitaren', 24)
+Positive: ('Zondag', 4)
+Negative: ('Paul', 1)
+
+...#55...
+Neutral: ('zijn', 23)
+Positive: ('lekker', 4)
+Negative: ('juni', 1)
+
+...#56...
+Neutral: ('blijesmiley', 23)
+Positive: ('veel', 4)
+Negative: ('zo', 1)
+
+...#57...
+Neutral: ('ze', 22)
+Positive: ('Heb', 4)
+Negative: ('concert', 1)
+
+...#58...
+Neutral: ('1', 22)
+Positive: ('dus', 4)
+Negative: ('jeetje', 1)
+
+...#59...
+Neutral: ('29', 22)
+Positive: ('?', 4)
+Negative: ('zitplaatsen', 1)
+
+...#60...
+Neutral: ('Vandaag', 22)
+Positive: ('zaterdag', 4)
+Negative: ('Aant', 1)
+
+...#61...
+Neutral: ('n', 22)
+Positive: ('heeft', 4)
+Negative: ('per', 1)
+
+...#62...
+Neutral: ('wel', 22)
+Positive: ('Van', 3)
+Negative: ('3', 1)
+
+...#63...
+Neutral: ('xe1', 22)
+Positive: ('VAN', 3)
+Negative: ('Onlangs', 1)
+
+...#64...
+Neutral: ('hoeveel', 21)
+Positive: ('kunnen', 3)
+Negative: ('7', 1)
+
+...#65...
+Neutral: ('Prijsvraagje', 21)
+Positive: ('lieve', 3)
+Negative: ('kantoetsweek', 1)
+
+...#66...
+Neutral: ('Ga', 20)
+Positive: ('me', 3)
+Negative: ('vval', 1)
+
+...#67...
+Neutral: ('25', 20)
+Positive: ('alle', 3)
+Negative: ('G', 1)
+
+...#68...
+Neutral: ('Verloten', 20)
+Positive: ('2012', 3)
+Negative: ('plaatsen', 1)
+
+...#69...
+Neutral: ('bouw', 20)
+Positive: ('r', 3)
+Negative: ('volgen', 1)
+
+...#70...
+Neutral: ('gewonnen', 20)
+Positive: ('blij', 3)
+Negative: ('39m', 1)
+
+...#71...
+Neutral: ('z', 20)
+Positive: ('mij', 3)
+Negative: ('39n', 1)
+
+...#72...
+Neutral: ('maar', 19)
+Positive: ('jaar', 3)
+Negative: ('bevestigd', 1)
+
+...#73...
+Neutral: ('st', 19)
+Positive: ('je', 3)
+Negative: ('wt', 1)
+
+...#74...
+Neutral: ('D', 19)
+Positive: ('Kaartjes', 3)
+Negative: ('C1000', 1)
+
+...#75...
+Neutral: ('heb', 19)
+Positive: ('Yes', 3)
+Negative: ('stme', 1)
+
+...#76...
+Neutral: ('klaar', 18)
+Positive: ('vrijdag', 3)
+Negative: ('En', 1)
+
+...#77...
+Neutral: ('wil', 18)
+Positive: ('wel', 3)
+Negative: ('bevestigg', 1)
+
+...#78...
+Neutral: ('AHOY', 18)
+Positive: ('tijd', 3)
+Negative: ('s', 1)
+
+...#79...
+Neutral: ('Wel', 18)
+Positive: ('Met', 3)
+Negative: ('zachte', 1)
+
+...#80...
+Neutral: ('ken', 18)
+Positive: ('oa', 3)
+Negative: ('Hallo', 1)
+
+...#81...
+Neutral: ('Leuk', 18)
+Positive: ('Nu', 3)
+Negative: ('jammer', 1)
+
+...#82...
+Neutral: ('na', 18)
+Positive: ('helemaal', 3)
+Negative: ('geplaatst', 1)
+
+...#83...
+Neutral: ('Wie', 18)
+Positive: ('kaartje', 3)
+Negative: ('en', 1)
+
+...#84...
+Neutral: ('wie', 17)
+Positive: ('Voor', 2)
+Negative: ('echt', 1)
+
+...#85...
+Neutral: ('kan', 17)
+Positive: ('fale', 2)
+Negative: ('Heb', 1)
+
+...#86...
+Neutral: ('39en', 17)
+Positive: ('zo', 2)
+Negative: ('ons', 1)
+
+...#87...
+Neutral: ('4', 17)
+Positive: ('bemachtigd', 2)
+Negative: ('2012Na', 1)
+
+...#88...
+Neutral: ('Volgen', 17)
+Positive: ('mee', 2)
+Negative: ('manieren', 1)
+
+...#89...
+Neutral: ('weetje', 17)
+Positive: ('meer', 2)
+Negative: ('heeft', 1)
+
+...#90...
+Neutral: ('dit', 16)
+Positive: ('zijn', 2)
+Negative: ('Dalijk', 1)
+
+...#91...
+Neutral: ('Morgen', 16)
+Positive: ('door', 2)
+Negative: ('Vrienn', 1)
+
+...#92...
+Neutral: ('gaat', 16)
+Positive: ('tpie', 2)
+Negative: ('gaat', 1)
+
+...#93...
+Neutral: ('begt', 16)
+Positive: ('anrs', 2)
+Negative: ('tot', 1)
+
+...#94...
+Neutral: ('jaar', 16)
+Positive: ('Maar', 2)
+Negative: ('rond', 1)
+
+...#95...
+Neutral: ('jan', 16)
+Positive: ('mag', 2)
+Negative: ('2', 1)
+
+...#96...
+Neutral: ('Zijn', 16)
+Positive: ('waarschijnlijk', 2)
+Negative: ('heb', 1)
+
+...#97...
+Neutral: ('cor', 16)
+Positive: ('25', 2)
+Negative: ('var', 1)
+
+...#98...
+Neutral: ('20', 15)
+Positive: ('morgen', 2)
+Negative: ('hem', 1)
+
+...#99...
+Neutral: ('Iemand', 15)
+Positive: ('mijn', 2)
+Negative: ('hen', 1)
+
+...#100...
+Neutral: ('brengen', 15)
+Positive: ('yeah', 2)
+Negative: ('oktober', 1)
+
+...#101...
+Neutral: ('Ik', 15)
+Positive: ('waar', 2)
+Negative: ('verschillen', 1)
+
+...#102...
+Neutral: ('start', 15)
+Positive: ('programma', 2)
+Negative: ('Guus', 1)
+
+...#103...
+Neutral: ('nieuwe', 15)
+Positive: ('zal', 2)
+Negative: ('Tevergeefs', 1)
+
+...#104...
+Neutral: ('al', 15)
+Positive: ('tot', 2)
+Negative: ('vragen', 1)
+
+...#105...
+Neutral: ('zo', 14)
+Positive: ('ben', 2)
+Negative: ('Je', 1)
+
+...#106...
+Neutral: ('wij', 14)
+Positive: ('holland', 2)
+Negative: ('11', 1)
+
+...#107...
+Neutral: ('28', 14)
+Positive: ('dank', 2)
+Negative: ('gekregen', 1)
+
+...#108...
+Neutral: ('geluid', 14)
+Positive: ('Zaterdag', 2)
+Negative: ('te', 1)
+
+...#109...
+Neutral: ('licht', 14)
+Positive: ('feestje', 2)
+Negative: ('16', 1)
+
+...#110...
+Neutral: ('Upes', 14)
+Positive: ('VVAL', 2)
+Negative: ('18', 1)
+
+...#111...
+Neutral: ('layer', 14)
+Positive: ('01', 2)
+Negative: ('mn', 1)
+
+...#112...
+Neutral: ('hier', 14)
+Positive: ('zojuist', 2)
+Negative: ('worn', 1)
+
+...#113...
+Neutral: ('trailers', 14)
+Positive: ('Januari', 2)
+Negative: ('gasttren', 1)
+
+...#114...
+Neutral: ('39', 13)
+Positive: ('moet', 2)
+Negative: ('600', 1)
+
+...#115...
+Neutral: ('teresse', 13)
+Positive: ('jan', 2)
+Negative: ('af', 1)
+
+...#116...
+Neutral: ('2012', 13)
+Positive: ('toch', 2)
+Negative: ('al', 1)
+
+...#117...
+Neutral: ('dak', 13)
+Positive: ('collega', 2)
+Negative: ('onze', 1)
+
+...#118...
+Neutral: ('onze', 13)
+Positive: ('aftellen', 2)
+Negative: ('mij', 1)
+
+...#119...
+Neutral: ('twitter', 13)
+Positive: ('ken', 2)
+Negative: ('Liever', 1)
+
+...#120...
+Neutral: ('doen', 12)
+Positive: ('verko', 2)
+Negative: ('Maar', 1)
+
+...#121...
+Neutral: ('We', 12)
+Positive: ('s', 2)
+Negative: ('1', 1)
+
+...#122...
+Neutral: ('lekker', 12)
+Positive: ('Hoe', 2)
+Negative: ('Fck', 1)
+
+...#123...
+Neutral: ('ahoy', 12)
+Positive: ('gewoon', 2)
+Negative: ('kijken', 1)
+
+...#124...
+Neutral: ('Rotterdam', 12)
+Positive: ('xa0', 2)
+Negative: ('VVAL', 1)
+
+...#125...
+Neutral: ('Weet', 12)
+Positive: ('vd', 2)
+Negative: ('week', 1)
+
+...#126...
+Neutral: ('nu', 12)
+Positive: ('hebben', 2)
+Negative: ('3911', 1)
+
+...#127...
+Neutral: ('alweer', 11)
+Positive: ('weg', 2)
+Negative: ('dgn', 1)
+
+...#128...
+Neutral: ('39n', 11)
+Positive: ('groep', 2)
+Negative: ('kan', 1)
+
+...#129...
+Neutral: ('W', 11)
+Positive: ('bemachtigen', 2)
+Negative: ('hebben', 1)
+
+...#130...
+Neutral: ('echte', 11)
+Positive: ('Op', 2)
+Negative: ('geprobeerd', 1)
+
+...#131...
+Neutral: ('YMT5tiYc', 11)
+Positive: ('KANE', 2)
+Negative: ('u', 1)
+
+...#132...
+Neutral: ('kaartkers', 10)
+Positive: ('mooi', 2)
+Negative: ('zien', 1)
+
+...#133...
+Neutral: ('kroeg', 10)
+Positive: ('of', 2)
+Negative: ('kaartje', 1)
+
+...#134...
+Neutral: ('checken', 10)
+Positive: ('geluk', 2)
+
+...#135...
+Neutral: ('weet', 10)
+Positive: ('Rotterdam', 2)
+
+...#136...
+Neutral: ('kaartverko', 10)
+Positive: ('dagen', 2)
+
+...#137...
+Neutral: ('ben', 10)
+Positive: ('ontspanng', 2)
+
+...#138...
+Neutral: ('sfeer', 10)
+Positive: ('Z', 2)
+
+...#139...
+Neutral: ('kt', 10)
+Positive: ('jaloers', 2)
+
+...#140...
+Neutral: ('nieuwsbrieflen', 10)
+Positive: ('Vip', 2)
+
+...#141...
+Neutral: ('mailbox', 10)
+Positive: ('5', 2)
+
+...#142...
+Neutral: ('jullie', 10)
+Positive: ('nice', 2)
+
+...#143...
+Neutral: ('Snel', 10)
+Positive: ('papa', 2)
+
+...#144...
+Neutral: ('of', 10)
+Positive: ('weekend', 2)
+
+...#145...
+Neutral: ('schrijven', 10)
+Positive: ('Eigenlijk', 1)
+
+...#146...
+Neutral: ('Voorverko', 10)
+Positive: ('eerste', 1)
+
+...#147...
+Neutral: ('VAN', 9)
+Positive: ('GOUD', 1)
+
+...#148...
+Neutral: ('iemand', 9)
+Positive: ('als', 1)
+
+...#149...
+Neutral: ('me', 9)
+Positive: ('misschien', 1)
+
+...#150...
+Neutral: ('grootste', 9)
+Positive: ('tijdstip', 1)
+
+...#151...
+Neutral: ('21', 9)
+Positive: ('Lekker', 1)
+
+...#152...
+Neutral: ('weken', 9)
+Positive: ('vet', 1)
+
+...#153...
+Neutral: ('Vrijdag', 9)
+Positive: ('buddy', 1)
+
+...#154...
+Neutral: ('ko', 9)
+Positive: ('Nog', 1)
+
+...#155...
+Neutral: ('wordt', 9)
+Positive: ('beste', 1)
+
+...#156...
+Neutral: ('marktplaats', 9)
+Positive: ('Nou', 1)
+
+...#157...
+Neutral: ('snel', 9)
+Positive: ('figureren', 1)
+
+...#158...
+Neutral: ('artiesten', 9)
+Positive: ('WEEK', 1)
+
+...#159...
+Neutral: ('per', 9)
+Positive: ('verr', 1)
+
+...#160...
+Neutral: ('kaartje', 9)
+Positive: ('feessie', 1)
+
+...#161...
+Neutral: ('vast', 8)
+Positive: ('Jeej', 1)
+
+...#162...
+Neutral: ('tickets', 8)
+Positive: ('Kaarten', 1)
+
+...#163...
+Neutral: ('meld', 8)
+Positive: ('tickets', 1)
+
+...#164...
+Neutral: ('Zo', 8)
+Positive: ('Cool', 1)
+
+...#165...
+Neutral: ('Lees', 8)
+Positive: ('Grolsh', 1)
+
+...#166...
+Neutral: ('En', 8)
+Positive: ('JAAAAAAAAA', 1)
+
+...#167...
+Neutral: ('v', 8)
+Positive: ('goed', 1)
+
+...#168...
+Neutral: ('bekend', 8)
+Positive: ('3x', 1)
+
+...#169...
+Neutral: ('7', 8)
+Positive: ('besteld', 1)
+
+...#170...
+Neutral: ('Heln', 8)
+Positive: ('lief', 1)
+
+...#171...
+Neutral: ('ff', 8)
+Positive: ('net', 1)
+
+...#172...
+Neutral: ('onr', 8)
+Positive: ('leg', 1)
+
+...#173...
+Neutral: ('daar', 8)
+Positive: ('Mn', 1)
+
+...#174...
+Neutral: ('Het', 8)
+Positive: ('mei', 1)
+
+...#175...
+Neutral: ('verloten', 8)
+Positive: ('VOLGENDE', 1)
+
+...#176...
+Neutral: ('Twee', 8)
+Positive: ('woot', 1)
+
+...#177...
+Neutral: ('nachtgen', 8)
+Positive: ('dren', 1)
+
+...#178...
+Neutral: ('bus', 8)
+Positive: ('100', 1)
+
+...#179...
+Neutral: ('onrel', 7)
+Positive: ('lijkt', 1)
+
+...#180...
+Neutral: ('net', 7)
+Positive: ('Zo', 1)
+
+...#181...
+Neutral: ('maken', 7)
+Positive: ('gezellig', 1)
+
+...#182...
+Neutral: ('6', 7)
+Positive: ('Genieten', 1)
+
+...#183...
+Neutral: ('word', 7)
+Positive: ('k', 1)
+
+...#184...
+Neutral: ('Spectaculaire', 7)
+Positive: ('NOG', 1)
+
+...#185...
+Neutral: ('Jan', 7)
+Positive: ('WOENSDAG', 1)
+
+...#186...
+Neutral: ('dag', 7)
+Positive: ('later', 1)
+
+...#187...
+Neutral: ('kans', 7)
+Positive: ('dro', 1)
+
+...#188...
+Neutral: ('C1000', 7)
+Positive: ('Tilburg', 1)
+
+...#189...
+Neutral: ('HOSACXNX', 7)
+Positive: ('manier', 1)
+
+...#190...
+Neutral: ('ADnl', 7)
+Positive: ('straks', 1)
+
+...#191...
+Neutral: ('vervoer', 7)
+Positive: ('maakt', 1)
+
+...#192...
+Neutral: ('twee', 7)
+Positive: ('ERRUG', 1)
+
+...#193...
+Neutral: ('toch', 7)
+Positive: ('FUCK', 1)
+
+...#194...
+Neutral: ('YES', 7)
+Positive: ('harjan', 1)
+
+...#195...
+Neutral: ('schermen', 7)
+Positive: ('heeeeeeeeel', 1)
+
+...#196...
+Neutral: ('s', 7)
+Positive: ('weekendje', 1)
+
+...#197...
+Neutral: ('jij', 7)
+Positive: ('Nice', 1)
+
+...#198...
+Neutral: ('weg', 7)
+Positive: ('zit', 1)
+
+...#199...
+Neutral: ('xe9n', 7)
+Positive: ('bezig', 1)
+
+...#200...
+Neutral: ('af', 7)
+Positive: ('Aitt', 1)
+
+...#201...
+Neutral: ('m', 7)
+Positive: ('Joehoe', 1)
+
+...#202...
+Neutral: ('as', 7)
+Positive: ('oftewelonbeperkt', 1)
+
+...#203...
+Neutral: ('uit', 7)
+Positive: ('gaaf', 1)
+
+...#204...
+Neutral: ('AD', 7)
+Positive: ('thuis', 1)
+
+...#205...
+Neutral: ('wnen', 7)
+Positive: ('Iris', 1)
+
+...#206...
+Neutral: ('mensen', 6)
+Positive: ('starten', 1)
+
+...#207...
+Neutral: ('maak', 6)
+Positive: ('pff', 1)
+
+...#208...
+Neutral: ('Kaarten', 6)
+Positive: ('ook', 1)
+
+...#209...
+Neutral: ('kaart', 6)
+Positive: ('slapen', 1)
+
+...#210...
+Neutral: ('kunnen', 6)
+Positive: ('worn', 1)
+
+...#211...
+Neutral: ('k', 6)
+Positive: ('erg', 1)
+
+...#212...
+Neutral: ('laatste', 6)
+Positive: ('nieuwste', 1)
+
+...#213...
+Neutral: ('repetities', 6)
+Positive: ('aight', 1)
+
+...#214...
+Neutral: ('fo', 6)
+Positive: ('zupen', 1)
+
+...#215...
+Neutral: ('vragen', 6)
+Positive: ('drker', 1)
+
+...#216...
+Neutral: ('april', 6)
+Positive: ('weten', 1)
+
+...#217...
+Neutral: ('27', 6)
+Positive: ('20ste', 1)
+
+...#218...
+Neutral: ('39t', 6)
+Positive: ('fuck', 1)
+
+...#219...
+Neutral: ('AMSTEL', 6)
+Positive: ('hoe', 1)
+
+...#220...
+Neutral: ('Er', 6)
+Positive: ('ene', 1)
+
+...#221...
+Neutral: ('ons', 6)
+Positive: ('Kan', 1)
+
+...#222...
+Neutral: ('ODL', 6)
+Positive: ('1', 1)
+
+...#223...
+Neutral: ('broertje', 6)
+Positive: ('scriptie', 1)
+
+...#224...
+Neutral: ('Zondag', 6)
+Positive: ('Weekend', 1)
+
+...#225...
+Neutral: ('concert', 6)
+Positive: ('Zojuist', 1)
+
+...#226...
+Neutral: ('zitplaatsen', 6)
+Positive: ('avond', 1)
+
+...#227...
+Neutral: ('engen', 6)
+Positive: ('verheugen', 1)
+
+...#228...
+Neutral: ('zgen', 6)
+Positive: ('liveme', 1)
+
+...#229...
+Neutral: ('verko', 6)
+Positive: ('fo', 1)
+
+...#230...
+Neutral: ('veel', 6)
+Positive: ('a', 1)
+
+...#231...
+Neutral: ('VRIENDEN', 6)
+Positive: ('woehoeeeh', 1)
+
+...#232...
+Neutral: ('Laatste', 6)
+Positive: ('horen', 1)
+
+...#233...
+Neutral: ('dus', 6)
+Positive: ('st', 1)
+
+...#234...
+Neutral: ('helaas', 6)
+Positive: ('bestaat', 1)
+
+...#235...
+Neutral: ('biedg', 6)
+Positive: ('mdag', 1)
+
+...#236...
+Neutral: ('standighen', 6)
+Positive: ('zeg', 1)
+
+...#237...
+Neutral: ('Alkmaar', 6)
+Positive: ('weken', 1)
+
+...#238...
+Neutral: ('Oa', 6)
+Positive: ('amstellive', 1)
+
+...#239...
+Neutral: ('K5MysjU9', 6)
+Positive: ('danyeah', 1)
+
+...#240...
+Neutral: ('x201d', 6)
+Positive: ('geven', 1)
+
+...#241...
+Neutral: ('Fans', 6)
+Positive: ('Jan', 1)
+
+...#242...
+Neutral: ('Klee', 6)
+Positive: ('Re', 1)
+
+...#243...
+Neutral: ('28e', 6)
+Positive: ('Whaa', 1)
+
+...#244...
+Neutral: ('mooi', 6)
+Positive: ('arrangement', 1)
+
+...#245...
+Neutral: ('samen', 6)
+Positive: ('dagje', 1)
+
+...#246...
+Neutral: ('heeft', 6)
+Positive: ('le', 1)
+
+...#247...
+Neutral: ('achter', 6)
+Positive: ('20', 1)
+
+...#248...
+Neutral: ('Nerland', 6)
+Positive: ('21', 1)
+
+...#249...
+Neutral: ('Eentje', 6)
+Positive: ('Daarna', 1)
+
+...#250...
+Neutral: ('Z', 6)
+Positive: ('better', 1)
+
+...#251...
+Neutral: ('willen', 6)
+Positive: ('vast', 1)
+
+...#252...
+Neutral: ('ad', 6)
+Positive: ('bouw', 1)
+
+...#253...
+Neutral: ('Door', 6)
+Positive: ('onverwachts', 1)
+
+...#254...
+Neutral: ('weekend', 6)
+Positive: ('tje', 1)
+
+...#255...
+Neutral: ('Al', 6)
+Positive: ('artiesten', 1)
+
+...#256...
+Neutral: ('ter', 5)
+Positive: ('half', 1)
+
+...#257...
+Neutral: ('even', 5)
+Positive: ('Naaaaa', 1)
+
+...#258...
+Neutral: ('gezellig', 5)
+Positive: ('Ruymbeek', 1)
+
+...#259...
+Neutral: ('Xanr', 5)
+Positive: ('l', 1)
+
+...#260...
+Neutral: ('haha', 5)
+Positive: ('bekijken', 1)
+
+...#261...
+Neutral: ('mag', 5)
+Positive: ('Thankx', 1)
+
+...#262...
+Neutral: ('eng', 5)
+Positive: ('stemmg', 1)
+
+...#263...
+Neutral: ('Voor', 5)
+Positive: ('Door', 1)
+
+...#264...
+Neutral: ('geven', 5)
+Positive: ('heze', 1)
+
+...#265...
+Neutral: ('kane', 5)
+Positive: ('goe', 1)
+
+...#266...
+Neutral: ('spectaculaire', 5)
+Positive: ('7', 1)
+
+...#267...
+Neutral: ('stuk', 5)
+Positive: ('stuk', 1)
+
+...#268...
+Neutral: ('wachten', 5)
+Positive: ('Alvast', 1)
+
+...#269...
+Neutral: ('18', 5)
+Positive: ('Super', 1)
+
+...#270...
+Neutral: ('werken', 5)
+Positive: ('Week', 1)
+
+...#271...
+Neutral: ('personeelsuitje', 5)
+Positive: ('Dankzij', 1)
+
+...#272...
+Neutral: ('Gezocht', 5)
+Positive: ('vroeg', 1)
+
+...#273...
+Neutral: ('alvast', 5)
+Positive: ('plaatsen', 1)
+
+...#274...
+Neutral: ('x', 5)
+Positive: ('verjaardag', 1)
+
+...#275...
+Neutral: ('wwwfacebookc', 5)
+Positive: ('39t', 1)
+
+...#276...
+Neutral: ('alle', 5)
+Positive: ('Annemiek', 1)
+
+...#277...
+Neutral: ('nieuws', 5)
+Positive: ('technische', 1)
+
+...#278...
+Neutral: ('Yes', 5)
+Positive: ('rtien', 1)
+
+...#279...
+Neutral: ('x20ac100', 5)
+Positive: ('ontg', 1)
+
+...#280...
+Neutral: ('Heb', 5)
+Positive: ('wachten', 1)
+
+...#281...
+Neutral: ('belang', 5)
+Positive: ('heimwee', 1)
+
+...#282...
+Neutral: ('Veldkaarten', 5)
+Positive: ('Vorig', 1)
+
+...#283...
+Neutral: ('mij', 5)
+Positive: ('Goed', 1)
+
+...#284...
+Neutral: ('euro', 5)
+Positive: ('yeaahh', 1)
+
+...#285...
+Neutral: ('x201c', 5)
+Positive: ('Vooral', 1)
+
+...#286...
+Neutral: ('paga', 5)
+Positive: ('natuurlijk', 1)
+
+...#287...
+Neutral: ('Stoepje', 5)
+Positive: ('liveGeweldig', 1)
+
+...#288...
+Neutral: ('Harrwijk', 5)
+Positive: ('anrhalf', 1)
+
+...#289...
+Neutral: ('wat', 5)
+Positive: ('man', 1)
+
+...#290...
+Neutral: ('dagen', 5)
+Positive: ('storg', 1)
+
+...#291...
+Neutral: ('Veel', 5)
+Positive: ('toe', 1)
+
+...#292...
+Neutral: ('Januari', 5)
+Positive: ('volgenweek', 1)
+
+...#293...
+Neutral: ('helemaal', 5)
+Positive: ('Absurd', 1)
+
+...#294...
+Neutral: ('stad', 5)
+Positive: ('Smit', 1)
+
+...#295...
+Neutral: ('bevat', 4)
+Positive: ('brengen', 1)
+
+...#296...
+Neutral: ('16', 4)
+Positive: ('11', 1)
+
+...#297...
+Neutral: ('Interviews', 4)
+Positive: ('27ste', 1)
+
+...#298...
+Neutral: ('jurk', 4)
+Positive: ('beg', 1)
+
+...#299...
+Neutral: ('extra', 4)
+Positive: ('woensdag', 1)
+
+...#300...
+Neutral: ('starten', 4)
+Positive: ('beter', 1)
+
+...#301...
+Neutral: ('AUB', 4)
+Positive: ('Rianne', 1)
+
+...#302...
+Neutral: ('show', 4)
+Positive: ('Gaat', 1)
+
+...#303...
+Neutral: ('worn', 4)
+Positive: ('feest', 1)
+
+...#304...
+Neutral: ('meer', 4)
+Positive: ('DD', 1)
+
+...#305...
+Neutral: ('Maar', 4)
+Positive: ('Brur', 1)
+
+...#306...
+Neutral: ('tvoh', 4)
+Positive: ('turner', 1)
+
+...#307...
+Neutral: ('Eurese', 4)
+Positive: ('gebeld', 1)
+
+...#308...
+Neutral: ('sk', 4)
+Positive: ('beluisteren', 1)
+
+...#309...
+Neutral: ('crew', 4)
+Positive: ('Whaaa', 1)
+
+...#310...
+Neutral: ('Hij', 4)
+Positive: ('zou', 1)
+
+...#311...
+Neutral: ('morgen', 4)
+Positive: ('eten', 1)
+
+...#312...
+Neutral: ('Varsseveld', 4)
+Positive: ('kijken', 1)
+
+...#313...
+Neutral: ('Check', 4)
+Positive: ('xa0Dit', 1)
+
+...#314...
+Neutral: ('primeur', 4)
+Positive: ('Yoehoe', 1)
+
+...#315...
+Neutral: ('waar', 4)
+Positive: ('HvA', 1)
+
+...#316...
+Neutral: ('bemachtigd', 4)
+Positive: ('jaaa', 1)
+
+...#317...
+Neutral: ('origele', 4)
+Positive: ('avondje', 1)
+
+...#318...
+Neutral: ('wwwadnl', 4)
+Positive: ('Jawel', 1)
+
+...#319...
+Neutral: ('w', 4)
+Positive: ('ZOOOOO', 1)
+
+...#320...
+Neutral: ('wanneer', 4)
+Positive: ('Jeeeeeeetje', 1)
+
+...#321...
+Neutral: ('snRw3Ji7', 4)
+Positive: ('begrijpen', 1)
+
+...#322...
+Neutral: ('geweldige', 4)
+Positive: ('m', 1)
+
+...#323...
+Neutral: ('gast', 4)
+Positive: ('uur', 1)
+
+...#324...
+Neutral: ('180', 4)
+Positive: ('betere', 1)
+
+...#325...
+Neutral: ('Kl', 4)
+Positive: ('sterrencast', 1)
+
+...#326...
+Neutral: ('tellen', 4)
+Positive: ('kt', 1)
+
+...#327...
+Neutral: ('jouw', 4)
+Positive: ('Heze', 1)
+
+...#328...
+Neutral: ('zou', 4)
+Positive: ('Barry', 1)
+
+...#329...
+Neutral: ('01', 4)
+Positive: ('twee', 1)
+
+...#330...
+Neutral: ('The', 4)
+Positive: ('Hay', 1)
+
+...#331...
+Neutral: ('vpPMYJ52', 4)
+Positive: ('krijgen', 1)
+
+...#332...
+Neutral: ('Kijk', 4)
+Positive: ('We', 1)
+
+...#333...
+Neutral: ('begonnen', 4)
+Positive: ('alvast', 1)
+
+...#334...
+Neutral: ('zoek', 4)
+Positive: ('daar', 1)
+
+...#335...
+Neutral: ('titel', 4)
+Positive: ('eigenlijk', 1)
+
+...#336...
+Neutral: ('yes', 4)
+Positive: ('jah', 1)
+
+...#337...
+Neutral: ('app_303061923047671', 4)
+Positive: ('Je', 1)
+
+...#338...
+Neutral: ('facebookpaga', 4)
+Positive: ('rotterdam', 1)
+
+...#339...
+Neutral: ('3', 4)
+Positive: ('schoonours', 1)
+
+...#340...
+Neutral: ('nieuwsbrief', 4)
+Positive: ('di', 1)
+
+...#341...
+Neutral: ('fans', 4)
+Positive: ('H', 1)
+
+...#342...
+Neutral: ('Hoe', 4)
+Positive: ('bedankt', 1)
+
+...#343...
+Neutral: ('65', 4)
+Positive: ('wordt', 1)
+
+...#344...
+Neutral: ('cpensatie', 4)
+Positive: ('hoort', 1)
+
+...#345...
+Neutral: ('gewoon', 4)
+Positive: ('liedjes', 1)
+
+...#346...
+Neutral: ('Speciaal', 4)
+Positive: ('gek', 1)
+
+...#347...
+Neutral: ('volgend', 4)
+Positive: ('dufste', 1)
+
+...#348...
+Neutral: ('DE', 4)
+Positive: ('hiero', 1)
+
+...#349...
+Neutral: ('Voice', 4)
+Positive: ('sta', 1)
+
+...#350...
+Neutral: ('ivm', 4)
+Positive: ('hele', 1)
+
+...#351...
+Neutral: ('heuse', 4)
+Positive: ('whahaha', 1)
+
+...#352...
+Neutral: ('facebook', 4)
+Positive: ('zaterdagavondshow', 1)
+
+...#353...
+Neutral: ('paar', 4)
+Positive: ('concert', 1)
+
+...#354...
+Neutral: ('tijd', 4)
+Positive: ('zeggen', 1)
+
+...#355...
+Neutral: ('setje', 4)
+Positive: ('HEEEEEEEELLLL', 1)
+
+...#356...
+Neutral: ('t', 4)
+Positive: ('yeaaahhhhhh', 1)
+
+...#357...
+Neutral: ('Geweldige', 4)
+Positive: ('paul', 1)
+
+...#358...
+Neutral: ('Facebookpaga', 4)
+Positive: ('best', 1)
+
+...#359...
+Neutral: ('lage', 4)
+Positive: ('onverwacht', 1)
+
+...#360...
+Neutral: ('Volg', 4)
+Positive: ('ff', 1)
+
+...#361...
+Neutral: ('ADNL', 4)
+Positive: ('begnen', 1)
+
+...#362...
+Neutral: ('f5X6EG68', 4)
+Positive: ('verjaardagscaau', 1)
+
+...#363...
+Neutral: ('G', 4)
+Positive: ('we', 1)
+
+...#364...
+Neutral: ('all', 3)
+Positive: ('richtg', 1)
+
+...#365...
+Neutral: ('musselkanaal', 3)
+Positive: ('gesport', 1)
+
+...#366...
+Neutral: ('als', 3)
+Positive: ('VanVelzen', 1)
+
+...#367...
+Neutral: ('Gelukkig', 3)
+Positive: ('mailbox', 1)
+
+...#368...
+Neutral: ('wnaar', 3)
+Positive: ('Dand', 1)
+
+...#369...
+Neutral: ('uitverkocht', 3)
+Positive: ('gezellige', 1)
+
+...#370...
+Neutral: ('46zNwsja', 3)
+Positive: ('kje', 1)
+
+...#371...
+Neutral: ('techniek', 3)
+Positive: ('Kane', 1)
+
+...#372...
+Neutral: ('100', 3)
+Positive: ('Samen', 1)
+
+...#373...
+Neutral: ('tekst', 3)
+Positive: ('Woei', 1)
+
+...#374...
+Neutral: ('moet', 3)
+Positive: ('Het', 1)
+
+...#375...
+Neutral: ('wereldsterren', 3)
+Positive: ('Vet', 1)
+
+...#376...
+Neutral: ('slapen', 3)
+Positive: ('Ier', 1)
+
+...#377...
+Neutral: ('mn', 3)
+Positive: ('cmercials', 1)
+
+...#378...
+Neutral: ('want', 3)
+Positive: ('snel', 1)
+
+...#379...
+Neutral: ('tal', 3)
+Positive: ('enzenz', 1)
+
+...#380...
+Neutral: ('pakken', 3)
+Positive: ('Goe', 1)
+
+...#381...
+Neutral: ('wakker', 3)
+Positive: ('life', 1)
+
+...#382...
+Neutral: ('zeg', 3)
+Positive: ('DE', 1)
+
+...#383...
+Neutral: ('verlotg', 3)
+Positive: ('Vandaag', 1)
+
+...#384...
+Neutral: ('Kroonjuwelen', 3)
+Positive: ('Heberz', 1)
+
+...#385...
+Neutral: ('toegepast', 3)
+Positive: ('druk', 1)
+
+...#386...
+Neutral: ('bandje', 3)
+Positive: ('Voice', 1)
+
+...#387...
+Neutral: ('2x', 3)
+Positive: ('terwijl', 1)
+
+...#388...
+Neutral: ('VIP', 3)
+Positive: ('chill', 1)
+
+...#389...
+Neutral: ('avond', 3)
+Positive: ('gekregen', 1)
+
+...#390...
+Neutral: ('mijn', 3)
+Positive: ('geweldig', 1)
+
+...#391...
+Neutral: ('Nu', 3)
+Positive: ('n', 1)
+
+...#392...
+Neutral: ('Oproep', 3)
+Positive: ('Daat', 1)
+
+...#393...
+Neutral: ('hoor', 3)
+Positive: ('drken', 1)
+
+...#394...
+Neutral: ('rond', 3)
+Positive: ('Maaspoort', 1)
+
+...#395...
+Neutral: ('tot', 3)
+Positive: ('cmercial', 1)
+
+...#396...
+Neutral: ('zelfs', 3)
+Positive: ('dag', 1)
+
+...#397...
+Neutral: ('12', 3)
+Positive: ('tper', 1)
+
+...#398...
+Neutral: ('14', 3)
+Positive: ('7dagen', 1)
+
+...#399...
+Neutral: ('tren', 3)
+Positive: ('TVOH', 1)
+
+...#400...
+Neutral: ('busreis', 3)
+Positive: ('pap', 1)
+
+...#401...
+Neutral: ('woensdag', 3)
+Positive: ('Toch', 1)
+
+...#402...
+Neutral: ('dtv', 3)
+Positive: ('39vrienn', 1)
+
+...#403...
+Neutral: ('bnen', 3)
+Positive: ('bnen', 1)
+
+...#404...
+Neutral: ('US', 3)
+Positive: ('party', 1)
+
+...#405...
+Neutral: ('kijken', 3)
+Positive: ('woeeehoe', 1)
+
+...#406...
+Neutral: ('xe9', 3)
+Positive: ('Dvd', 1)
+
+...#407...
+Neutral: ('Je', 3)
+Positive: ('Leuk', 1)
+
+...#408...
+Neutral: ('Earrg', 3)
+Positive: ('coaches', 1)
+
+...#409...
+Neutral: ('benieuwd', 3)
+Positive: ('ooit', 1)
+
+...#410...
+Neutral: ('bier', 3)
+Positive: ('entertaer', 1)
+
+...#411...
+Neutral: ('geregeld', 3)
+Positive: ('In', 1)
+
+...#412...
+Neutral: ('Heeft', 3)
+Positive: ('Jalaaalalaa', 1)
+
+...#413...
+Neutral: ('VanVelzen', 3)
+Positive: ('waha', 1)
+
+...#414...
+Neutral: ('uur', 3)
+Positive: ('BLIJ', 1)
+
+...#415...
+Neutral: ('ja', 3)
+Positive: ('beetje', 1)
+
+...#416...
+Neutral: ('Kaartje', 3)
+Positive: ('boeg', 1)
+
+...#417...
+Neutral: ('schat', 3)
+Positive: ('gehad', 1)
+
+...#418...
+Neutral: ('Kane', 3)
+Positive: ('gaten', 1)
+
+...#419...
+Neutral: ('Twitter', 3)
+Positive: ('Volgend', 1)
+
+...#420...
+Neutral: ('krijtbord', 3)
+Positive: ('Zoooooo', 1)
+
+...#421...
+Neutral: ('juiste', 3)
+Positive: ('Bedankt', 1)
+
+...#422...
+Neutral: ('Racoon', 3)
+Positive: ('On', 1)
+
+...#423...
+Neutral: ('druk', 3)
+Positive: ('Druk', 1)
+
+...#424...
+Neutral: ('VvAL', 3)
+Positive: ('knallend', 1)
+
+...#425...
+Neutral: ('site', 3)
+Positive: ('Oh', 1)
+
+...#426...
+Neutral: ('huidige', 3)
+Positive: ('YEAH', 1)
+
+...#427...
+Neutral: ('laat', 3)
+Positive: ('Dit', 1)
+
+...#428...
+Neutral: ('veldkaarten', 3)
+Positive: ('Dijk', 1)
+
+...#429...
+Neutral: ('Leuke', 3)
+Positive: ('Tpers', 1)
+
+...#430...
+Neutral: ('Mdag', 3)
+Positive: ('51', 1)
+
+...#431...
+Neutral: ('TE', 3)
+Positive: ('houuuu', 1)
+
+...#432...
+Neutral: ('zieligesmiley', 3)
+Positive: ('zieligesmiley', 1)
+
+...#433...
+Neutral: ('heel', 3)
+Positive: ('zooz', 1)
+
+...#434...
+Neutral: ('Wat', 3)
+Positive: ('VriennAmstellive', 1)
+
+...#435...
+Neutral: ('autatisch', 3)
+Positive: ('heel', 1)
+
+...#436...
+Neutral: ('formatie', 3)
+Positive: ('Bnenkort', 1)
+
+...#437...
+Neutral: ('dgetjes', 3)
+Positive: ('Niemand', 1)
+
+...#438...
+Neutral: ('0xYFMAgO', 3)
+Positive: ('zusje', 1)
+
+...#439...
+Neutral: ('gig', 3)
+Positive: ('naarrrrrr', 1)
+
+...#440...
+Neutral: ('zie', 3)
+Positive: ('twitter', 1)
+
+...#441...
+Neutral: ('Vriennamstelnl', 3)
+Positive: ('volledig', 1)
+
+...#442...
+Neutral: ('Kosten', 3)
+Positive: ('Much', 1)
+
+...#443...
+Neutral: ('alsjeblieft', 3)
+Positive: ('Ellen', 1)
+
+...#444...
+Neutral: ('terug', 3)
+Positive: ('Net', 1)
+
+...#445...
+Neutral: ('KOOP', 3)
+Positive: ('Life', 1)
+
+...#446...
+Neutral: ('TV', 3)
+Positive: ('vrij', 1)
+
+...#447...
+Neutral: ('e', 3)
+Positive: ('doen', 1)
+
+...#448...
+Neutral: ('zien', 3)
+Positive: ('O', 1)
+
+...#449...
+Neutral: ('ours', 2)
+Positive: ('daarna', 1)
+
+...#450...
+Neutral: ('baby', 2)
+Positive: ('graag', 1)
+
+...#451...
+Neutral: ('Monique', 2)
+Positive: ('super', 1)
+
+...#452...
+Neutral: ('Dat', 2)
+Positive: ('trekken', 1)
+
+...#453...
+Neutral: ('gelukkig', 2)
+Positive: ('GEWONNEN', 1)
+
+...#454...
+Neutral: ('weten', 2)
+Positive: ('Rowwen', 1)
+
+...#455...
+Neutral: ('presenteerd', 2)
+Positive: ('hier', 1)
+
+...#456...
+Neutral: ('zitplaats', 2)
+Positive: ('dsdag', 1)
+
+...#457...
+Neutral: ('exact', 2)
+Positive: ('TOCH', 1)
+
+...#458...
+Neutral: ('MOET', 2)
+Positive: ('Hoezo', 1)
+
+...#459...
+Neutral: ('tre', 2)
+Positive: ('NL', 1)
+
+...#460...
+Neutral: ('programma', 2)
+Positive: ('hoofd', 1)
+
+...#461...
+Neutral: ('rtplease', 2)
+Positive: ('Nerland', 1)
+
+...#462...
+Neutral: ('zeker', 2)
+Positive: ('bouwen', 1)
+
+...#463...
+Neutral: ('goed', 2)
+Positive: ('up', 1)
+
+...#464...
+Neutral: ('tijns', 2)
+Positive: ('nieuwe', 1)
+
+...#465...
+Neutral: ('Gratis', 2)
+Positive: ('gewenst', 1)
+
+...#466...
+Neutral: ('1350', 2)
+Positive: ('vriennamstellive', 1)
+
+...#467...
+Neutral: ('loten', 2)
+Positive: ('Tonny', 1)
+
+...#468...
+Neutral: ('M3Veztb9', 2)
+Positive: ('willen', 1)
+
+...#469...
+Neutral: ('z7', 2)
+Positive: ('Duurt', 1)
+
+...#470...
+Neutral: ('toen', 2)
+Positive: ('rowwen', 1)
+
+...#471...
+Neutral: ('35', 2)
+Positive: ('dufheid', 1)
+
+...#472...
+Neutral: ('lastig', 2)
+Positive: ('as', 1)
+
+...#473...
+Neutral: ('Tot', 2)
+Positive: ('Hou', 1)
+
+...#474...
+Neutral: ('bedoelen', 2)
+Positive: ('039appelle', 1)
+
+...#475...
+Neutral: ('middag', 2)
+Positive: ('film', 1)
+
+...#476...
+Neutral: ('Monday', 2)
+Positive: ('vakantie', 1)
+
+...#477...
+Neutral: ('personen', 2)
+Positive: ('nemen', 1)
+
+...#478...
+Neutral: ('nodig', 2)
+Positive: ('lees', 1)
+
+...#479...
+Neutral: ('door', 2)
+Positive: ('49', 1)
+
+...#480...
+Neutral: ('arenakaarten', 2)
+Positive: ('xf2g', 1)
+
+...#481...
+Neutral: ('trouwens', 2)
+Positive: ('excuses', 1)
+
+...#482...
+Neutral: ('Nou', 2)
+Positive: ('Yvonne', 1)
+
+...#483...
+Neutral: ('Wegens', 2)
+Positive: ('exclusief', 1)
+
+...#484...
+Neutral: ('Reclameland', 2)
+Positive: ('laten', 1)
+
+...#485...
+Neutral: ('Jammer', 2)
+Positive: ('moers', 1)
+
+...#486...
+Neutral: ('kunt', 2)
+Positive: ('Vriendje', 1)
+
+...#487...
+Neutral: ('nl', 2)
+Positive: ('Jaaaaa', 1)
+
+...#488...
+Neutral: ('RADIO', 2)
+Positive: ('Heel', 1)
+
+...#489...
+Neutral: ('donrdag', 2)
+Positive: ('lang', 1)
+
+...#490...
+Neutral: ('Hoeveel', 2)
+Positive: ('schours', 1)
+
+...#491...
+Neutral: ('Kaart', 2)
+Positive: ('reclame', 1)
+
+...#492...
+Neutral: ('hoe', 2)
+Positive: ('Yeah', 1)
+
+...#493...
+Neutral: ('wordtweerfeest', 2)
+Positive: ('c1000', 1)
+
+...#494...
+Neutral: ('here', 2)
+
+...#495...
+Neutral: ('Aangebon', 2)
+
+...#496...
+Neutral: ('pas', 2)
+
+...#497...
+Neutral: ('rtislief', 2)
+
+...#498...
+Neutral: ('Succes', 2)
+
+...#499...
+Neutral: ('actiev', 2)
+
+...#500...
+Neutral: ('Als', 2)
+
+...#501...
+Neutral: ('gemaakt', 2)
+
+...#502...
+Neutral: ('Blue', 2)
+
+...#503...
+Neutral: ('nieuw', 2)
+
+...#504...
+Neutral: ('drken', 2)
+
+...#505...
+Neutral: ('zelf', 2)
+
+...#506...
+Neutral: ('baas', 2)
+
+...#507...
+Neutral: ('Jurk', 2)
+
+...#508...
+Neutral: ('feestje', 2)
+
+...#509...
+Neutral: ('mail', 2)
+
+...#510...
+Neutral: ('Ziet', 2)
+
+...#511...
+Neutral: ('waren', 2)
+
+...#512...
+Neutral: ('13e', 2)
+
+...#513...
+Neutral: ('allemaal', 2)
+
+...#514...
+Neutral: ('nou', 2)
+
+...#515...
+Neutral: ('3845', 2)
+
+...#516...
+Neutral: ('26ste', 2)
+
+...#517...
+Neutral: ('tentamens', 2)
+
+...#518...
+Neutral: ('natuurlijk', 2)
+
+...#519...
+Neutral: ('joepie', 2)
+
+...#520...
+Neutral: ('Omg', 2)
+
+...#521...
+Neutral: ('gok', 2)
+
+...#522...
+Neutral: ('JURK', 2)
+
+...#523...
+Neutral: ('plaatsen', 2)
+
+...#524...
+Neutral: ('schatje', 2)
+
+...#525...
+Neutral: ('echt', 2)
+
+...#526...
+Neutral: ('mama', 2)
+
+...#527...
+Neutral: ('toe', 2)
+
+...#528...
+Neutral: ('hotel', 2)
+
+...#529...
+Neutral: ('regelen', 2)
+
+...#530...
+Neutral: ('10', 2)
+
+...#531...
+Neutral: ('geluk', 2)
+
+...#532...
+Neutral: ('27ste', 2)
+
+...#533...
+Neutral: ('dank', 2)
+
+...#534...
+Neutral: ('werk', 2)
+
+...#535...
+Neutral: ('Prijs', 2)
+
+...#536...
+Neutral: ('Gaat', 2)
+
+...#537...
+Neutral: ('Zorg', 2)
+
+...#538...
+Neutral: ('eten', 2)
+
+...#539...
+Neutral: ('beschbaar', 2)
+
+...#540...
+Neutral: ('frontman', 2)
+
+...#541...
+Neutral: ('vertrekt', 2)
+
+...#542...
+Neutral: ('sGcFiPHd', 2)
+
+...#543...
+Neutral: ('misschien', 2)
+
+...#544...
+Neutral: ('Hay', 2)
+
+...#545...
+Neutral: ('ier', 2)
+
+...#546...
+Neutral: ('Klaar', 2)
+
+...#547...
+Neutral: ('bouwen', 2)
+
+...#548...
+Neutral: ('Jaaaaaa', 2)
+
+...#549...
+Neutral: ('rotterdam', 2)
+
+...#550...
+Neutral: ('zaar', 2)
+
+...#551...
+Neutral: ('l8zEos', 2)
+
+...#552...
+Neutral: ('he', 2)
+
+...#553...
+Neutral: ('treedt', 2)
+
+...#554...
+Neutral: ('Over', 2)
+
+...#555...
+Neutral: ('Trijntje', 2)
+
+...#556...
+Neutral: ('aftellen', 2)
+
+...#557...
+Neutral: ('jou', 2)
+
+...#558...
+Neutral: ('Rotterdamse', 2)
+
+...#559...
+Neutral: ('Mijn', 2)
+
+...#560...
+Neutral: ('Kaartjes', 2)
+
+...#561...
+Neutral: ('Cool', 2)
+
+...#562...
+Neutral: ('jammer', 2)
+
+...#563...
+Neutral: ('Zoeken', 2)
+
+...#564...
+Neutral: ('ce', 2)
+
+...#565...
+Neutral: ('gekregen', 2)
+
+...#566...
+Neutral: ('verschijnt', 2)
+
+...#567...
+Neutral: ('wilt', 2)
+
+...#568...
+Neutral: ('succes', 2)
+
+...#569...
+Neutral: ('vol', 2)
+
+...#570...
+Neutral: ('Tip', 2)
+
+...#571...
+Neutral: ('rij', 2)
+
+...#572...
+Neutral: ('helpen', 2)
+
+...#573...
+Neutral: ('elijk', 2)
+
+...#574...
+Neutral: ('Toch', 2)
+
+...#575...
+Neutral: ('9', 2)
+
+...#576...
+Neutral: ('party', 2)
+
+...#577...
+Neutral: ('Is', 2)
+
+...#578...
+Neutral: ('Helijk', 2)
+
+...#579...
+Neutral: ('In', 2)
+
+...#580...
+Neutral: ('durftevragen', 2)
+
+...#581...
+Neutral: ('tha', 2)
+
+...#582...
+Neutral: ('gehad', 2)
+
+...#583...
+Neutral: ('Mlgh41KD', 2)
+
+...#584...
+Neutral: ('xXHW6kXk', 2)
+
+...#585...
+Neutral: ('Dit', 2)
+
+...#586...
+Neutral: ('you', 2)
+
+...#587...
+Neutral: ('Dijk', 2)
+
+...#588...
+Neutral: ('vriennamstellive', 2)
+
+...#589...
+Neutral: ('vip', 2)
+
+...#590...
+Neutral: ('Niet', 2)
+
+...#591...
+Neutral: ('nk', 2)
+
+...#592...
+Neutral: ('Nee', 2)
+
+...#593...
+Neutral: ('vrij', 2)
+
+...#594...
+Neutral: ('o', 2)
+
+...#595...
+Neutral: ('vriendnen', 2)
+
+...#596...
+Neutral: ('velzen', 2)
+
+...#597...
+Neutral: ('Bus', 2)
+
+...#598...
+Neutral: ('kennen', 2)
+
+...#599...
+Neutral: ('waarschijnlijk', 2)
+
+...#600...
+Neutral: ('39fietsen', 2)
+
+...#601...
+Neutral: ('d', 2)
+
+...#602...
+Neutral: ('Waylon', 2)
+
+...#603...
+Neutral: ('was', 2)
+
+...#604...
+Neutral: ('relaxen', 2)
+
+...#605...
+Neutral: ('Let', 2)
+
+...#606...
+Neutral: ('Goln', 2)
+
+...#607...
+Neutral: ('fale', 2)
+
+...#608...
+Neutral: ('Grongen', 2)
+
+...#609...
+Neutral: ('x20ac95', 2)
+
+...#610...
+Neutral: ('Ben', 2)
+
+...#611...
+Neutral: ('shit', 2)
+
+...#612...
+Neutral: ('5', 2)
+
+...#613...
+Neutral: ('papa', 2)
+
+...#614...
+Neutral: ('ongeveer', 2)
+
+...#615...
+Neutral: ('heerlijk', 2)
+
+...#616...
+Neutral: ('Wauw', 2)
+
+...#617...
+Neutral: ('k4Ziuiha', 2)
+
+...#618...
+Neutral: ('thxfred', 1)
+
+...#619...
+Neutral: ('jaja', 1)
+
+...#620...
+Neutral: ('0', 1)
+
+...#621...
+Neutral: ('Mooi', 1)
+
+...#622...
+Neutral: ('slaapplek', 1)
+
+...#623...
+Neutral: ('WE', 1)
+
+...#624...
+Neutral: ('ge', 1)
+
+...#625...
+Neutral: ('VAL12Tpk0Vu5iKOMfacebook', 1)
+
+...#626...
+Neutral: ('Today', 1)
+
+...#627...
+Neutral: ('spuiten', 1)
+
+...#628...
+Neutral: ('Thuis', 1)
+
+...#629...
+Neutral: ('bnenkort', 1)
+
+...#630...
+Neutral: ('verkocht', 1)
+
+...#631...
+Neutral: ('uitzicht', 1)
+
+...#632...
+Neutral: ('Heze', 1)
+
+...#633...
+Neutral: ('doe', 1)
+
+...#634...
+Neutral: ('prijswnaars', 1)
+
+...#635...
+Neutral: ('Dan', 1)
+
+...#636...
+Neutral: ('plezier', 1)
+
+...#637...
+Neutral: ('rg', 1)
+
+...#638...
+Neutral: ('yyyyieeeeaaaahh', 1)
+
+...#639...
+Neutral: ('gelukkige', 1)
+
+...#640...
+Neutral: ('bankmetJURK', 1)
+
+...#641...
+Neutral: ('vergeten', 1)
+
+...#642...
+Neutral: ('Volgens', 1)
+
+...#643...
+Neutral: ('Holland', 1)
+
+...#644...
+Neutral: ('PHdyu9CT', 1)
+
+...#645...
+Neutral: ('maat', 1)
+
+...#646...
+Neutral: ('zekervet', 1)
+
+...#647...
+Neutral: ('evenement', 1)
+
+...#648...
+Neutral: ('hallen', 1)
+
+...#649...
+Neutral: ('7045', 1)
+
+...#650...
+Neutral: ('IgPiKZqE', 1)
+
+...#651...
+Neutral: ('GB', 1)
+
+...#652...
+Neutral: ('genieten', 1)
+
+...#653...
+Neutral: ('ma', 1)
+
+...#654...
+Neutral: ('ruk', 1)
+
+...#655...
+Neutral: ('ErwIlseJo', 1)
+
+...#656...
+Neutral: ('Sandra', 1)
+
+...#657...
+Neutral: ('Showaspx', 1)
+
+...#658...
+Neutral: ('dannaar', 1)
+
+...#659...
+Neutral: ('Morge', 1)
+
+...#660...
+Neutral: ('bracht', 1)
+
+...#661...
+Neutral: ('nouhij', 1)
+
+...#662...
+Neutral: ('wss', 1)
+
+...#663...
+Neutral: ('Dj', 1)
+
+...#664...
+Neutral: ('gebru', 1)
+
+...#665...
+Neutral: ('lauw', 1)
+
+...#666...
+Neutral: ('Vip', 1)
+
+...#667...
+Neutral: ('leverg', 1)
+
+...#668...
+Neutral: ('Xb3e76Gp', 1)
+
+...#669...
+Neutral: ('ten', 1)
+
+...#670...
+Neutral: ('geslaag', 1)
+
+...#671...
+Neutral: ('bestellen', 1)
+
+...#672...
+Neutral: ('BFCWAwuQ', 1)
+
+...#673...
+Neutral: ('za', 1)
+
+...#674...
+Neutral: ('kkh1x1Nn', 1)
+
+...#675...
+Neutral: ('vriend', 1)
+
+...#676...
+Neutral: ('Ren', 1)
+
+...#677...
+Neutral: ('ticketsh', 1)
+
+...#678...
+Neutral: ('kaarte', 1)
+
+...#679...
+Neutral: ('Heijne', 1)
+
+...#680...
+Neutral: ('GMKb6jKa', 1)
+
+...#681...
+Neutral: ('gezocht', 1)
+
+...#682...
+Neutral: ('besteld', 1)
+
+...#683...
+Neutral: ('nee', 1)
+
+...#684...
+Neutral: ('39dam', 1)
+
+...#685...
+Neutral: ('elementen', 1)
+
+...#686...
+Neutral: ('erg', 1)
+
+...#687...
+Neutral: ('heren', 1)
+
+...#688...
+Neutral: ('nerland', 1)
+
+...#689...
+Neutral: ('wezig', 1)
+
+...#690...
+Neutral: ('KAAEN', 1)
+
+...#691...
+Neutral: ('Schoenmaker', 1)
+
+...#692...
+Neutral: ('Helemaal', 1)
+
+...#693...
+Neutral: ('producent', 1)
+
+...#694...
+Neutral: ('QMurns7G', 1)
+
+...#695...
+Neutral: ('KRcUYFhK', 1)
+
+...#696...
+Neutral: ('liefhebber', 1)
+
+...#697...
+Neutral: ('studagen', 1)
+
+...#698...
+Neutral: ('weertoch', 1)
+
+...#699...
+Neutral: ('amiHi4Og', 1)
+
+...#700...
+Neutral: ('arena', 1)
+
+...#701...
+Neutral: ('beurs', 1)
+
+...#702...
+Neutral: ('Ieser', 1)
+
+...#703...
+Neutral: ('uurtje', 1)
+
+...#704...
+Neutral: ('Normaal', 1)
+
+...#705...
+Neutral: ('R0KgzeuS', 1)
+
+...#706...
+Neutral: ('Un', 1)
+
+...#707...
+Neutral: ('VxM5fYxA', 1)
+
+...#708...
+Neutral: ('reageren', 1)
+
+...#709...
+Neutral: ('845', 1)
+
+...#710...
+Neutral: ('bod', 1)
+
+...#711...
+Neutral: ('mimaal', 1)
+
+...#712...
+Neutral: ('naaar', 1)
+
+...#713...
+Neutral: ('Robert', 1)
+
+...#714...
+Neutral: ('jee', 1)
+
+...#715...
+Neutral: ('FB', 1)
+
+...#716...
+Neutral: ('eo', 1)
+
+...#717...
+Neutral: ('Jeh', 1)
+
+...#718...
+Neutral: ('leuke', 1)
+
+...#719...
+Neutral: ('Damers', 1)
+
+...#720...
+Neutral: ('VQ7wmfUp', 1)
+
+...#721...
+Neutral: ('countdown', 1)
+
+...#722...
+Neutral: ('qM4C52AP', 1)
+
+...#723...
+Neutral: ('super', 1)
+
+...#724...
+Neutral: ('bendrtijd', 1)
+
+...#725...
+Neutral: ('by', 1)
+
+...#726...
+Neutral: ('geval', 1)
+
+...#727...
+Neutral: ('heelheelheelveelz', 1)
+
+...#728...
+Neutral: ('12236', 1)
+
+...#729...
+Neutral: ('rek', 1)
+
+...#730...
+Neutral: ('Want', 1)
+
+...#731...
+Neutral: ('nken', 1)
+
+...#732...
+Neutral: ('los', 1)
+
+...#733...
+Neutral: ('tk', 1)
+
+...#734...
+Neutral: ('thuis', 1)
+
+...#735...
+Neutral: ('rachellepartytime', 1)
+
+...#736...
+Neutral: ('lieve', 1)
+
+...#737...
+Neutral: ('wilwel', 1)
+
+...#738...
+Neutral: ('3QqGMKFb', 1)
+
+...#739...
+Neutral: ('95', 1)
+
+...#740...
+Neutral: ('md', 1)
+
+...#741...
+Neutral: ('20ste', 1)
+
+...#742...
+Neutral: ('mc', 1)
+
+...#743...
+Neutral: ('UIT', 1)
+
+...#744...
+Neutral: ('onrweg', 1)
+
+...#745...
+Neutral: ('can', 1)
+
+...#746...
+Neutral: ('bieren', 1)
+
+...#747...
+Neutral: ('Behalve', 1)
+
+...#748...
+Neutral: ('wwwreclamelandnl', 1)
+
+...#749...
+Neutral: ('keet', 1)
+
+...#750...
+Neutral: ('600', 1)
+
+...#751...
+Neutral: ('tas', 1)
+
+...#752...
+Neutral: ('xe9r', 1)
+
+...#753...
+Neutral: ('Oppas', 1)
+
+...#754...
+Neutral: ('gedronken', 1)
+
+...#755...
+Neutral: ('Abl', 1)
+
+...#756...
+Neutral: ('neemt', 1)
+
+...#757...
+Neutral: ('Yeahhhhhhh', 1)
+
+...#758...
+Neutral: ('TVOH', 1)
+
+...#759...
+Neutral: ('VOOR', 1)
+
+...#760...
+Neutral: ('Nieuwsbrief', 1)
+
+...#761...
+Neutral: ('Party', 1)
+
+...#762...
+Neutral: ('contues', 1)
+
+...#763...
+Neutral: ('kost', 1)
+
+...#764...
+Neutral: ('gezwmen', 1)
+
+...#765...
+Neutral: ('anre', 1)
+
+...#766...
+Neutral: ('Shows', 1)
+
+...#767...
+Neutral: ('niets', 1)
+
+...#768...
+Neutral: ('niceee', 1)
+
+...#769...
+Neutral: ('Vroeg', 1)
+
+...#770...
+Neutral: ('pogg', 1)
+
+...#771...
+Neutral: ('fotoshoot', 1)
+
+...#772...
+Neutral: ('hou', 1)
+
+...#773...
+Neutral: ('19234', 1)
+
+...#774...
+Neutral: ('Bijna', 1)
+
+...#775...
+Neutral: ('hoogste', 1)
+
+...#776...
+Neutral: ('nnis', 1)
+
+...#777...
+Neutral: ('ap7mFT7a', 1)
+
+...#778...
+Neutral: ('verassg', 1)
+
+...#779...
+Neutral: ('bieracties', 1)
+
+...#780...
+Neutral: ('feestjeTot', 1)
+
+...#781...
+Neutral: ('A', 1)
+
+...#782...
+Neutral: ('EQhEKbz9', 1)
+
+...#783...
+Neutral: ('blijblijblij', 1)
+
+...#784...
+Neutral: ('Lessen', 1)
+
+...#785...
+Neutral: ('veldkaartje', 1)
+
+...#786...
+Neutral: ('ow', 1)
+
+...#787...
+Neutral: ('fb', 1)
+
+...#788...
+Neutral: ('Kroonjuweel', 1)
+
+...#789...
+Neutral: ('langs', 1)
+
+...#790...
+Neutral: ('8792', 1)
+
+...#791...
+Neutral: ('mam', 1)
+
+...#792...
+Neutral: ('ontst', 1)
+
+...#793...
+Neutral: ('VERVOER', 1)
+
+...#794...
+Neutral: ('spannend', 1)
+
+...#795...
+Neutral: ('Oorschot', 1)
+
+...#796...
+Neutral: ('Sabien', 1)
+
+...#797...
+Neutral: ('sh', 1)
+
+...#798...
+Neutral: ('Radio', 1)
+
+...#799...
+Neutral: ('Joepie', 1)
+
+...#800...
+Neutral: ('liggen', 1)
+
+...#801...
+Neutral: ('Hier', 1)
+
+...#802...
+Neutral: ('xxx', 1)
+
+...#803...
+Neutral: ('Tdagen', 1)
+
+...#804...
+Neutral: ('XwxhbDBw', 1)
+
+...#805...
+Neutral: ('besloten', 1)
+
+...#806...
+Neutral: ('presenteren', 1)
+
+...#807...
+Neutral: ('1226', 1)
+
+...#808...
+Neutral: ('Wij', 1)
+
+...#809...
+Neutral: ('stapplaatsen', 1)
+
+...#810...
+Neutral: ('zei', 1)
+
+...#811...
+Neutral: ('18750', 1)
+
+...#812...
+Neutral: ('gefeliciteerd', 1)
+
+...#813...
+Neutral: ('already', 1)
+
+...#814...
+Neutral: ('FPXI4xwo', 1)
+
+...#815...
+Neutral: ('heln', 1)
+
+...#816...
+Neutral: ('dagje', 1)
+
+...#817...
+Neutral: ('24', 1)
+
+...#818...
+Neutral: ('26', 1)
+
+...#819...
+Neutral: ('23', 1)
+
+...#820...
+Neutral: ('dusEn', 1)
+
+...#821...
+Neutral: ('Jij', 1)
+
+...#822...
+Neutral: ('zitten', 1)
+
+...#823...
+Neutral: ('21e', 1)
+
+...#824...
+Neutral: ('keuze', 1)
+
+...#825...
+Neutral: ('1375', 1)
+
+...#826...
+Neutral: ('kussen', 1)
+
+...#827...
+Neutral: ('2010', 1)
+
+...#828...
+Neutral: ('tryout', 1)
+
+...#829...
+Neutral: ('tje', 1)
+
+...#830...
+Neutral: ('radio2', 1)
+
+...#831...
+Neutral: ('2012INCL', 1)
+
+...#832...
+Neutral: ('Whiehoe', 1)
+
+...#833...
+Neutral: ('school', 1)
+
+...#834...
+Neutral: ('vroege', 1)
+
+...#835...
+Neutral: ('troupeavond', 1)
+
+...#836...
+Neutral: ('band', 1)
+
+...#837...
+Neutral: ('tails', 1)
+
+...#838...
+Neutral: ('Beste', 1)
+
+...#839...
+Neutral: ('NAAR', 1)
+
+...#840...
+Neutral: ('half', 1)
+
+...#841...
+Neutral: ('SUUUUPPPEEEEERRRR', 1)
+
+...#842...
+Neutral: ('bank', 1)
+
+...#843...
+Neutral: ('reactie', 1)
+
+...#844...
+Neutral: ('39vd', 1)
+
+...#845...
+Neutral: ('Interesse', 1)
+
+...#846...
+Neutral: ('Vanweek', 1)
+
+...#847...
+Neutral: ('warenuh', 1)
+
+...#848...
+Neutral: ('l', 1)
+
+...#849...
+Neutral: ('events', 1)
+
+...#850...
+Neutral: ('geken', 1)
+
+...#851...
+Neutral: ('zaalvoetbal', 1)
+
+...#852...
+Neutral: ('Sp679pTW', 1)
+
+...#853...
+Neutral: ('dpCP2tcF', 1)
+
+...#854...
+Neutral: ('backle', 1)
+
+...#855...
+Neutral: ('Kamphuis', 1)
+
+...#856...
+Neutral: ('yeah', 1)
+
+...#857...
+Neutral: ('horen', 1)
+
+...#858...
+Neutral: ('leuk', 1)
+
+...#859...
+Neutral: ('aloneventje', 1)
+
+...#860...
+Neutral: ('meegaat', 1)
+
+...#861...
+Neutral: ('3913', 1)
+
+...#862...
+Neutral: ('nnn', 1)
+
+...#863...
+Neutral: ('Persdag', 1)
+
+...#864...
+Neutral: ('album', 1)
+
+...#865...
+Neutral: ('Dus', 1)
+
+...#866...
+Neutral: ('miss', 1)
+
+...#867...
+Neutral: ('rep', 1)
+
+...#868...
+Neutral: ('load', 1)
+
+...#869...
+Neutral: ('HMH', 1)
+
+...#870...
+Neutral: ('bied', 1)
+
+...#871...
+Neutral: ('locatie', 1)
+
+...#872...
+Neutral: ('Brutus', 1)
+
+...#873...
+Neutral: ('pieperheerlijk', 1)
+
+...#874...
+Neutral: ('foto', 1)
+
+...#875...
+Neutral: ('EN', 1)
+
+...#876...
+Neutral: ('4pasySd6', 1)
+
+...#877...
+Neutral: ('Tpie', 1)
+
+...#878...
+Neutral: ('vak', 1)
+
+...#879...
+Neutral: ('gehaaldD', 1)
+
+...#880...
+Neutral: ('Here', 1)
+
+...#881...
+Neutral: ('janps', 1)
+
+...#882...
+Neutral: ('verassgen', 1)
+
+...#883...
+Neutral: ('bleek', 1)
+
+...#884...
+Neutral: ('please', 1)
+
+...#885...
+Neutral: ('plaatsWij', 1)
+
+...#886...
+Neutral: ('kroonjuwelen', 1)
+
+...#887...
+Neutral: ('kon', 1)
+
+...#888...
+Neutral: ('days', 1)
+
+...#889...
+Neutral: ('Oosterhuis', 1)
+
+...#890...
+Neutral: ('zozo', 1)
+
+...#891...
+Neutral: ('1225', 1)
+
+...#892...
+Neutral: ('vloek', 1)
+
+...#893...
+Neutral: ('groep', 1)
+
+...#894...
+Neutral: ('samenstellg', 1)
+
+...#895...
+Neutral: ('hpakee', 1)
+
+...#896...
+Neutral: ('4XoUBD1O', 1)
+
+...#897...
+Neutral: ('100000man', 1)
+
+...#898...
+Neutral: ('telefoontje', 1)
+
+...#899...
+Neutral: ('hoeveelnachtjesnog', 1)
+
+...#900...
+Neutral: ('tijdstip', 1)
+
+...#901...
+Neutral: ('PER', 1)
+
+...#902...
+Neutral: ('nachies', 1)
+
+...#903...
+Neutral: ('mazzel', 1)
+
+...#904...
+Neutral: ('altijd', 1)
+
+...#905...
+Neutral: ('leukste', 1)
+
+...#906...
+Neutral: ('zaterdagsavond', 1)
+
+...#907...
+Neutral: ('1x', 1)
+
+...#908...
+Neutral: ('mams', 1)
+
+...#909...
+Neutral: ('1e', 1)
+
+...#910...
+Neutral: ('Buisonje', 1)
+
+...#911...
+Neutral: ('digen', 1)
+
+...#912...
+Neutral: ('vele', 1)
+
+...#913...
+Neutral: ('blijkt', 1)
+
+...#914...
+Neutral: ('veld', 1)
+
+...#915...
+Neutral: ('Guus', 1)
+
+...#916...
+Neutral: ('gerelaxte', 1)
+
+...#917...
+Neutral: ('Eerst', 1)
+
+...#918...
+Neutral: ('slapenen', 1)
+
+...#919...
+Neutral: ('lkBfqBsw', 1)
+
+...#920...
+Neutral: ('toevallig', 1)
+
+...#921...
+Neutral: ('480', 1)
+
+...#922...
+Neutral: ('R', 1)
+
+...#923...
+Neutral: ('Greets', 1)
+
+...#924...
+Neutral: ('driemaal', 1)
+
+...#925...
+Neutral: ('Smit', 1)
+
+...#926...
+Neutral: ('hen', 1)
+
+...#927...
+Neutral: ('EUR', 1)
+
+...#928...
+Neutral: ('Rmy', 1)
+
+...#929...
+Neutral: ('vertelt', 1)
+
+...#930...
+Neutral: ('skivakantie', 1)
+
+...#931...
+Neutral: ('See', 1)
+
+...#932...
+Neutral: ('sneeuw', 1)
+
+...#933...
+Neutral: ('Zaterdag', 1)
+
+...#934...
+Neutral: ('beter', 1)
+
+...#935...
+Neutral: ('geregel', 1)
+
+...#936...
+Neutral: ('Goe', 1)
+
+...#937...
+Neutral: ('z9iPLISL', 1)
+
+...#938...
+Neutral: ('7500', 1)
+
+...#939...
+Neutral: ('gaves', 1)
+
+...#940...
+Neutral: ('uniek', 1)
+
+...#941...
+Neutral: ('weekje', 1)
+
+...#942...
+Neutral: ('COMEWe', 1)
+
+...#943...
+Neutral: ('u0ga4W6K', 1)
+
+...#944...
+Neutral: ('neee', 1)
+
+...#945...
+Neutral: ('drukke', 1)
+
+...#946...
+Neutral: ('lid', 1)
+
+...#947...
+Neutral: ('Mirjam', 1)
+
+...#948...
+Neutral: ('prijs', 1)
+
+...#949...
+Neutral: ('editie', 1)
+
+...#950...
+Neutral: ('57', 1)
+
+...#951...
+Neutral: ('Wnaars', 1)
+
+...#952...
+Neutral: ('totaal', 1)
+
+...#953...
+Neutral: ('knappenmaar', 1)
+
+...#954...
+Neutral: ('a', 1)
+
+...#955...
+Neutral: ('mathijs', 1)
+
+...#956...
+Neutral: ('btj', 1)
+
+...#957...
+Neutral: ('hun', 1)
+
+...#958...
+Neutral: ('Gelresch', 1)
+
+...#959...
+Neutral: ('Qu', 1)
+
+...#960...
+Neutral: ('vervelend', 1)
+
+...#961...
+Neutral: ('LIve', 1)
+
+...#962...
+Neutral: ('mischien', 1)
+
+...#963...
+Neutral: ('Factor', 1)
+
+...#964...
+Neutral: ('virus', 1)
+
+...#965...
+Neutral: ('gedachte', 1)
+
+...#966...
+Neutral: ('Jawel', 1)
+
+...#967...
+Neutral: ('grolsch', 1)
+
+...#968...
+Neutral: ('tussendoor', 1)
+
+...#969...
+Neutral: ('2330', 1)
+
+...#970...
+Neutral: ('Kottk', 1)
+
+...#971...
+Neutral: ('zoals', 1)
+
+...#972...
+Neutral: ('Veld', 1)
+
+...#973...
+Neutral: ('welke', 1)
+
+...#974...
+Neutral: ('Een', 1)
+
+...#975...
+Neutral: ('pic', 1)
+
+...#976...
+Neutral: ('Zet', 1)
+
+...#977...
+Neutral: ('Ticketloket', 1)
+
+...#978...
+Neutral: ('Okee', 1)
+
+...#979...
+Neutral: ('Afgerond', 1)
+
+...#980...
+Neutral: ('dames', 1)
+
+...#981...
+Neutral: ('Barry', 1)
+
+...#982...
+Neutral: ('goln', 1)
+
+...#983...
+Neutral: ('HEUL', 1)
+
+...#984...
+Neutral: ('krijgen', 1)
+
+...#985...
+Neutral: ('smorgesvroeg', 1)
+
+...#986...
+Neutral: ('JANUARI', 1)
+
+...#987...
+Neutral: ('Anna', 1)
+
+...#988...
+Neutral: ('priv', 1)
+
+...#989...
+Neutral: ('Bij', 1)
+
+...#990...
+Neutral: ('eigenlijk', 1)
+
+...#991...
+Neutral: ('hadn', 1)
+
+...#992...
+Neutral: ('3JS', 1)
+
+...#993...
+Neutral: ('bEetje', 1)
+
+...#994...
+Neutral: ('beekweek', 1)
+
+...#995...
+Neutral: ('daag', 1)
+
+...#996...
+Neutral: ('Uitzendg', 1)
+
+...#997...
+Neutral: ('Jo', 1)
+
+...#998...
+Neutral: ('XCVAwQNV', 1)
+
+...#999...
+Neutral: ('gehore', 1)
+
+...#1000...
+Neutral: ('bezoek', 1)
+
+...#1001...
+Neutral: ('8kaartjes', 1)
+
+...#1002...
+Neutral: ('Ja', 1)
+
+...#1003...
+Neutral: ('tentame', 1)
+
+...#1004...
+Neutral: ('do', 1)
+
+...#1005...
+Neutral: ('6250', 1)
+
+...#1006...
+Neutral: ('H', 1)
+
+...#1007...
+Neutral: ('Aan', 1)
+
+...#1008...
+Neutral: ('WEL', 1)
+
+...#1009...
+Neutral: ('goedbezig', 1)
+
+...#1010...
+Neutral: ('Quick', 1)
+
+...#1011...
+Neutral: ('eruit', 1)
+
+...#1012...
+Neutral: ('geef', 1)
+
+...#1013...
+Neutral: ('Zou', 1)
+
+...#1014...
+Neutral: ('Help', 1)
+
+...#1015...
+Neutral: ('partij', 1)
+
+...#1016...
+Neutral: ('h', 1)
+
+...#1017...
+Neutral: ('earg', 1)
+
+...#1018...
+Neutral: ('bellen', 1)
+
+...#1019...
+Neutral: ('rolstoel', 1)
+
+...#1020...
+Neutral: ('wezijner', 1)
+
+...#1021...
+Neutral: ('werkweek', 1)
+
+...#1022...
+Neutral: ('333', 1)
+
+...#1023...
+Neutral: ('Marion', 1)
+
+...#1024...
+Neutral: ('meedoen', 1)
+
+...#1025...
+Neutral: ('alsnog', 1)
+
+...#1026...
+Neutral: ('53764', 1)
+
+...#1027...
+Neutral: ('iets', 1)
+
+...#1028...
+Neutral: ('DDD', 1)
+
+...#1029...
+Neutral: ('liveHERE', 1)
+
+...#1030...
+Neutral: ('gewekt', 1)
+
+...#1031...
+Neutral: ('Onrweg', 1)
+
+...#1032...
+Neutral: ('cpetitie', 1)
+
+...#1033...
+Neutral: ('besmettelijk', 1)
+
+...#1034...
+Neutral: ('up', 1)
+
+...#1035...
+Neutral: ('protie', 1)
+
+...#1036...
+Neutral: ('bed', 1)
+
+...#1037...
+Neutral: ('feesten', 1)
+
+...#1038...
+Neutral: ('geknapt', 1)
+
+...#1039...
+Neutral: ('nachtjes', 1)
+
+...#1040...
+Neutral: ('Wouter', 1)
+
+...#1041...
+Neutral: ('Dmelsch', 1)
+
+...#1042...
+Neutral: ('BUS', 1)
+
+...#1043...
+Neutral: ('Sonl', 1)
+
+...#1044...
+Neutral: ('VIXJGTKR', 1)
+
+...#1045...
+Neutral: ('keertje', 1)
+
+...#1046...
+Neutral: ('BIED', 1)
+
+...#1047...
+Neutral: ('boswanlg', 1)
+
+...#1048...
+Neutral: ('vond', 1)
+
+...#1049...
+Neutral: ('email', 1)
+
+...#1050...
+Neutral: ('OtQ3nP8P', 1)
+
+...#1051...
+Neutral: ('gister', 1)
+
+...#1052...
+Neutral: ('richtg', 1)
+
+...#1053...
+Neutral: ('mIGIZu8G', 1)
+
+...#1054...
+Neutral: ('zoveel', 1)
+
+...#1055...
+Neutral: ('luisteren', 1)
+
+...#1056...
+Neutral: ('le', 1)
+
+...#1057...
+Neutral: ('Wachten', 1)
+
+...#1058...
+Neutral: ('falisten', 1)
+
+...#1059...
+Neutral: ('Tres', 1)
+
+...#1060...
+Neutral: ('hits', 1)
+
+...#1061...
+Neutral: ('bussie', 1)
+
+...#1062...
+Neutral: ('stukje', 1)
+
+...#1063...
+Neutral: ('Beterschap', 1)
+
+...#1064...
+Neutral: ('Stefan', 1)
+
+...#1065...
+Neutral: ('cl', 1)
+
+...#1066...
+Neutral: ('hyves', 1)
+
+...#1067...
+Neutral: ('Shit', 1)
+
+...#1068...
+Neutral: ('Hen', 1)
+
+...#1069...
+Neutral: ('missen', 1)
+
+...#1070...
+Neutral: ('Notk', 1)
+
+...#1071...
+Neutral: ('Vval', 1)
+
+...#1072...
+Neutral: ('rYCXjiOt', 1)
+
+...#1073...
+Neutral: ('ps', 1)
+
+...#1074...
+Neutral: ('Amstelbier', 1)
+
+...#1075...
+Neutral: ('draaien', 1)
+
+...#1076...
+Neutral: ('7093', 1)
+
+...#1077...
+Neutral: ('buren', 1)
+
+...#1078...
+Neutral: ('vvazk', 1)
+
+...#1079...
+Neutral: ('4wosXoug', 1)
+
+...#1080...
+Neutral: ('Anneke', 1)
+
+...#1081...
+Neutral: ('scherp', 1)
+
+...#1082...
+Neutral: ('hval', 1)
+
+...#1083...
+Neutral: ('vval2012', 1)
+
+...#1084...
+Neutral: ('geeft', 1)
+
+...#1085...
+Neutral: ('26jan2012', 1)
+
+...#1086...
+Neutral: ('veldkaartjes', 1)
+
+...#1087...
+Neutral: ('gezellige', 1)
+
+...#1088...
+Neutral: ('Dren', 1)
+
+...#1089...
+Neutral: ('zich', 1)
+
+...#1090...
+Neutral: ('annulergen', 1)
+
+...#1091...
+Neutral: ('chill', 1)
+
+...#1092...
+Neutral: ('rangskaarten', 1)
+
+...#1093...
+Neutral: ('n4fpWV4q', 1)
+
+...#1094...
+Neutral: ('And', 1)
+
+...#1095...
+Neutral: ('officiele', 1)
+
+...#1096...
+Neutral: ('geweldig', 1)
+
+...#1097...
+Neutral: ('bedje', 1)
+
+...#1098...
+Neutral: ('vraagje', 1)
+
+...#1099...
+Neutral: ('boyzz', 1)
+
+...#1100...
+Neutral: ('verjaardagen', 1)
+
+...#1101...
+Neutral: ('Concerten', 1)
+
+...#1102...
+Neutral: ('wege', 1)
+
+...#1103...
+Neutral: ('tegen', 1)
+
+...#1104...
+Neutral: ('wiln', 1)
+
+...#1105...
+Neutral: ('dagjeuit', 1)
+
+...#1106...
+Neutral: ('buurt', 1)
+
+...#1107...
+Neutral: ('amstelkeb', 1)
+
+...#1108...
+Neutral: ('Tickets', 1)
+
+...#1109...
+Neutral: ('cont', 1)
+
+...#1110...
+Neutral: ('Owww', 1)
+
+...#1111...
+Neutral: ('7rD7QvY1', 1)
+
+...#1112...
+Neutral: ('Bestel', 1)
+
+...#1113...
+Neutral: ('vn', 1)
+
+...#1114...
+Neutral: ('lust', 1)
+
+...#1115...
+Neutral: ('Walga', 1)
+
+...#1116...
+Neutral: ('Reizen', 1)
+
+...#1117...
+Neutral: ('ready', 1)
+
+...#1118...
+Neutral: ('Ok', 1)
+
+...#1119...
+Neutral: ('ie', 1)
+
+...#1120...
+Neutral: ('nietZondag', 1)
+
+...#1121...
+Neutral: ('Te', 1)
+
+...#1122...
+Neutral: ('39vrienn', 1)
+
+...#1123...
+Neutral: ('Gezellig', 1)
+
+...#1124...
+Neutral: ('tour', 1)
+
+...#1125...
+Neutral: ('latertje', 1)
+
+...#1126...
+Neutral: ('saskia', 1)
+
+...#1127...
+Neutral: ('gtpmj', 1)
+
+...#1128...
+Neutral: ('followers', 1)
+
+...#1129...
+Neutral: ('plaats', 1)
+
+...#1130...
+Neutral: ('7324', 1)
+
+...#1131...
+Neutral: ('vera', 1)
+
+...#1132...
+Neutral: ('dgn', 1)
+
+...#1133...
+Neutral: ('nie', 1)
+
+...#1134...
+Neutral: ('brak', 1)
+
+...#1135...
+Neutral: ('vvk', 1)
+
+...#1136...
+Neutral: ('vd', 1)
+
+...#1137...
+Neutral: ('Aanschaf', 1)
+
+...#1138...
+Neutral: ('tadaaa', 1)
+
+...#1139...
+Neutral: ('brengt', 1)
+
+...#1140...
+Neutral: ('tjah', 1)
+
+...#1141...
+Neutral: ('Zuid', 1)
+
+...#1142...
+Neutral: ('Pierre', 1)
+
+...#1143...
+Neutral: ('know', 1)
+
+...#1144...
+Neutral: ('doet', 1)
+
+...#1145...
+Neutral: ('Overnachtgen', 1)
+
+...#1146...
+Neutral: ('VsxAT1QY', 1)
+
+...#1147...
+Neutral: ('machen', 1)
+
+...#1148...
+Neutral: ('kaar', 1)
+
+...#1149...
+Neutral: ('drie', 1)
+
+...#1150...
+Neutral: ('QN1PMQeC', 1)
+
+...#1151...
+Neutral: ('left', 1)
+
+...#1152...
+Neutral: ('RDOM', 1)
+
+...#1153...
+Neutral: ('After', 1)
+
+...#1154...
+Neutral: ('zienwe', 1)
+
+...#1155...
+Neutral: ('dar', 1)
+
+...#1156...
+Neutral: ('26e', 1)
+
+...#1157...
+Neutral: ('meneer', 1)
+
+...#1158...
+Neutral: ('Slamfm', 1)
+
+...#1159...
+Neutral: ('Pfff', 1)
+
+...#1160...
+Neutral: ('va', 1)
+
+...#1161...
+Neutral: ('not', 1)
+
+...#1162...
+Neutral: ('7110', 1)
+
+...#1163...
+Neutral: ('eerst', 1)
+
+...#1164...
+Neutral: ('onbetrouwbaar', 1)
+
+...#1165...
+Neutral: ('Gefeliciteerd', 1)
+
+...#1166...
+Neutral: ('tafeltennis', 1)
+
+...#1167...
+Neutral: ('ist', 1)
+
+...#1168...
+Neutral: ('ZATERDAG', 1)
+
+...#1169...
+Neutral: ('dusss', 1)
+
+...#1170...
+Neutral: ('mdje', 1)
+
+...#1171...
+Neutral: ('KAAJES', 1)
+
+...#1172...
+Neutral: ('had', 1)
+
+...#1173...
+Neutral: ('gestuurd', 1)
+
+...#1174...
+Neutral: ('Waar', 1)
+
+...#1175...
+Neutral: ('L6CPbZ', 1)
+
+...#1176...
+Neutral: ('aTnLJqbZ', 1)
+
+...#1177...
+Neutral: ('ski', 1)
+
+...#1178...
+Neutral: ('ceeeeeeee', 1)
+
+...#1179...
+Neutral: ('stoel', 1)
+
+...#1180...
+Neutral: ('On', 1)
+
+...#1181...
+Neutral: ('Om', 1)
+
+...#1182...
+Neutral: ('Paulowna', 1)
+
+...#1183...
+Neutral: ('midls', 1)
+
+...#1184...
+Neutral: ('Jongens', 1)
+
+...#1185...
+Neutral: ('prijsuitreg', 1)
+
+...#1186...
+Neutral: ('Of', 1)
+
+...#1187...
+Neutral: ('120393728071036', 1)
+
+...#1188...
+Neutral: ('8147', 1)
+
+...#1189...
+Neutral: ('Hey', 1)
+
+...#1190...
+Neutral: ('Tour', 1)
+
+...#1191...
+Neutral: ('regio', 1)
+
+...#1192...
+Neutral: ('viertjes', 1)
+
+...#1193...
+Neutral: ('lB1D6i3I', 1)
+
+...#1194...
+Neutral: ('nteresseern', 1)
+
+...#1195...
+Neutral: ('loss', 1)
+
+...#1196...
+Neutral: ('58', 1)
+
+...#1197...
+Neutral: ('volgens', 1)
+
+...#1198...
+Neutral: ('MAAR', 1)
+
+...#1199...
+Neutral: ('prijsvraag', 1)
+
+...#1200...
+Neutral: ('beterewerk', 1)
+
+...#1201...
+Neutral: ('8700', 1)
+
+...#1202...
+Neutral: ('2kaarten', 1)
+
+...#1203...
+Neutral: ('Enig', 1)
+
+...#1204...
+Neutral: ('Aftellen', 1)
+
+...#1205...
+Neutral: ('Geesteren', 1)
+
+...#1206...
+Neutral: ('Nel', 1)
+
+...#1207...
+Neutral: ('right', 1)
+
+...#1208...
+Neutral: ('reacties', 1)
+
+...#1209...
+Neutral: ('zoektocht', 1)
+
+...#1210...
+Neutral: ('berein', 1)
+
+...#1211...
+Neutral: ('aaaaaaaaaaaaah', 1)
+
+...#1212...
+Neutral: ('Net', 1)
+
+...#1213...
+Neutral: ('ANWB_webcare', 1)
+
+...#1214...
+Neutral: ('vsn', 1)
+
+...#1215...
+Neutral: ('valreep', 1)
+
+...#1216...
+Neutral: ('Life', 1)
+
+...#1217...
+Neutral: ('weekendnaar', 1)
+
+...#1218...
+Neutral: ('betaald', 1)
+
+...#1219...
+Neutral: ('Prbordfoto', 1)
+
+...#1220...
+Neutral: ('Woehoe', 1)
+
+...#1221...
+Neutral: ('Met', 1)
+
+...#1222...
+Neutral: ('mogen', 1)
+
+...#1223...
+Neutral: ('Ho', 1)
+
+...#1224...
+Neutral: ('planng', 1)
+
+...#1225...
+Neutral: ('1396', 1)
+
+...#1226...
+Neutral: ('uitslapen', 1)
+
+...#1227...
+Neutral: ('Nerlandstalige', 1)
+
+...#1228...
+Neutral: ('be', 1)
+
+...#1229...
+Neutral: ('kapot', 1)
+
+...#1230...
+Neutral: ('daarna', 1)
+
+...#1231...
+Neutral: ('Elijk', 1)
+
+...#1232...
+Neutral: ('bu', 1)
+
+...#1233...
+Neutral: ('graag', 1)
+
+...#1234...
+Neutral: ('bkelen', 1)
+
+...#1235...
+Neutral: ('ofzo', 1)
+
+...#1236...
+Neutral: ('zaterdagavond', 1)
+
+...#1237...
+Neutral: ('proeven', 1)
+
+...#1238...
+Neutral: ('xebn', 1)
+
+...#1239...
+Neutral: ('Tribe', 1)
+
+...#1240...
+Neutral: ('Hoef', 1)
+
+...#1241...
+Neutral: ('bekijken', 1)
+
+...#1242...
+Neutral: ('Alfa', 1)
+
+...#1243...
+Neutral: ('bloemetje', 1)
+
+...#1244...
+Neutral: ('geblazen', 1)
+
+...#1245...
+Neutral: ('oh', 1)
+
+...#1246...
+Neutral: ('belangrijk', 1)
+
+...#1247...
+Neutral: ('GEWONNEN', 1)
+
+...#1248...
+Neutral: ('Rowwen', 1)
+
+...#1249...
+Neutral: ('podium', 1)
+
+...#1250...
+Neutral: ('supergezellig', 1)
+
+...#1251...
+Neutral: ('28ste', 1)
+
+...#1252...
+Neutral: ('Katola', 1)
+
+...#1253...
+Neutral: ('dsdag', 1)
+
+...#1254...
+Neutral: ('Misschien', 1)
+
+...#1255...
+Neutral: ('kuip', 1)
+
+...#1256...
+Neutral: ('27jan', 1)
+
+...#1257...
+Neutral: ('YESkaartjes', 1)
+
+...#1258...
+Neutral: ('kwijt', 1)
+
+...#1259...
+Neutral: ('versie', 1)
+
+...#1260...
+Neutral: ('liveheb', 1)
+
+...#1261...
+Neutral: ('gedoe', 1)
+
+...#1262...
+Neutral: ('o6Wy6cpA', 1)
+
+...#1263...
+Neutral: ('geleverd', 1)
+
+...#1264...
+Neutral: ('koud', 1)
+
+...#1265...
+Neutral: ('rondje', 1)
+
+...#1266...
+Neutral: ('RAAK', 1)
+
+...#1267...
+Neutral: ('anren', 1)
+
+...#1268...
+Neutral: ('leuker', 1)
+
+...#1269...
+Neutral: ('Renee', 1)
+
+...#1270...
+Neutral: ('LEEEUKKKK', 1)
+
+...#1271...
+Neutral: ('vallen', 1)
+
+...#1272...
+Neutral: ('Ook', 1)
+
+...#1273...
+Neutral: ('smit', 1)
+
+...#1274...
+Neutral: ('YESSSSS', 1)
+
+...#1275...
+Neutral: ('personeelsfeest', 1)
+
+...#1276...
+Neutral: ('Charly', 1)
+
+...#1277...
+Neutral: ('hel', 1)
+
+...#1278...
+Neutral: ('gzitten', 1)
+
+...#1279...
+Neutral: ('VEREK', 1)
+
+...#1280...
+Neutral: ('hard', 1)
+
+...#1281...
+Neutral: ('ed', 1)
+
+...#1282...
+Neutral: ('Manusje', 1)
+
+...#1283...
+Neutral: ('UyoVFn96', 1)
+
+...#1284...
+Neutral: ('Schrijf', 1)
+
+...#1285...
+Neutral: ('6885', 1)
+
+...#1286...
+Neutral: ('ho', 1)
+
+...#1287...
+Neutral: ('Yess', 1)
+
+...#1288...
+Neutral: ('leukD', 1)
+
+...#1289...
+Neutral: ('220', 1)
+
+...#1290...
+Neutral: ('Astrid', 1)
+
+...#1291...
+Neutral: ('Jayn', 1)
+
+...#1292...
+Neutral: ('pilske', 1)
+
+...#1293...
+Neutral: ('Esme', 1)
+
+...#1294...
+Neutral: ('Yeah', 1)
+
+...#1295...
+Neutral: ('bezig', 1)
+
+...#1296...
+Neutral: ('stondallangmijnlijstje', 1)
+
+...#1297...
+Neutral: ('wist', 1)
+
+...#1298...
+Neutral: ('x20ac6750', 1)
+
+...#1299...
+Neutral: ('tmHIFoiu', 1)
+
+...#1300...
+Neutral: ('uitkijken', 1)
+
+...#1301...
+Neutral: ('slken', 1)
+
+...#1302...
+Neutral: ('zette', 1)
+
+...#1303...
+Neutral: ('Alle', 1)
+
+...#1304...
+Neutral: ('Luchtgitaar', 1)
+
+...#1305...
+Neutral: ('an', 1)
+
+...#1306...
+Neutral: ('diverse', 1)
+
+...#1307...
+Neutral: ('Bakker', 1)
+
+...#1308...
+Neutral: ('kant', 1)
+
+...#1309...
+Neutral: ('vakantie', 1)
+
+...#1310...
+Neutral: ('plaatsuggestie', 1)
+
+...#1311...
+Neutral: ('QpggvZJX', 1)
+
+...#1312...
+Neutral: ('nemen', 1)
+
+...#1313...
+Neutral: ('us', 1)
+
+...#1314...
+Neutral: ('Wooow', 1)
+
+...#1315...
+Neutral: ('relatie', 1)
+
+...#1316...
+Neutral: ('2000', 1)
+
+...#1317...
+Neutral: ('liefste', 1)
+
+...#1318...
+Neutral: ('afpilsen', 1)
+
+...#1319...
+Neutral: ('sowieso', 1)
+
+...#1320...
+Neutral: ('webshseeticketsnl', 1)
+
+...#1321...
+Neutral: ('lijkt', 1)
+
+...#1322...
+Neutral: ('uitzendg', 1)
+
+...#1323...
+Neutral: ('ongeluks', 1)
+
+...#1324...
+Neutral: ('ritme', 1)
+
+...#1325...
+Neutral: ('ll', 1)
+
+...#1326...
+Neutral: ('E', 1)
+
+...#1327...
+Neutral: ('KATWIJK8800', 1)
+
+...#1328...
+Neutral: ('9354', 1)
+
+...#1329...
+Neutral: ('actie', 1)
+
+...#1330...
+Neutral: ('Joyce', 1)
+
+...#1331...
+Neutral: ('zonr', 1)
+
+...#1332...
+Neutral: ('terview', 1)
+
+...#1333...
+Neutral: ('U', 1)
+
+...#1334...
+Neutral: ('nummers', 1)
+
+...#1335...
+Neutral: ('broertjelief', 1)
+
+...#1336...
+Neutral: ('Wt', 1)
+
+...#1337...
+Neutral: ('IFRHn1WR', 1)
+
+...#1338...
+Neutral: ('lang', 1)
+
+...#1339...
+Neutral: ('niveau', 1)
+
+...#1340...
+Neutral: ('Ah', 1)
+
+...#1341...
+Neutral: ('Wil', 1)
+
+...#1342...
+Neutral: ('daarh', 1)
+
+...#1343...
+Neutral: ('werkenbouw', 1)
+
+...#1344...
+Neutral: ('35000', 1)
+
+...#1345...
+Neutral: ('As', 1)
+
+...#1346...
+Neutral: ('u', 1)
+
+...#1347...
+Neutral: ('dicht', 1)
+
+...#1348...
+Neutral: ('liveee', 1)
+
+...#1349...
+Neutral: ('Mel', 1)
+
+...#1350...
+Neutral: ('KAAJE', 1)
+
