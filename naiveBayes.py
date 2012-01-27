@@ -49,6 +49,7 @@ class Main():
             print "--- iteration", i + 1, "of", iterations, "---"
             
             # Reset variables
+            self.naiveBayes = {}
             self.trainSet = []
             self.testSet = []
             self.priorNeutral  = 0
@@ -87,37 +88,37 @@ class Main():
                 confusion[int(sent+1)][int(clas+1)] += 1
                 
             print confusion
-            for n in range(3):
-                for m in range(3):
-                    allconfusion[n][m] += confusion[n][m]
+            for j in range(3):
+                for k in range(3):
+                    allconfusion[j][k] += confusion[j][k]
 
         # Calculate mean
         print 'Average:'
         total = 0
-        for n in range(3):
-            for m in range(3):
-                allconfusion[n][m] /= float(iterations)
-                total += allconfusion[n][m]
+        for i in range(3):
+            for j in range(3):
+                allconfusion[i][j] /= float(iterations)
+                total += allconfusion[i][j]
 
         #acc = (allconfusion[0][0] + allconfusion[1][1] + allconfusion[2][2]) / float(total)
         # for every real class
         s = 0
-        for n in range(3):
-            row_sum = sum(allconfusion[n])
+        for i in range(3):
+            row_sum = sum(allconfusion[i])
             s+= row_sum
             
-        for n in range(3):
-            row_sum = sum(allconfusion[n])
+        for i in range(3):
+            row_sum = sum(allconfusion[i])
             col_sum = 0
-            for m in range(3):
-                col_sum += confusion[m][n]
+            for j in range(3):
+                col_sum += confusion[j][i]
                 
-            truepositives = float(allconfusion[n][n])
+            truepositives = float(allconfusion[i][i])
             truenegatives = s - row_sum - col_sum + truepositives
             falsepositives = col_sum - truepositives
             falsenegatives = row_sum - truepositives
 
-            print 'For class ', n , ':'
+            print 'For {0}-class:'.format(['Negative','Neutral','Positive'][i])
             
             rec = truepositives / (truepositives + falsenegatives )
             pre = truepositives / ( truepositives + falsepositives )
