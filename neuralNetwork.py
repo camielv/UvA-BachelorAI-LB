@@ -90,7 +90,7 @@ def neuralNetwork(iterations = 20):
     # Get current time
     now = time.time()
     
-    senten = initializeCorpus( 1, 50 )
+    senten = initializeCorpus( 1, 1000 )
     (sentence, sentiment, num_sentences) = senten
 
     # create a corpus
@@ -106,108 +106,128 @@ def neuralNetwork(iterations = 20):
     layerNodes = dict()
     outputNodes = dict()
 
-    num_hidden = len(inputVector)
+    num_hidden = len(inputVector[0])
     num_classes = 3
-    
+    lengthInput = len(inputVector[0])
+            
     # inputnodes have a value, weight
     # layernodes have a value, weight,
     # outputnodes only a value
     inputNodes = {'v':dict(), 'w':dict()}
     layerNodes = {'v':dict(), 'w':dict()}
     outputNodes = {'v':dict() }
-    
-    for iteration in range(iterations):
-        print 'Iteration', iteration+1, ':'
+
+    # initialize weights
+    for i in range(lengthInput):
+
+        inputNodes['w'][i] = dict()
+        for j in range( num_hidden ):
+            # weight from node i to node j are 1
+            inputNodes['w'][i][j] = 1
+
+    for j in range( num_hidden ):
+        layerNodes['w'][j] = dict()
+        for k in range( num_classes ):
+            # weight from node j to k are 1
+            layerNodes['w'][j][k] = 1
+
+    # testing weights
+    for i in range(lengthInput):
+        for j in range( num_hidden ):
+            inputNodes['w'][i][j] = 0.2
+    for j in range(num_hidden):
+        for k in range(num_classes):
+            layerNodes['w'][j][k] = 0.2
+
+        
+    for iteration in range( iterations ):
+        print 'Iteration', iteration + 1, '::::::'
         Delta = {0:dict(), 1:dict()}
 
-        for t in trainSet:
+        # initialize Delta
+        for i in range( lengthInput ):
+            Delta[0][i] = dict()
+            for j in range( num_hidden ):
+                Delta[0][i][j] = 0
+                Delta[1][j] = dict()
+                for k in range( num_classes ):
+                    Delta[1][j][k] = 0
+        
+        for t in range(1):
             s = sentence[t]
 
-            # initialize Delta
-            for i in range(len(inputVector)):
-                Delta[0][i] = dict()
-                for j in range( num_hidden ):
-                    Delta[0][i][j] = 0
-                    Delta[1][j] = dict()
-                    for k in range( num_classes ):
-                        Delta[1][j][k] = 0
-
             # initialize input
-            for i in range(len(inputVector)):
+            for i in range( lengthInput ):
                 # copy input values
                 inputNodes['v'][i] = inputVector[t][i]
-
-                inputNodes['w'][i] = dict()
-                for j in range( num_hidden ):
-                    # weight from node i to node j
-                    inputNodes['w'][i][j] = 1
-                    layerNodes['w'][j] = dict()
-                    for k in range( num_classes ):
-                        # weight from node j to k
-                        layerNodes['w'][j][k] = 1
-
+            
             # forward progapagation
             for j in range( num_hidden ):
                 inputValue = 0
-                for i in range( len( inputVector ) ):
-                    inputValue += inputNodes['v'][j] * inputNodes['w'][i][j]
+                for i in range( lengthInput ):
+                    inputValue += inputNodes['v'][i] * inputNodes['w'][i][j]
                 layerNodes['v'][j] = (1  / (1 + math.exp( -inputValue )))  
 
+                # print 'Hidden:', layerNodes['v'][j]
+                
             for k in range( num_classes ):
                 inputValue = 0
                 for j in range( num_hidden ):
-                    inputValue += layerNodes['v'][k] * layerNodes['w'][j][k]
+                    inputValue += layerNodes['v'][j] * layerNodes['w'][j][k]
                 outputNodes['v'][k] = (1  / (1 + math.exp( -inputValue )))
+                # print 'Output:',outputNodes['v'][k]
+                
+            #print 'Output:',outputNodes['v']
+            
 
             # calculate error of each node delta: backward 
-            delta = {1:dict(), 2:dict(), 3:dict()}
-            # neutral
-            delta[2][0] = outputNodes['v'][0] - (sentiment[t] == 0)
+            delta = {1:dict(), 2:dict()}
+            # neutral, desired output for sentiment == 0 is 1
+            delta[2][0] = (sentiment[t] == 0) - outputNodes['v'][0]
             # positive
-            delta[2][1] = outputNodes['v'][1] - (sentiment[t] > 0)
+            delta[2][1] = (sentiment[t] > 0)- outputNodes['v'][1]
             # negative
-            delta[2][2] = outputNodes['v'][2] - (sentiment[t] < 0)
+            delta[2][2] = (sentiment[t] < 0) - outputNodes['v'][2]
+
+            #   print 'S=', sentiment[t], 'Error :', delta[2]
 
             for j in range( num_hidden ):
                 delta[1][j] = 0
                 for k in range( num_classes ):
                     delta[1][j] += layerNodes['w'][j][k] * delta[2][k] * ( layerNodes['v'][j] * ( 1 - layerNodes['v'][j] ))
 
-            for i in range( len(inputVector )):
-                for j in range( num_hidden ):
-                    Delta[0][i][j] += inputNodes['v'][i] * delta[1][j] 
-                    for k in range( num_classes ):
-                        Delta[1][j][k] += layerNodes['v'][j] * delta[2][k]
-
-        # update weights:
-        alpha = 0.01 # learning rate
-        
-        for i in range( len( inputVector )):
             for j in range( num_hidden ):
                 for k in range( num_classes ):
-                    layerNodes['w'][j][k] += alpha * layerNodes['v'][j] * Delta[1][j][k]
-
-            inputNodes['w'][i][j] += alpha * inputNodes['v'][i] * Delta[0][i][j]
+                    Delta[1][j][k] += layerNodes['v'][j] * delta[2][k]
+                    
+            for i in range( lengthInput ):
+                for j in range( num_hidden ):
+                    Delta[0][i][j] += layerNodes['v'][i] * delta[1][j]
+                    
+        #    for l in Delta:
+        #        for i in Delta[l]:
+        #            for j in Delta[i][l]:
+        #                print 'Delta', l,'from',i, 'to',j,'  ',Delta[l][i][j]
+        # update weights:
+        alpha = 0.05 # learning rate
+        
+        for j in range( num_hidden ):
+            for k in range( num_classes ):                    
+                layerNodes['w'][j][k] += alpha * layerNodes['v'][j] * Delta[1][j][k]
+        for i in range( len( inputVector )):
+            for j in range( num_hidden):                    
+                inputNodes['w'][i][j] += alpha * inputNodes['v'][i] * Delta[0][i][j]
     
         
-    print 'Time taken: ', time.time() - now
+    print 'Time training took: ', time.time() - now
     # test stuff
-    for t in testSet:
+    for t in trainSet:
         s = sentence[t]
 
         # initialize input
-        for i in range(len(inputVector)):
+        for i in range(lengthInput):
             # copy input values
             inputNodes['v'][i] = inputVector[t][i]
-
-            inputNodes['w'][i] = dict()
-            for j in range( num_hidden ):
-                # weight from node i to node j
-                inputNodes['w'][i][j] = 1
-                layerNodes['w'][j] = dict()
-                for k in range( num_classes ):
-                    # weight from node j to k
-                    layerNodes['w'][j][k] = 1
 
         # forward progapagation
         for j in range( num_hidden ):
@@ -219,11 +239,10 @@ def neuralNetwork(iterations = 20):
         for k in range( num_classes ):
             inputValue = 0
             for j in range( num_hidden ):
-                inputValue += layerNodes['v'][k] * layerNodes['w'][j][k]
+                inputValue += layerNodes['v'][j] * layerNodes['w'][j][k]
             outputNodes['v'][k] = (1  / (1 + math.exp( -inputValue )))
 
-        print 'True sentiment:', sentiment[t]
-        print 'Found neutral/pos/neg values:', outputNodes['v'].values()
+        print 'True s:', sentiment[t], ',found', outputNodes['v'].values()
         
 
 def createWordVectors(trainSet, num_sentences, sentence ):
