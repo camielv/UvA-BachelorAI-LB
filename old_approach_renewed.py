@@ -19,9 +19,12 @@ class Main():
     trainSet = []
     testSet = []
 
+<<<<<<< HEAD
     # Perceptrons for threshold learning
     perceptron = []
     
+=======
+>>>>>>> f4a018cb96f181d0bf5a98d02ca9539281604a38
     # The number of sentences
     num_sentences = 0
 
@@ -31,6 +34,7 @@ class Main():
         now = time.time()
 
         # The n for the n-grams
+<<<<<<< HEAD
         self.n = 3
 
         # Number of classes and distribution
@@ -39,6 +43,13 @@ class Main():
 
         # Create perceptrons
         self.perceptron = [ perceptron.Perceptron() for c in range( self.num_classes ) ]
+=======
+        self.n = 4
+
+        # Number of classes and distribution
+        self.class_distribution = [0],[-1,1,-2,2]
+        self.num_classes = len( self.class_distribution )
+>>>>>>> f4a018cb96f181d0bf5a98d02ca9539281604a38
         
         # Load the sentences and sentiments from file
         self.initializeCorpus( total_messages )
@@ -51,12 +62,16 @@ class Main():
             
             # Reset variables
             self.corpus = {}
+<<<<<<< HEAD
             self.classified = {}
             self.threshold = {}
+=======
+>>>>>>> f4a018cb96f181d0bf5a98d02ca9539281604a38
             self.probSent = {}
             self.trainSet = []
             self.testSet = []
 
+<<<<<<< HEAD
             # Reset perceptrons
             for c in range( self.num_classes ):
                 self.perceptron[c].reset()
@@ -64,6 +79,11 @@ class Main():
             # Random selection of training and test data
             self.makeCorpus( distribution = (0.7, 0.3) )
             self.trainPerceptrons()
+=======
+
+            # Random selection of training and test data
+            self.makeCorpus( distribution = (0.7, 0.3) )
+>>>>>>> f4a018cb96f181d0bf5a98d02ca9539281604a38
             self.testMethod()
             
             # Create test set
@@ -77,7 +97,12 @@ class Main():
                         break
 
                 # Find the classified class
+<<<<<<< HEAD
                 temp_set[0].append( self.classified[j] )
+=======
+                m = self.probSent[j].index( max( self.probSent[j] ) )
+                temp_set[0].append( m )
+>>>>>>> f4a018cb96f181d0bf5a98d02ca9539281604a38
                     
             # Create confusion matrix
             confusion = [ [ 0 for x in range( self.num_classes ) ] for y in range( self.num_classes ) ]
@@ -109,7 +134,11 @@ class Main():
             row_sum = sum( allconfusion[i] )
             col_sum = 0
             for j in range( self.num_classes ):
+<<<<<<< HEAD
                 col_sum += allconfusion[j][i]
+=======
+                col_sum += confusion[j][i]
+>>>>>>> f4a018cb96f181d0bf5a98d02ca9539281604a38
                 
             truepositives = float(allconfusion[i][i])
             truenegatives = total - row_sum - col_sum + truepositives
@@ -200,8 +229,12 @@ class Main():
                 self.trainSet.append(i-1)
             else:
                 self.testSet.append(i-1)
+<<<<<<< HEAD
 
         print 'Counting frequencies'
+=======
+    
+>>>>>>> f4a018cb96f181d0bf5a98d02ca9539281604a38
         for i in self.trainSet:
             # Tokenize the sentence
             tk_sent = self.tokenize( self.clean( self.sentence[i] ) )
@@ -242,6 +275,7 @@ class Main():
                                     break
                                     
                             temp_ngram[k][j] = []
+<<<<<<< HEAD
 
     def trainPerceptrons( self ):
         print 'Calculating probabilities'
@@ -331,6 +365,12 @@ class Main():
         print '--- Testing Phase ---'
 
         print 'Calculating probabilities'
+=======
+                            
+    def testMethod(self):
+        print 'Testing'
+        
+>>>>>>> f4a018cb96f181d0bf5a98d02ca9539281604a38
         # Calculate prior probabilities
         sums = [ 0 for c in range( self.num_classes ) ]
             
@@ -392,6 +432,7 @@ class Main():
                 print 'zero features found in following sentence:'
                 print self.sentence[i]                
 
+<<<<<<< HEAD
             self.probSent[i] = classes
             
         print 'Applying perceptrons'
@@ -415,4 +456,9 @@ class Main():
                 self.classified[i] = max( fired, key=fired.get ) #fired.keys()[ fired.values().index( max( fired.values() ) ) ]
                 
             
+=======
+
+            self.probSent[i] = classes
+            
+>>>>>>> f4a018cb96f181d0bf5a98d02ca9539281604a38
 m = Main()

@@ -234,6 +234,7 @@ class LanguageProcessor():
         # Delete expressions, such as links, hashtags, twitteraccountnames 
         sentence = re.sub( r'http\/\/t\.co\/\w+|\.|\,|\[|\]|&#39;s|\||#|:|;|RT|\(|\)|@\w+|\**', '', sentence )
         sentence = re.sub( ' +',' ', sentence )
+        sentence = re.sub(r'''(?ix)\b(?=haha)\S*(\S+)(?<=\bhaha)\1*\b''', 'haha', sentence)
         return sentence
         # print sentence
         # Werkt nog niet cleanup is nog niet goed genoeg

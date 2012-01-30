@@ -22,7 +22,11 @@ class Main():
     # The number of sentences
     num_sentences = 0
 
+<<<<<<< HEAD
     def __init__( self, iterations = 2, total_messages = 10000 ):
+=======
+    def __init__( self, iterations = 4, total_messages = 10000 ):
+>>>>>>> f4a018cb96f181d0bf5a98d02ca9539281604a38
                
         # Get current time
         now = time.time()
@@ -31,7 +35,11 @@ class Main():
         self.n = 4
 
         # Number of classes and distribution
+<<<<<<< HEAD
         self.class_distribution = [0],[-1,1,-2,2]
+=======
+        self.class_distribution = [2],[-2],[-1],[1],[0]
+>>>>>>> f4a018cb96f181d0bf5a98d02ca9539281604a38
         self.num_classes = len( self.class_distribution )
         
         # Load the sentences and sentiments from file
@@ -57,7 +65,12 @@ class Main():
             # Create test set
             temp_set = [],[]
             for j in self.testSet:
+<<<<<<< HEAD
                 
+=======
+                m = max( self.probSent[j] )
+
+>>>>>>> f4a018cb96f181d0bf5a98d02ca9539281604a38
                 # Find the correct class
                 for c in range( self.num_classes ):
                     if self.sentiment[j] in self.class_distribution[c]:
@@ -65,8 +78,15 @@ class Main():
                         break
 
                 # Find the classified class
+<<<<<<< HEAD
                 m = self.probSent[j].index( max( self.probSent[j] ) )
                 temp_set[0].append( m )
+=======
+                for c in range( self.num_classes ):
+                    if m == self.probSent[j][c]:
+                        temp_set[0].append( c )
+                        break
+>>>>>>> f4a018cb96f181d0bf5a98d02ca9539281604a38
                     
             # Create confusion matrix
             confusion = [ [ 0 for x in range( self.num_classes ) ] for y in range( self.num_classes ) ]
@@ -98,7 +118,11 @@ class Main():
             row_sum = sum( allconfusion[i] )
             col_sum = 0
             for j in range( self.num_classes ):
+<<<<<<< HEAD
                 col_sum += allconfusion[j][i]
+=======
+                col_sum += confusion[j][i]
+>>>>>>> f4a018cb96f181d0bf5a98d02ca9539281604a38
                 
             truepositives = float(allconfusion[i][i])
             truenegatives = total - row_sum - col_sum + truepositives
