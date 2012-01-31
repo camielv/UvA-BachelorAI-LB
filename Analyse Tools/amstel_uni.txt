@@ -1,0 +1,4586 @@
+...ANALYSIS OF DATASET...
+
+...All Tokens...
+Total tokens: 11063
+Neutral tokens: 9338
+Positive tokens: 217
+Negative tokens: 217
+
+...Different Tokens...
+Total tokens: 1949
+Neutral tokens: 1311
+Positive tokens: 140
+Negative tokens: 140
+
+...Results...
+...#1...
+Neutral: (('van',), 459) Percentage: 0.0491539944314
+Positive: (('!',), 190) Percentage: 0.12599469496
+Negative: (('van',), 9) Percentage: 0.0414746543779
+
+...#2...
+Neutral: (('!',), 408) Percentage: 0.0436924394945
+Positive: (('van',), 76) Percentage: 0.0503978779841
+Negative: (('de',), 8) Percentage: 0.036866359447
+
+...#3...
+Neutral: (('de',), 309) Percentage: 0.0330905975584
+Positive: (('Amstel',), 46) Percentage: 0.0305039787798
+Negative: (('vrienden',), 7) Percentage: 0.0322580645161
+
+...#4...
+Neutral: (('Amstel',), 298) Percentage: 0.031912615121
+Positive: (('vrienden',), 36) Percentage: 0.0238726790451
+Negative: (('voor',), 6) Percentage: 0.0276497695853
+
+...#5...
+Neutral: (('Vrienden',), 224) Percentage: 0.023988005997
+Positive: (('Vrienden',), 34) Percentage: 0.0225464190981
+Negative: (('ik',), 5) Percentage: 0.0230414746544
+
+...#6...
+Neutral: (('voor',), 198) Percentage: 0.0212036838723
+Positive: (('de',), 34) Percentage: 0.0225464190981
+Negative: (('niet',), 5) Percentage: 0.0230414746544
+
+...#7...
+Neutral: (('naar',), 167) Percentage: 0.0178839151853
+Positive: (('voor',), 31) Percentage: 0.0205570291777
+Negative: (('Amstel',), 4) Percentage: 0.0184331797235
+
+...#8...
+Neutral: (('en',), 153) Percentage: 0.0163846648105
+Positive: (('in',), 28) Percentage: 0.0185676392573
+Negative: (('!',), 4) Percentage: 0.0184331797235
+
+...#9...
+Neutral: (('vrienden',), 152) Percentage: 0.016277575498
+Positive: (('naar',), 28) Percentage: 0.0185676392573
+Negative: (('met',), 4) Percentage: 0.0184331797235
+
+...#10...
+Neutral: (('http',), 141) Percentage: 0.0150995930606
+Positive: (('live',), 24) Percentage: 0.0159151193634
+Negative: (('live',), 4) Percentage: 0.0184331797235
+
+...#11...
+Neutral: (('tco',), 130) Percentage: 0.0139216106233
+Positive: (('amstel',), 23) Percentage: 0.0152519893899
+Negative: (('dat',), 4) Percentage: 0.0184331797235
+
+...#12...
+Neutral: (('Live',), 117) Percentage: 0.0125294495609
+Positive: (('zin',), 21) Percentage: 0.013925729443
+Negative: (('amstel',), 4) Percentage: 0.0184331797235
+
+...#13...
+Neutral: (('vval',), 112) Percentage: 0.0119940029985
+Positive: (('week',), 21) Percentage: 0.013925729443
+Negative: (('een',), 4) Percentage: 0.0184331797235
+
+...#14...
+Neutral: (('in',), 107) Percentage: 0.0114585564361
+Positive: (('Live',), 20) Percentage: 0.0132625994695
+Negative: (('Live',), 3) Percentage: 0.0138248847926
+
+...#15...
+Neutral: (('?',), 105) Percentage: 0.0112443778111
+Positive: (('ik',), 18) Percentage: 0.0119363395225
+Negative: (('bij',), 3) Percentage: 0.0138248847926
+
+...#16...
+Neutral: (('De',), 104) Percentage: 0.0111372884986
+Positive: (('heb',), 13) Percentage: 0.00862068965517
+Negative: (('is',), 3) Percentage: 0.0138248847926
+
+...#17...
+Neutral: (('op',), 102) Percentage: 0.0109231098736
+Positive: (('gewonnen',), 13) Percentage: 0.00862068965517
+Negative: (('ze',), 2) Percentage: 0.00921658986175
+
+...#18...
+Neutral: (('kaarten',), 99) Percentage: 0.0106018419362
+Positive: (('met',), 12) Percentage: 0.0079575596817
+Negative: (('waarom',), 2) Percentage: 0.00921658986175
+
+...#19...
+Neutral: (('live',), 96) Percentage: 0.0102805739987
+Positive: (('een',), 12) Percentage: 0.0079575596817
+Negative: (('betaald',), 2) Percentage: 0.00921658986175
+
+...#20...
+Neutral: (('een',), 81) Percentage: 0.00867423431142
+Positive: (('en',), 11) Percentage: 0.00729442970822
+Negative: (('besteld',), 2) Percentage: 0.00921658986175
+
+...#21...
+Neutral: (('amstel',), 80) Percentage: 0.00856714499893
+Positive: (('al',), 11) Percentage: 0.00729442970822
+Negative: (('?',), 2) Percentage: 0.00921658986175
+
+...#22...
+Neutral: (('bij',), 75) Percentage: 0.0080316984365
+Positive: (('nu',), 11) Percentage: 0.00729442970822
+Negative: (('krijgen',), 2) Percentage: 0.00921658986175
+
+...#23...
+Neutral: (('Ahoy',), 74) Percentage: 0.00792460912401
+Positive: (('er',), 10) Percentage: 0.00663129973475
+Negative: (('het',), 2) Percentage: 0.00921658986175
+
+...#24...
+Neutral: (('via',), 62) Percentage: 0.00663953737417
+Positive: (('volgende',), 10) Percentage: 0.00663129973475
+Negative: (('naar',), 2) Percentage: 0.00921658986175
+
+...#25...
+Neutral: (('je',), 61) Percentage: 0.00653244806168
+Positive: (('kaarten',), 9) Percentage: 0.00596816976127
+Negative: (('ticketloket',), 2) Percentage: 0.00921658986175
+
+...#26...
+Neutral: (('met',), 60) Percentage: 0.0064253587492
+Positive: (('De',), 8) Percentage: 0.0053050397878
+Negative: (('3912',), 2) Percentage: 0.00921658986175
+
+...#27...
+Neutral: (('het',), 58) Percentage: 0.00621118012422
+Positive: (('kaartjes',), 7) Percentage: 0.00464190981432
+Negative: (('kaartjes',), 2) Percentage: 0.00921658986175
+
+...#28...
+Neutral: (('ik',), 57) Percentage: 0.00610409081174
+Positive: (('leuk',), 7) Percentage: 0.00464190981432
+Negative: (('nu',), 2) Percentage: 0.00921658986175
+
+...#29...
+Neutral: (('VVAL',), 54) Percentage: 0.00578282287428
+Positive: (('Volgende',), 7) Percentage: 0.00464190981432
+Negative: (('we',), 2) Percentage: 0.00921658986175
+
+...#30...
+Neutral: (('is',), 52) Percentage: 0.0055686442493
+Positive: (('januari',), 7) Percentage: 0.00464190981432
+Negative: (('door',), 2) Percentage: 0.00921658986175
+
+...#31...
+Neutral: (('nog',), 52) Percentage: 0.0055686442493
+Positive: (('nog',), 7) Percentage: 0.00464190981432
+Negative: (('bestelling',), 2) Percentage: 0.00921658986175
+
+...#32...
+Neutral: (('er',), 51) Percentage: 0.00546155493682
+Positive: (('bij',), 7) Percentage: 0.00464190981432
+Negative: (('mail',), 2) Percentage: 0.00921658986175
+
+...#33...
+Neutral: (('januari',), 49) Percentage: 0.00524737631184
+Positive: (('Ik',), 7) Percentage: 0.00464190981432
+Negative: (('zien',), 1) Percentage: 0.00460829493088
+
+...#34...
+Neutral: (('gratis',), 49) Percentage: 0.00524737631184
+Positive: (('blijesmiley',), 7) Percentage: 0.00464190981432
+Negative: (('zo',), 1) Percentage: 0.00460829493088
+
+...#35...
+Neutral: (('parkeer',), 47) Percentage: 0.00503319768687
+Positive: (('AMSTEL',), 6) Percentage: 0.00397877984085
+Negative: (('VVAL',), 1) Percentage: 0.00460829493088
+
+...#36...
+Neutral: (('ANWB',), 47) Percentage: 0.00503319768687
+Positive: (('vval',), 6) Percentage: 0.00397877984085
+Negative: (('plaatsen',), 1) Percentage: 0.00460829493088
+
+...#37...
+Neutral: (('week',), 47) Percentage: 0.00503319768687
+Positive: (('2',), 6) Percentage: 0.00397877984085
+Negative: (('16',), 1) Percentage: 0.00460829493088
+
+...#38...
+Neutral: (('te',), 47) Percentage: 0.00503319768687
+Positive: (('LIVE',), 6) Percentage: 0.00397877984085
+Negative: (('al',), 1) Percentage: 0.00460829493088
+
+...#39...
+Neutral: (('we',), 47) Percentage: 0.00503319768687
+Positive: (('op',), 6) Percentage: 0.00397877984085
+Negative: (('Meeuwis',), 1) Percentage: 0.00460829493088
+
+...#40...
+Neutral: (('gaan',), 45) Percentage: 0.0048190190619
+Positive: (('En',), 6) Percentage: 0.00397877984085
+Negative: (('week',), 1) Percentage: 0.00460829493088
+
+...#41...
+Neutral: (('2',), 42) Percentage: 0.00449775112444
+Positive: (('ga',), 6) Percentage: 0.00397877984085
+Negative: (('C1000',), 1) Percentage: 0.00460829493088
+
+...#42...
+Neutral: (('2013',), 40) Percentage: 0.00428357249946
+Positive: (('om',), 5) Percentage: 0.00331564986737
+Negative: (('omg',), 1) Percentage: 0.00460829493088
+
+...#43...
+Neutral: (('Van',), 40) Percentage: 0.00428357249946
+Positive: (('is',), 5) Percentage: 0.00331564986737
+Negative: (('600',), 1) Percentage: 0.00460829493088
+
+...#44...
+Neutral: (('om',), 37) Percentage: 0.003962304562
+Positive: (('geweest',), 5) Percentage: 0.00331564986737
+Negative: (('echt',), 1) Percentage: 0.00460829493088
+
+...#45...
+Neutral: (('samenrijdennl',), 36) Percentage: 0.00385521524952
+Positive: (('dat',), 5) Percentage: 0.00331564986737
+Negative: (('Maar',), 1) Percentage: 0.00460829493088
+
+...#46...
+Neutral: (('volgers',), 36) Percentage: 0.00385521524952
+Positive: (('VRIENDEN',), 5) Percentage: 0.00331564986737
+Negative: (('11',), 1) Percentage: 0.00460829493088
+
+...#47...
+Neutral: (('zaterdag',), 35) Percentage: 0.00374812593703
+Positive: (('Ahoy',), 5) Percentage: 0.00331564986737
+Negative: (('dies',), 1) Percentage: 0.00460829493088
+
+...#48...
+Neutral: (('LIVE',), 34) Percentage: 0.00364103662454
+Positive: (('zondag',), 5) Percentage: 0.00331564986737
+Negative: (('op',), 1) Percentage: 0.00460829493088
+
+...#49...
+Neutral: (('ook',), 33) Percentage: 0.00353394731206
+Positive: (('te',), 5) Percentage: 0.00331564986737
+Negative: (('1',), 1) Percentage: 0.00460829493088
+
+...#50...
+Neutral: (('zondag',), 33) Percentage: 0.00353394731206
+Positive: (('27',), 5) Percentage: 0.00331564986737
+Negative: (('39n',), 1) Percentage: 0.00460829493088
+
+...#51...
+Neutral: (('vrijdag',), 31) Percentage: 0.00331976868709
+Positive: (('niet',), 5) Percentage: 0.00331564986737
+Negative: (('Gaapverwekkend',), 1) Percentage: 0.00460829493088
+
+...#52...
+Neutral: (('over',), 31) Percentage: 0.00331976868709
+Positive: (('echt',), 4) Percentage: 0.0026525198939
+Negative: (('heb',), 1) Percentage: 0.00460829493088
+
+...#53...
+Neutral: (('kaartjes',), 30) Percentage: 0.0032126793746
+Positive: (('heeft',), 4) Percentage: 0.0026525198939
+Negative: (('manieren',), 1) Percentage: 0.00460829493088
+
+...#54...
+Neutral: (('dan',), 30) Percentage: 0.0032126793746
+Positive: (('dan',), 4) Percentage: 0.0026525198939
+Negative: (('18',), 1) Percentage: 0.00460829493088
+
+...#55...
+Neutral: (('weer',), 28) Percentage: 0.00299850074963
+Positive: (('zaterdag',), 4) Percentage: 0.0026525198939
+Negative: (('vader',), 1) Percentage: 0.00460829493088
+
+...#56...
+Neutral: (('mee',), 28) Percentage: 0.00299850074963
+Positive: (('lekker',), 4) Percentage: 0.0026525198939
+Negative: (('leeftijdsgrens',), 1) Percentage: 0.00460829493088
+
+...#57...
+Neutral: (('kroonluchter',), 27) Percentage: 0.00289141143714
+Positive: (('maar',), 4) Percentage: 0.0026525198939
+Negative: (('tot',), 1) Percentage: 0.00460829493088
+
+...#58...
+Neutral: (('hebben',), 27) Percentage: 0.00289141143714
+Positive: (('veel',), 4) Percentage: 0.0026525198939
+Negative: (('stomme',), 1) Percentage: 0.00460829493088
+
+...#59...
+Neutral: (('reeks',), 27) Percentage: 0.00289141143714
+Positive: (('Vrijdag',), 4) Percentage: 0.0026525198939
+Negative: (('jullie',), 1) Percentage: 0.00460829493088
+
+...#60...
+Neutral: (('niet',), 27) Percentage: 0.00289141143714
+Positive: (('weer',), 4) Percentage: 0.0026525198939
+Negative: (('in',), 1) Percentage: 0.00460829493088
+
+...#61...
+Neutral: (('ga',), 27) Percentage: 0.00289141143714
+Positive: (('kan',), 4) Percentage: 0.0026525198939
+Negative: (('We',), 1) Percentage: 0.00460829493088
+
+...#62...
+Neutral: (('volgen',), 26) Percentage: 0.00278432212465
+Positive: (('die',), 4) Percentage: 0.0026525198939
+Negative: (('vesting',), 1) Percentage: 0.00460829493088
+
+...#63...
+Neutral: (('Kom',), 25) Percentage: 0.00267723281217
+Positive: (('dus',), 4) Percentage: 0.0026525198939
+Negative: (('Guus',), 1) Percentage: 0.00460829493088
+
+...#64...
+Neutral: (('22',), 25) Percentage: 0.00267723281217
+Positive: (('22',), 4) Percentage: 0.0026525198939
+Negative: (('vragen',), 1) Percentage: 0.00460829493088
+
+...#65...
+Neutral: (('Nog',), 24) Percentage: 0.00257014349968
+Positive: (('C1000',), 4) Percentage: 0.0026525198939
+Negative: (('en',), 1) Percentage: 0.00460829493088
+
+...#66...
+Neutral: (('gitaren',), 24) Percentage: 0.00257014349968
+Positive: (('Zondag',), 4) Percentage: 0.0026525198939
+Negative: (('39m',), 1) Percentage: 0.00460829493088
+
+...#67...
+Neutral: (('Op',), 24) Percentage: 0.00257014349968
+Positive: (('Heb',), 4) Percentage: 0.0026525198939
+Negative: (('u',), 1) Percentage: 0.00460829493088
+
+...#68...
+Neutral: (('zijn',), 23) Percentage: 0.00246305418719
+Positive: (('D',), 4) Percentage: 0.0026525198939
+Negative: (('Geen',), 1) Percentage: 0.00460829493088
+
+...#69...
+Neutral: (('volgende',), 23) Percentage: 0.00246305418719
+Positive: (('dit',), 4) Percentage: 0.0026525198939
+Negative: (('Dalijk',), 1) Percentage: 0.00460829493088
+
+...#70...
+Neutral: (('29',), 22) Percentage: 0.00235596487471
+Positive: (('2013',), 4) Percentage: 0.0026525198939
+Negative: (('waarvoor',), 1) Percentage: 0.00460829493088
+
+...#71...
+Neutral: (('n',), 22) Percentage: 0.00235596487471
+Positive: (('oa',), 3) Percentage: 0.00198938992042
+Negative: (('gekregen',), 1) Percentage: 0.00460829493088
+
+...#72...
+Neutral: (('xe1',), 22) Percentage: 0.00235596487471
+Positive: (('me',), 3) Percentage: 0.00198938992042
+Negative: (('rond',), 1) Percentage: 0.00460829493088
+
+...#73...
+Neutral: (('Vandaag',), 22) Percentage: 0.00235596487471
+Positive: (('helemaal',), 3) Percentage: 0.00198938992042
+Negative: (('Heb',), 1) Percentage: 0.00460829493088
+
+...#74...
+Neutral: (('Prijsvraagje',), 21) Percentage: 0.00224887556222
+Positive: (('jaar',), 3) Percentage: 0.00198938992042
+Negative: (('2011',), 1) Percentage: 0.00460829493088
+
+...#75...
+Neutral: (('hoeveel',), 21) Percentage: 0.00224887556222
+Positive: (('Yes',), 3) Percentage: 0.00198938992042
+Negative: (('volgende',), 1) Percentage: 0.00460829493088
+
+...#76...
+Neutral: (('1',), 21) Percentage: 0.00224887556222
+Positive: (('vrijdag',), 3) Percentage: 0.00198938992042
+Negative: (('Krijg',), 1) Percentage: 0.00460829493088
+
+...#77...
+Neutral: (('wel',), 20) Percentage: 0.00214178624973
+Positive: (('kaartje',), 3) Percentage: 0.00198938992042
+Negative: (('kijken',), 1) Percentage: 0.00460829493088
+
+...#78...
+Neutral: (('gewonnen',), 20) Percentage: 0.00214178624973
+Positive: (('2012',), 3) Percentage: 0.00198938992042
+Negative: (('juni',), 1) Percentage: 0.00460829493088
+
+...#79...
+Neutral: (('25',), 20) Percentage: 0.00214178624973
+Positive: (('blij',), 3) Percentage: 0.00198938992042
+Negative: (('Vrienden',), 1) Percentage: 0.00460829493088
+
+...#80...
+Neutral: (('Verloten',), 20) Percentage: 0.00214178624973
+Positive: (('wel',), 3) Percentage: 0.00198938992042
+Negative: (('gaat',), 1) Percentage: 0.00460829493088
+
+...#81...
+Neutral: (('Ga',), 20) Percentage: 0.00214178624973
+Positive: (('kunnen',), 3) Percentage: 0.00198938992042
+Negative: (('Keer',), 1) Percentage: 0.00460829493088
+
+...#82...
+Neutral: (('heb',), 19) Percentage: 0.00203469693725
+Positive: (('mij',), 3) Percentage: 0.00198938992042
+Negative: (('7',), 1) Percentage: 0.00460829493088
+
+...#83...
+Neutral: (('maar',), 19) Percentage: 0.00203469693725
+Positive: (('Met',), 3) Percentage: 0.00198938992042
+Negative: (('deze',), 1) Percentage: 0.00460829493088
+
+...#84...
+Neutral: (('dat',), 19) Percentage: 0.00203469693725
+Positive: (('Nu',), 3) Percentage: 0.00198938992042
+Negative: (('mn',), 1) Percentage: 0.00460829493088
+
+...#85...
+Neutral: (('Wel',), 18) Percentage: 0.00192760762476
+Positive: (('lieve',), 3) Percentage: 0.00198938992042
+Negative: (('geplaatst',), 1) Percentage: 0.00460829493088
+
+...#86...
+Neutral: (('klaar',), 18) Percentage: 0.00192760762476
+Positive: (('alle',), 3) Percentage: 0.00198938992042
+Negative: (('28',), 1) Percentage: 0.00460829493088
+
+...#87...
+Neutral: (('zin',), 18) Percentage: 0.00192760762476
+Positive: (('?',), 3) Percentage: 0.00198938992042
+Negative: (('per',), 1) Percentage: 0.00460829493088
+
+...#88...
+Neutral: (('AHOY',), 18) Percentage: 0.00192760762476
+Positive: (('Kaartjes',), 3) Percentage: 0.00198938992042
+Negative: (('hem',), 1) Percentage: 0.00460829493088
+
+...#89...
+Neutral: (('Wie',), 18) Percentage: 0.00192760762476
+Positive: (('tijd',), 3) Percentage: 0.00198938992042
+Negative: (('jeetje',), 1) Percentage: 0.00460829493088
+
+...#90...
+Neutral: (('die',), 18) Percentage: 0.00192760762476
+Positive: (('VAN',), 3) Percentage: 0.00198938992042
+Negative: (('Fck',), 1) Percentage: 0.00460829493088
+
+...#91...
+Neutral: (('wil',), 18) Percentage: 0.00192760762476
+Positive: (('aan',), 3) Percentage: 0.00198938992042
+Negative: (('opgestuurd',), 1) Percentage: 0.00460829493088
+
+...#92...
+Neutral: (('Leuk',), 18) Percentage: 0.00192760762476
+Positive: (('het',), 3) Percentage: 0.00198938992042
+Negative: (('12',), 1) Percentage: 0.00460829493088
+
+...#93...
+Neutral: (('Volgende',), 17) Percentage: 0.00182051831227
+Positive: (('je',), 3) Percentage: 0.00198938992042
+Negative: (('vval',), 1) Percentage: 0.00460829493088
+
+...#94...
+Neutral: (('4',), 17) Percentage: 0.00182051831227
+Positive: (('Van',), 3) Percentage: 0.00198938992042
+Negative: (('dgn',), 1) Percentage: 0.00460829493088
+
+...#95...
+Neutral: (('kan',), 17) Percentage: 0.00182051831227
+Positive: (('anders',), 2) Percentage: 0.00132625994695
+Negative: (('worden',), 1) Percentage: 0.00460829493088
+
+...#96...
+Neutral: (('wie',), 17) Percentage: 0.00182051831227
+Positive: (('ze',), 2) Percentage: 0.00132625994695
+Negative: (('te',), 1) Percentage: 0.00460829493088
+
+...#97...
+Neutral: (('weetje',), 17) Percentage: 0.00182051831227
+Positive: (('feestje',), 2) Percentage: 0.00132625994695
+Negative: (('mee',), 1) Percentage: 0.00460829493088
+
+...#98...
+Neutral: (('39en',), 17) Percentage: 0.00182051831227
+Positive: (('Maar',), 2) Percentage: 0.00132625994695
+Negative: (('verschillende',), 1) Percentage: 0.00460829493088
+
+...#99...
+Neutral: (('decor',), 16) Percentage: 0.00171342899979
+Positive: (('groep',), 2) Percentage: 0.00132625994695
+Negative: (('concert',), 1) Percentage: 0.00460829493088
+
+...#100...
+Neutral: (('opbouw',), 16) Percentage: 0.00171342899979
+Positive: (('geluk',), 2) Percentage: 0.00132625994695
+Negative: (('Liever',), 1) Percentage: 0.00460829493088
+
+...#101...
+Neutral: (('gaat',), 16) Percentage: 0.00171342899979
+Positive: (('geen',), 2) Percentage: 0.00132625994695
+Negative: (('wint',), 1) Percentage: 0.00460829493088
+
+...#102...
+Neutral: (('Morgen',), 16) Percentage: 0.00171342899979
+Positive: (('deze',), 2) Percentage: 0.00132625994695
+Negative: (('januari',), 1) Percentage: 0.00460829493088
+
+...#103...
+Neutral: (('begint',), 16) Percentage: 0.00171342899979
+Positive: (('Voor',), 2) Percentage: 0.00132625994695
+Negative: (('onneembare',), 1) Percentage: 0.00460829493088
+
+...#104...
+Neutral: (('Zijn',), 16) Percentage: 0.00171342899979
+Positive: (('zojuist',), 2) Percentage: 0.00132625994695
+Negative: (('zitplaatsen',), 1) Percentage: 0.00460829493088
+
+...#105...
+Neutral: (('aan',), 16) Percentage: 0.00171342899979
+Positive: (('door',), 2) Percentage: 0.00132625994695
+Negative: (('heeft',), 1) Percentage: 0.00460829493088
+
+...#106...
+Neutral: (('dit',), 16) Percentage: 0.00171342899979
+Positive: (('gewoon',), 2) Percentage: 0.00132625994695
+Negative: (('geprobeerd',), 1) Percentage: 0.00460829493088
+
+...#107...
+Neutral: (('20',), 15) Percentage: 0.0016063396873
+Positive: (('meer',), 2) Percentage: 0.00132625994695
+Negative: (('mij',), 1) Percentage: 0.00460829493088
+
+...#108...
+Neutral: (('brengen',), 15) Percentage: 0.0016063396873
+Positive: (('moet',), 2) Percentage: 0.00132625994695
+Negative: (('kaartje',), 1) Percentage: 0.00460829493088
+
+...#109...
+Neutral: (('jan',), 15) Percentage: 0.0016063396873
+Positive: (('nice',), 2) Percentage: 0.00132625994695
+Negative: (('21',), 1) Percentage: 0.00460829493088
+
+...#110...
+Neutral: (('nieuwe',), 15) Percentage: 0.0016063396873
+Positive: (('Zin',), 2) Percentage: 0.00132625994695
+Negative: (('kan',), 1) Percentage: 0.00460829493088
+
+...#111...
+Neutral: (('start',), 15) Percentage: 0.0016063396873
+Positive: (('25',), 2) Percentage: 0.00132625994695
+Negative: (('gek',), 1) Percentage: 0.00460829493088
+
+...#112...
+Neutral: (('Ik',), 15) Percentage: 0.0016063396873
+Positive: (('01',), 2) Percentage: 0.00132625994695
+Negative: (('ons',), 1) Percentage: 0.00460829493088
+
+...#113...
+Neutral: (('Iemand',), 15) Percentage: 0.0016063396873
+Positive: (('KANE',), 2) Percentage: 0.00132625994695
+Negative: (('maar',), 1) Percentage: 0.00460829493088
+
+...#114...
+Neutral: (('staan',), 15) Percentage: 0.0016063396873
+Positive: (('waarschijnlijk',), 2) Percentage: 0.00132625994695
+Negative: (('als',), 1) Percentage: 0.00460829493088
+
+...#115...
+Neutral: (('komende',), 14) Percentage: 0.00149925037481
+Positive: (('Januari',), 2) Percentage: 0.00132625994695
+Negative: (('Aant',), 1) Percentage: 0.00460829493088
+
+...#116...
+Neutral: (('al',), 14) Percentage: 0.00149925037481
+Positive: (('aftellen',), 2) Percentage: 0.00132625994695
+Negative: (('hebben',), 1) Percentage: 0.00460829493088
+
+...#117...
+Neutral: (('wij',), 14) Percentage: 0.00149925037481
+Positive: (('der',), 2) Percentage: 0.00132625994695
+Negative: (('vanaf',), 1) Percentage: 0.00460829493088
+
+...#118...
+Neutral: (('layer',), 14) Percentage: 0.00149925037481
+Positive: (('zinin',), 2) Percentage: 0.00132625994695
+Negative: (('bevestigd',), 1) Percentage: 0.00460829493088
+
+...#119...
+Neutral: (('trailers',), 14) Percentage: 0.00149925037481
+Positive: (('over',), 2) Percentage: 0.00132625994695
+Negative: (('Paul',), 1) Percentage: 0.00460829493088
+
+...#120...
+Neutral: (('Updates',), 14) Percentage: 0.00149925037481
+Positive: (('weekend',), 2) Percentage: 0.00132625994695
+Negative: (('oktober',), 1) Percentage: 0.00460829493088
+
+...#121...
+Neutral: (('licht',), 14) Percentage: 0.00149925037481
+Positive: (('bemachtigen',), 2) Percentage: 0.00132625994695
+Negative: (('En',), 1) Percentage: 0.00460829493088
+
+...#122...
+Neutral: (('28',), 14) Percentage: 0.00149925037481
+Positive: (('mooi',), 2) Percentage: 0.00132625994695
+Negative: (('tickets',), 1) Percentage: 0.00460829493088
+
+...#123...
+Neutral: (('geluid',), 14) Percentage: 0.00149925037481
+Positive: (('mag',), 2) Percentage: 0.00132625994695
+Negative: (('hadden',), 1) Percentage: 0.00460829493088
+
+...#124...
+Neutral: (('dak',), 13) Percentage: 0.00139216106233
+Positive: (('voorverkoop',), 2) Percentage: 0.00132625994695
+Negative: (('beetje',), 1) Percentage: 0.00460829493088
+
+...#125...
+Neutral: (('twitter',), 13) Percentage: 0.00139216106233
+Positive: (('bemachtigd',), 2) Percentage: 0.00132625994695
+Negative: (('2',), 1) Percentage: 0.00460829493088
+
+...#126...
+Neutral: (('jaar',), 13) Percentage: 0.00139216106233
+Positive: (('morgen',), 2) Percentage: 0.00132625994695
+Negative: (('gastoptreden',), 1) Percentage: 0.00460829493088
+
+...#127...
+Neutral: (('interesse',), 13) Percentage: 0.00139216106233
+Positive: (('mijn',), 2) Percentage: 0.00132625994695
+Negative: (('2012Na',), 1) Percentage: 0.00460829493088
+
+...#128...
+Neutral: (('onze',), 13) Percentage: 0.00139216106233
+Positive: (('finale',), 2) Percentage: 0.00132625994695
+Negative: (('Hallo',), 1) Percentage: 0.00460829493088
+
+...#129...
+Neutral: (('zo',), 13) Percentage: 0.00139216106233
+Positive: (('Zaterdag',), 2) Percentage: 0.00132625994695
+Negative: (('3911',), 1) Percentage: 0.00460829493088
+
+...#130...
+Neutral: (('Weet',), 12) Percentage: 0.00128507174984
+Positive: (('of',), 2) Percentage: 0.00132625994695
+Negative: (('ga',), 1) Percentage: 0.00460829493088
+
+...#131...
+Neutral: (('Deze',), 12) Percentage: 0.00128507174984
+Positive: (('zijn',), 2) Percentage: 0.00132625994695
+Negative: (('Onlangs',), 1) Percentage: 0.00460829493088
+
+...#132...
+Neutral: (('2012',), 12) Percentage: 0.00128507174984
+Positive: (('weg',), 2) Percentage: 0.00132625994695
+Negative: (('jan',), 1) Percentage: 0.00460829493088
+
+...#133...
+Neutral: (('lekker',), 12) Percentage: 0.00128507174984
+Positive: (('Op',), 2) Percentage: 0.00132625994695
+Negative: (('3',), 1) Percentage: 0.00460829493088
+
+...#134...
+Neutral: (('nu',), 12) Percentage: 0.00128507174984
+Positive: (('ontspanning',), 2) Percentage: 0.00132625994695
+Negative: (('Pfff',), 1) Percentage: 0.00460829493088
+
+...#135...
+Neutral: (('We',), 12) Percentage: 0.00128507174984
+Positive: (('5',), 2) Percentage: 0.00132625994695
+Negative: (('zachte',), 1) Percentage: 0.00460829493088
+
+...#136...
+Neutral: (('Rotterdam',), 12) Percentage: 0.00128507174984
+Positive: (('hebben',), 2) Percentage: 0.00132625994695
+Negative: (('jammer',), 1) Percentage: 0.00460829493088
+
+...#137...
+Neutral: (('echte',), 11) Percentage: 0.00117798243735
+Positive: (('holland',), 2) Percentage: 0.00132625994695
+Negative: (('bevestiging',), 1) Percentage: 0.00460829493088
+
+...#138...
+Neutral: (('Win',), 11) Percentage: 0.00117798243735
+Positive: (('programma',), 2) Percentage: 0.00132625994695
+Negative: (('hopen',), 1) Percentage: 0.00460829493088
+
+...#139...
+Neutral: (('39n',), 11) Percentage: 0.00117798243735
+Positive: (('jan',), 2) Percentage: 0.00132625994695
+Negative: (('Je',), 1) Percentage: 0.00460829493088
+
+...#140...
+Neutral: (('alweer',), 11) Percentage: 0.00117798243735
+Positive: (('Hoe',), 2) Percentage: 0.00132625994695
+Negative: (('nog',), 1) Percentage: 0.00460829493088
+
+...#141...
+Neutral: (('doen',), 11) Percentage: 0.00117798243735
+Positive: (('toch',), 2) Percentage: 0.00132625994695
+
+...#142...
+Neutral: (('kaartkopers',), 10) Percentage: 0.00107089312487
+Positive: (('Vip',), 2) Percentage: 0.00132625994695
+
+...#143...
+Neutral: (('mailbox',), 10) Percentage: 0.00107089312487
+Positive: (('tot',), 2) Percentage: 0.00132625994695
+
+...#144...
+Neutral: (('inschrijven',), 10) Percentage: 0.00107089312487
+Positive: (('zo',), 2) Percentage: 0.00132625994695
+
+...#145...
+Neutral: (('kaartverkoop',), 10) Percentage: 0.00107089312487
+Positive: (('papa',), 2) Percentage: 0.00132625994695
+
+...#146...
+Neutral: (('jullie',), 10) Percentage: 0.00107089312487
+Positive: (('dank',), 2) Percentage: 0.00132625994695
+
+...#147...
+Neutral: (('ben',), 10) Percentage: 0.00107089312487
+Positive: (('mee',), 2) Percentage: 0.00132625994695
+
+...#148...
+Neutral: (('Snel',), 10) Percentage: 0.00107089312487
+Positive: (('dagen',), 2) Percentage: 0.00132625994695
+
+...#149...
+Neutral: (('Voorverkoop',), 10) Percentage: 0.00107089312487
+Positive: (('collega',), 2) Percentage: 0.00132625994695
+
+...#150...
+Neutral: (('komt',), 10) Percentage: 0.00107089312487
+Positive: (('Rotterdam',), 2) Percentage: 0.00132625994695
+
+...#151...
+Neutral: (('of',), 10) Percentage: 0.00107089312487
+Positive: (('zal',), 2) Percentage: 0.00132625994695
+
+...#152...
+Neutral: (('bijna',), 10) Percentage: 0.00107089312487
+Positive: (('vd',), 2) Percentage: 0.00132625994695
+
+...#153...
+Neutral: (('sfeer',), 10) Percentage: 0.00107089312487
+Positive: (('nieuwe',), 1) Percentage: 0.000663129973475
+
+...#154...
+Neutral: (('nieuwsbriefleden',), 10) Percentage: 0.00107089312487
+Positive: (('039appelle',), 1) Percentage: 0.000663129973475
+
+...#155...
+Neutral: (('kroeg',), 10) Percentage: 0.00107089312487
+Positive: (('toppie',), 1) Percentage: 0.000663129973475
+
+...#156...
+Neutral: (('checken',), 10) Percentage: 0.00107089312487
+Positive: (('schouders',), 1) Percentage: 0.000663129973475
+
+...#157...
+Neutral: (('VAN',), 9) Percentage: 0.00096380381238
+Positive: (('daarna',), 1) Percentage: 0.000663129973475
+
+...#158...
+Neutral: (('iemand',), 9) Percentage: 0.00096380381238
+Positive: (('beginnen',), 1) Percentage: 0.000663129973475
+
+...#159...
+Neutral: (('weken',), 9) Percentage: 0.00096380381238
+Positive: (('gaaf',), 1) Percentage: 0.000663129973475
+
+...#160...
+Neutral: (('me',), 9) Percentage: 0.00096380381238
+Positive: (('Druk',), 1) Percentage: 0.000663129973475
+
+...#161...
+Neutral: (('grootste',), 9) Percentage: 0.00096380381238
+Positive: (('film',), 1) Percentage: 0.000663129973475
+
+...#162...
+Neutral: (('geen',), 9) Percentage: 0.00096380381238
+Positive: (('weken',), 1) Percentage: 0.000663129973475
+
+...#163...
+Neutral: (('kaartje',), 9) Percentage: 0.00096380381238
+Positive: (('verjaardag',), 1) Percentage: 0.000663129973475
+
+...#164...
+Neutral: (('hier',), 9) Percentage: 0.00096380381238
+Positive: (('VriendenvanAmstellive',), 1) Percentage: 0.000663129973475
+
+...#165...
+Neutral: (('snel',), 9) Percentage: 0.00096380381238
+Positive: (('twitter',), 1) Percentage: 0.000663129973475
+
+...#166...
+Neutral: (('21',), 9) Percentage: 0.00096380381238
+Positive: (('ERRUG',), 1) Percentage: 0.000663129973475
+
+...#167...
+Neutral: (('koop',), 9) Percentage: 0.00096380381238
+Positive: (('49',), 1) Percentage: 0.000663129973475
+
+...#168...
+Neutral: (('Vrijdag',), 9) Percentage: 0.00096380381238
+Positive: (('NL',), 1) Percentage: 0.000663129973475
+
+...#169...
+Neutral: (('artiesten',), 9) Percentage: 0.00096380381238
+Positive: (('boeg',), 1) Percentage: 0.000663129973475
+
+...#170...
+Neutral: (('wordt',), 9) Percentage: 0.00096380381238
+Positive: (('Hoezo',), 1) Percentage: 0.000663129973475
+
+...#171...
+Neutral: (('weet',), 9) Percentage: 0.00096380381238
+Positive: (('later',), 1) Percentage: 0.000663129973475
+
+...#172...
+Neutral: (('per',), 8) Percentage: 0.000856714499893
+Positive: (('Hay',), 1) Percentage: 0.000663129973475
+
+...#173...
+Neutral: (('overnachtingen',), 8) Percentage: 0.000856714499893
+Positive: (('pff',), 1) Percentage: 0.000663129973475
+
+...#174...
+Neutral: (('ff',), 8) Percentage: 0.000856714499893
+Positive: (('l',), 1) Percentage: 0.000663129973475
+
+...#175...
+Neutral: (('daar',), 8) Percentage: 0.000856714499893
+Positive: (('Much',), 1) Percentage: 0.000663129973475
+
+...#176...
+Neutral: (('onder',), 8) Percentage: 0.000856714499893
+Positive: (('Volgend',), 1) Percentage: 0.000663129973475
+
+...#177...
+Neutral: (('7',), 8) Percentage: 0.000856714499893
+Positive: (('besteld',), 1) Percentage: 0.000663129973475
+
+...#178...
+Neutral: (('v',), 8) Percentage: 0.000856714499893
+Positive: (('kopen',), 1) Percentage: 0.000663129973475
+
+...#179...
+Neutral: (('39',), 8) Percentage: 0.000856714499893
+Positive: (('Jalaaalalaa',), 1) Percentage: 0.000663129973475
+
+...#180...
+Neutral: (('Twee',), 8) Percentage: 0.000856714499893
+Positive: (('dromen',), 1) Percentage: 0.000663129973475
+
+...#181...
+Neutral: (('Lees',), 8) Percentage: 0.000856714499893
+Positive: (('O',), 1) Percentage: 0.000663129973475
+
+...#182...
+Neutral: (('vast',), 8) Percentage: 0.000856714499893
+Positive: (('Vriendje',), 1) Percentage: 0.000663129973475
+
+...#183...
+Neutral: (('tickets',), 8) Percentage: 0.000856714499893
+Positive: (('Annemiek',), 1) Percentage: 0.000663129973475
+
+...#184...
+Neutral: (('Het',), 8) Percentage: 0.000856714499893
+Positive: (('gekregen',), 1) Percentage: 0.000663129973475
+
+...#185...
+Neutral: (('Zo',), 8) Percentage: 0.000856714499893
+Positive: (('woot',), 1) Percentage: 0.000663129973475
+
+...#186...
+Neutral: (('blijesmiley',), 8) Percentage: 0.000856714499893
+Positive: (('opbouw',), 1) Percentage: 0.000663129973475
+
+...#187...
+Neutral: (('verloten',), 8) Percentage: 0.000856714499893
+Positive: (('vrij',), 1) Percentage: 0.000663129973475
+
+...#188...
+Neutral: (('bekend',), 8) Percentage: 0.000856714499893
+Positive: (('enzenz',), 1) Percentage: 0.000663129973475
+
+...#189...
+Neutral: (('meld',), 8) Percentage: 0.000856714499893
+Positive: (('mailbox',), 1) Percentage: 0.000663129973475
+
+...#190...
+Neutral: (('bus',), 8) Percentage: 0.000856714499893
+Positive: (('Kaarten',), 1) Percentage: 0.000663129973475
+
+...#191...
+Neutral: (('D',), 8) Percentage: 0.000856714499893
+Positive: (('oftewelonbeperkt',), 1) Percentage: 0.000663129973475
+
+...#192...
+Neutral: (('Helden',), 8) Percentage: 0.000856714499893
+Positive: (('Yeah',), 1) Percentage: 0.000663129973475
+
+...#193...
+Neutral: (('En',), 8) Percentage: 0.000856714499893
+Positive: (('doen',), 1) Percentage: 0.000663129973475
+
+...#194...
+Neutral: (('vervoer',), 7) Percentage: 0.000749625187406
+Positive: (('exclusief',), 1) Percentage: 0.000663129973475
+
+...#195...
+Neutral: (('xe9n',), 7) Percentage: 0.000749625187406
+Positive: (('arrangement',), 1) Percentage: 0.000663129973475
+
+...#196...
+Neutral: (('schermen',), 7) Percentage: 0.000749625187406
+Positive: (('Duurt',), 1) Percentage: 0.000663129973475
+
+...#197...
+Neutral: (('maken',), 7) Percentage: 0.000749625187406
+Positive: (('20',), 1) Percentage: 0.000663129973475
+
+...#198...
+Neutral: (('as',), 7) Percentage: 0.000749625187406
+Positive: (('BLIJ',), 1) Percentage: 0.000663129973475
+
+...#199...
+Neutral: (('word',), 7) Percentage: 0.000749625187406
+Positive: (('technische',), 1) Percentage: 0.000663129973475
+
+...#200...
+Neutral: (('jij',), 7) Percentage: 0.000749625187406
+Positive: (('verder',), 1) Percentage: 0.000663129973475
+
+...#201...
+Neutral: (('m',), 7) Percentage: 0.000749625187406
+Positive: (('39vrienden',), 1) Percentage: 0.000663129973475
+
+...#202...
+Neutral: (('AD',), 7) Percentage: 0.000749625187406
+Positive: (('naarrrrrr',), 1) Percentage: 0.000663129973475
+
+...#203...
+Neutral: (('twee',), 7) Percentage: 0.000749625187406
+Positive: (('hele',), 1) Percentage: 0.000663129973475
+
+...#204...
+Neutral: (('HOSACXNX',), 7) Percentage: 0.000749625187406
+Positive: (('27ste',), 1) Percentage: 0.000663129973475
+
+...#205...
+Neutral: (('Spectaculaire',), 7) Percentage: 0.000749625187406
+Positive: (('maakt',), 1) Percentage: 0.000663129973475
+
+...#206...
+Neutral: (('6',), 7) Percentage: 0.000749625187406
+Positive: (('as',), 1) Percentage: 0.000663129973475
+
+...#207...
+Neutral: (('weg',), 7) Percentage: 0.000749625187406
+Positive: (('Daarna',), 1) Percentage: 0.000663129973475
+
+...#208...
+Neutral: (('net',), 7) Percentage: 0.000749625187406
+Positive: (('houuuu',), 1) Percentage: 0.000663129973475
+
+...#209...
+Neutral: (('toch',), 7) Percentage: 0.000749625187406
+Positive: (('heimwee',), 1) Percentage: 0.000663129973475
+
+...#210...
+Neutral: (('C1000',), 7) Percentage: 0.000749625187406
+Positive: (('lief',), 1) Percentage: 0.000663129973475
+
+...#211...
+Neutral: (('dag',), 7) Percentage: 0.000749625187406
+Positive: (('hoe',), 1) Percentage: 0.000663129973475
+
+...#212...
+Neutral: (('ADnl',), 7) Percentage: 0.000749625187406
+Positive: (('sterrencast',), 1) Percentage: 0.000663129973475
+
+...#213...
+Neutral: (('ahoy',), 7) Percentage: 0.000749625187406
+Positive: (('buddy',), 1) Percentage: 0.000663129973475
+
+...#214...
+Neutral: (('onderdeel',), 7) Percentage: 0.000749625187406
+Positive: (('In',), 1) Percentage: 0.000663129973475
+
+...#215...
+Neutral: (('kans',), 7) Percentage: 0.000749625187406
+Positive: (('sta',), 1) Percentage: 0.000663129973475
+
+...#216...
+Neutral: (('YES',), 7) Percentage: 0.000749625187406
+Positive: (('whahaha',), 1) Percentage: 0.000663129973475
+
+...#217...
+Neutral: (('zingen',), 6) Percentage: 0.00064253587492
+Positive: (('GEWONNEN',), 1) Percentage: 0.000663129973475
+
+...#218...
+Neutral: (('aanbieding',), 6) Percentage: 0.00064253587492
+Positive: (('zeggen',), 1) Percentage: 0.000663129973475
+
+...#219...
+Neutral: (('broertje',), 6) Percentage: 0.00064253587492
+Positive: (('ff',), 1) Percentage: 0.000663129973475
+
+...#220...
+Neutral: (('vragen',), 6) Percentage: 0.00064253587492
+Positive: (('DE',), 1) Percentage: 0.000663129973475
+
+...#221...
+Neutral: (('ODL',), 6) Percentage: 0.00064253587492
+Positive: (('beste',), 1) Percentage: 0.000663129973475
+
+...#222...
+Neutral: (('27',), 6) Percentage: 0.00064253587492
+Positive: (('betere',), 1) Percentage: 0.000663129973475
+
+...#223...
+Neutral: (('Kaarten',), 6) Percentage: 0.00064253587492
+Positive: (('volgendeweek',), 1) Percentage: 0.000663129973475
+
+...#224...
+Neutral: (('Al',), 6) Percentage: 0.00064253587492
+Positive: (('Naaaaa',), 1) Percentage: 0.000663129973475
+
+...#225...
+Neutral: (('repetities',), 6) Percentage: 0.00064253587492
+Positive: (('Binnenkort',), 1) Percentage: 0.000663129973475
+
+...#226...
+Neutral: (('kunnen',), 6) Percentage: 0.00064253587492
+Positive: (('hier',), 1) Percentage: 0.000663129973475
+
+...#227...
+Neutral: (('kaart',), 6) Percentage: 0.00064253587492
+Positive: (('liveGeweldig',), 1) Percentage: 0.000663129973475
+
+...#228...
+Neutral: (('AMSTEL',), 6) Percentage: 0.00064253587492
+Positive: (('nieuwste',), 1) Percentage: 0.000663129973475
+
+...#229...
+Neutral: (('april',), 6) Percentage: 0.00064253587492
+Positive: (('tijdstip',), 1) Percentage: 0.000663129973475
+
+...#230...
+Neutral: (('Zin',), 6) Percentage: 0.00064253587492
+Positive: (('Absurd',), 1) Percentage: 0.000663129973475
+
+...#231...
+Neutral: (('helaas',), 6) Percentage: 0.00064253587492
+Positive: (('goed',), 1) Percentage: 0.000663129973475
+
+...#232...
+Neutral: (('Er',), 6) Percentage: 0.00064253587492
+Positive: (('WEEK',), 1) Percentage: 0.000663129973475
+
+...#233...
+Neutral: (('Laatste',), 6) Percentage: 0.00064253587492
+Positive: (('verjaardagscadeau',), 1) Percentage: 0.000663129973475
+
+...#234...
+Neutral: (('achter',), 6) Percentage: 0.00064253587492
+Positive: (('Samen',), 1) Percentage: 0.000663129973475
+
+...#235...
+Neutral: (('Oa',), 6) Percentage: 0.00064253587492
+Positive: (('anderhalf',), 1) Percentage: 0.000663129973475
+
+...#236...
+Neutral: (('weekend',), 6) Percentage: 0.00064253587492
+Positive: (('dinsdag',), 1) Percentage: 0.000663129973475
+
+...#237...
+Neutral: (('Alkmaar',), 6) Percentage: 0.00064253587492
+Positive: (('gebeld',), 1) Percentage: 0.000663129973475
+
+...#238...
+Neutral: (('mooi',), 6) Percentage: 0.00064253587492
+Positive: (('brengen',), 1) Percentage: 0.000663129973475
+
+...#239...
+Neutral: (('Nederland',), 6) Percentage: 0.00064253587492
+Positive: (('entertainer',), 1) Percentage: 0.000663129973475
+
+...#240...
+Neutral: (('Kleine',), 6) Percentage: 0.00064253587492
+Positive: (('Nou',), 1) Percentage: 0.000663129973475
+
+...#241...
+Neutral: (('openingen',), 6) Percentage: 0.00064253587492
+Positive: (('n',), 1) Percentage: 0.000663129973475
+
+...#242...
+Neutral: (('ad',), 6) Percentage: 0.00064253587492
+Positive: (('Alvast',), 1) Percentage: 0.000663129973475
+
+...#243...
+Neutral: (('Jan',), 6) Percentage: 0.00064253587492
+Positive: (('Life',), 1) Percentage: 0.000663129973475
+
+...#244...
+Neutral: (('veel',), 6) Percentage: 0.00064253587492
+Positive: (('HvA',), 1) Percentage: 0.000663129973475
+
+...#245...
+Neutral: (('Eentje',), 6) Percentage: 0.00064253587492
+Positive: (('moeders',), 1) Percentage: 0.000663129973475
+
+...#246...
+Neutral: (('Fans',), 6) Percentage: 0.00064253587492
+Positive: (('ontvang',), 1) Percentage: 0.000663129973475
+
+...#247...
+Neutral: (('VRIENDEN',), 6) Percentage: 0.00064253587492
+Positive: (('dufste',), 1) Percentage: 0.000663129973475
+
+...#248...
+Neutral: (('39t',), 6) Percentage: 0.00064253587492
+Positive: (('xa0',), 1) Percentage: 0.000663129973475
+
+...#249...
+Neutral: (('zitplaatsen',), 6) Percentage: 0.00064253587492
+Positive: (('Eigenlijk',), 1) Percentage: 0.000663129973475
+
+...#250...
+Neutral: (('28e',), 6) Percentage: 0.00064253587492
+Positive: (('reclame',), 1) Percentage: 0.000663129973475
+
+...#251...
+Neutral: (('vanaf',), 6) Percentage: 0.00064253587492
+Positive: (('eerste',), 1) Percentage: 0.000663129973475
+
+...#252...
+Neutral: (('info',), 6) Percentage: 0.00064253587492
+Positive: (('jaaa',), 1) Percentage: 0.000663129973475
+
+...#253...
+Neutral: (('Zondag',), 6) Percentage: 0.00064253587492
+Positive: (('51',), 1) Percentage: 0.000663129973475
+
+...#254...
+Neutral: (('laatste',), 6) Percentage: 0.00064253587492
+Positive: (('rhet',), 1) Percentage: 0.000663129973475
+
+...#255...
+Neutral: (('Door',), 6) Percentage: 0.00064253587492
+Positive: (('topper',), 1) Percentage: 0.000663129973475
+
+...#256...
+Neutral: (('samen',), 6) Percentage: 0.00064253587492
+Positive: (('Rome',), 1) Percentage: 0.000663129973475
+
+...#257...
+Neutral: (('maak',), 6) Percentage: 0.00064253587492
+Positive: (('WOENSDAG',), 1) Percentage: 0.000663129973475
+
+...#258...
+Neutral: (('omstandigheden',), 6) Percentage: 0.00064253587492
+Positive: (('11',), 1) Percentage: 0.000663129973475
+
+...#259...
+Neutral: (('concert',), 6) Percentage: 0.00064253587492
+Positive: (('bezig',), 1) Percentage: 0.000663129973475
+
+...#260...
+Neutral: (('ons',), 6) Percentage: 0.00064253587492
+Positive: (('goede',), 1) Percentage: 0.000663129973475
+
+...#261...
+Neutral: (('heeft',), 6) Percentage: 0.00064253587492
+Positive: (('knallend',), 1) Percentage: 0.000663129973475
+
+...#262...
+Neutral: (('willen',), 6) Percentage: 0.00064253587492
+Positive: (('voornemen',), 1) Percentage: 0.000663129973475
+
+...#263...
+Neutral: (('ze',), 5) Percentage: 0.000535446562433
+Positive: (('woensdag',), 1) Percentage: 0.000663129973475
+
+...#264...
+Neutral: (('Veel',), 5) Percentage: 0.000535446562433
+Positive: (('vakantie',), 1) Percentage: 0.000663129973475
+
+...#265...
+Neutral: (('stad',), 5) Percentage: 0.000535446562433
+Positive: (('rotterdam',), 1) Percentage: 0.000663129973475
+
+...#266...
+Neutral: (('helemaal',), 5) Percentage: 0.000535446562433
+Positive: (('hiero',), 1) Percentage: 0.000663129973475
+
+...#267...
+Neutral: (('na',), 5) Percentage: 0.000535446562433
+Positive: (('vet',), 1) Percentage: 0.000663129973475
+
+...#268...
+Neutral: (('deze',), 5) Percentage: 0.000535446562433
+Positive: (('ZOOOOO',), 1) Percentage: 0.000663129973475
+
+...#269...
+Neutral: (('Yes',), 5) Percentage: 0.000535446562433
+Positive: (('heel',), 1) Percentage: 0.000663129973475
+
+...#270...
+Neutral: (('Harderwijk',), 5) Percentage: 0.000535446562433
+Positive: (('Barry',), 1) Percentage: 0.000663129973475
+
+...#271...
+Neutral: (('Gezocht',), 5) Percentage: 0.000535446562433
+Positive: (('Door',), 1) Percentage: 0.000663129973475
+
+...#272...
+Neutral: (('Xander',), 5) Percentage: 0.000535446562433
+Positive: (('maandag',), 1) Percentage: 0.000663129973475
+
+...#273...
+Neutral: (('winnen',), 5) Percentage: 0.000535446562433
+Positive: (('begin',), 1) Percentage: 0.000663129973475
+
+...#274...
+Neutral: (('nieuws',), 5) Percentage: 0.000535446562433
+Positive: (('FUCK',), 1) Percentage: 0.000663129973475
+
+...#275...
+Neutral: (('18',), 5) Percentage: 0.000535446562433
+Positive: (('gehad',), 1) Percentage: 0.000663129973475
+
+...#276...
+Neutral: (('Januari',), 5) Percentage: 0.000535446562433
+Positive: (('Bruder',), 1) Percentage: 0.000663129973475
+
+...#277...
+Neutral: (('x20ac100',), 5) Percentage: 0.000535446562433
+Positive: (('Nog',), 1) Percentage: 0.000663129973475
+
+...#278...
+Neutral: (('opening',), 5) Percentage: 0.000535446562433
+Positive: (('m',), 1) Percentage: 0.000663129973475
+
+...#279...
+Neutral: (('mensen',), 5) Percentage: 0.000535446562433
+Positive: (('begrijpen',), 1) Percentage: 0.000663129973475
+
+...#280...
+Neutral: (('pagina',), 5) Percentage: 0.000535446562433
+Positive: (('feest',), 1) Percentage: 0.000663129973475
+
+...#281...
+Neutral: (('alvast',), 5) Percentage: 0.000535446562433
+Positive: (('H',), 1) Percentage: 0.000663129973475
+
+...#282...
+Neutral: (('alle',), 5) Percentage: 0.000535446562433
+Positive: (('erg',), 1) Percentage: 0.000663129973475
+
+...#283...
+Neutral: (('spectaculaire',), 5) Percentage: 0.000535446562433
+Positive: (('lijkt',), 1) Percentage: 0.000663129973475
+
+...#284...
+Neutral: (('mij',), 5) Percentage: 0.000535446562433
+Positive: (('7',), 1) Percentage: 0.000663129973475
+
+...#285...
+Neutral: (('geven',), 5) Percentage: 0.000535446562433
+Positive: (('Iris',), 1) Percentage: 0.000663129973475
+
+...#286...
+Neutral: (('kom',), 5) Percentage: 0.000535446562433
+Positive: (('snel',), 1) Percentage: 0.000663129973475
+
+...#287...
+Neutral: (('werken',), 5) Percentage: 0.000535446562433
+Positive: (('Nice',), 1) Percentage: 0.000663129973475
+
+...#288...
+Neutral: (('hierover',), 5) Percentage: 0.000535446562433
+Positive: (('commercials',), 1) Percentage: 0.000663129973475
+
+...#289...
+Neutral: (('x201c',), 5) Percentage: 0.000535446562433
+Positive: (('Toch',), 1) Percentage: 0.000663129973475
+
+...#290...
+Neutral: (('x',), 5) Percentage: 0.000535446562433
+Positive: (('daar',), 1) Percentage: 0.000663129973475
+
+...#291...
+Neutral: (('ter',), 5) Percentage: 0.000535446562433
+Positive: (('Cool',), 1) Percentage: 0.000663129973475
+
+...#292...
+Neutral: (('belang',), 5) Percentage: 0.000535446562433
+Positive: (('yeah',), 1) Percentage: 0.000663129973475
+
+...#293...
+Neutral: (('wwwfacebookcom',), 5) Percentage: 0.000535446562433
+Positive: (('heeeeeeeeel',), 1) Percentage: 0.000663129973475
+
+...#294...
+Neutral: (('kane',), 5) Percentage: 0.000535446562433
+Positive: (('turner',), 1) Percentage: 0.000663129973475
+
+...#295...
+Neutral: (('Voor',), 5) Percentage: 0.000535446562433
+Positive: (('alvast',), 1) Percentage: 0.000663129973475
+
+...#296...
+Neutral: (('mag',), 5) Percentage: 0.000535446562433
+Positive: (('storing',), 1) Percentage: 0.000663129973475
+
+...#297...
+Neutral: (('Heb',), 5) Percentage: 0.000535446562433
+Positive: (('ooit',), 1) Percentage: 0.000663129973475
+
+...#298...
+Neutral: (('Stoepje',), 5) Percentage: 0.000535446562433
+Positive: (('best',), 1) Percentage: 0.000663129973475
+
+...#299...
+Neutral: (('even',), 5) Percentage: 0.000535446562433
+Positive: (('Dijk',), 1) Percentage: 0.000663129973475
+
+...#300...
+Neutral: (('wat',), 5) Percentage: 0.000535446562433
+Positive: (('half',), 1) Percentage: 0.000663129973475
+
+...#301...
+Neutral: (('Veldkaarten',), 5) Percentage: 0.000535446562433
+Positive: (('Tonny',), 1) Percentage: 0.000663129973475
+
+...#302...
+Neutral: (('dagen',), 5) Percentage: 0.000535446562433
+Positive: (('gesport',), 1) Percentage: 0.000663129973475
+
+...#303...
+Neutral: (('euro',), 5) Percentage: 0.000535446562433
+Positive: (('ben',), 1) Percentage: 0.000663129973475
+
+...#304...
+Neutral: (('setje',), 4) Percentage: 0.000428357249946
+Positive: (('21',), 1) Percentage: 0.000663129973475
+
+...#305...
+Neutral: (('Maar',), 4) Percentage: 0.000428357249946
+Positive: (('dertien',), 1) Percentage: 0.000663129973475
+
+...#306...
+Neutral: (('originele',), 4) Percentage: 0.000428357249946
+Positive: (('gek',), 1) Percentage: 0.000663129973475
+
+...#307...
+Neutral: (('bevat',), 4) Percentage: 0.000428357249946
+Positive: (('Vorig',), 1) Percentage: 0.000663129973475
+
+...#308...
+Neutral: (('Klik',), 4) Percentage: 0.000428357249946
+Positive: (('jah',), 1) Percentage: 0.000663129973475
+
+...#309...
+Neutral: (('Volg',), 4) Percentage: 0.000428357249946
+Positive: (('Daat',), 1) Percentage: 0.000663129973475
+
+...#310...
+Neutral: (('geweldige',), 4) Percentage: 0.000428357249946
+Positive: (('als',), 1) Percentage: 0.000663129973475
+
+...#311...
+Neutral: (('paar',), 4) Percentage: 0.000428357249946
+Positive: (('NOG',), 1) Percentage: 0.000663129973475
+
+...#312...
+Neutral: (('f5X6EG68',), 4) Percentage: 0.000428357249946
+Positive: (('Oh',), 1) Percentage: 0.000663129973475
+
+...#313...
+Neutral: (('eens',), 4) Percentage: 0.000428357249946
+Positive: (('Hou',), 1) Percentage: 0.000663129973475
+
+...#314...
+Neutral: (('volgend',), 4) Percentage: 0.000428357249946
+Positive: (('trekken',), 1) Percentage: 0.000663129973475
+
+...#315...
+Neutral: (('extra',), 4) Percentage: 0.000428357249946
+Positive: (('vroeg',), 1) Percentage: 0.000663129973475
+
+...#316...
+Neutral: (('vpPMYJ52',), 4) Percentage: 0.000428357249946
+Positive: (('Heberzinin',), 1) Percentage: 0.000663129973475
+
+...#317...
+Neutral: (('DE',), 4) Percentage: 0.000428357249946
+Positive: (('Maaspoort',), 1) Percentage: 0.000663129973475
+
+...#318...
+Neutral: (('begonnen',), 4) Percentage: 0.000428357249946
+Positive: (('Nederland',), 1) Percentage: 0.000663129973475
+
+...#319...
+Neutral: (('gewoon',), 4) Percentage: 0.000428357249946
+Positive: (('Jeeeeeeetje',), 1) Percentage: 0.000663129973475
+
+...#320...
+Neutral: (('meer',), 4) Percentage: 0.000428357249946
+Positive: (('twee',), 1) Percentage: 0.000663129973475
+
+...#321...
+Neutral: (('app_303061923047671',), 4) Percentage: 0.000428357249946
+Positive: (('zou',), 1) Percentage: 0.000663129973475
+
+...#322...
+Neutral: (('16',), 4) Percentage: 0.000428357249946
+Positive: (('Rianne',), 1) Percentage: 0.000663129973475
+
+...#323...
+Neutral: (('wanneer',), 4) Percentage: 0.000428357249946
+Positive: (('man',), 1) Percentage: 0.000663129973475
+
+...#324...
+Neutral: (('Interviews',), 4) Percentage: 0.000428357249946
+Positive: (('zeg',), 1) Percentage: 0.000663129973475
+
+...#325...
+Neutral: (('The',), 4) Percentage: 0.000428357249946
+Positive: (('Rowwen',), 1) Percentage: 0.000663129973475
+
+...#326...
+Neutral: (('vanuit',), 4) Percentage: 0.000428357249946
+Positive: (('Kan',), 1) Percentage: 0.000663129973475
+
+...#327...
+Neutral: (('Geweldige',), 4) Percentage: 0.000428357249946
+Positive: (('Ruymbeek',), 1) Percentage: 0.000663129973475
+
+...#328...
+Neutral: (('180',), 4) Percentage: 0.000428357249946
+Positive: (('kijken',), 1) Percentage: 0.000663129973475
+
+...#329...
+Neutral: (('aanstaande',), 4) Percentage: 0.000428357249946
+Positive: (('lees',), 1) Percentage: 0.000663129973475
+
+...#330...
+Neutral: (('voorverkoop',), 4) Percentage: 0.000428357249946
+Positive: (('better',), 1) Percentage: 0.000663129973475
+
+...#331...
+Neutral: (('zou',), 4) Percentage: 0.000428357249946
+Positive: (('Mn',), 1) Percentage: 0.000663129973475
+
+...#332...
+Neutral: (('facebook',), 4) Percentage: 0.000428357249946
+Positive: (('Zoooooo',), 1) Percentage: 0.000663129973475
+
+...#333...
+Neutral: (('3',), 4) Percentage: 0.000428357249946
+Positive: (('geven',), 1) Percentage: 0.000663129973475
+
+...#334...
+Neutral: (('show',), 4) Percentage: 0.000428357249946
+Positive: (('dag',), 1) Percentage: 0.000663129973475
+
+...#335...
+Neutral: (('morgen',), 4) Percentage: 0.000428357249946
+Positive: (('aight',), 1) Percentage: 0.000663129973475
+
+...#336...
+Neutral: (('Check',), 4) Percentage: 0.000428357249946
+Positive: (('TOCH',), 1) Percentage: 0.000663129973475
+
+...#337...
+Neutral: (('Speciaal',), 4) Percentage: 0.000428357249946
+Positive: (('diaan',), 1) Percentage: 0.000663129973475
+
+...#338...
+Neutral: (('wwwadnl',), 4) Percentage: 0.000428357249946
+Positive: (('komt',), 1) Percentage: 0.000663129973475
+
+...#339...
+Neutral: (('zoek',), 4) Percentage: 0.000428357249946
+Positive: (('volledig',), 1) Percentage: 0.000663129973475
+
+...#340...
+Neutral: (('65',), 4) Percentage: 0.000428357249946
+Positive: (('xa0De',), 1) Percentage: 0.000663129973475
+
+...#341...
+Neutral: (('nieuwsbrief',), 4) Percentage: 0.000428357249946
+Positive: (('zaterdagavondshow',), 1) Percentage: 0.000663129973475
+
+...#342...
+Neutral: (('Voice',), 4) Percentage: 0.000428357249946
+Positive: (('Whaa',), 1) Percentage: 0.000663129973475
+
+...#343...
+Neutral: (('starten',), 4) Percentage: 0.000428357249946
+Positive: (('kom',), 1) Percentage: 0.000663129973475
+
+...#344...
+Neutral: (('Facebookpagina',), 4) Percentage: 0.000428357249946
+Positive: (('fuck',), 1) Percentage: 0.000663129973475
+
+...#345...
+Neutral: (('bemachtigd',), 4) Percentage: 0.000428357249946
+Positive: (('ook',), 1) Percentage: 0.000663129973475
+
+...#346...
+Neutral: (('tijd',), 4) Percentage: 0.000428357249946
+Positive: (('Net',), 1) Percentage: 0.000663129973475
+
+...#347...
+Neutral: (('sk',), 4) Percentage: 0.000428357249946
+Positive: (('xa0Dit',), 1) Percentage: 0.000663129973475
+
+...#348...
+Neutral: (('bouw',), 4) Percentage: 0.000428357249946
+Positive: (('Yvonne',), 1) Percentage: 0.000663129973475
+
+...#349...
+Neutral: (('crew',), 4) Percentage: 0.000428357249946
+Positive: (('Jan',), 1) Percentage: 0.000663129973475
+
+...#350...
+Neutral: (('01',), 4) Percentage: 0.000428357249946
+Positive: (('coaches',), 1) Percentage: 0.000663129973475
+
+...#351...
+Neutral: (('ADNL',), 4) Percentage: 0.000428357249946
+Positive: (('Dinand',), 1) Percentage: 0.000663129973475
+
+...#352...
+Neutral: (('Hoe',), 4) Percentage: 0.000428357249946
+Positive: (('graag',), 1) Percentage: 0.000663129973475
+
+...#353...
+Neutral: (('bijlage',), 4) Percentage: 0.000428357249946
+Positive: (('Super',), 1) Percentage: 0.000663129973475
+
+...#354...
+Neutral: (('titel',), 4) Percentage: 0.000428357249946
+Positive: (('binnen',), 1) Percentage: 0.000663129973475
+
+...#355...
+Neutral: (('Hij',), 4) Percentage: 0.000428357249946
+Positive: (('drinken',), 1) Percentage: 0.000663129973475
+
+...#356...
+Neutral: (('worden',), 4) Percentage: 0.000428357249946
+Positive: (('GOUD',), 1) Percentage: 0.000663129973475
+
+...#357...
+Neutral: (('compensatie',), 4) Percentage: 0.000428357249946
+Positive: (('avondje',), 1) Percentage: 0.000663129973475
+
+...#358...
+Neutral: (('gezellig',), 4) Percentage: 0.000428357249946
+Positive: (('Aitt',), 1) Percentage: 0.000663129973475
+
+...#359...
+Neutral: (('jouw',), 4) Percentage: 0.000428357249946
+Positive: (('mei',), 1) Percentage: 0.000663129973475
+
+...#360...
+Neutral: (('tellende',), 4) Percentage: 0.000428357249946
+Positive: (('hoort',), 1) Percentage: 0.000663129973475
+
+...#361...
+Neutral: (('ivm',), 4) Percentage: 0.000428357249946
+Positive: (('waha',), 1) Percentage: 0.000663129973475
+
+...#362...
+Neutral: (('gast',), 4) Percentage: 0.000428357249946
+Positive: (('toe',), 1) Percentage: 0.000663129973475
+
+...#363...
+Neutral: (('heuse',), 4) Percentage: 0.000428357249946
+Positive: (('verheugen',), 1) Percentage: 0.000663129973475
+
+...#364...
+Neutral: (('facebookpagina',), 4) Percentage: 0.000428357249946
+Positive: (('slapen',), 1) Percentage: 0.000663129973475
+
+...#365...
+Neutral: (('Varsseveld',), 4) Percentage: 0.000428357249946
+Positive: (('Niemand',), 1) Percentage: 0.000663129973475
+
+...#366...
+Neutral: (('Kijk',), 4) Percentage: 0.000428357249946
+Positive: (('dufheid',), 1) Percentage: 0.000663129973475
+
+...#367...
+Neutral: (('yes',), 4) Percentage: 0.000428357249946
+Positive: (('Gaat',), 1) Percentage: 0.000663129973475
+
+...#368...
+Neutral: (('wachten',), 4) Percentage: 0.000428357249946
+Positive: (('droom',), 1) Percentage: 0.000663129973475
+
+...#369...
+Neutral: (('fans',), 4) Percentage: 0.000428357249946
+Positive: (('39t',), 1) Percentage: 0.000663129973475
+
+...#370...
+Neutral: (('Europese',), 4) Percentage: 0.000428357249946
+Positive: (('c1000',), 1) Percentage: 0.000663129973475
+
+...#371...
+Neutral: (('uit',), 3) Percentage: 0.00032126793746
+Positive: (('vriendenvanamstellive',), 1) Percentage: 0.000663129973475
+
+...#372...
+Neutral: (('site',), 3) Percentage: 0.00032126793746
+Positive: (('Joehoe',), 1) Percentage: 0.000663129973475
+
+...#373...
+Neutral: (('toegepast',), 3) Percentage: 0.00032126793746
+Positive: (('Week',), 1) Percentage: 0.000663129973475
+
+...#374...
+Neutral: (('musselkanaal',), 3) Percentage: 0.00032126793746
+Positive: (('YEAH',), 1) Percentage: 0.000663129973475
+
+...#375...
+Neutral: (('Kane',), 3) Percentage: 0.00032126793746
+Positive: (('harjan',), 1) Percentage: 0.000663129973475
+
+...#376...
+Neutral: (('Kroonjuwelen',), 3) Percentage: 0.00032126793746
+Positive: (('line',), 1) Percentage: 0.000663129973475
+
+...#377...
+Neutral: (('voorjaar',), 3) Percentage: 0.00032126793746
+Positive: (('JAAAAAAAAA',), 1) Percentage: 0.000663129973475
+
+...#378...
+Neutral: (('xe9',), 3) Percentage: 0.00032126793746
+Positive: (('vast',), 1) Percentage: 0.000663129973475
+
+...#379...
+Neutral: (('schat',), 3) Percentage: 0.00032126793746
+Positive: (('krijgen',), 1) Percentage: 0.000663129973475
+
+...#380...
+Neutral: (('Twitter',), 3) Percentage: 0.00032126793746
+Positive: (('Ellen',), 1) Percentage: 0.000663129973475
+
+...#381...
+Neutral: (('rond',), 3) Percentage: 0.00032126793746
+Positive: (('gezellige',), 1) Percentage: 0.000663129973475
+
+...#382...
+Neutral: (('e',), 3) Percentage: 0.00032126793746
+Positive: (('HEEEEEEEELLLL',), 1) Percentage: 0.000663129973475
+
+...#383...
+Neutral: (('ja',), 3) Percentage: 0.00032126793746
+Positive: (('drinker',), 1) Percentage: 0.000663129973475
+
+...#384...
+Neutral: (('Vriendenvanamstelnl',), 3) Percentage: 0.00032126793746
+Positive: (('scriptie',), 1) Percentage: 0.000663129973475
+
+...#385...
+Neutral: (('alsjeblieft',), 3) Percentage: 0.00032126793746
+Positive: (('bedankt',), 1) Percentage: 0.000663129973475
+
+...#386...
+Neutral: (('12',), 3) Percentage: 0.00032126793746
+Positive: (('yeaahh',), 1) Percentage: 0.000663129973475
+
+...#387...
+Neutral: (('geregeld',), 3) Percentage: 0.00032126793746
+Positive: (('7dagen',), 1) Percentage: 0.000663129973475
+
+...#388...
+Neutral: (('TE',), 3) Percentage: 0.00032126793746
+Positive: (('Voice',), 1) Percentage: 0.000663129973475
+
+...#389...
+Neutral: (('hoor',), 3) Percentage: 0.00032126793746
+Positive: (('starten',), 1) Percentage: 0.000663129973475
+
+...#390...
+Neutral: (('KOOP',), 3) Percentage: 0.00032126793746
+Positive: (('Jaaaaa',), 1) Percentage: 0.000663129973475
+
+...#391...
+Neutral: (('win',), 3) Percentage: 0.00032126793746
+Positive: (('xf2g',), 1) Percentage: 0.000663129973475
+
+...#392...
+Neutral: (('techniek',), 3) Percentage: 0.00032126793746
+Positive: (('uur',), 1) Percentage: 0.000663129973475
+
+...#393...
+Neutral: (('moet',), 3) Percentage: 0.00032126793746
+Positive: (('tickets',), 1) Percentage: 0.000663129973475
+
+...#394...
+Neutral: (('krijtbord',), 3) Percentage: 0.00032126793746
+Positive: (('Weekend',), 1) Percentage: 0.000663129973475
+
+...#395...
+Neutral: (('Heeft',), 3) Percentage: 0.00032126793746
+Positive: (('danyeah',), 1) Percentage: 0.000663129973475
+
+...#396...
+Neutral: (('uitverkocht',), 3) Percentage: 0.00032126793746
+Positive: (('figureren',), 1) Percentage: 0.000663129973475
+
+...#397...
+Neutral: (('primeur',), 3) Percentage: 0.00032126793746
+Positive: (('geweldig',), 1) Percentage: 0.000663129973475
+
+...#398...
+Neutral: (('laat',), 3) Percentage: 0.00032126793746
+Positive: (('eigenlijk',), 1) Percentage: 0.000663129973475
+
+...#399...
+Neutral: (('zelfs',), 3) Percentage: 0.00032126793746
+Positive: (('richting',), 1) Percentage: 0.000663129973475
+
+...#400...
+Neutral: (('39de',), 3) Percentage: 0.00032126793746
+Positive: (('Dit',), 1) Percentage: 0.000663129973475
+
+...#401...
+Neutral: (('benieuwd',), 3) Percentage: 0.00032126793746
+Positive: (('100',), 1) Percentage: 0.000663129973475
+
+...#402...
+Neutral: (('wakker',), 3) Percentage: 0.00032126793746
+Positive: (('Het',), 1) Percentage: 0.000663129973475
+
+...#403...
+Neutral: (('bandje',), 3) Percentage: 0.00032126793746
+Positive: (('bestaat',), 1) Percentage: 0.000663129973475
+
+...#404...
+Neutral: (('automatisch',), 3) Percentage: 0.00032126793746
+Positive: (('kopje',), 1) Percentage: 0.000663129973475
+
+...#405...
+Neutral: (('Nu',), 3) Percentage: 0.00032126793746
+Positive: (('feessie',), 1) Percentage: 0.000663129973475
+
+...#406...
+Neutral: (('heel',), 3) Percentage: 0.00032126793746
+Positive: (('Whaaa',), 1) Percentage: 0.000663129973475
+
+...#407...
+Neutral: (('Oproep',), 3) Percentage: 0.00032126793746
+Positive: (('stuk',), 1) Percentage: 0.000663129973475
+
+...#408...
+Neutral: (('gig',), 3) Percentage: 0.00032126793746
+Positive: (('Woei',), 1) Percentage: 0.000663129973475
+
+...#409...
+Neutral: (('veldkaarten',), 3) Percentage: 0.00032126793746
+Positive: (('zit',), 1) Percentage: 0.000663129973475
+
+...#410...
+Neutral: (('als',), 3) Percentage: 0.00032126793746
+Positive: (('Zo',), 1) Percentage: 0.000663129973475
+
+...#411...
+Neutral: (('US',), 3) Percentage: 0.00032126793746
+Positive: (('beetje',), 1) Percentage: 0.000663129973475
+
+...#412...
+Neutral: (('zeg',), 3) Percentage: 0.00032126793746
+Positive: (('liveme',), 1) Percentage: 0.000663129973475
+
+...#413...
+Neutral: (('kijken',), 3) Percentage: 0.00032126793746
+Positive: (('Smit',), 1) Percentage: 0.000663129973475
+
+...#414...
+Neutral: (('Racoon',), 3) Percentage: 0.00032126793746
+Positive: (('weten',), 1) Percentage: 0.000663129973475
+
+...#415...
+Neutral: (('Earring',), 3) Percentage: 0.00032126793746
+Positive: (('Goed',), 1) Percentage: 0.000663129973475
+
+...#416...
+Neutral: (('dingetjes',), 3) Percentage: 0.00032126793746
+Positive: (('commercial',), 1) Percentage: 0.000663129973475
+
+...#417...
+Neutral: (('druk',), 3) Percentage: 0.00032126793746
+Positive: (('gewenst',), 1) Percentage: 0.000663129973475
+
+...#418...
+Neutral: (('mijn',), 3) Percentage: 0.00032126793746
+Positive: (('misschien',), 1) Percentage: 0.000663129973475
+
+...#419...
+Neutral: (('binnen',), 3) Percentage: 0.00032126793746
+Positive: (('ineens',), 1) Percentage: 0.000663129973475
+
+...#420...
+Neutral: (('huidige',), 3) Percentage: 0.00032126793746
+Positive: (('schoonouders',), 1) Percentage: 0.000663129973475
+
+...#421...
+Neutral: (('slapen',), 3) Percentage: 0.00032126793746
+Positive: (('net',), 1) Percentage: 0.000663129973475
+
+...#422...
+Neutral: (('tekst',), 3) Percentage: 0.00032126793746
+Positive: (('onverwacht',), 1) Percentage: 0.000663129973475
+
+...#423...
+Neutral: (('Kaartje',), 3) Percentage: 0.00032126793746
+Positive: (('ene',), 1) Percentage: 0.000663129973475
+
+...#424...
+Neutral: (('busreis',), 3) Percentage: 0.00032126793746
+Positive: (('eentje',), 1) Percentage: 0.000663129973475
+
+...#425...
+Neutral: (('zie',), 3) Percentage: 0.00032126793746
+Positive: (('Jawel',), 1) Percentage: 0.000663129973475
+
+...#426...
+Neutral: (('mn',), 3) Percentage: 0.00032126793746
+Positive: (('eten',), 1) Percentage: 0.000663129973475
+
+...#427...
+Neutral: (('Maandag',), 3) Percentage: 0.00032126793746
+Positive: (('manier',), 1) Percentage: 0.000663129973475
+
+...#428...
+Neutral: (('Gelukkig',), 3) Percentage: 0.00032126793746
+Positive: (('bouwen',), 1) Percentage: 0.000663129973475
+
+...#429...
+Neutral: (('uur',), 3) Percentage: 0.00032126793746
+Positive: (('Grolsh',), 1) Percentage: 0.000663129973475
+
+...#430...
+Neutral: (('100',), 3) Percentage: 0.00032126793746
+Positive: (('Jeej',), 1) Percentage: 0.000663129973475
+
+...#431...
+Neutral: (('stuk',), 3) Percentage: 0.00032126793746
+Positive: (('Je',), 1) Percentage: 0.000663129973475
+
+...#432...
+Neutral: (('dus',), 3) Percentage: 0.00032126793746
+Positive: (('Vetin',), 1) Percentage: 0.000663129973475
+
+...#433...
+Neutral: (('juiste',), 3) Percentage: 0.00032126793746
+Positive: (('Lekker',), 1) Percentage: 0.000663129973475
+
+...#434...
+Neutral: (('14',), 3) Percentage: 0.00032126793746
+Positive: (('gaan',), 1) Percentage: 0.000663129973475
+
+...#435...
+Neutral: (('terug',), 3) Percentage: 0.00032126793746
+Positive: (('VVAL',), 1) Percentage: 0.000663129973475
+
+...#436...
+Neutral: (('woensdag',), 3) Percentage: 0.00032126793746
+Positive: (('chill',), 1) Percentage: 0.000663129973475
+
+...#437...
+Neutral: (('aantal',), 3) Percentage: 0.00032126793746
+Positive: (('20ste',), 1) Percentage: 0.000663129973475
+
+...#438...
+Neutral: (('Wat',), 3) Percentage: 0.00032126793746
+Positive: (('info',), 1) Percentage: 0.000663129973475
+
+...#439...
+Neutral: (('alleen',), 3) Percentage: 0.00032126793746
+Positive: (('3x',), 1) Percentage: 0.000663129973475
+
+...#440...
+Neutral: (('Je',), 3) Percentage: 0.00032126793746
+Positive: (('Dvd',), 1) Percentage: 0.000663129973475
+
+...#441...
+Neutral: (('winnaar',), 3) Percentage: 0.00032126793746
+Positive: (('1',), 1) Percentage: 0.000663129973475
+
+...#442...
+Neutral: (('2x',), 3) Percentage: 0.00032126793746
+Positive: (('Yoehoe',), 1) Percentage: 0.000663129973475
+
+...#443...
+Neutral: (('Leuke',), 3) Percentage: 0.00032126793746
+Positive: (('weekendje',), 1) Percentage: 0.000663129973475
+
+...#444...
+Neutral: (('t',), 3) Percentage: 0.00032126793746
+Positive: (('onverwachts',), 1) Percentage: 0.000663129973475
+
+...#445...
+Neutral: (('TV',), 3) Percentage: 0.00032126793746
+Positive: (('horen',), 1) Percentage: 0.000663129973475
+
+...#446...
+Neutral: (('tot',), 3) Percentage: 0.00032126793746
+Positive: (('pap',), 1) Percentage: 0.000663129973475
+
+...#447...
+Neutral: (('Kosten',), 3) Percentage: 0.00032126793746
+Positive: (('We',), 1) Percentage: 0.000663129973475
+
+...#448...
+Neutral: (('VanVelzen',), 3) Percentage: 0.00032126793746
+Positive: (('Thankx',), 1) Percentage: 0.000663129973475
+
+...#449...
+Neutral: (('nabij',), 3) Percentage: 0.00032126793746
+Positive: (('artiesten',), 1) Percentage: 0.000663129973475
+
+...#450...
+Neutral: (('bier',), 3) Percentage: 0.00032126793746
+Positive: (('gezellig',), 1) Percentage: 0.000663129973475
+
+...#451...
+Neutral: (('want',), 3) Percentage: 0.00032126793746
+Positive: (('avond',), 1) Percentage: 0.000663129973475
+
+...#452...
+Neutral: (('tvoh',), 3) Percentage: 0.00032126793746
+Positive: (('VanVelzen',), 1) Percentage: 0.000663129973475
+
+...#453...
+Neutral: (('waar',), 3) Percentage: 0.00032126793746
+Positive: (('eens',), 1) Percentage: 0.000663129973475
+
+...#454...
+Neutral: (('haha',), 3) Percentage: 0.00032126793746
+Positive: (('Genieten',), 1) Percentage: 0.000663129973475
+
+...#455...
+Neutral: (('VIP',), 3) Percentage: 0.00032126793746
+Positive: (('zusje',), 1) Percentage: 0.000663129973475
+
+...#456...
+Neutral: (('erbij',), 3) Percentage: 0.00032126793746
+Positive: (('straks',), 1) Percentage: 0.000663129973475
+
+...#457...
+Neutral: (('formatie',), 3) Percentage: 0.00032126793746
+Positive: (('life',), 1) Percentage: 0.000663129973475
+
+...#458...
+Neutral: (('plaatsen',), 2) Percentage: 0.000214178624973
+Positive: (('leg',), 1) Percentage: 0.000663129973475
+
+...#459...
+Neutral: (('Niet',), 2) Percentage: 0.000214178624973
+Positive: (('Toppers',), 1) Percentage: 0.000663129973475
+
+...#460...
+Neutral: (('Is',), 2) Percentage: 0.000214178624973
+Positive: (('Vooral',), 1) Percentage: 0.000663129973475
+
+...#461...
+Neutral: (('o',), 2) Percentage: 0.000214178624973
+Positive: (('Dankzij',), 1) Percentage: 0.000663129973475
+
+...#462...
+Neutral: (('echt',), 2) Percentage: 0.000214178624973
+Positive: (('heze',), 1) Percentage: 0.000663129973475
+
+...#463...
+Neutral: (('Blue',), 2) Percentage: 0.000214178624973
+Positive: (('beter',), 1) Percentage: 0.000663129973475
+
+...#464...
+Neutral: (('exact',), 2) Percentage: 0.000214178624973
+Positive: (('gaten',), 1) Percentage: 0.000663129973475
+
+...#465...
+Neutral: (('Reclameland',), 2) Percentage: 0.000214178624973
+Positive: (('hoofd',), 1) Percentage: 0.000663129973475
+
+...#466...
+Neutral: (('waarschijnlijk',), 2) Percentage: 0.000214178624973
+Positive: (('bijkomen',), 1) Percentage: 0.000663129973475
+
+...#467...
+Neutral: (('Hay',), 2) Percentage: 0.000214178624973
+Positive: (('concert',), 1) Percentage: 0.000663129973475
+
+...#468...
+Neutral: (('Zoeken',), 2) Percentage: 0.000214178624973
+Positive: (('Iedereen',), 1) Percentage: 0.000663129973475
+
+...#469...
+Neutral: (('you',), 2) Percentage: 0.000214178624973
+Positive: (('VOLGENDE',), 1) Percentage: 0.000663129973475
+
+...#470...
+Neutral: (('geluk',), 2) Percentage: 0.000214178624973
+Positive: (('druk',), 1) Percentage: 0.000663129973475
+
+...#471...
+Neutral: (('Zorg',), 2) Percentage: 0.000214178624973
+Positive: (('waarop',), 1) Percentage: 0.000663129973475
+
+...#472...
+Neutral: (('Hoeveel',), 2) Percentage: 0.000214178624973
+Positive: (('Leuk',), 1) Percentage: 0.000663129973475
+
+...#473...
+Neutral: (('arenakaarten',), 2) Percentage: 0.000214178624973
+Positive: (('natuurlijk',), 1) Percentage: 0.000663129973475
+
+...#474...
+Neutral: (('vrij',), 2) Percentage: 0.000214178624973
+Positive: (('stemming',), 1) Percentage: 0.000663129973475
+
+...#475...
+Neutral: (('frontman',), 2) Percentage: 0.000214178624973
+Positive: (('terwijl',), 1) Percentage: 0.000663129973475
+
+...#476...
+Neutral: (('donderdag',), 2) Percentage: 0.000214178624973
+Positive: (('laten',), 1) Percentage: 0.000663129973475
+
+...#477...
+Neutral: (('middag',), 2) Percentage: 0.000214178624973
+Positive: (('Heel',), 1) Percentage: 0.000663129973475
+
+...#478...
+Neutral: (('feestje',), 2) Percentage: 0.000214178624973
+Positive: (('Kane',), 1) Percentage: 0.000663129973475
+
+...#479...
+Neutral: (('27ste',), 2) Percentage: 0.000214178624973
+Positive: (('up',), 1) Percentage: 0.000663129973475
+
+...#480...
+Neutral: (('JURK',), 2) Percentage: 0.000214178624973
+Positive: (('Bedankt',), 1) Percentage: 0.000663129973475
+
+...#481...
+Neutral: (('hoe',), 2) Percentage: 0.000214178624973
+Positive: (('woehoeeeh',), 1) Percentage: 0.000663129973475
+
+...#482...
+Neutral: (('1350',), 2) Percentage: 0.000214178624973
+Positive: (('Zojuist',), 1) Percentage: 0.000663129973475
+
+...#483...
+Neutral: (('omdat',), 2) Percentage: 0.000214178624973
+Positive: (('waar',), 1) Percentage: 0.000663129973475
+
+...#484...
+Neutral: (('9',), 2) Percentage: 0.000214178624973
+Positive: (('we',), 1) Percentage: 0.000663129973475
+
+...#485...
+Neutral: (('Jurk',), 2) Percentage: 0.000214178624973
+Positive: (('willen',), 1) Percentage: 0.000663129973475
+
+...#486...
+Neutral: (('In',), 2) Percentage: 0.000214178624973
+Positive: (('dagje',), 1) Percentage: 0.000663129973475
+
+...#487...
+Neutral: (('beschikbaar',), 2) Percentage: 0.000214178624973
+Positive: (('liedjes',), 1) Percentage: 0.000663129973475
+
+...#488...
+Neutral: (('Waylon',), 2) Percentage: 0.000214178624973
+Positive: (('wordt',), 1) Percentage: 0.000663129973475
+
+...#489...
+Neutral: (('pakken',), 2) Percentage: 0.000214178624973
+Positive: (('Goede',), 1) Percentage: 0.000663129973475
+
+...#490...
+Neutral: (('Wauw',), 2) Percentage: 0.000214178624973
+Positive: (('bekijken',), 1) Percentage: 0.000663129973475
+
+...#491...
+Neutral: (('nl',), 2) Percentage: 0.000214178624973
+Positive: (('paul',), 1) Percentage: 0.000663129973475
+
+...#492...
+Neutral: (('baby',), 2) Percentage: 0.000214178624973
+Positive: (('Onde',), 1) Percentage: 0.000663129973475
+
+...#493...
+Neutral: (('door',), 2) Percentage: 0.000214178624973
+Positive: (('rowwen',), 1) Percentage: 0.000663129973475
+
+...#494...
+Neutral: (('26ste',), 2) Percentage: 0.000214178624973
+Positive: (('wachten',), 1) Percentage: 0.000663129973475
+
+...#495...
+Neutral: (('Succes',), 2) Percentage: 0.000214178624973
+Positive: (('super',), 1) Percentage: 0.000663129973475
+
+...#496...
+Neutral: (('was',), 2) Percentage: 0.000214178624973
+Positive: (('Vandaag',), 1) Percentage: 0.000663129973475
+
+...#497...
+Neutral: (('Dat',), 2) Percentage: 0.000214178624973
+Positive: (('Heze',), 1) Percentage: 0.000663129973475
+
+...#498...
+Neutral: (('home',), 2) Percentage: 0.000214178624973
+Positive: (('staan',), 1) Percentage: 0.000663129973475
+
+...#499...
+Neutral: (('jammer',), 2) Percentage: 0.000214178624973
+
+...#500...
+Neutral: (('Gaan',), 2) Percentage: 0.000214178624973
+
+...#501...
+Neutral: (('misschien',), 2) Percentage: 0.000214178624973
+
+...#502...
+Neutral: (('wilt',), 2) Percentage: 0.000214178624973
+
+...#503...
+Neutral: (('35',), 2) Percentage: 0.000214178624973
+
+...#504...
+Neutral: (('zeker',), 2) Percentage: 0.000214178624973
+
+...#505...
+Neutral: (('wordtweerfeest',), 2) Percentage: 0.000214178624973
+
+...#506...
+Neutral: (('loten',), 2) Percentage: 0.000214178624973
+
+...#507...
+Neutral: (('gok',), 2) Percentage: 0.000214178624973
+
+...#508...
+Neutral: (('rotterdam',), 2) Percentage: 0.000214178624973
+
+...#509...
+Neutral: (('Omg',), 2) Percentage: 0.000214178624973
+
+...#510...
+Neutral: (('Nee',), 2) Percentage: 0.000214178624973
+
+...#511...
+Neutral: (('gehad',), 2) Percentage: 0.000214178624973
+
+...#512...
+Neutral: (('aftellen',), 2) Percentage: 0.000214178624973
+
+...#513...
+Neutral: (('Trijntje',), 2) Percentage: 0.000214178624973
+
+...#514...
+Neutral: (('jurk',), 2) Percentage: 0.000214178624973
+
+...#515...
+Neutral: (('Toch',), 2) Percentage: 0.000214178624973
+
+...#516...
+Neutral: (('Golden',), 2) Percentage: 0.000214178624973
+
+...#517...
+Neutral: (('personen',), 2) Percentage: 0.000214178624973
+
+...#518...
+Neutral: (('Dijk',), 2) Percentage: 0.000214178624973
+
+...#519...
+Neutral: (('bedoelen',), 2) Percentage: 0.000214178624973
+
+...#520...
+Neutral: (('Monday',), 2) Percentage: 0.000214178624973
+
+...#521...
+Neutral: (('actiev',), 2) Percentage: 0.000214178624973
+
+...#522...
+Neutral: (('nou',), 2) Percentage: 0.000214178624973
+
+...#523...
+Neutral: (('allemaal',), 2) Percentage: 0.000214178624973
+
+...#524...
+Neutral: (('waren',), 2) Percentage: 0.000214178624973
+
+...#525...
+Neutral: (('Prijs',), 2) Percentage: 0.000214178624973
+
+...#526...
+Neutral: (('Over',), 2) Percentage: 0.000214178624973
+
+...#527...
+Neutral: (('rij',), 2) Percentage: 0.000214178624973
+
+...#528...
+Neutral: (('Wegens',), 2) Percentage: 0.000214178624973
+
+...#529...
+Neutral: (('ouders',), 2) Percentage: 0.000214178624973
+
+...#530...
+Neutral: (('presenteerd',), 2) Percentage: 0.000214178624973
+
+...#531...
+Neutral: (('DeVrienden',), 2) Percentage: 0.000214178624973
+
+...#532...
+Neutral: (('Nou',), 2) Percentage: 0.000214178624973
+
+...#533...
+Neutral: (('mail',), 2) Percentage: 0.000214178624973
+
+...#534...
+Neutral: (('schatje',), 2) Percentage: 0.000214178624973
+
+...#535...
+Neutral: (('39fietsen',), 2) Percentage: 0.000214178624973
+
+...#536...
+Neutral: (('3845',), 2) Percentage: 0.000214178624973
+
+...#537...
+Neutral: (('Cool',), 2) Percentage: 0.000214178624973
+
+...#538...
+Neutral: (('drinken',), 2) Percentage: 0.000214178624973
+
+...#539...
+Neutral: (('10',), 2) Percentage: 0.000214178624973
+
+...#540...
+Neutral: (('gemaakt',), 2) Percentage: 0.000214178624973
+
+...#541...
+Neutral: (('Geen',), 2) Percentage: 0.000214178624973
+
+...#542...
+Neutral: (('Groningen',), 2) Percentage: 0.000214178624973
+
+...#543...
+Neutral: (('baas',), 2) Percentage: 0.000214178624973
+
+...#544...
+Neutral: (('gekregen',), 2) Percentage: 0.000214178624973
+
+...#545...
+Neutral: (('Gaat',), 2) Percentage: 0.000214178624973
+
+...#546...
+Neutral: (('mama',), 2) Percentage: 0.000214178624973
+
+...#547...
+Neutral: (('opeens',), 2) Percentage: 0.000214178624973
+
+...#548...
+Neutral: (('vriendinnen',), 2) Percentage: 0.000214178624973
+
+...#549...
+Neutral: (('Jammer',), 2) Percentage: 0.000214178624973
+
+...#550...
+Neutral: (('k4Ziuiha',), 2) Percentage: 0.000214178624973
+
+...#551...
+Neutral: (('vol',), 2) Percentage: 0.000214178624973
+
+...#552...
+Neutral: (('vriendenvanamstellive',), 2) Percentage: 0.000214178624973
+
+...#553...
+Neutral: (('kennen',), 2) Percentage: 0.000214178624973
+
+...#554...
+Neutral: (('finale',), 2) Percentage: 0.000214178624973
+
+...#555...
+Neutral: (('Tot',), 2) Percentage: 0.000214178624973
+
+...#556...
+Neutral: (('Kaart',), 2) Percentage: 0.000214178624973
+
+...#557...
+Neutral: (('lastig',), 2) Percentage: 0.000214178624973
+
+...#558...
+Neutral: (('Rotterdamse',), 2) Percentage: 0.000214178624973
+
+...#559...
+Neutral: (('tha',), 2) Percentage: 0.000214178624973
+
+...#560...
+Neutral: (('Gratis',), 2) Percentage: 0.000214178624973
+
+...#561...
+Neutral: (('MOET',), 2) Percentage: 0.000214178624973
+
+...#562...
+Neutral: (('zitplaats',), 2) Percentage: 0.000214178624973
+
+...#563...
+Neutral: (('RADIO',), 2) Percentage: 0.000214178624973
+
+...#564...
+Neutral: (('helpen',), 2) Percentage: 0.000214178624973
+
+...#565...
+Neutral: (('Bus',), 2) Percentage: 0.000214178624973
+
+...#566...
+Neutral: (('Mijn',), 2) Percentage: 0.000214178624973
+
+...#567...
+Neutral: (('13e',), 2) Percentage: 0.000214178624973
+
+...#568...
+Neutral: (('natuurlijk',), 2) Percentage: 0.000214178624973
+
+...#569...
+Neutral: (('Dit',), 2) Percentage: 0.000214178624973
+
+...#570...
+Neutral: (('Kaartjes',), 2) Percentage: 0.000214178624973
+
+...#571...
+Neutral: (('5',), 2) Percentage: 0.000214178624973
+
+...#572...
+Neutral: (('Klaar',), 2) Percentage: 0.000214178624973
+
+...#573...
+Neutral: (('zomaar',), 2) Percentage: 0.000214178624973
+
+...#574...
+Neutral: (('Aangeboden',), 2) Percentage: 0.000214178624973
+
+...#575...
+Neutral: (('Jaaaaaa',), 2) Percentage: 0.000214178624973
+
+...#576...
+Neutral: (('programma',), 2) Percentage: 0.000214178624973
+
+...#577...
+Neutral: (('optreden',), 2) Percentage: 0.000214178624973
+
+...#578...
+Neutral: (('Tip',), 2) Percentage: 0.000214178624973
+
+...#579...
+Neutral: (('vertrekt',), 2) Percentage: 0.000214178624973
+
+...#580...
+Neutral: (('eten',), 2) Percentage: 0.000214178624973
+
+...#581...
+Neutral: (('bouwen',), 2) Percentage: 0.000214178624973
+
+...#582...
+Neutral: (('zien',), 2) Percentage: 0.000214178624973
+
+...#583...
+Neutral: (('VvAL',), 2) Percentage: 0.000214178624973
+
+...#584...
+Neutral: (('ongeveer',), 2) Percentage: 0.000214178624973
+
+...#585...
+Neutral: (('Let',), 2) Percentage: 0.000214178624973
+
+...#586...
+Neutral: (('ervoor',), 2) Percentage: 0.000214178624973
+
+...#587...
+Neutral: (('zover7',), 2) Percentage: 0.000214178624973
+
+...#588...
+Neutral: (('kunt',), 2) Percentage: 0.000214178624973
+
+...#589...
+Neutral: (('toen',), 2) Percentage: 0.000214178624973
+
+...#590...
+Neutral: (('jou',), 2) Percentage: 0.000214178624973
+
+...#591...
+Neutral: (('eindelijk',), 2) Percentage: 0.000214178624973
+
+...#592...
+Neutral: (('shit',), 2) Percentage: 0.000214178624973
+
+...#593...
+Neutral: (('here',), 2) Percentage: 0.000214178624973
+
+...#594...
+Neutral: (('zelf',), 2) Percentage: 0.000214178624973
+
+...#595...
+Neutral: (('Als',), 2) Percentage: 0.000214178624973
+
+...#596...
+Neutral: (('treedt',), 2) Percentage: 0.000214178624973
+
+...#597...
+Neutral: (('verkoop',), 2) Percentage: 0.000214178624973
+
+...#598...
+Neutral: (('vanavond',), 2) Percentage: 0.000214178624973
+
+...#599...
+Neutral: (('joepie',), 2) Percentage: 0.000214178624973
+
+...#600...
+Neutral: (('papa',), 2) Percentage: 0.000214178624973
+
+...#601...
+Neutral: (('dank',), 2) Percentage: 0.000214178624973
+
+...#602...
+Neutral: (('heerlijk',), 2) Percentage: 0.000214178624973
+
+...#603...
+Neutral: (('Monique',), 2) Percentage: 0.000214178624973
+
+...#604...
+Neutral: (('hotel',), 2) Percentage: 0.000214178624973
+
+...#605...
+Neutral: (('optrede',), 2) Percentage: 0.000214178624973
+
+...#606...
+Neutral: (('trouwens',), 2) Percentage: 0.000214178624973
+
+...#607...
+Neutral: (('d',), 2) Percentage: 0.000214178624973
+
+...#608...
+Neutral: (('tijdens',), 2) Percentage: 0.000214178624973
+
+...#609...
+Neutral: (('gelukkig',), 2) Percentage: 0.000214178624973
+
+...#610...
+Neutral: (('Ben',), 2) Percentage: 0.000214178624973
+
+...#611...
+Neutral: (('denk',), 2) Percentage: 0.000214178624973
+
+...#612...
+Neutral: (('Ziet',), 2) Percentage: 0.000214178624973
+
+...#613...
+Neutral: (('aankomende',), 2) Percentage: 0.000214178624973
+
+...#614...
+Neutral: (('x20ac95',), 2) Percentage: 0.000214178624973
+
+...#615...
+Neutral: (('Hopelijk',), 2) Percentage: 0.000214178624973
+
+...#616...
+Neutral: (('39vind',), 1) Percentage: 0.000107089312487
+
+...#617...
+Neutral: (('KAAJES',), 1) Percentage: 0.000107089312487
+
+...#618...
+Neutral: (('24',), 1) Percentage: 0.000107089312487
+
+...#619...
+Neutral: (('tmHIFoiu',), 1) Percentage: 0.000107089312487
+
+...#620...
+Neutral: (('yyyyieeeeaaaahh',), 1) Percentage: 0.000107089312487
+
+...#621...
+Neutral: (('Jij',), 1) Percentage: 0.000107089312487
+
+...#622...
+Neutral: (('weten',), 1) Percentage: 0.000107089312487
+
+...#623...
+Neutral: (('480',), 1) Percentage: 0.000107089312487
+
+...#624...
+Neutral: (('LIve',), 1) Percentage: 0.000107089312487
+
+...#625...
+Neutral: (('ZATERDAG',), 1) Percentage: 0.000107089312487
+
+...#626...
+Neutral: (('helden',), 1) Percentage: 0.000107089312487
+
+...#627...
+Neutral: (('As',), 1) Percentage: 0.000107089312487
+
+...#628...
+Neutral: (('backline',), 1) Percentage: 0.000107089312487
+
+...#629...
+Neutral: (('daarna',), 1) Percentage: 0.000107089312487
+
+...#630...
+Neutral: (('kant',), 1) Percentage: 0.000107089312487
+
+...#631...
+Neutral: (('Gelderesch',), 1) Percentage: 0.000107089312487
+
+...#632...
+Neutral: (('220',), 1) Percentage: 0.000107089312487
+
+...#633...
+Neutral: (('bellen',), 1) Percentage: 0.000107089312487
+
+...#634...
+Neutral: (('opknappenmaar',), 1) Percentage: 0.000107089312487
+
+...#635...
+Neutral: (('maandje',), 1) Percentage: 0.000107089312487
+
+...#636...
+Neutral: (('samenstelling',), 1) Percentage: 0.000107089312487
+
+...#637...
+Neutral: (('Beenakker',), 1) Percentage: 0.000107089312487
+
+...#638...
+Neutral: (('uitslapen',), 1) Percentage: 0.000107089312487
+
+...#639...
+Neutral: (('Enig',), 1) Percentage: 0.000107089312487
+
+...#640...
+Neutral: (('Joepie',), 1) Percentage: 0.000107089312487
+
+...#641...
+Neutral: (('xebn',), 1) Percentage: 0.000107089312487
+
+...#642...
+Neutral: (('maand',), 1) Percentage: 0.000107089312487
+
+...#643...
+Neutral: (('genieten',), 1) Percentage: 0.000107089312487
+
+...#644...
+Neutral: (('ge',), 1) Percentage: 0.000107089312487
+
+...#645...
+Neutral: (('Te',), 1) Percentage: 0.000107089312487
+
+...#646...
+Neutral: (('KATWIJK8800',), 1) Percentage: 0.000107089312487
+
+...#647...
+Neutral: (('voorbij',), 1) Percentage: 0.000107089312487
+
+...#648...
+Neutral: (('school',), 1) Percentage: 0.000107089312487
+
+...#649...
+Neutral: (('GMKb6jKa',), 1) Percentage: 0.000107089312487
+
+...#650...
+Neutral: (('competitie',), 1) Percentage: 0.000107089312487
+
+...#651...
+Neutral: (('Yess',), 1) Percentage: 0.000107089312487
+
+...#652...
+Neutral: (('TVOH',), 1) Percentage: 0.000107089312487
+
+...#653...
+Neutral: (('Dan',), 1) Percentage: 0.000107089312487
+
+...#654...
+Neutral: (('Veld',), 1) Percentage: 0.000107089312487
+
+...#655...
+Neutral: (('l',), 1) Percentage: 0.000107089312487
+
+...#656...
+Neutral: (('los',), 1) Percentage: 0.000107089312487
+
+...#657...
+Neutral: (('viertjes',), 1) Percentage: 0.000107089312487
+
+...#658...
+Neutral: (('feestjeTot',), 1) Percentage: 0.000107089312487
+
+...#659...
+Neutral: (('plaatsuggestie',), 1) Percentage: 0.000107089312487
+
+...#660...
+Neutral: (('0',), 1) Percentage: 0.000107089312487
+
+...#661...
+Neutral: (('werkweek',), 1) Percentage: 0.000107089312487
+
+...#662...
+Neutral: (('Guus',), 1) Percentage: 0.000107089312487
+
+...#663...
+Neutral: (('know',), 1) Percentage: 0.000107089312487
+
+...#664...
+Neutral: (('gekomen',), 1) Percentage: 0.000107089312487
+
+...#665...
+Neutral: (('besteld',), 1) Percentage: 0.000107089312487
+
+...#666...
+Neutral: (('kopen',), 1) Percentage: 0.000107089312487
+
+...#667...
+Neutral: (('leukste',), 1) Percentage: 0.000107089312487
+
+...#668...
+Neutral: (('2000',), 1) Percentage: 0.000107089312487
+
+...#669...
+Neutral: (('21e',), 1) Percentage: 0.000107089312487
+
+...#670...
+Neutral: (('btj',), 1) Percentage: 0.000107089312487
+
+...#671...
+Neutral: (('thuis',), 1) Percentage: 0.000107089312487
+
+...#672...
+Neutral: (('top',), 1) Percentage: 0.000107089312487
+
+...#673...
+Neutral: (('Sandra',), 1) Percentage: 0.000107089312487
+
+...#674...
+Neutral: (('vind',), 1) Percentage: 0.000107089312487
+
+...#675...
+Neutral: (('zich',), 1) Percentage: 0.000107089312487
+
+...#676...
+Neutral: (('wwwreclamelandnl',), 1) Percentage: 0.000107089312487
+
+...#677...
+Neutral: (('gister',), 1) Percentage: 0.000107089312487
+
+...#678...
+Neutral: (('keet',), 1) Percentage: 0.000107089312487
+
+...#679...
+Neutral: (('weertoch',), 1) Percentage: 0.000107089312487
+
+...#680...
+Neutral: (('zekervet',), 1) Percentage: 0.000107089312487
+
+...#681...
+Neutral: (('Eerst',), 1) Percentage: 0.000107089312487
+
+...#682...
+Neutral: (('bracht',), 1) Percentage: 0.000107089312487
+
+...#683...
+Neutral: (('altijd',), 1) Percentage: 0.000107089312487
+
+...#684...
+Neutral: (('belangrijk',), 1) Percentage: 0.000107089312487
+
+...#685...
+Neutral: (('Behalve',), 1) Percentage: 0.000107089312487
+
+...#686...
+Neutral: (('2012INCL',), 1) Percentage: 0.000107089312487
+
+...#687...
+Neutral: (('verassing',), 1) Percentage: 0.000107089312487
+
+...#688...
+Neutral: (('VERVOER',), 1) Percentage: 0.000107089312487
+
+...#689...
+Neutral: (('Anneke',), 1) Percentage: 0.000107089312487
+
+...#690...
+Neutral: (('LEEEUKKKK',), 1) Percentage: 0.000107089312487
+
+...#691...
+Neutral: (('Volgens',), 1) Percentage: 0.000107089312487
+
+...#692...
+Neutral: (('PER',), 1) Percentage: 0.000107089312487
+
+...#693...
+Neutral: (('zoektocht',), 1) Percentage: 0.000107089312487
+
+...#694...
+Neutral: (('tadaaa',), 1) Percentage: 0.000107089312487
+
+...#695...
+Neutral: (('oppas',), 1) Percentage: 0.000107089312487
+
+...#696...
+Neutral: (('Holland',), 1) Percentage: 0.000107089312487
+
+...#697...
+Neutral: (('boyzz',), 1) Percentage: 0.000107089312487
+
+...#698...
+Neutral: (('zaalvoetbal',), 1) Percentage: 0.000107089312487
+
+...#699...
+Neutral: (('NAAR',), 1) Percentage: 0.000107089312487
+
+...#700...
+Neutral: (('besloten',), 1) Percentage: 0.000107089312487
+
+...#701...
+Neutral: (('hval',), 1) Percentage: 0.000107089312487
+
+...#702...
+Neutral: (('verjaardagen',), 1) Percentage: 0.000107089312487
+
+...#703...
+Neutral: (('tjah',), 1) Percentage: 0.000107089312487
+
+...#704...
+Neutral: (('album',), 1) Percentage: 0.000107089312487
+
+...#705...
+Neutral: (('Lessen',), 1) Percentage: 0.000107089312487
+
+...#706...
+Neutral: (('Astrid',), 1) Percentage: 0.000107089312487
+
+...#707...
+Neutral: (('za',), 1) Percentage: 0.000107089312487
+
+...#708...
+Neutral: (('reacties',), 1) Percentage: 0.000107089312487
+
+...#709...
+Neutral: (('eind',), 1) Percentage: 0.000107089312487
+
+...#710...
+Neutral: (('liveee',), 1) Percentage: 0.000107089312487
+
+...#711...
+Neutral: (('va',), 1) Percentage: 0.000107089312487
+
+...#712...
+Neutral: (('brengt',), 1) Percentage: 0.000107089312487
+
+...#713...
+Neutral: (('Prikbordfoto',), 1) Percentage: 0.000107089312487
+
+...#714...
+Neutral: (('Dommelsch',), 1) Percentage: 0.000107089312487
+
+...#715...
+Neutral: (('E',), 1) Percentage: 0.000107089312487
+
+...#716...
+Neutral: (('k',), 1) Percentage: 0.000107089312487
+
+...#717...
+Neutral: (('Party',), 1) Percentage: 0.000107089312487
+
+...#718...
+Neutral: (('6885',), 1) Percentage: 0.000107089312487
+
+...#719...
+Neutral: (('prijsvraag',), 1) Percentage: 0.000107089312487
+
+...#720...
+Neutral: (('eerst',), 1) Percentage: 0.000107089312487
+
+...#721...
+Neutral: (('pic',), 1) Percentage: 0.000107089312487
+
+...#722...
+Neutral: (('hallen',), 1) Percentage: 0.000107089312487
+
+...#723...
+Neutral: (('drukke',), 1) Percentage: 0.000107089312487
+
+...#724...
+Neutral: (('tussendoor',), 1) Percentage: 0.000107089312487
+
+...#725...
+Neutral: (('Jayden',), 1) Percentage: 0.000107089312487
+
+...#726...
+Neutral: (('Helemaal',), 1) Percentage: 0.000107089312487
+
+...#727...
+Neutral: (('werkenopbouw',), 1) Percentage: 0.000107089312487
+
+...#728...
+Neutral: (('Vip',), 1) Percentage: 0.000107089312487
+
+...#729...
+Neutral: (('VOOR',), 1) Percentage: 0.000107089312487
+
+...#730...
+Neutral: (('7045',), 1) Percentage: 0.000107089312487
+
+...#731...
+Neutral: (('GEWONNEN',), 1) Percentage: 0.000107089312487
+
+...#732...
+Neutral: (('bieren',), 1) Percentage: 0.000107089312487
+
+...#733...
+Neutral: (('bleek',), 1) Percentage: 0.000107089312487
+
+...#734...
+Neutral: (('Sabien',), 1) Percentage: 0.000107089312487
+
+...#735...
+Neutral: (('1396',), 1) Percentage: 0.000107089312487
+
+...#736...
+Neutral: (('smorgesvroeg',), 1) Percentage: 0.000107089312487
+
+...#737...
+Neutral: (('verkocht',), 1) Percentage: 0.000107089312487
+
+...#738...
+Neutral: (('bod',), 1) Percentage: 0.000107089312487
+
+...#739...
+Neutral: (('mischien',), 1) Percentage: 0.000107089312487
+
+...#740...
+Neutral: (('interview',), 1) Percentage: 0.000107089312487
+
+...#741...
+Neutral: (('vergeten',), 1) Percentage: 0.000107089312487
+
+...#742...
+Neutral: (('totaal',), 1) Percentage: 0.000107089312487
+
+...#743...
+Neutral: (('supergezellig',), 1) Percentage: 0.000107089312487
+
+...#744...
+Neutral: (('ring',), 1) Percentage: 0.000107089312487
+
+...#745...
+Neutral: (('Bijna',), 1) Percentage: 0.000107089312487
+
+...#746...
+Neutral: (('kroonjuwelen',), 1) Percentage: 0.000107089312487
+
+...#747...
+Neutral: (('zoals',), 1) Percentage: 0.000107089312487
+
+...#748...
+Neutral: (('onderweg',), 1) Percentage: 0.000107089312487
+
+...#749...
+Neutral: (('nietZondag',), 1) Percentage: 0.000107089312487
+
+...#750...
+Neutral: (('Whiehoe',), 1) Percentage: 0.000107089312487
+
+...#751...
+Neutral: (('IFRHn1WR',), 1) Percentage: 0.000107089312487
+
+...#752...
+Neutral: (('tijdstip',), 1) Percentage: 0.000107089312487
+
+...#753...
+Neutral: (('daarheen',), 1) Percentage: 0.000107089312487
+
+...#754...
+Neutral: (('vervelend',), 1) Percentage: 0.000107089312487
+
+...#755...
+Neutral: (('voorbereiden',), 1) Percentage: 0.000107089312487
+
+...#756...
+Neutral: (('FB',), 1) Percentage: 0.000107089312487
+
+...#757...
+Neutral: (('us',), 1) Percentage: 0.000107089312487
+
+...#758...
+Neutral: (('veld',), 1) Percentage: 0.000107089312487
+
+...#759...
+Neutral: (('6250',), 1) Percentage: 0.000107089312487
+
+...#760...
+Neutral: (('goed',), 1) Percentage: 0.000107089312487
+
+...#761...
+Neutral: (('mazzel',), 1) Percentage: 0.000107089312487
+
+...#762...
+Neutral: (('opperde',), 1) Percentage: 0.000107089312487
+
+...#763...
+Neutral: (('vak',), 1) Percentage: 0.000107089312487
+
+...#764...
+Neutral: (('producent',), 1) Percentage: 0.000107089312487
+
+...#765...
+Neutral: (('verschijnt',), 1) Percentage: 0.000107089312487
+
+...#766...
+Neutral: (('Eindelijk',), 1) Percentage: 0.000107089312487
+
+...#767...
+Neutral: (('nummers',), 1) Percentage: 0.000107089312487
+
+...#768...
+Neutral: (('invip',), 1) Percentage: 0.000107089312487
+
+...#769...
+Neutral: (('leuke',), 1) Percentage: 0.000107089312487
+
+...#770...
+Neutral: (('dinsdag',), 1) Percentage: 0.000107089312487
+
+...#771...
+Neutral: (('7093',), 1) Percentage: 0.000107089312487
+
+...#772...
+Neutral: (('Morge',), 1) Percentage: 0.000107089312487
+
+...#773...
+Neutral: (('26e',), 1) Percentage: 0.000107089312487
+
+...#774...
+Neutral: (('hard',), 1) Percentage: 0.000107089312487
+
+...#775...
+Neutral: (('foto',), 1) Percentage: 0.000107089312487
+
+...#776...
+Neutral: (('days',), 1) Percentage: 0.000107089312487
+
+...#777...
+Neutral: (('minimaal',), 1) Percentage: 0.000107089312487
+
+...#778...
+Neutral: (('doe',), 1) Percentage: 0.000107089312487
+
+...#779...
+Neutral: (('krijgen',), 1) Percentage: 0.000107089312487
+
+...#780...
+Neutral: (('Life',), 1) Percentage: 0.000107089312487
+
+...#781...
+Neutral: (('26jan2012',), 1) Percentage: 0.000107089312487
+
+...#782...
+Neutral: (('annuleringen',), 1) Percentage: 0.000107089312487
+
+...#783...
+Neutral: (('idee',), 1) Percentage: 0.000107089312487
+
+...#784...
+Neutral: (('600',), 1) Percentage: 0.000107089312487
+
+...#785...
+Neutral: (('liefste',), 1) Percentage: 0.000107089312487
+
+...#786...
+Neutral: (('toevallig',), 1) Percentage: 0.000107089312487
+
+...#787...
+Neutral: (('Renee',), 1) Percentage: 0.000107089312487
+
+...#788...
+Neutral: (('slikken',), 1) Percentage: 0.000107089312487
+
+...#789...
+Neutral: (('by',), 1) Percentage: 0.000107089312487
+
+...#790...
+Neutral: (('3JS',), 1) Percentage: 0.000107089312487
+
+...#791...
+Neutral: (('veldkaartje',), 1) Percentage: 0.000107089312487
+
+...#792...
+Neutral: (('dames',), 1) Percentage: 0.000107089312487
+
+...#793...
+Neutral: (('Wachten',), 1) Percentage: 0.000107089312487
+
+...#794...
+Neutral: (('waarom',), 1) Percentage: 0.000107089312487
+
+...#795...
+Neutral: (('not',), 1) Percentage: 0.000107089312487
+
+...#796...
+Neutral: (('continues',), 1) Percentage: 0.000107089312487
+
+...#797...
+Neutral: (('geblazen',), 1) Percentage: 0.000107089312487
+
+...#798...
+Neutral: (('vip',), 1) Percentage: 0.000107089312487
+
+...#799...
+Neutral: (('Oorschot',), 1) Percentage: 0.000107089312487
+
+...#800...
+Neutral: (('doet',), 1) Percentage: 0.000107089312487
+
+...#801...
+Neutral: (('zieligesmiley',), 1) Percentage: 0.000107089312487
+
+...#802...
+Neutral: (('COMEWe',), 1) Percentage: 0.000107089312487
+
+...#803...
+Neutral: (('8kaartjes',), 1) Percentage: 0.000107089312487
+
+...#804...
+Neutral: (('reageren',), 1) Percentage: 0.000107089312487
+
+...#805...
+Neutral: (('Nel',), 1) Percentage: 0.000107089312487
+
+...#806...
+Neutral: (('vriend',), 1) Percentage: 0.000107089312487
+
+...#807...
+Neutral: (('eruit',), 1) Percentage: 0.000107089312487
+
+...#808...
+Neutral: (('gaanzitten',), 1) Percentage: 0.000107089312487
+
+...#809...
+Neutral: (('Dennis',), 1) Percentage: 0.000107089312487
+
+...#810...
+Neutral: (('please',), 1) Percentage: 0.000107089312487
+
+...#811...
+Neutral: (('fb',), 1) Percentage: 0.000107089312487
+
+...#812...
+Neutral: (('leuk',), 1) Percentage: 0.000107089312487
+
+...#813...
+Neutral: (('party',), 1) Percentage: 0.000107089312487
+
+...#814...
+Neutral: (('proeven',), 1) Percentage: 0.000107089312487
+
+...#815...
+Neutral: (('nouhij',), 1) Percentage: 0.000107089312487
+
+...#816...
+Neutral: (('Onderweg',), 1) Percentage: 0.000107089312487
+
+...#817...
+Neutral: (('Barry',), 1) Percentage: 0.000107089312487
+
+...#818...
+Neutral: (('blijkt',), 1) Percentage: 0.000107089312487
+
+...#819...
+Neutral: (('tour',), 1) Percentage: 0.000107089312487
+
+...#820...
+Neutral: (('See',), 1) Percentage: 0.000107089312487
+
+...#821...
+Neutral: (('keuze',), 1) Percentage: 0.000107089312487
+
+...#822...
+Neutral: (('liefhebber',), 1) Percentage: 0.000107089312487
+
+...#823...
+Neutral: (('machen',), 1) Percentage: 0.000107089312487
+
+...#824...
+Neutral: (('uniek',), 1) Percentage: 0.000107089312487
+
+...#825...
+Neutral: (('nieuw',), 1) Percentage: 0.000107089312487
+
+...#826...
+Neutral: (('velzen',), 1) Percentage: 0.000107089312487
+
+...#827...
+Neutral: (('gewekt',), 1) Percentage: 0.000107089312487
+
+...#828...
+Neutral: (('27jan',), 1) Percentage: 0.000107089312487
+
+...#829...
+Neutral: (('lust',), 1) Percentage: 0.000107089312487
+
+...#830...
+Neutral: (('tas',), 1) Percentage: 0.000107089312487
+
+...#831...
+Neutral: (('Wil',), 1) Percentage: 0.000107089312487
+
+...#832...
+Neutral: (('Abdel',), 1) Percentage: 0.000107089312487
+
+...#833...
+Neutral: (('28ste',), 1) Percentage: 0.000107089312487
+
+...#834...
+Neutral: (('derek',), 1) Percentage: 0.000107089312487
+
+...#835...
+Neutral: (('opgeknapt',), 1) Percentage: 0.000107089312487
+
+...#836...
+Neutral: (('durftevragen',), 1) Percentage: 0.000107089312487
+
+...#837...
+Neutral: (('slaapplek',), 1) Percentage: 0.000107089312487
+
+...#838...
+Neutral: (('zinin',), 1) Percentage: 0.000107089312487
+
+...#839...
+Neutral: (('UIT',), 1) Percentage: 0.000107089312487
+
+...#840...
+Neutral: (('Shit',), 1) Percentage: 0.000107089312487
+
+...#841...
+Neutral: (('podium',), 1) Percentage: 0.000107089312487
+
+...#842...
+Neutral: (('kon',), 1) Percentage: 0.000107089312487
+
+...#843...
+Neutral: (('fotoshoot',), 1) Percentage: 0.000107089312487
+
+...#844...
+Neutral: (('Alfa',), 1) Percentage: 0.000107089312487
+
+...#845...
+Neutral: (('erg',), 1) Percentage: 0.000107089312487
+
+...#846...
+Neutral: (('Beste',), 1) Percentage: 0.000107089312487
+
+...#847...
+Neutral: (('plaatsWij',), 1) Percentage: 0.000107089312487
+
+...#848...
+Neutral: (('lijkt',), 1) Percentage: 0.000107089312487
+
+...#849...
+Neutral: (('brak',), 1) Percentage: 0.000107089312487
+
+...#850...
+Neutral: (('langs',), 1) Percentage: 0.000107089312487
+
+...#851...
+Neutral: (('bussie',), 1) Percentage: 0.000107089312487
+
+...#852...
+Neutral: (('Walinga',), 1) Percentage: 0.000107089312487
+
+...#853...
+Neutral: (('VQ7wmfUp',), 1) Percentage: 0.000107089312487
+
+...#854...
+Neutral: (('Notk',), 1) Percentage: 0.000107089312487
+
+...#855...
+Neutral: (('countdown',), 1) Percentage: 0.000107089312487
+
+...#856...
+Neutral: (('Dj',), 1) Percentage: 0.000107089312487
+
+...#857...
+Neutral: (('weekje',), 1) Percentage: 0.000107089312487
+
+...#858...
+Neutral: (('had',), 1) Percentage: 0.000107089312487
+
+...#859...
+Neutral: (('alsnog',), 1) Percentage: 0.000107089312487
+
+...#860...
+Neutral: (('driemaal',), 1) Percentage: 0.000107089312487
+
+...#861...
+Neutral: (('vvk',), 1) Percentage: 0.000107089312487
+
+...#862...
+Neutral: (('Zou',), 1) Percentage: 0.000107089312487
+
+...#863...
+Neutral: (('eentje',), 1) Percentage: 0.000107089312487
+
+...#864...
+Neutral: (('Aftellen',), 1) Percentage: 0.000107089312487
+
+...#865...
+Neutral: (('Bij',), 1) Percentage: 0.000107089312487
+
+...#866...
+Neutral: (('lid',), 1) Percentage: 0.000107089312487
+
+...#867...
+Neutral: (('weekendnaar',), 1) Percentage: 0.000107089312487
+
+...#868...
+Neutral: (('geregelde',), 1) Percentage: 0.000107089312487
+
+...#869...
+Neutral: (('yeah',), 1) Percentage: 0.000107089312487
+
+...#870...
+Neutral: (('Katolina',), 1) Percentage: 0.000107089312487
+
+...#871...
+Neutral: (('dar',), 1) Percentage: 0.000107089312487
+
+...#872...
+Neutral: (('Hier',), 1) Percentage: 0.000107089312487
+
+...#873...
+Neutral: (('After',), 1) Percentage: 0.000107089312487
+
+...#874...
+Neutral: (('8700',), 1) Percentage: 0.000107089312487
+
+...#875...
+Neutral: (('Trikes',), 1) Percentage: 0.000107089312487
+
+...#876...
+Neutral: (('1x',), 1) Percentage: 0.000107089312487
+
+...#877...
+Neutral: (('kwijt',), 1) Percentage: 0.000107089312487
+
+...#878...
+Neutral: (('aaaaaaaaaaaaah',), 1) Percentage: 0.000107089312487
+
+...#879...
+Neutral: (('bu',), 1) Percentage: 0.000107089312487
+
+...#880...
+Neutral: (('bEetje',), 1) Percentage: 0.000107089312487
+
+...#881...
+Neutral: (('niets',), 1) Percentage: 0.000107089312487
+
+...#882...
+Neutral: (('Woehoe',), 1) Percentage: 0.000107089312487
+
+...#883...
+Neutral: (('geeft',), 1) Percentage: 0.000107089312487
+
+...#884...
+Neutral: (('gedachte',), 1) Percentage: 0.000107089312487
+
+...#885...
+Neutral: (('vroege',), 1) Percentage: 0.000107089312487
+
+...#886...
+Neutral: (('half',), 1) Percentage: 0.000107089312487
+
+...#887...
+Neutral: (('webshopseeticketsnl',), 1) Percentage: 0.000107089312487
+
+...#888...
+Neutral: (('vanwege',), 1) Percentage: 0.000107089312487
+
+...#889...
+Neutral: (('prijs',), 1) Percentage: 0.000107089312487
+
+...#890...
+Neutral: (('stoel',), 1) Percentage: 0.000107089312487
+
+...#891...
+Neutral: (('elementen',), 1) Percentage: 0.000107089312487
+
+...#892...
+Neutral: (('partij',), 1) Percentage: 0.000107089312487
+
+...#893...
+Neutral: (('39De',), 1) Percentage: 0.000107089312487
+
+...#894...
+Neutral: (('Quick',), 1) Percentage: 0.000107089312487
+
+...#895...
+Neutral: (('kkh1x1Nn',), 1) Percentage: 0.000107089312487
+
+...#896...
+Neutral: (('gedoe',), 1) Percentage: 0.000107089312487
+
+...#897...
+Neutral: (('followers',), 1) Percentage: 0.000107089312487
+
+...#898...
+Neutral: (('zozo',), 1) Percentage: 0.000107089312487
+
+...#899...
+Neutral: (('kost',), 1) Percentage: 0.000107089312487
+
+...#900...
+Neutral: (('gehore',), 1) Percentage: 0.000107089312487
+
+...#901...
+Neutral: (('pieperheerlijk',), 1) Percentage: 0.000107089312487
+
+...#902...
+Neutral: (('95',), 1) Percentage: 0.000107089312487
+
+...#903...
+Neutral: (('tryout',), 1) Percentage: 0.000107089312487
+
+...#904...
+Neutral: (('845',), 1) Percentage: 0.000107089312487
+
+...#905...
+Neutral: (('troupeavond',), 1) Percentage: 0.000107089312487
+
+...#906...
+Neutral: (('Queen',), 1) Percentage: 0.000107089312487
+
+...#907...
+Neutral: (('Dromen',), 1) Percentage: 0.000107089312487
+
+...#908...
+Neutral: (('aanwezig',), 1) Percentage: 0.000107089312487
+
+...#909...
+Neutral: (('Jongens',), 1) Percentage: 0.000107089312487
+
+...#910...
+Neutral: (('luisteren',), 1) Percentage: 0.000107089312487
+
+...#911...
+Neutral: (('liggen',), 1) Percentage: 0.000107089312487
+
+...#912...
+Neutral: (('diverse',), 1) Percentage: 0.000107089312487
+
+...#913...
+Neutral: (('latertje',), 1) Percentage: 0.000107089312487
+
+...#914...
+Neutral: (('KAAEN',), 1) Percentage: 0.000107089312487
+
+...#915...
+Neutral: (('uitkijken',), 1) Percentage: 0.000107089312487
+
+...#916...
+Neutral: (('Kroonjuweel',), 1) Percentage: 0.000107089312487
+
+...#917...
+Neutral: (('rondje',), 1) Percentage: 0.000107089312487
+
+...#918...
+Neutral: (('events',), 1) Percentage: 0.000107089312487
+
+...#919...
+Neutral: (('actie',), 1) Percentage: 0.000107089312487
+
+...#920...
+Neutral: (('Bestel',), 1) Percentage: 0.000107089312487
+
+...#921...
+Neutral: (('Met',), 1) Percentage: 0.000107089312487
+
+...#922...
+Neutral: (('hadden',), 1) Percentage: 0.000107089312487
+
+...#923...
+Neutral: (('12236',), 1) Percentage: 0.000107089312487
+
+...#924...
+Neutral: (('Omdat',), 1) Percentage: 0.000107089312487
+
+...#925...
+Neutral: (('ready',), 1) Percentage: 0.000107089312487
+
+...#926...
+Neutral: (('golden',), 1) Percentage: 0.000107089312487
+
+...#927...
+Neutral: (('o6Wy6cpA',), 1) Percentage: 0.000107089312487
+
+...#928...
+Neutral: (('Zuid',), 1) Percentage: 0.000107089312487
+
+...#929...
+Neutral: (('BUS',), 1) Percentage: 0.000107089312487
+
+...#930...
+Neutral: (('dichtbij',), 1) Percentage: 0.000107089312487
+
+...#931...
+Neutral: (('bijzonder',), 1) Percentage: 0.000107089312487
+
+...#932...
+Neutral: (('Rowwen',), 1) Percentage: 0.000107089312487
+
+...#933...
+Neutral: (('Yeahhhhhhh',), 1) Percentage: 0.000107089312487
+
+...#934...
+Neutral: (('bezoek',), 1) Percentage: 0.000107089312487
+
+...#935...
+Neutral: (('volgens',), 1) Percentage: 0.000107089312487
+
+...#936...
+Neutral: (('2330',), 1) Percentage: 0.000107089312487
+
+...#937...
+Neutral: (('draaien',), 1) Percentage: 0.000107089312487
+
+...#938...
+Neutral: (('Of',), 1) Percentage: 0.000107089312487
+
+...#939...
+Neutral: (('sneeuw',), 1) Percentage: 0.000107089312487
+
+...#940...
+Neutral: (('Robert',), 1) Percentage: 0.000107089312487
+
+...#941...
+Neutral: (('dusss',), 1) Percentage: 0.000107089312487
+
+...#942...
+Neutral: (('Heijne',), 1) Percentage: 0.000107089312487
+
+...#943...
+Neutral: (('personeelsfeest',), 1) Percentage: 0.000107089312487
+
+...#944...
+Neutral: (('nie',), 1) Percentage: 0.000107089312487
+
+...#945...
+Neutral: (('wilden',), 1) Percentage: 0.000107089312487
+
+...#946...
+Neutral: (('hoogste',), 1) Percentage: 0.000107089312487
+
+...#947...
+Neutral: (('do',), 1) Percentage: 0.000107089312487
+
+...#948...
+Neutral: (('Amstelbier',), 1) Percentage: 0.000107089312487
+
+...#949...
+Neutral: (('Hopen',), 1) Percentage: 0.000107089312487
+
+...#950...
+Neutral: (('warenuh',), 1) Percentage: 0.000107089312487
+
+...#951...
+Neutral: (('Tour',), 1) Percentage: 0.000107089312487
+
+...#952...
+Neutral: (('Owww',), 1) Percentage: 0.000107089312487
+
+...#953...
+Neutral: (('Charly',), 1) Percentage: 0.000107089312487
+
+...#954...
+Neutral: (('tegen',), 1) Percentage: 0.000107089312487
+
+...#955...
+Neutral: (('Yeah',), 1) Percentage: 0.000107089312487
+
+...#956...
+Neutral: (('53764',), 1) Percentage: 0.000107089312487
+
+...#957...
+Neutral: (('Showaspx',), 1) Percentage: 0.000107089312487
+
+...#958...
+Neutral: (('Misschien',), 1) Percentage: 0.000107089312487
+
+...#959...
+Neutral: (('inNog',), 1) Percentage: 0.000107089312487
+
+...#960...
+Neutral: (('bedje',), 1) Percentage: 0.000107089312487
+
+...#961...
+Neutral: (('Ok',), 1) Percentage: 0.000107089312487
+
+...#962...
+Neutral: (('Jo',), 1) Percentage: 0.000107089312487
+
+...#963...
+Neutral: (('Net',), 1) Percentage: 0.000107089312487
+
+...#964...
+Neutral: (('YESkaartjes',), 1) Percentage: 0.000107089312487
+
+...#965...
+Neutral: (('Damers',), 1) Percentage: 0.000107089312487
+
+...#966...
+Neutral: (('pilske',), 1) Percentage: 0.000107089312487
+
+...#967...
+Neutral: (('opnieuw',), 1) Percentage: 0.000107089312487
+
+...#968...
+Neutral: (('EUR',), 1) Percentage: 0.000107089312487
+
+...#969...
+Neutral: (('nee',), 1) Percentage: 0.000107089312487
+
+...#970...
+Neutral: (('nederland',), 1) Percentage: 0.000107089312487
+
+...#971...
+Neutral: (('Stefan',), 1) Percentage: 0.000107089312487
+
+...#972...
+Neutral: (('naaar',), 1) Percentage: 0.000107089312487
+
+...#973...
+Neutral: (('liveheb',), 1) Percentage: 0.000107089312487
+
+...#974...
+Neutral: (('MAAR',), 1) Percentage: 0.000107089312487
+
+...#975...
+Neutral: (('graag',), 1) Percentage: 0.000107089312487
+
+...#976...
+Neutral: (('And',), 1) Percentage: 0.000107089312487
+
+...#977...
+Neutral: (('Nieuwsbrief',), 1) Percentage: 0.000107089312487
+
+...#978...
+Neutral: (('locatie',), 1) Percentage: 0.000107089312487
+
+...#979...
+Neutral: (('binnenkort',), 1) Percentage: 0.000107089312487
+
+...#980...
+Neutral: (('marktplaats',), 1) Percentage: 0.000107089312487
+
+...#981...
+Neutral: (('ma',), 1) Percentage: 0.000107089312487
+
+...#982...
+Neutral: (('Winnaars',), 1) Percentage: 0.000107089312487
+
+...#983...
+Neutral: (('rolstoel',), 1) Percentage: 0.000107089312487
+
+...#984...
+Neutral: (('aTnLJqbZ',), 1) Percentage: 0.000107089312487
+
+...#985...
+Neutral: (('sh',), 1) Percentage: 0.000107089312487
+
+...#986...
+Neutral: (('rachellepartytime',), 1) Percentage: 0.000107089312487
+
+...#987...
+Neutral: (('ruk',), 1) Percentage: 0.000107089312487
+
+...#988...
+Neutral: (('valreep',), 1) Percentage: 0.000107089312487
+
+...#989...
+Neutral: (('koud',), 1) Percentage: 0.000107089312487
+
+...#990...
+Neutral: (('mogen',), 1) Percentage: 0.000107089312487
+
+...#991...
+Neutral: (('vraagje',), 1) Percentage: 0.000107089312487
+
+...#992...
+Neutral: (('Shows',), 1) Percentage: 0.000107089312487
+
+...#993...
+Neutral: (('lieve',), 1) Percentage: 0.000107089312487
+
+...#994...
+Neutral: (('Kottink',), 1) Percentage: 0.000107089312487
+
+...#995...
+Neutral: (('onbetrouwbaar',), 1) Percentage: 0.000107089312487
+
+...#996...
+Neutral: (('betaald',), 1) Percentage: 0.000107089312487
+
+...#997...
+Neutral: (('virus',), 1) Percentage: 0.000107089312487
+
+...#998...
+Neutral: (('meegaat',), 1) Percentage: 0.000107089312487
+
+...#999...
+Neutral: (('Normaal',), 1) Percentage: 0.000107089312487
+
+...#1000...
+Neutral: (('smit',), 1) Percentage: 0.000107089312487
+
+...#1001...
+Neutral: (('7324',), 1) Percentage: 0.000107089312487
+
+...#1002...
+Neutral: (('Uitzending',), 1) Percentage: 0.000107089312487
+
+...#1003...
+Neutral: (('26',), 1) Percentage: 0.000107089312487
+
+...#1004...
+Neutral: (('come',), 1) Percentage: 0.000107089312487
+
+...#1005...
+Neutral: (('nachtjes',), 1) Percentage: 0.000107089312487
+
+...#1006...
+Neutral: (('toe',), 1) Percentage: 0.000107089312487
+
+...#1007...
+Neutral: (('Help',), 1) Percentage: 0.000107089312487
+
+...#1008...
+Neutral: (('bestellen',), 1) Percentage: 0.000107089312487
+
+...#1009...
+Neutral: (('evenement',), 1) Percentage: 0.000107089312487
+
+...#1010...
+Neutral: (('oh',), 1) Percentage: 0.000107089312487
+
+...#1011...
+Neutral: (('Okee',), 1) Percentage: 0.000107089312487
+
+...#1012...
+Neutral: (('geslaagde',), 1) Percentage: 0.000107089312487
+
+...#1013...
+Neutral: (('telefoontje',), 1) Percentage: 0.000107089312487
+
+...#1014...
+Neutral: (('Overnachtingen',), 1) Percentage: 0.000107089312487
+
+...#1015...
+Neutral: (('ritme',), 1) Percentage: 0.000107089312487
+
+...#1016...
+Neutral: (('vooraan',), 1) Percentage: 0.000107089312487
+
+...#1017...
+Neutral: (('right',), 1) Percentage: 0.000107089312487
+
+...#1018...
+Neutral: (('eenjurk',), 1) Percentage: 0.000107089312487
+
+...#1019...
+Neutral: (('Oosterhuis',), 1) Percentage: 0.000107089312487
+
+...#1020...
+Neutral: (('Ren',), 1) Percentage: 0.000107089312487
+
+...#1021...
+Neutral: (('GB',), 1) Percentage: 0.000107089312487
+
+...#1022...
+Neutral: (('amstelkeb',), 1) Percentage: 0.000107089312487
+
+...#1023...
+Neutral: (('gezwommen',), 1) Percentage: 0.000107089312487
+
+...#1024...
+Neutral: (('geval',), 1) Percentage: 0.000107089312487
+
+...#1025...
+Neutral: (('Topdagen',), 1) Percentage: 0.000107089312487
+
+...#1026...
+Neutral: (('buren',), 1) Percentage: 0.000107089312487
+
+...#1027...
+Neutral: (('SUUUUPPPEEEEERRRR',), 1) Percentage: 0.000107089312487
+
+...#1028...
+Neutral: (('w',), 1) Percentage: 0.000107089312487
+
+...#1029...
+Neutral: (('liveHERE',), 1) Percentage: 0.000107089312487
+
+...#1030...
+Neutral: (('line',), 1) Percentage: 0.000107089312487
+
+...#1031...
+Neutral: (('kaar',), 1) Percentage: 0.000107089312487
+
+...#1032...
+Neutral: (('Zaterdag',), 1) Percentage: 0.000107089312487
+
+...#1033...
+Neutral: (('Wint',), 1) Percentage: 0.000107089312487
+
+...#1034...
+Neutral: (('mam',), 1) Percentage: 0.000107089312487
+
+...#1035...
+Neutral: (('presenteren',), 1) Percentage: 0.000107089312487
+
+...#1036...
+Neutral: (('miss',), 1) Percentage: 0.000107089312487
+
+...#1037...
+Neutral: (('Here',), 1) Percentage: 0.000107089312487
+
+...#1038...
+Neutral: (('buurt',), 1) Percentage: 0.000107089312487
+
+...#1039...
+Neutral: (('gebruik',), 1) Percentage: 0.000107089312487
+
+...#1040...
+Neutral: (('Iesereen',), 1) Percentage: 0.000107089312487
+
+...#1041...
+Neutral: (('Nederlandstalige',), 1) Percentage: 0.000107089312487
+
+...#1042...
+Neutral: (('welke',), 1) Percentage: 0.000107089312487
+
+...#1043...
+Neutral: (('2kaarten',), 1) Percentage: 0.000107089312487
+
+...#1044...
+Neutral: (('planning',), 1) Percentage: 0.000107089312487
+
+...#1045...
+Neutral: (('bendroptijdbij',), 1) Percentage: 0.000107089312487
+
+...#1046...
+Neutral: (('U',), 1) Percentage: 0.000107089312487
+
+...#1047...
+Neutral: (('lB1D6i3I',), 1) Percentage: 0.000107089312487
+
+...#1048...
+Neutral: (('2010',), 1) Percentage: 0.000107089312487
+
+...#1049...
+Neutral: (('finalisten',), 1) Percentage: 0.000107089312487
+
+...#1050...
+Neutral: (('boswandeling',), 1) Percentage: 0.000107089312487
+
+...#1051...
+Neutral: (('spannend',), 1) Percentage: 0.000107089312487
+
+...#1052...
+Neutral: (('zei',), 1) Percentage: 0.000107089312487
+
+...#1053...
+Neutral: (('dgn',), 1) Percentage: 0.000107089312487
+
+...#1054...
+Neutral: (('besmettelijk',), 1) Percentage: 0.000107089312487
+
+...#1055...
+Neutral: (('hou',), 1) Percentage: 0.000107089312487
+
+...#1056...
+Neutral: (('WE',), 1) Percentage: 0.000107089312487
+
+...#1057...
+Neutral: (('tk',), 1) Percentage: 0.000107089312487
+
+...#1058...
+Neutral: (('Want',), 1) Percentage: 0.000107089312487
+
+...#1059...
+Neutral: (('broertjelief',), 1) Percentage: 0.000107089312487
+
+...#1060...
+Neutral: (('Anna',), 1) Percentage: 0.000107089312487
+
+...#1061...
+Neutral: (('vsn',), 1) Percentage: 0.000107089312487
+
+...#1062...
+Neutral: (('333',), 1) Percentage: 0.000107089312487
+
+...#1063...
+Neutral: (('Mooi',), 1) Percentage: 0.000107089312487
+
+...#1064...
+Neutral: (('relatie',), 1) Percentage: 0.000107089312487
+
+...#1065...
+Neutral: (('neee',), 1) Percentage: 0.000107089312487
+
+...#1066...
+Neutral: (('dusEn',), 1) Percentage: 0.000107089312487
+
+...#1067...
+Neutral: (('gestuurd',), 1) Percentage: 0.000107089312487
+
+...#1068...
+Neutral: (('BIED',), 1) Percentage: 0.000107089312487
+
+...#1069...
+Neutral: (('R',), 1) Percentage: 0.000107089312487
+
+...#1070...
+Neutral: (('39dam',), 1) Percentage: 0.000107089312487
+
+...#1071...
+Neutral: (('anderen',), 1) Percentage: 0.000107089312487
+
+...#1072...
+Neutral: (('pas',), 1) Percentage: 0.000107089312487
+
+...#1073...
+Neutral: (('geweldig',), 1) Percentage: 0.000107089312487
+
+...#1074...
+Neutral: (('Oppas',), 1) Percentage: 0.000107089312487
+
+...#1075...
+Neutral: (('eigenlijk',), 1) Percentage: 0.000107089312487
+
+...#1076...
+Neutral: (('richting',), 1) Percentage: 0.000107089312487
+
+...#1077...
+Neutral: (('tentamens',), 1) Percentage: 0.000107089312487
+
+...#1078...
+Neutral: (('opstapplaatsen',), 1) Percentage: 0.000107089312487
+
+...#1079...
+Neutral: (('afpilsen',), 1) Percentage: 0.000107089312487
+
+...#1080...
+Neutral: (('Aanschaf',), 1) Percentage: 0.000107089312487
+
+...#1081...
+Neutral: (('wist',), 1) Percentage: 0.000107089312487
+
+...#1082...
+Neutral: (('Alle',), 1) Percentage: 0.000107089312487
+
+...#1083...
+Neutral: (('Wij',), 1) Percentage: 0.000107089312487
+
+...#1084...
+Neutral: (('zienwe',), 1) Percentage: 0.000107089312487
+
+...#1085...
+Neutral: (('mams',), 1) Percentage: 0.000107089312487
+
+...#1086...
+Neutral: (('ten',), 1) Percentage: 0.000107089312487
+
+...#1087...
+Neutral: (('RDOM',), 1) Percentage: 0.000107089312487
+
+...#1088...
+Neutral: (('xe9r',), 1) Percentage: 0.000107089312487
+
+...#1089...
+Neutral: (('loss',), 1) Percentage: 0.000107089312487
+
+...#1090...
+Neutral: (('Factor',), 1) Percentage: 0.000107089312487
+
+...#1091...
+Neutral: (('editie',), 1) Percentage: 0.000107089312487
+
+...#1092...
+Neutral: (('mIGIZu8G',), 1) Percentage: 0.000107089312487
+
+...#1093...
+Neutral: (('Luchtgitaar',), 1) Percentage: 0.000107089312487
+
+...#1094...
+Neutral: (('Manusje',), 1) Percentage: 0.000107089312487
+
+...#1095...
+Neutral: (('wss',), 1) Percentage: 0.000107089312487
+
+...#1096...
+Neutral: (('Smit',), 1) Percentage: 0.000107089312487
+
+...#1097...
+Neutral: (('Slamfm',), 1) Percentage: 0.000107089312487
+
+...#1098...
+Neutral: (('zaterdagavond',), 1) Percentage: 0.000107089312487
+
+...#1099...
+Neutral: (('Vroeg',), 1) Percentage: 0.000107089312487
+
+...#1100...
+Neutral: (('niveau',), 1) Percentage: 0.000107089312487
+
+...#1101...
+Neutral: (('inpakken',), 1) Percentage: 0.000107089312487
+
+...#1102...
+Neutral: (('Today',), 1) Percentage: 0.000107089312487
+
+...#1103...
+Neutral: (('Mel',), 1) Percentage: 0.000107089312487
+
+...#1104...
+Neutral: (('veldkaartjes',), 1) Percentage: 0.000107089312487
+
+...#1105...
+Neutral: (('bloemetje',), 1) Percentage: 0.000107089312487
+
+...#1106...
+Neutral: (('57',), 1) Percentage: 0.000107089312487
+
+...#1107...
+Neutral: (('aloneventje',), 1) Percentage: 0.000107089312487
+
+...#1108...
+Neutral: (('kuip',), 1) Percentage: 0.000107089312487
+
+...#1109...
+Neutral: (('band',), 1) Percentage: 0.000107089312487
+
+...#1110...
+Neutral: (('studiedagen',), 1) Percentage: 0.000107089312487
+
+...#1111...
+Neutral: (('ineens',), 1) Percentage: 0.000107089312487
+
+...#1112...
+Neutral: (('rangskaarten',), 1) Percentage: 0.000107089312487
+
+...#1113...
+Neutral: (('nteresseerden',), 1) Percentage: 0.000107089312487
+
+...#1114...
+Neutral: (('prijsuitreiking',), 1) Percentage: 0.000107089312487
+
+...#1115...
+Neutral: (('skivakantie',), 1) Percentage: 0.000107089312487
+
+...#1116...
+Neutral: (('plezier',), 1) Percentage: 0.000107089312487
+
+...#1117...
+Neutral: (('RAAK',), 1) Percentage: 0.000107089312487
+
+...#1118...
+Neutral: (('maat',), 1) Percentage: 0.000107089312487
+
+...#1119...
+Neutral: (('VEREK',), 1) Percentage: 0.000107089312487
+
+...#1120...
+Neutral: (('hoop',), 1) Percentage: 0.000107089312487
+
+...#1121...
+Neutral: (('Tickets',), 1) Percentage: 0.000107089312487
+
+...#1122...
+Neutral: (('prijswinnaars',), 1) Percentage: 0.000107089312487
+
+...#1123...
+Neutral: (('mc',), 1) Percentage: 0.000107089312487
+
+...#1124...
+Neutral: (('35000',), 1) Percentage: 0.000107089312487
+
+...#1125...
+Neutral: (('bed',), 1) Percentage: 0.000107089312487
+
+...#1126...
+Neutral: (('Wouter',), 1) Percentage: 0.000107089312487
+
+...#1127...
+Neutral: (('Jawel',), 1) Percentage: 0.000107089312487
+
+...#1128...
+Neutral: (('HEUL',), 1) Percentage: 0.000107089312487
+
+...#1129...
+Neutral: (('On',), 1) Percentage: 0.000107089312487
+
+...#1130...
+Neutral: (('vele',), 1) Percentage: 0.000107089312487
+
+...#1131...
+Neutral: (('leuker',), 1) Percentage: 0.000107089312487
+
+...#1132...
+Neutral: (('geleverd',), 1) Percentage: 0.000107089312487
+
+...#1133...
+Neutral: (('vond',), 1) Percentage: 0.000107089312487
+
+...#1134...
+Neutral: (('Gefeliciteerd',), 1) Percentage: 0.000107089312487
+
+...#1135...
+Neutral: (('u',), 1) Percentage: 0.000107089312487
+
+...#1136...
+Neutral: (('earing',), 1) Percentage: 0.000107089312487
+
+...#1137...
+Neutral: (('vallen',), 1) Percentage: 0.000107089312487
+
+...#1138...
+Neutral: (('Aan',), 1) Percentage: 0.000107089312487
+
+...#1139...
+Neutral: (('priv',), 1) Percentage: 0.000107089312487
+
+...#1140...
+Neutral: (('meedoen',), 1) Percentage: 0.000107089312487
+
+...#1141...
+Neutral: (('heen',), 1) Percentage: 0.000107089312487
+
+...#1142...
+Neutral: (('Wooow',), 1) Percentage: 0.000107089312487
+
+...#1143...
+Neutral: (('bezig',), 1) Percentage: 0.000107089312487
+
+...#1144...
+Neutral: (('slapenen',), 1) Percentage: 0.000107089312487
+
+...#1145...
+Neutral: (('Marion',), 1) Percentage: 0.000107089312487
+
+...#1146...
+Neutral: (('gezellige',), 1) Percentage: 0.000107089312487
+
+...#1147...
+Neutral: (('open',), 1) Percentage: 0.000107089312487
+
+...#1148...
+Neutral: (('bikkelen',), 1) Percentage: 0.000107089312487
+
+...#1149...
+Neutral: (('neemt',), 1) Percentage: 0.000107089312487
+
+...#1150...
+Neutral: (('20ste',), 1) Percentage: 0.000107089312487
+
+...#1151...
+Neutral: (('overnemen',), 1) Percentage: 0.000107089312487
+
+...#1152...
+Neutral: (('regio',), 1) Percentage: 0.000107089312487
+
+...#1153...
+Neutral: (('Brutus',), 1) Percentage: 0.000107089312487
+
+...#1154...
+Neutral: (('werk',), 1) Percentage: 0.000107089312487
+
+...#1155...
+Neutral: (('18750',), 1) Percentage: 0.000107089312487
+
+...#1156...
+Neutral: (('komen',), 1) Percentage: 0.000107089312487
+
+...#1157...
+Neutral: (('iets',), 1) Percentage: 0.000107089312487
+
+...#1158...
+Neutral: (('load',), 1) Percentage: 0.000107089312487
+
+...#1159...
+Neutral: (('dannaar',), 1) Percentage: 0.000107089312487
+
+...#1160...
+Neutral: (('iedereen',), 1) Percentage: 0.000107089312487
+
+...#1161...
+Neutral: (('Persdag',), 1) Percentage: 0.000107089312487
+
+...#1162...
+Neutral: (('vanvelzen',), 1) Percentage: 0.000107089312487
+
+...#1163...
+Neutral: (('HMH',), 1) Percentage: 0.000107089312487
+
+...#1164...
+Neutral: (('jaja',), 1) Percentage: 0.000107089312487
+
+...#1165...
+Neutral: (('gerelaxte',), 1) Percentage: 0.000107089312487
+
+...#1166...
+Neutral: (('nachies',), 1) Percentage: 0.000107089312487
+
+...#1167...
+Neutral: (('horen',), 1) Percentage: 0.000107089312487
+
+...#1168...
+Neutral: (('ow',), 1) Percentage: 0.000107089312487
+
+...#1169...
+Neutral: (('meneer',), 1) Percentage: 0.000107089312487
+
+...#1170...
+Neutral: (('ap7mFT7a',), 1) Percentage: 0.000107089312487
+
+...#1171...
+Neutral: (('beekweek',), 1) Percentage: 0.000107089312487
+
+...#1172...
+Neutral: (('zaterdagsavond',), 1) Percentage: 0.000107089312487
+
+...#1173...
+Neutral: (('officiele',), 1) Percentage: 0.000107089312487
+
+...#1174...
+Neutral: (('Vandeweek',), 1) Percentage: 0.000107089312487
+
+...#1175...
+Neutral: (('ErwinIlseJo',), 1) Percentage: 0.000107089312487
+
+...#1176...
+Neutral: (('gefeliciteerd',), 1) Percentage: 0.000107089312487
+
+...#1177...
+Neutral: (('58',), 1) Percentage: 0.000107089312487
+
+...#1178...
+Neutral: (('vertelt',), 1) Percentage: 0.000107089312487
+
+...#1179...
+Neutral: (('bekijken',), 1) Percentage: 0.000107089312487
+
+...#1180...
+Neutral: (('zodat',), 1) Percentage: 0.000107089312487
+
+...#1181...
+Neutral: (('Radio',), 1) Percentage: 0.000107089312487
+
+...#1182...
+Neutral: (('an',), 1) Percentage: 0.000107089312487
+
+...#1183...
+Neutral: (('vakantie',), 1) Percentage: 0.000107089312487
+
+...#1184...
+Neutral: (('heren',), 1) Percentage: 0.000107089312487
+
+...#1185...
+Neutral: (('relaxen',), 1) Percentage: 0.000107089312487
+
+...#1186...
+Neutral: (('heleen',), 1) Percentage: 0.000107089312487
+
+...#1187...
+Neutral: (('andere',), 1) Percentage: 0.000107089312487
+
+...#1188...
+Neutral: (('Buisonje',), 1) Percentage: 0.000107089312487
+
+...#1189...
+Neutral: (('janpeens',), 1) Percentage: 0.000107089312487
+
+...#1190...
+Neutral: (('geef',), 1) Percentage: 0.000107089312487
+
+...#1191...
+Neutral: (('Hoop',), 1) Percentage: 0.000107089312487
+
+...#1192...
+Neutral: (('lkBfqBsw',), 1) Percentage: 0.000107089312487
+
+...#1193...
+Neutral: (('ticketshop',), 1) Percentage: 0.000107089312487
+
+...#1194...
+Neutral: (('already',), 1) Percentage: 0.000107089312487
+
+...#1195...
+Neutral: (('sowieso',), 1) Percentage: 0.000107089312487
+
+...#1196...
+Neutral: (('arena',), 1) Percentage: 0.000107089312487
+
+...#1197...
+Neutral: (('z',), 1) Percentage: 0.000107089312487
+
+...#1198...
+Neutral: (('ski',), 1) Percentage: 0.000107089312487
+
+...#1199...
+Neutral: (('Mirjam',), 1) Percentage: 0.000107089312487
+
+...#1200...
+Neutral: (('poging',), 1) Percentage: 0.000107089312487
+
+...#1201...
+Neutral: (('Rommy',), 1) Percentage: 0.000107089312487
+
+...#1202...
+Neutral: (('bied',), 1) Percentage: 0.000107089312487
+
+...#1203...
+Neutral: (('vandaag',), 1) Percentage: 0.000107089312487
+
+...#1204...
+Neutral: (('succes',), 1) Percentage: 0.000107089312487
+
+...#1205...
+Neutral: (('gezocht',), 1) Percentage: 0.000107089312487
+
+...#1206...
+Neutral: (('saskia',), 1) Percentage: 0.000107089312487
+
+...#1207...
+Neutral: (('Ticketloket',), 1) Percentage: 0.000107089312487
+
+...#1208...
+Neutral: (('ontstaan',), 1) Percentage: 0.000107089312487
+
+...#1209...
+Neutral: (('bank',), 1) Percentage: 0.000107089312487
+
+...#1210...
+Neutral: (('rYCXjiOt',), 1) Percentage: 0.000107089312487
+
+...#1211...
+Neutral: (('Vval',), 1) Percentage: 0.000107089312487
+
+...#1212...
+Neutral: (('Schrijf',), 1) Percentage: 0.000107089312487
+
+...#1213...
+Neutral: (('Pierre',), 1) Percentage: 0.000107089312487
+
+...#1214...
+Neutral: (('7110',), 1) Percentage: 0.000107089312487
+
+...#1215...
+Neutral: (('ist',), 1) Percentage: 0.000107089312487
+
+...#1216...
+Neutral: (('Tribe',), 1) Percentage: 0.000107089312487
+
+...#1217...
+Neutral: (('Ja',), 1) Percentage: 0.000107089312487
+
+...#1218...
+Neutral: (('verassingen',), 1) Percentage: 0.000107089312487
+
+...#1219...
+Neutral: (('vooroptreden',), 1) Percentage: 0.000107089312487
+
+...#1220...
+Neutral: (('Waarde',), 1) Percentage: 0.000107089312487
+
+...#1221...
+Neutral: (('inmiddels',), 1) Percentage: 0.000107089312487
+
+...#1222...
+Neutral: (('Interesse',), 1) Percentage: 0.000107089312487
+
+...#1223...
+Neutral: (('hyves',), 1) Percentage: 0.000107089312487
+
+...#1224...
+Neutral: (('8147',), 1) Percentage: 0.000107089312487
+
+...#1225...
+Neutral: (('39vrienden',), 1) Percentage: 0.000107089312487
+
+...#1226...
+Neutral: (('beter',), 1) Percentage: 0.000107089312487
+
+...#1227...
+Neutral: (('tafeltennis',), 1) Percentage: 0.000107089312487
+
+...#1228...
+Neutral: (('keertje',), 1) Percentage: 0.000107089312487
+
+...#1229...
+Neutral: (('hun',), 1) Percentage: 0.000107089312487
+
+...#1230...
+Neutral: (('100000man',), 1) Percentage: 0.000107089312487
+
+...#1231...
+Neutral: (('1e',), 1) Percentage: 0.000107089312487
+
+...#1232...
+Neutral: (('missen',), 1) Percentage: 0.000107089312487
+
+...#1233...
+Neutral: (('nodig',), 1) Percentage: 0.000107089312487
+
+...#1234...
+Neutral: (('reactie',), 1) Percentage: 0.000107089312487
+
+...#1235...
+Neutral: (('Schoenmaker',), 1) Percentage: 0.000107089312487
+
+...#1236...
+Neutral: (('hits',), 1) Percentage: 0.000107089312487
+
+...#1237...
+Neutral: (('dtv',), 1) Percentage: 0.000107089312487
+
+...#1238...
+Neutral: (('kapot',), 1) Percentage: 0.000107089312487
+
+...#1239...
+Neutral: (('QpggvZJX',), 1) Percentage: 0.000107089312487
+
+...#1240...
+Neutral: (('left',), 1) Percentage: 0.000107089312487
+
+...#1241...
+Neutral: (('Xb3e76Gp',), 1) Percentage: 0.000107089312487
+
+...#1242...
+Neutral: (('gelukkige',), 1) Percentage: 0.000107089312487
+
+...#1243...
+Neutral: (('indigen',), 1) Percentage: 0.000107089312487
+
+...#1244...
+Neutral: (('Dus',), 1) Percentage: 0.000107089312487
+
+...#1245...
+Neutral: (('19234',), 1) Percentage: 0.000107089312487
+
+...#1246...
+Neutral: (('WEL',), 1) Percentage: 0.000107089312487
+
+...#1247...
+Neutral: (('can',), 1) Percentage: 0.000107089312487
+
+...#1248...
+Neutral: (('be',), 1) Percentage: 0.000107089312487
+
+...#1249...
+Neutral: (('denken',), 1) Percentage: 0.000107089312487
+
+...#1250...
+Neutral: (('Joyce',), 1) Percentage: 0.000107089312487
+
+...#1251...
+Neutral: (('Een',), 1) Percentage: 0.000107089312487
+
+...#1252...
+Neutral: (('eo',), 1) Percentage: 0.000107089312487
+
+...#1253...
+Neutral: (('regelen',), 1) Percentage: 0.000107089312487
+
+...#1254...
+Neutral: (('4wosXoug',), 1) Percentage: 0.000107089312487
+
+...#1255...
+Neutral: (('Zometeen',), 1) Percentage: 0.000107089312487
+
+...#1256...
+Neutral: (('Ook',), 1) Percentage: 0.000107089312487
+
+...#1257...
+Neutral: (('Gezellig',), 1) Percentage: 0.000107089312487
+
+...#1258...
+Neutral: (('vinden',), 1) Percentage: 0.000107089312487
+
+...#1259...
+Neutral: (('up',), 1) Percentage: 0.000107089312487
+
+...#1260...
+Neutral: (('drie',), 1) Percentage: 0.000107089312487
+
+...#1261...
+Neutral: (('Greets',), 1) Percentage: 0.000107089312487
+
+...#1262...
+Neutral: (('Kamphuis',), 1) Percentage: 0.000107089312487
+
+...#1263...
+Neutral: (('bieracties',), 1) Percentage: 0.000107089312487
+
+...#1264...
+Neutral: (('x20ac6750',), 1) Percentage: 0.000107089312487
+
+...#1265...
+Neutral: (('scherp',), 1) Percentage: 0.000107089312487
+
+...#1266...
+Neutral: (('stukje',), 1) Percentage: 0.000107089312487
+
+...#1267...
+Neutral: (('Jeh',), 1) Percentage: 0.000107089312487
+
+...#1268...
+Neutral: (('details',), 1) Percentage: 0.000107089312487
+
+...#1269...
+Neutral: (('uitzending',), 1) Percentage: 0.000107089312487
+
+...#1270...
+Neutral: (('plaats',), 1) Percentage: 0.000107089312487
+
+...#1271...
+Neutral: (('rep',), 1) Percentage: 0.000107089312487
+
+...#1272...
+Neutral: (('incl',), 1) Percentage: 0.000107089312487
+
+...#1273...
+Neutral: (('dagje',), 1) Percentage: 0.000107089312487
+
+...#1274...
+Neutral: (('vloek',), 1) Percentage: 0.000107089312487
+
+...#1275...
+Neutral: (('JANUARI',), 1) Percentage: 0.000107089312487
+
+...#1276...
+Neutral: (('Hoef',), 1) Percentage: 0.000107089312487
+
+...#1277...
+Neutral: (('Hey',), 1) Percentage: 0.000107089312487
+
+...#1278...
+Neutral: (('versie',), 1) Percentage: 0.000107089312487
+
+...#1279...
+Neutral: (('zitten',), 1) Percentage: 0.000107089312487
+
+...#1280...
+Neutral: (('7500',), 1) Percentage: 0.000107089312487
+
+...#1281...
+Neutral: (('Heze',), 1) Percentage: 0.000107089312487
+
+...#1282...
+Neutral: (('Goede',), 1) Percentage: 0.000107089312487
+
+...#1283...
+Neutral: (('chill',), 1) Percentage: 0.000107089312487
+
+...#1284...
+Neutral: (('lang',), 1) Percentage: 0.000107089312487
+
+...#1285...
+Neutral: (('avond',), 1) Percentage: 0.000107089312487
+
+...#1286...
+Neutral: (('feesten',), 1) Percentage: 0.000107089312487
+
+...#1287...
+Neutral: (('ongeluks',), 1) Percentage: 0.000107089312487
+
+...#1288...
+Neutral: (('qM4C52AP',), 1) Percentage: 0.000107089312487
+
+...#1289...
+Neutral: (('tentame',), 1) Percentage: 0.000107089312487
+
+...#1290...
+Neutral: (('beurs',), 1) Percentage: 0.000107089312487
+
+...#1291...
+Neutral: (('opgaves',), 1) Percentage: 0.000107089312487
+
+...#1292...
+Neutral: (('zoveel',), 1) Percentage: 0.000107089312487
+
+...#1293...
+Neutral: (('jee',), 1) Percentage: 0.000107089312487
+
+...#1294...
+Neutral: (('23',), 1) Percentage: 0.000107089312487
+
+...#1295...
+Neutral: (('af',), 1) Percentage: 0.000107089312487
+
+...#1296...
+Neutral: (('Pfff',), 1) Percentage: 0.000107089312487
+
+...#1297...
+Neutral: (('4pasySd6',), 1) Percentage: 0.000107089312487
+
+...#1298...
+Neutral: (('ANWB_webcare',), 1) Percentage: 0.000107089312487
+
+...#1299...
+Neutral: (('opgehaaldD',), 1) Percentage: 0.000107089312487
+
+...#1300...
+Neutral: (('super',), 1) Percentage: 0.000107089312487
+
+...#1301...
+Neutral: (('1225',), 1) Percentage: 0.000107089312487
+
+...#1302...
+Neutral: (('promotie',), 1) Percentage: 0.000107089312487
+
+...#1303...
+Neutral: (('EN',), 1) Percentage: 0.000107089312487
+
+...#1304...
+Neutral: (('Ah',), 1) Percentage: 0.000107089312487
+
+...#1305...
+Neutral: (('cont',), 1) Percentage: 0.000107089312487
+
+...#1306...
+Neutral: (('spuiten',), 1) Percentage: 0.000107089312487
+
+...#1307...
+Neutral: (('ieder',), 1) Percentage: 0.000107089312487
+
+...#1308...
+Neutral: (('gedronken',), 1) Percentage: 0.000107089312487
+
+...#1309...
+Neutral: (('Afgerond',), 1) Percentage: 0.000107089312487
+
+...#1310...
+Neutral: (('9354',), 1) Percentage: 0.000107089312487
+
+...#1311...
+Neutral: (('uurtje',), 1) Percentage: 0.000107089312487
+
