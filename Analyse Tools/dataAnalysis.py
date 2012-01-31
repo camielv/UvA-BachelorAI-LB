@@ -47,9 +47,13 @@ class DataAnalyser():
         sentence = sentence.replace( ':s', ' awkwardsmiley ' )
         sentence = sentence.replace( '!', " ! " )
         sentence = sentence.replace( '?', " ? " )
-        sentence = re.sub( r'http\/\/t\.co\/\w+|\.|\,|\[|\]|&#39;s|\||#|:|;|RT|\(|\)|@\w+|\**', '', sentence )
-        #sentence = re.sub('de|het|een|van|op|in|http|bij|die|ik|De|tco|dat|over|voor|aan|om', '', sentence)
+        # delete non-expressive words
+        sentence = re.sub(' EO | en | de | het | ik | jij | zij | wij | deze | dit | die | dat | is | je | na | zijn | uit | tot | te | sl | hierin | naar | onder | is ', ' ', sentence)
 
+        # Delete useless info, such as links, hashtags, twitteraccountnames 
+        sentence = re.sub('RT|@\w+|http.*', '', sentence)
+        sentence = re.sub( r'\.|\,|\/|\\', '', sentence )
+        sentence = re.sub( r'\[|\]|&#39;s|\||#|:|;|\(|\)|\**', '', sentence )
         sentence = re.sub( ' +',' ', sentence )
         sentence = re.sub(r'''(?ix)\b(?=haha)\S*(\S+)(?<=\bhaha)\1*\b''', 'haha', sentence)
         return sentence
