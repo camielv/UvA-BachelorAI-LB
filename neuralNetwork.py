@@ -17,14 +17,15 @@ def clean( sentence ):
     sentence = sentence.replace( '!', " ! " )
     sentence = sentence.replace( '?', " ? " )
     
-    # delete non-expressive words
-    sentence = re.sub(' en | de | het | ik | jij | zij | wij | deze | dit | die | dat | is | je | na | zijn | uit | tot | te | sl | hierin | naar | onder ', ' ', sentence)
-    
     # Delete useless info, such as links, hashtags, twitteraccountnames 
     sentence = re.sub('RT|@\w+|http.*', '', sentence)
     sentence = re.sub( r'\.|\,|\/|\\', '', sentence )
     sentence = re.sub( r'\[|\]|&#39;s|\||#|:|;|\(|\)|\**', '', sentence )
     sentence = re.sub( ' +',' ', sentence )
+
+    # delete non-expressive words
+    sentence = re.sub(' EO | en | de | het | ik | jij | zij | wij | deze | dit | die | dat | is | je | na | zijn | uit | tot | te | sl | hierin | naar | onder | is ', ' ', sentence)
+
     return sentence
     # print sentence
     # Werkt nog niet cleanup is nog niet goed genoeg
@@ -88,11 +89,11 @@ def makeCorpus(n, num_sentences):
             testSet.append(i-1)
     return testSet, trainSet
 
-def neuralNetwork(iterations = 100):
+def neuralNetwork(iterations = 1):
     # Get current time
     now = time.time()
     
-    senten = initializeCorpus( 1, 100 )
+    senten = initializeCorpus( 1, 10 )
     (sentence, sentiment, num_sentences) = senten
 
     # create a corpus
@@ -108,15 +109,17 @@ def neuralNetwork(iterations = 100):
     layerNodes = dict()
     outputNodes = dict()
 
-    num_hidden = 6
-    num_classes = 3
-    lengthInput = len(inputVector[0])
-    
     # testing variables
-    trainSet = [0,1]
-    testSet = [0,1]
-    inputVector = {0:[0,0,1], 1:[1,0,0]}
-    sentiment   = {0:   0,    1:1}
+
+
+    num_hidden = 2
+    num_classes = 1
+    
+    trainSet = [0,1,2,3]
+    testSet = [0,1,2,3]
+    inputVector = {0:[0,0], 1:[0,1], 2:[1,0], 3:[1,1]}
+    sentiment   = {0:   0,    1:1,    2:1,     3:0}
+
     lengthInput = len(inputVector[0])
     
     # inputnodes have a value, weight
@@ -158,70 +161,58 @@ def neuralNetwork(iterations = 100):
             for i in range( lengthInput ):
                 # copy input values
                 inputNodes['v'][i] = inputVector[t][i]
-            
+                
             # forward progapagation
             for j in range( num_hidden ):
                 inputValue = 0
                 for i in range( lengthInput ):
                     inputValue += inputNodes['v'][i] * inputNodes['w'][i][j]
+                #print 'Inputvalue in node 2,',j,'for input',inputVector[t],'  = ', inputValue
                 layerNodes['v'][j] = (1  / (1 + math.exp( -inputValue )))  
 
-                #print 'Hidden:  g(', inputValue, ')=', layerNodes['v'][j]
+                #print 'Hidden node',j,':  g(', inputValue, ')=', layerNodes['v'][j]
                 
             for k in range( num_classes ):
                 inputValue = 0
                 for j in range( num_hidden ):
                     inputValue += layerNodes['v'][j] * layerNodes['w'][j][k]
                 outputNodes['v'][k] = (1  / (1 + math.exp( -inputValue )))
-                #print 'Output:  g(', inputValue, ')=', outputNodes['v'][k]
+                #print 'Output node',k,':  g(', inputValue, ')=', outputNodes['v'][k]
                 
 
             # calculate error of each node delta: backward 
-            delta = {1:dict(), 2:dict()}
+            delta = {0:dict(), 1:dict(), 2:dict()}
             # neutral, desired output for sentiment == 0 is 1
-            delta[2][0] = (sentiment[t] == 0) - outputNodes['v'][0]
+            delta[2][0] = sentiment[t] - outputNodes['v'][0]
             # positive
-            delta[2][1] = (sentiment[t] > 0)- outputNodes['v'][1]
+            #delta[2][1] = (sentiment[t] != 0)- outputNodes['v'][1]
             # negative
-            delta[2][2] = (sentiment[t] < 0) - outputNodes['v'][2]
+            #delta[2][2] = (sentiment[t] < 0) - outputNodes['v'][2]
 
             #print 'Sentiment = ', sentiment[t]
-            #print 'Error (neutral/pos/neg):', delta[2]
+            #print '\nError layer 2:', delta[2]
 
             for j in range( num_hidden ):
                 delta[1][j] = 0
                 for k in range( num_classes ):
                     delta[1][j] += layerNodes['w'][j][k] * delta[2][k] * ( layerNodes['v'][j] * ( 1 - layerNodes['v'][j] ))
+            #print 'Error layer 1', delta[1], '\n'
+
+            # weight update i to j = alpha * delta j * output i
+            
+            print ''                    
+            alpha = 0.1 # learning rate
             
             for j in range( num_hidden ):
                 for k in range( num_classes ):
-                    Delta[1][j][k] += layerNodes['v'][j] * delta[2][k]
-                 #   print 'Layer2',j,'to Layer3',k, ' = ', Delta[1][j][k]
+                    layerNodes['w'][j][k] += alpha * layerNodes['v'][j] * delta[2][k]
+                    print 'Update weight 1,',j,'to 2,',k,':', layerNodes['w'][j][k]
                     
             for i in range( lengthInput ):
-                for j in range( num_hidden ):
-                    Delta[0][i][j] += inputNodes['v'][i] * delta[1][j]
-                  #  print 'Layer1',i,'to Layer2',j, ' = ', Delta[1][i][j]
-                    
-        #    for l in Delta:
-        #        for i in Delta[l]:
-        #            for j in Delta[i][l]:
-        #                print 'Delta', l,'from',i, 'to',j,'  ',Delta[l][i][j]
-        # update weights:
-        alpha = 0.1 # learning rate
-        
-        for j in range( num_hidden ):
-            for k in range( num_classes ):
-                #print 'Update layer 2',j,'to',k,alpha * layerNodes['v'][j] * Delta[1][j][k]
-                layerNodes['w'][j][k] += alpha * layerNodes['v'][j] * Delta[1][j][k]
-                
-        for i in range( lengthInput ):
-            for j in range( num_hidden):                    
-                #print 'Update layer 1',i,'to',j,alpha * layerNodes['v'][j] * Delta[1][j][k]
-                inputNodes['w'][i][j] += alpha * inputNodes['v'][i] * Delta[0][i][j]
-                #if alpha * inputNodes['v'][i] * Delta[0][i][j] != 0:
-                #    print 'Changed weigts by ', inputNodes['v'][i] * Delta[0][i][j]
-    
+                for j in range( num_hidden):                    
+                    #print 'Update layer 1',i,'to',j,alpha * layerNodes['v'][j] * Delta[1][j][k]
+                    inputNodes['w'][i][j] += alpha * inputNodes['v'][i] * delta[1][j]
+                    print 'Update weight 0,',i,'to 1,',j,':',inputNodes['w'][i][j]
         
     print 'Time training took: ', time.time() - now
     # test stuff
@@ -235,7 +226,7 @@ def neuralNetwork(iterations = 100):
         # forward progapagation
         for j in range( num_hidden ):
             inputValue = 0
-            for i in range( len( inputVector ) ):
+            for i in range( lengthInput ):
                 inputValue += inputNodes['v'][i] * inputNodes['w'][i][j]
             layerNodes['v'][j] = (1  / (1 + math.exp( -inputValue )))  
 
