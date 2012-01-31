@@ -1,5 +1,7 @@
 # Data Analyser
 import csv
+import types
+import sys
 import operator
 import re
 
@@ -8,11 +10,11 @@ class DataAnalyser():
     __positive = dict()
     __negative = dict()
 
-    def __init__( self, dataset ):
+    def __init__( self, dataset, n ):
         __neutral = __positive = __negative = dict()
-        self.__analyse( dataset )
+        self.__analyse( dataset, n )
 
-    def __analyse( self, dataset ):
+    def __analyse( self, dataset, n ):
         for entry in dataset:
             sentence = self.__tokenize( self.__clean( entry[9] ) )
             try:
@@ -20,7 +22,8 @@ class DataAnalyser():
             except ValueError:
                 continue
 
-            for token in sentence:
+            for i in range( 1, len( sentence ) - ( n - 1 ) ):
+                token = tuple(sentence[i-1 : (i-1)+n])
                 if( sentiment == 0 ):
                     if( self.__neutral.has_key(token) ):
                         self.__neutral[token] += 1
@@ -45,7 +48,7 @@ class DataAnalyser():
         sentence = sentence.replace( '!', " ! " )
         sentence = sentence.replace( '?', " ? " )
         sentence = re.sub( r'http\/\/t\.co\/\w+|\.|\,|\[|\]|&#39;s|\||#|:|;|RT|\(|\)|@\w+|\**', '', sentence )
-        sentence = re.sub('de|het|een|van|op|in|http|bij|die|ik|De|tco|dat|over|voor|aan|om', '', sentence)
+        #sentence = re.sub('de|het|een|van|op|in|http|bij|die|ik|De|tco|dat|over|voor|aan|om', '', sentence)
 
         sentence = re.sub( ' +',' ', sentence )
         sentence = re.sub(r'''(?ix)\b(?=haha)\S*(\S+)(?<=\bhaha)\1*\b''', 'haha', sentence)
@@ -54,8 +57,7 @@ class DataAnalyser():
     def __tokenize( self, sentence ):
         return re.findall('\w+|\?|\!', sentence)
 
-    def saveFile(self):
-        filename = "Analysis_Amstel.txt"
+    def saveFile(self, filename):
         print "Saving to file \"" + filename + "\"..."
         doc = open(filename, "w")
         doc.write("...ANALYSIS OF DATASET...\n\n")
@@ -87,11 +89,11 @@ class DataAnalyser():
         for i in range( len( sort_neutral) ):
             doc.write( "...#" + str(i + 1) + "...\n" )
             if( i < len(sort_neutral) ):
-                doc.write( "Neutral: " + str(sort_neutral[i]) + "\n")
+                doc.write( "Neutral: " + str(sort_neutral[i]) + " Percentage: " + str(sort_neutral[i][1] / float(tokens_neutral)) + "\n")
             if( i < len(sort_positive) ):
-                doc.write( "Positive: " + str(sort_positive[i]) + "\n")
+                doc.write( "Positive: " + str(sort_positive[i]) + " Percentage: " + str(sort_positive[i][1] / float(tokens_positive)) + "\n")
             if( i < len(sort_negative) ):
-                doc.write( "Negative: " + str(sort_negative[i]) + "\n")
+                doc.write( "Negative: " + str(sort_negative[i]) + " Percentage: " + str(sort_negative[i][1] / float(tokens_negative)) + "\n")
             doc.write( "\n" ) 
         doc.close()
         print "Done..."
@@ -131,6 +133,20 @@ class DataAnalyser():
                 print 'Negative: ', sort_negative[i]
             print "" 
 
-dataset = csv.reader( open( '../DataAMSTEL.csv', 'rb' ), delimiter=',', quotechar='"' )  
-analysis = DataAnalyser( dataset )
-analysis.saveFile()
+dataset = "../DataCSV.csv"
+n = 1
+filename = "Analysis.txt"
+args = sys.argv
+
+if ( len(args) > 3 ):
+    print "Succes!"
+    dataset = args[1]
+    filename = args[2]
+    try:
+        n = int(args[3])
+    except ValueError:
+        pass
+
+dataset = csv.reader( open( dataset , 'rb' ), delimiter=',', quotechar='"' )  
+analysis = DataAnalyser( dataset, n )
+analysis.saveFile( filename )
