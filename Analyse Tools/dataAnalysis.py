@@ -47,8 +47,6 @@ class DataAnalyser():
         sentence = sentence.replace( ':s', ' awkwardsmiley ' )
         sentence = sentence.replace( '!', " ! " )
         sentence = sentence.replace( '?', " ? " )
-        # delete non-expressive words
-        sentence = re.sub(' EO | en | de | het | ik | jij | zij | wij | deze | dit | die | dat | is | je | na | zijn | uit | tot | te | sl | hierin | naar | onder | is ', ' ', sentence)
 
         # Delete useless info, such as links, hashtags, twitteraccountnames 
         sentence = re.sub('RT|@\w+|http.*', '', sentence)
@@ -56,6 +54,8 @@ class DataAnalyser():
         sentence = re.sub( r'\[|\]|&#39;s|\||#|:|;|\(|\)|\**', '', sentence )
         sentence = re.sub( ' +',' ', sentence )
         sentence = re.sub(r'''(?ix)\b(?=haha)\S*(\S+)(?<=\bhaha)\1*\b''', 'haha', sentence)
+        # delete non-expressive words
+        sentence = re.sub('\sEO\s| en | de | het | ik | jij | zij | wij | deze | dit | die | dat | is | je | na | zijn | uit | tot | te | sl | hierin | naar | onder | is ', ' ', sentence)
         return sentence
 
     def __tokenize( self, sentence ):
