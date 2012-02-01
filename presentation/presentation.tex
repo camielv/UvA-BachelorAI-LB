@@ -1,0 +1,202 @@
+\documentclass{beamer}
+
+\mode<presentation>
+{
+  \usetheme{Berlin}
+  \usecolortheme{default}
+  \setbeamercovered{transparent}
+}
+
+\usepackage[english]{babel}
+\usepackage[all]{xy}
+\usepackage[latin1]{inputenc}
+
+\usepackage{times}
+\usepackage[T1]{fontenc}
+
+
+\title[Sentiment Analysis]
+{Sentiment Analysis}
+
+\subtitle{A Probabilistic Approach}
+
+\author[Gieske, Laan, Ten Velthuis, Verschoor, Wiggers] % (optional, use only with lots of authors)
+{S.~A.~Gieske \and S.~Laan \and D.~S.~Ten Velthuis \and C.~R.~Verschoor \and A.~J.~Wiggers}
+
+\institute[University of Amsterdam] % (optional, but mostly needed)
+{
+  Faculty of Science (FNWI) \\
+  University of Amsterdam
+}
+
+\AtBeginSubsection[]
+{
+  \begin{frame}<beamer>{Outline}
+    \tableofcontents[currentsection,currentsubsection]
+  \end{frame}
+}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Outline}
+  \tableofcontents
+\end{frame}
+
+
+\section{The goal}
+
+\begin{frame}{The goal of the project}
+\begin{block}{Project Description}
+Human operator `becomes' a robot:
+\end{block}
+\begin{itemize}
+\item Mimic head through VR glasses
+\item Mimic upper body through Kinect
+\item Control lower body through gestures
+\end{itemize}
+\end{frame}
+
+\section{Motivation}
+
+\begin{frame}{Motivation}
+We think this project is interesting because:\\
+\begin{itemize}
+\item<2-> Relatively new
+\item<3-> Step closer to human interface.
+\item<4-> Requires interesting problems to be solved.
+\end{itemize}
+\end{frame}
+
+\section{Solved problems}
+
+\subsection{Multiple programming languages}
+\begin{frame}[t]{VR glasses}
+\begin{block}Several languages have to be used for the different hardware.
+\end{block}
+\pause
+\begin{block}{Solution}
+A TCP server with
+\begin{itemize}
+\item The nao as server, sends images
+\item The VR glasses program as client, sends joint values
+\item The Kinect program as client, sends joint values
+\end{itemize}
+\end{block}
+\end{frame}
+
+\subsection{VR glasses}
+\begin{frame}[t]{VR glasses}
+\begin{block}Using the built-in gyroscope, calculate joint angles for the Nao.
+\end{block}
+\pause
+\begin{block}{Solution}
+\xymatrix{ \textnormal{Find angles} \ar[d] \\
+       \textnormal{Send through TCP} \ar[d]\\
+    \textnormal{Set angles} }
+
+\end{block}
+\end{frame}
+
+\section{Problems and Possible Solutions}
+\subsection{Inverse Kinematics}
+\begin{frame}[t]{Inverse Kinematics}
+\begin{block}Given a desired position for the robot, calculate joint angles.
+\end{block}
+\pause
+\begin{block}{Possible Solution}
+\begin{itemize}
+
+\end{itemize}
+\end{block}
+\end{frame}
+
+\subsection{Balance}
+\begin{frame}[t]{Robots and Balance}
+\begin{block}{Problem}
+Nao is easily brought out of balance. Human walking is difficult.
+\end{block}
+\pause
+\begin{block}{Possible Solution}
+Either:
+\begin{itemize}
+\item Use gestures 
+\item Create autobalancing (Nao built-in does not work)
+\end{itemize}
+\end{block}
+\end{frame}
+
+
+\section{Planning}
+\subsection{Tasks}
+\begin{frame}{Subtask Graph}
+\footnotesize
+\xymatrix{
+& \textnormal{Project}\ar@/_/[dl] \ar[d] \ar@/^/[dr]   & \\
+\textnormal{VR glasses}\ar@/_/[ddr] & \textnormal{Kinect to pc}\ar[d]                & \textnormal{Balance Nao}\ar[dd]   \\
+&\textnormal{Tutorials OpenNI}\ar[d] \\
+&\textnormal{Wireframe to Nao} \ar[d] & \textnormal{Autobalance during motion} \ar@/^/[dl] \\
+                                                               & \textnormal{Smooth motions, gestures} \\
+}
+\normalsize
+
+\end{frame}
+
+\subsection{Time Planning}
+
+\begin{frame}{Time Scheme}
+\begin{tabular}{|c|l|c|}
+\hline
+Week & Activity & Team Member\\
+\hline
+1  & Get OpenNI to work       & All\\
+  & Connect Kinect to PC       & All\\
+  & Contact supervisor         & Duncan\\
+\hline 
+2   
+  & Designing program structure     & All \\
+  & Inverse kinematics         & All \\
+  & TCP server\&client programs     & All \\
+  & Extract wireframe from Kinect     & Steven\\
+  & VR glasses gyroscope       & Duncan\\
+  & Control Nao based on client messages   & Auke \\
+  & Report & All \\
+\hline\hline
+  & Presentation \& Demo        & All\\
+\hline
+\end{tabular}
+\end{frame}
+
+\begin{frame}{Time Scheme continued}
+\begin{tabular}{|c|l|c|}
+\hline
+3  & More inverse kinematics      & All\\
+  & Gestures           & All\\
+  & Autobalance nao         & Auke \\
+\hline 
+4   & Bug fixing           & All\\
+  & Error margin         & All\\
+  & Report           & All\\
+\hline\hline
+  & Endpresentation, final demo    & All \\
+\hline
+\end{tabular}
+\end{frame}
+
+\subsection{Error margin}
+\begin{frame}{Uncertainties}
+\begin{itemize}[<+->]
+\item 
+Balance issues, either:\begin{itemize}
+\item Don't mimic the legs.
+\item Let the balancing system override the mimicking system.
+\item Use a gesture system for the lower part of the body. Probably this option.
+\end{itemize}
+\item Unforeseen technical difficulties
+\end{itemize}
+\end{frame}
+
+\end{document}
