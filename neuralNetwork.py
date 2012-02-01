@@ -4,6 +4,7 @@ import re
 import random
 import math
 import sys
+import pickle
 from svmutil import *
 
 # Open a file
@@ -25,7 +26,7 @@ def clean( sentence ):
     sentence = re.sub( ' +',' ', sentence )
 
     # delete non-expressive words
-    sentence = re.sub(' EO | en | de | het | ik | jij | zij | wij | deze | dit | die | dat | is | je | na | zijn | uit | tot | te | sl | hierin | naar | onder | is ', ' ', sentence)
+    sentence = re.sub(' EO | eo | en | de | het | ik | jij | zij | wij | deze | dit | die | dat | is | je | na | zijn | uit | tot | te | sl | hierin | naar | onder | is ', ' ', sentence)
 
     return sentence
     # print sentence
@@ -33,7 +34,7 @@ def clean( sentence ):
     #return __stemmer.stem( sentence )
 
 def tokenize( sentence ):
-    return re.findall('\w+|\?|\!', sentence)
+    return re.findall('\w+', sentence)
 
 def initializeCorpus(n, max_num = 10000,tweet_only=True):
     sentence = {}
@@ -90,11 +91,13 @@ def makeCorpus(n, num_sentences):
             testSet.append(i-1)
     return testSet, trainSet
 
-def neuralNetwork(iterations = 10):
+def neuralNetwork( iterations = 1 , filename = './weights.txt'):
+       
+    
     # Get current time
     now = time.time()
     
-    senten = initializeCorpus( 1, 1000 )
+    senten = initializeCorpus( 1, 500 )
     (sentence, sentiment, num_sentences) = senten
 
     # create a corpus
@@ -102,7 +105,7 @@ def neuralNetwork(iterations = 10):
     trainSet = sets[1]
     testSet = sets[0]
     
-    inputVector = createWordVectors(trainSet, num_sentences, sentence)
+    inputVector, bagOfWords = createWordVectors(trainSet, num_sentences, sentence)    
 
     # Network initialization
     nodes = dict()
@@ -110,10 +113,8 @@ def neuralNetwork(iterations = 10):
     layerNodes = dict()
     outputNodes = dict()
 
-    # testing variables
 
-
-    num_hidden = 10
+    num_hidden = 5
     num_classes = 1
     
     '''
@@ -132,8 +133,7 @@ def neuralNetwork(iterations = 10):
     layerNodes = {'v':dict(), 'w':dict()}
     outputNodes = {'v':dict() }
 
-    # initialize weights
-
+    
     for i in range( lengthInput + 1 ):
         inputNodes['w'][i] = dict()
         for j in range( num_hidden ):
@@ -232,15 +232,14 @@ def neuralNetwork(iterations = 10):
                         
             #print ''
     print '\nTime training took: ', time.time() - now
-    print inputNodes['w']
-    print layerNodes['w']
-    # test stuff
+
     confusion = {'tp':0,'fp':0,'tn':0,'fn':0}
     print '\nTesting..'
     
     for t in testSet:
         if not( t % 10 ):
             sys.stdout.write('.')
+            
         s = sentence[t]
         # initialize input
         for i in range(lengthInput):
@@ -248,7 +247,7 @@ def neuralNetwork(iterations = 10):
             inputNodes['v'][i] = inputVector[t][i]
         inputNodes['v'][lengthInput] = -1
         layerNodes['v'][num_hidden ] = -1 
-        print ''
+
         # forward progapagation
         for j in range( num_hidden ):
             inputValue = 0
@@ -266,16 +265,19 @@ def neuralNetwork(iterations = 10):
             outputNodes['v'][k] = (1  / (1 + math.exp( -inputValue )))
             #print 'Output node',k,':  g(', inputValue, ')=', outputNodes['v'][k]
                 
-        print 'True s:', sentiment[t], ',found', outputNodes['v'].values()
-        if (sentiment[t] != 0) == (outputNodes['v'][0] > 0.5):
+        #print 'True s:', sentiment[t], ',found', outputNodes['v'].values()
+        print '#',t, sentence[t],'--> output', outputNodes['v'][0]
+        print ''
+        if (sentiment[t] != 0) and (outputNodes['v'][0] > 0.5):
             confusion['tp'] += 1
-        elif (sentiment[t] != 0) == (outputNodes['v'][0] > 0.5):
-            confusion['fp'] += 1
-        elif (sentiment[t] == 0) == (outputNodes['v'][0] > 0.5):
+        elif (sentiment[t] != 0) and (outputNodes['v'][0] < 0.5):
             confusion['fn'] += 1
-        else:
+        elif (sentiment[t] == 0) and (outputNodes['v'][0] < 0.5):
             confusion['tn'] += 1
-        print confusion
+        else:
+            confusion['fp'] += 1
+    print confusion
+    raw_input('Press enter to exit')
         
 
 def createWordVectors(trainSet, num_sentences, sentence ):
@@ -304,6 +306,6 @@ def createWordVectors(trainSet, num_sentences, sentence ):
         vec = [ tk_sentence.count(x) for x in bagOfWords]
         
         wordVectors[i] = vec
-    return wordVectors
+    return wordVectors, bagOfWords
 
 neuralNetwork()
