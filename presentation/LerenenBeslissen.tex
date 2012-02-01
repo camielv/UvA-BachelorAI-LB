@@ -31,7 +31,8 @@
 
 \AtBeginSection[]
 {
-  \begin{frame}<beamer>{Outline}
+  \begin{frame}<beamer>{Outline}  
+    \setcounter{tocdepth}{1}
     \tableofcontents[currentsection,currentsubsection]
   \end{frame}
 }
@@ -71,6 +72,13 @@ Performing Sentiment Analysis on messages about the EO
 \end{frame}
 
 \section{Data Preprocessing}
+\begin{frame}<beamer>{Outline}
+    \setcounter{tocdepth}{2}
+    \tableofcontents[
+    currentsubsection, 
+    hideothersubsections, 
+    sectionstyle=show/hide] 
+  \end{frame}
 \begin{frame}{Data Preprocessing}
 Which features are used?
 \end{frame}
@@ -84,6 +92,13 @@ Nog meer data manipulatie?
 \end{frame}
 
 \section{Classification}
+\begin{frame}<beamer>{Outline}
+    \setcounter{tocdepth}{2}
+    \tableofcontents[
+    currentsubsection, 
+    hideothersubsections, 
+    sectionstyle=show/hide] 
+  \end{frame}
 \begin{frame}{Classification}
 \end{frame}
 
