@@ -53,7 +53,7 @@
 
 \begin{frame}{The goal of the project}
 \begin{block}{Project Description}
-Performing Sentiment Analysis on messages about the EO
+Performing sentiment analysis on messages about the EO
 \end{block}
 \begin{itemize}
 \item Classification Sentiment vs. Non Sentiment
@@ -64,9 +64,8 @@ Performing Sentiment Analysis on messages about the EO
 \section{Approach}
 \begin{frame}{Approach}
 \begin{itemize}
-\item Dataset Analysis
 \item Preprocessing of the data
-\item Perform Machine Learning Algorithms on data
+\item Perform machine learning algorithms on data
 \item Use the best algorithm to server
 \end{itemize}
 \end{frame}
@@ -79,16 +78,46 @@ Performing Sentiment Analysis on messages about the EO
     hideothersubsections, 
     sectionstyle=show/hide] 
   \end{frame}
-\begin{frame}{Data Preprocessing}
-Which features are used?
+\subsection{Dataset Analysis}
+\begin{frame}{Dataset Analysis}
+\begin{block}{Dataset messages EO}
+10.000 messages, 19 features per message
+\end{block}
+Ony 3 features used: \\
+\begin{itemize}
+\item Source
+\item Sentiment
+\item Message contents
+\end{itemize}
 \end{frame}
+
 \subsection{Data Cleaning}
 \begin{frame}{Data Cleaning}
-Hoe hebben we de data gecleaned
+\begin{itemize}
+\item Shorten words, ex. hahaha to haha
+\item Stemmer
+\end{itemize}
 \end{frame}
+
+\subsection{Data Reduction}
+\begin{frame}{Data Reduction}
+\begin{itemize}
+\item Only use Twitter messages (83\% of all messages)
+\item Remove articles, reference words and prepositions
+\item Substitute smileys with words
+\item Remove some punctuation marks (ex. not ! ? )
+\end{itemize}
+\end{frame}
+
 \subsection{Data Manipulation}
 \begin{frame}{Data Manipulation}
-Nog meer data manipulatie?
+\begin{itemize}
+\item Create tokens
+\item Assign sentiment probabilities to tokens
+\begin{equation}
+P(word) = \frac{ \sum word \in C_1}{\sum word \in C_1\cup C_2}
+\end{equation}
+\end{itemize}
 \end{frame}
 
 \section{Classification}
