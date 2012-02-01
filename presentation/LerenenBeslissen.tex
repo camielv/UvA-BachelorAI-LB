@@ -20,7 +20,7 @@
 
 \subtitle{A Probabilistic Approach}
 
-\author[Gieske, Laan, Verschoor, ten Velthuis, Wiggers ] % (optional, use only with lots of authors)
+\author[Gieske, Laan, ten Velthuis, Verschoor, Wiggers ] % (optional, use only with lots of authors)
 {S.~A.~Gieske \and S.~Laan \and D.~S.~Ten Velthuis \and C.~R.~Verschoor \and A.~J.~Wiggers}
 
 \institute[University of Amsterdam] % (optional, but mostly needed)
@@ -52,16 +52,22 @@
 
 \begin{frame}{The goal of the project}
 \begin{block}{Project Description}
-Sentiment Analysis on messages about EO
+Performing Sentiment Analysis on messages about the EO
 \end{block}
 \begin{itemize}
-\item Classification sentiment vs. nonsentiment
-\item Classification positive vs. negative
+\item Classification Sentiment vs. Non Sentiment
+\item Classification Positive vs. Negative
 \end{itemize}
 \end{frame}
 
 \section{Approach}
 \begin{frame}{Approach}
+\begin{itemize}
+\item Dataset Analysis
+\item Preprocessing of the data
+\item Perform Machine Learning Algorithms on data
+\item Use the best algorithm to server
+\end{itemize}
 \end{frame}
 
 \section{Data Preprocessing}
@@ -117,7 +123,22 @@ Nog meer data manipulatie?
 \begin{frame}{Results}
 \end{frame}
 
+% Webserver Framework
+\section{Webserver Framework}
+\begin{frame}{Webserver Framework}
+\begin{center}
+Request (HTML) $\rightarrow$ Server (PHP/PYTHON) $\rightarrow$ Result (XML)
+\end{center}
 
+\begin{description}
+\item[Request] http://url.com/?\textbf{dataset}=1&\textbf{message}=De EO is cool!\\
+\item[Result] XML File (Containing: Status, Message, Sentiment, Accuracy, Precision, Recall)
+\end{description}
+\end{frame}
+\begin{frame}{Demo}
+Action...
+\end{frame}
+% End Webserver Framework
 
 \section{Conclusion}
 
