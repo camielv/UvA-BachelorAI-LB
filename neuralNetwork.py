@@ -4,13 +4,13 @@ import re
 import random
 import math
 import sys
-import pickle
+import cPickle as pickle
 from svmutil import *
 
 # Open a file
 file1 = csv.reader(open('DataCSV.csv', 'rb'), delimiter=',', quotechar='"')
-
-
+weights = dict()
+    
 def clean( sentence ):
     sentence = sentence.replace( ':-)', " blijesmiley " )
     sentence = sentence.replace( ':)', " blijesmiley " )
@@ -26,7 +26,7 @@ def clean( sentence ):
     sentence = re.sub( ' +',' ', sentence )
 
     # delete non-expressive words
-    sentence = re.sub(' EO | eo | en | de | het | ik | jij | zij | wij | deze | dit | die | dat | is | je | na | zijn | uit | tot | te | sl | hierin | naar | onder | is ', ' ', sentence)
+    sentence = re.sub(' he | op | wie | uit | EO | eo | en | de | het | ik | jij | zij | wij | deze | dit | die | dat | is | je | na | zijn | uit | tot | te | sl | hierin | naar | onder | is ', ' ', sentence)
 
     return sentence
     # print sentence
@@ -91,21 +91,24 @@ def makeCorpus(n, num_sentences):
             testSet.append(i-1)
     return testSet, trainSet
 
-def neuralNetwork( iterations = 1 , filename = './weights.txt'):
+def neuralNetwork( iterations = 1000, filename = './weights.txt'):
        
     
     # Get current time
     now = time.time()
     
-    senten = initializeCorpus( 1, 500 )
+    senten = initializeCorpus( 1, 100 )
+
     (sentence, sentiment, num_sentences) = senten
 
     # create a corpus
     sets = makeCorpus( 1, num_sentences ) 
     trainSet = sets[1]
     testSet = sets[0]
-    
-    inputVector, bagOfWords = createWordVectors(trainSet, num_sentences, sentence)    
+    #trainSet = [0]
+    #testSet = [0]
+        
+    inputVector, bagOfWords = createWordVectors( trainSet, num_sentences, sentence )    
 
     # Network initialization
     nodes = dict()
@@ -133,28 +136,73 @@ def neuralNetwork( iterations = 1 , filename = './weights.txt'):
     layerNodes = {'v':dict(), 'w':dict()}
     outputNodes = {'v':dict() }
 
-    
-    for i in range( lengthInput + 1 ):
-        inputNodes['w'][i] = dict()
-        for j in range( num_hidden ):
-            # weight from node i to node j are 1
-            inputNodes['w'][i][j] = random.random()
+    ###########################################################################################
+    # load weights from file, if possible, else randomize weights    
+    if os.path.exists(filename):
+        try:
+            weights = pickle.load( open('weights.txt', 'r') )
+        except:
+        
+            print 'Randomized weights'
+            for i in range( lengthInput + 1 ):
+                inputNodes['w'][i] = dict()
+                for j in range( num_hidden ):
+                    # weight from node i to node j are 1
+                    inputNodes['w'][i][j] = random.random()
 
-    for j in range( num_hidden + 1 ):
-        layerNodes['w'][j] = dict()
+            for j in range( num_hidden + 1 ):
+                layerNodes['w'][j] = dict()
+                for k in range( num_classes ):
+                    # weight from node j to k are 1
+                    layerNodes['w'][j][k] = random.random()
+    
+        print 'Loaded weights from file', filename
+        number = 0
+        for x in bagOfWords:
+            # if a token exists in file weights
+            if x in weights:
+                inputNodes['w'][number]= dict()
+                for j in range( num_hidden ):
+                    # extract its weights to all hidden units 
+                    inputNodes['w'][number][j] = weights[x][j]
+            else:
+                print 'Random weight for word ', x
+                inputNodes['w'][number]= dict()
+                for j in range( num_hidden ):
+                    inputNodes['w'][number][j] = random.random()
+            number += 1
+        
+        inputNodes['w'][lengthInput] = dict()
+        for j in range( num_hidden ):
+            # load bias weights
+            inputNodes['w'][lengthInput][j] = weights['bias'][j]         
+
+            layerNodes['w'][j] = dict()
+            for k in range( num_classes ):
+                layerNodes['w'][j][k] = weights['hidden'+str(j)][k]
+        layerNodes['w'][num_hidden] = dict()
         for k in range( num_classes ):
-            # weight from node j to k are 1
-            layerNodes['w'][j][k] = random.random()
-    '''
-    inputNodes['w'][0][0] = -1
-    inputNodes['w'][1][1] = -1
-    inputNodes['w'][2][0] = 0.5
-    inputNodes['w'][2][1] = 0.5
-    layerNodes['w'][2][0] = 1
-    '''
+            # load hidden bias weights
+            layerNodes['w'][num_hidden][k] = weights['hidden'+str( num_hidden )][k]
+    
+    else:
+        print 'Randomized weights'
+        for i in range( lengthInput + 1 ):
+            inputNodes['w'][i] = dict()
+            for j in range( num_hidden ):
+                # weight from node i to node j are 1
+                inputNodes['w'][i][j] = random.random()
+
+        for j in range( num_hidden + 1 ):
+            layerNodes['w'][j] = dict()
+            for k in range( num_classes ):
+                # weight from node j to k are 1
+                layerNodes['w'][j][k] = random.random()
+
+    #####################################################################################
     
     for iteration in range( iterations ):
-        print '\n:::::: Iteration', iteration + 1, '::::::'
+        print '\n:::::: Iteration', iteration + 1, 'of', iterations, '::::::'
         
         for t in trainSet:
             if not( t % 10 ):
@@ -220,19 +268,48 @@ def neuralNetwork( iterations = 1 , filename = './weights.txt'):
             for j in range( num_hidden + 1):
                 for k in range( num_classes ):
                     layerNodes['w'][j][k] += alpha * layerNodes['v'][j] * delta[2][k]
-                    #if iteration == iterations-1:
-                    #    print 'Update weight 1,',j,'to 2,',k,':', layerNodes['w'][j][k]
                     
             for i in range( lengthInput + 1):
                 for j in range( num_hidden):                    
-                    #print 'Update layer 1',i,'to',j,alpha * layerNodes['v'][j] * Delta[1][j][k]
                     inputNodes['w'][i][j] += alpha * inputNodes['v'][i] * delta[1][j]
-                    #if iteration == iterations-1:
-                    #    print 'Update weight 0,',i,'to 1,',j,':',inputNodes['w'][i][j]
-                        
-            #print ''
-    print '\nTime training took: ', time.time() - now
+                     
+                    
+    print '\n\nTime training took: ', time.time() - now
 
+    ##########################################################################
+    print 'Saving weights'
+    if not(os.path.exists(filename)):
+        #create a file
+        open(filename, 'w')
+    
+    try:
+        weights = pickle.load( open(filename, 'r') )
+    except:
+        weights = dict()
+    i = 0
+    for x in bagOfWords:
+        weights[x] = dict()
+        for j in range( num_hidden ):
+            weights[x][j] = inputNodes['w'][i][j]
+        i += 1
+    
+    weights['bias'] = dict()
+    for j in range( num_hidden ):
+        # save bias units
+        weights['bias'][j] = inputNodes['w'][lengthInput][j]
+
+        weights['hidden'+str(j)] = dict()
+        for k in range( num_classes ):
+            weights['hidden'+str(j)][k] = layerNodes['w'][j][k]
+
+    weights['hidden'+str(num_hidden)] = dict()
+    for k in range( num_classes ):
+        weights['hidden'+str(num_hidden)][k]= layerNodes['w'][num_hidden][k]
+
+        
+    pickle.dump( weights, open( filename, 'w' ) )
+    
+    ###########################################################################
     confusion = {'tp':0,'fp':0,'tn':0,'fn':0}
     print '\nTesting..'
     
@@ -266,8 +343,8 @@ def neuralNetwork( iterations = 1 , filename = './weights.txt'):
             #print 'Output node',k,':  g(', inputValue, ')=', outputNodes['v'][k]
                 
         #print 'True s:', sentiment[t], ',found', outputNodes['v'].values()
-        print '#',t, sentence[t],'--> output', outputNodes['v'][0]
-        print ''
+        #print '#',t, sentence[t],'--> output', outputNodes['v'][0]
+        
         if (sentiment[t] != 0) and (outputNodes['v'][0] > 0.5):
             confusion['tp'] += 1
         elif (sentiment[t] != 0) and (outputNodes['v'][0] < 0.5):
@@ -276,14 +353,20 @@ def neuralNetwork( iterations = 1 , filename = './weights.txt'):
             confusion['tn'] += 1
         else:
             confusion['fp'] += 1
+    print ''
     print confusion
+
     raw_input('Press enter to exit')
+    
         
 
 def createWordVectors(trainSet, num_sentences, sentence ):
     # Create the bag of words
     print 'Creating the bag of words'
     bagOfWords = list()
+
+    global weights
+    
     for i in trainSet:
         # Tokenize sentence
         tk_sentence = sentence[i]
@@ -292,7 +375,7 @@ def createWordVectors(trainSet, num_sentences, sentence ):
         for token in tk_sentence:
             if token not in bagOfWords:
                 bagOfWords.append(token)
-
+                
     bagOfWords = set(bagOfWords)
 
     # Create the word vectors
@@ -303,9 +386,10 @@ def createWordVectors(trainSet, num_sentences, sentence ):
         tk_sentence = sentence[i]
         
         # Create word vector 
-        vec = [ tk_sentence.count(x) for x in bagOfWords]
+        vec = [ tk_sentence.count(x) for x in bagOfWords ]
         
         wordVectors[i] = vec
+
     return wordVectors, bagOfWords
 
 neuralNetwork()
