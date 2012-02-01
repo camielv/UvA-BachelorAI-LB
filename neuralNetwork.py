@@ -231,12 +231,16 @@ def neuralNetwork(iterations = 10):
                     #    print 'Update weight 0,',i,'to 1,',j,':',inputNodes['w'][i][j]
                         
             #print ''
-    print 'Time training took: ', time.time() - now
+    print '\nTime training took: ', time.time() - now
     print inputNodes['w']
     print layerNodes['w']
     # test stuff
     confusion = {'tp':0,'fp':0,'tn':0,'fn':0}
+    print '\nTesting..'
+    
     for t in testSet:
+        if not( t % 10 ):
+            sys.stdout.write('.')
         s = sentence[t]
         # initialize input
         for i in range(lengthInput):
