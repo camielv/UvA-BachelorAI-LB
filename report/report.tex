@@ -75,13 +75,21 @@ Universiteit van Amsterdam\\
 
 % CONTENTS
 \section{Introduction}
-With the growth of Social Media, such as social networks and blogs consumers gained a place to review, rate, recommend products on-line. Making on-line opinion important for companies who want to market their products, manage their reputations and identify new opportunities. Being able to automate the process of finding relevant content, filtering out noise and categorize the messages will speed up the process incredibly compared of doing it by hand. Research has shown that sentiment analysis is showing promising results to automate this process.
+With the growth of Social Media, such as social networks and blogs consumers gained a place to review, rate, recommend products on-line. Making on-line opinion important for companies who want to market their products, manage their reputations and identify new opportunities. Being able to automate the process of finding relevant content, filtering out noise and categorize the messages will speed up the process compared of doing it by hand. Research has shown that sentiment analysis is showing promising results to automate this process.
 
-Sentiment analysis is the application of natural language processing, computational linguistics and text analytics to identify and extract subjective information in source materials. Which makes the data from social media ready for further analysis. Using sentinemt analysis we will group data into positive, negative and neutral messages
+Sentiment analysis is the application of natural language processing, computational linguistics and text analytics to identify and extract subjective information in source materials. Which makes the data from social media ready for further analysis. Using sentinemt analysis we will group twitter messages into positive, negative and neutral messages
 
 \section{Problem Specification}
+Our dataset was provided by our client, a excel file excisting of around 10.000 social messages (blogs,facebook post and twitter messages), all graded by hand into 5 categories: +2 very positive, +1 positve, 0 neutral, -1 negative, -2 very negative.  The goal of our project is to build a learning algotrm that can classify these messages.
+% By loading the .csv version of the excel file we where able to acces the data in Pyton. 
+
 \subsection{Datacleaning}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate molestie mi ac dignissim. Proin tristique convallis volutpat. Nunc semper erat id tortor fermentum ullamcorper. Donec sed erat quis erat condimentum pellentesque. Donec sed tristique quam. Proin dictum convallis velit a porttitor. Curabitur in tellus tortor. Proin aliquet blandit sagittis. Curabitur vitae mauris ac leo dignissim rhoncus nec ut orci. Praesent vulputate mollis auctor. Aenean in felis diam, quis dictum metus.
+A person message can contain allot of redundant charcters (noise), 
+
+
+Soon we decided that we would focus on the twitter feeds because, of the 
+(twitter = 140 karakters, anders dan blogs en facebook)(verwijderen "punt, komma's, lijsten etc" (uitroepteken vraagteken blijven, uitleg) (stemmer, uitleg) (tokenize)
+
 
 \subsection{Datareduction}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate molestie mi ac dignissim. Proin tristique convallis volutpat. Nunc semper erat id tortor fermentum ullamcorper. Donec sed erat quis erat condimentum pellentesque. Donec sed tristique quam. Proin dictum convallis velit a porttitor. Curabitur in tellus tortor. Proin aliquet blandit sagittis. Curabitur vitae mauris ac leo dignissim rhoncus nec ut orci. Praesent vulputate mollis auctor. Aenean in felis diam, quis dictum metus.
