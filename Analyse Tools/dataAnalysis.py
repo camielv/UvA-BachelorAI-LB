@@ -41,6 +41,8 @@ class DataAnalyser():
                         self.__negative[token] = 1
 
     def __clean( self, sentence ):
+        #print sentence
+        sentence = sentence.lower()
         sentence = sentence.replace( ':-)', " blijesmiley " )
         sentence = sentence.replace( ':)', " blijesmiley " )
         sentence = sentence.replace( ':(', " zieligesmiley " )
@@ -49,17 +51,24 @@ class DataAnalyser():
         sentence = sentence.replace( '?', " ? " )
 
         # Delete useless info, such as links, hashtags, twitteraccountnames 
-        sentence = re.sub('RT|@\w+|http.*', '', sentence)
+        sentence = re.sub('rt |@\w+|http.*', '', sentence )
         sentence = re.sub( r'\.|\,|\/|\\', '', sentence )
         sentence = re.sub( r'\[|\]|&#39;s|\||#|:|;|\(|\)|\**', '', sentence )
         sentence = re.sub( ' +',' ', sentence )
-        sentence = re.sub(r'''(?ix)\b(?=haha)\S*(\S+)(?<=\bhaha)\1*\b''', 'haha', sentence)
+
         # delete non-expressive words
-        sentence = re.sub('\sEO\s| en | de | het | ik | jij | zij | wij | deze | dit | die | dat | is | je | na | zijn | uit | tot | te | sl | hierin | naar | onder | is ', ' ', sentence)
+        wordlist = ['bij', 'in', 'van', 'een', 'he','op','wie','uit','eo','en','de','het','ik','jij','zij','wij','deze','dit','die','dat','is','je','na','zijn','uit','tot','te','sl','hierin','naar','onder','is']
+        for x in wordlist:
+            sentence = re.sub(' '+x+' ',' ', sentence)
+            sentence = re.sub('\A'+x+' ',' ', sentence)
+            sentence = re.sub(' '+x+'\Z',' ', sentence)
+        #print sentence
+        #raw_input('Press enter')
+
         return sentence
 
     def __tokenize( self, sentence ):
-        return re.findall('\w+|\?|\!', sentence)
+        return re.findall('\w+|\?', sentence)
 
     def saveFile(self, filename):
         print "Saving to file \"" + filename + "\"..."
