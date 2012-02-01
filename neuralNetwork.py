@@ -154,7 +154,7 @@ def neuralNetwork(iterations = 10):
     '''
     
     for iteration in range( iterations ):
-        print ':::::: Iteration', iteration + 1, '::::::'
+        print '\n:::::: Iteration', iteration + 1, '::::::'
         
         for t in trainSet:
             if not( t % 10 ):
@@ -235,6 +235,7 @@ def neuralNetwork(iterations = 10):
     print inputNodes['w']
     print layerNodes['w']
     # test stuff
+    confusion = {'tp':0,'fp':0,'tn':0,'fn':0}
     for t in testSet:
         s = sentence[t]
         # initialize input
@@ -262,6 +263,15 @@ def neuralNetwork(iterations = 10):
             #print 'Output node',k,':  g(', inputValue, ')=', outputNodes['v'][k]
                 
         print 'True s:', sentiment[t], ',found', outputNodes['v'].values()
+        if (sentiment[t] != 0) == (outputNodes['v'][0] > 0.5):
+            confusion['tp'] += 1
+        elif (sentiment[t] != 0) == (outputNodes['v'][0] > 0.5):
+            confusion['fp'] += 1
+        elif (sentiment[t] == 0) == (outputNodes['v'][0] > 0.5):
+            confusion['fn'] += 1
+        else:
+            confusion['tn'] += 1
+        print confusion
         
 
 def createWordVectors(trainSet, num_sentences, sentence ):
