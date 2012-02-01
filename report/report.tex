@@ -13,10 +13,11 @@
 \usepackage{url}
 \usepackage{qtree}
 \usepackage{lastpage}
+\usepackage{multirow}
 \urlstyle{same}
 
 % Page numbering
-\lhead{Sentiment Analysis - A Probabilistic Aproach}
+\lhead{Sentiment Analysis - A Probabilistic Approach}
 \rhead{page \thepage/\pageref{LastPage}}
 \cfoot{}
 \rfoot{\thepage}
@@ -77,15 +78,15 @@ Universiteit van Amsterdam\\
 \section{Introduction} 
 With the growth of Social Media, such as social networks and blogs consumers gained a place to review, rate, recommend products on-line. Making on-line opinion important for companies who want to market their products, manage their reputations and identify new opportunities. Being able to automate the process of finding relevant content, filtering out noise and categorize the messages will speed up the process compared of doing it by hand. Research has shown that sentiment analysis is showing promising results to automate this process.
 
-Sentiment analysis is the application of natural language processing, computational linguistics and text analytics to identify and extract subjective information in source materials. Which makes the data from social media ready for further analysis. Using sentinemt analysis we will group twitter messages into positive, negative and neutral messages
+Sentiment analysis is the application of natural language processing, computational linguistics and text analytics to identify and extract subjective information in source materials. Which makes the data from social media ready for further analysis. Using sentiment analysis we will group twitter messages into positive, negative and neutral messages
 
 \section{Problem Specification}
-Our dataset was provided by our client, a excel file excisting of around 10.000 social messages (blogs,facebook post and twitter messages), all graded by hand into 5 categories: +2 very positive, +1 positve, 0 neutral, -1 negative, -2 very negative.  The goal of our project is to build a learning algotrm that can classify these messages by itself.
+Our dataset was provided by our client, a excel file existing of around 10.000 messages from social media\footnote{ Data contained posts from blogs, posts from facebook  and tweets}. All messages were graded by hand into 5 categories, ranging from very negative to very positive. The goal of our project is to build a learning algorithm that can classify these messages.
 
-% By loading the .csv version of the excel file we where able to acces the data in Pyton. 
+% By loading the .csv version of the excel file we where able to access the data in Python. 
 
 \subsection{Data Cleaning}
-A persons tweet can only contain 140 characters, so to still be able to express yourself users mostly use slang and emoticons. Which increases the value of cleaning the messages first.
+A tweet can only contain 140 characters, so to still be able to express yourself users mostly use slang and emoticons. Which increases the value of cleaning the messages first.
 For example punctuations such as: dot's, comma's and list's dont add anything to the sentiment of a messages so we deleted all useless information. Exclamation and question marks do give value to the sentiment of a sentence because, they can tell something about the emotion of the sentence so we left those in our corpus. 
 
 Making use of a Dutch stemmer found in the NLTK database (heb ik nog niet over gehad uitleg nodig), we are able to reduce inflected words to their stem, base or root form. Most words have the same meaning, for example "FUCK and Fucking"  are related to each other and by stemming the 2 words to their base form "fuck"  we decrease the amount of different words in our corpus and gain more same words (moet beter verwoord worden).
@@ -113,13 +114,42 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate molestie
 
 \subsubsection{Artificial Neural Network}
 
-\subsubsection{Method 3}
+\subsubsection{Maximum Entropy}
 
-\subsection{Problistics Terms}
+\subsubsection{Naive Bayes Classifier}
+
+\subsubsection{Weighted Probability Sum}
+
+\subsection{Classification Measures}
 %Waarschijnlijk deze substecion voor machine learning
+
+In order to test how well a specific algorithm performs, a couple of measurements are used. Each will be explained briefly in terms of table \ref{classification}.
+
+\begin{table}[h]
+\center
+\begin{tabular}{cc|c|c|}
+\cline{3-4}
+& & \multicolumn{2}{|c|}{Classified Class} \\ \cline{3-4}
+& &  Positive & Negative \\ \cline{1-4}
+\multicolumn{1}{|c|}{\multirow{2}{*}{Actual Class}} &
+\multicolumn{1}{|c|}{Positive} &  TP & FN      \\ \cline{2-4}
+\multicolumn{1}{|c|}{}                        &
+\multicolumn{1}{|c|}{Negative} & FP & TN     \\ \cline{1-4}
+\end{tabular}
+\caption{Table of classification classes}
+\label{classification}
+\end{table} 
+
+
 \subsubsection{Accuracy}
 
 \subsubsection{Precision}
+
+The precision is defined as follows:
+
+\begin{equation*}
+\textit{Precision} = \frac{ \textit{TP}}{\textit{TP} + \textit{FP}}
+\end{equation*}
 
 \subsubsection{Recall}
 
@@ -134,15 +164,15 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate molestie
 
 
 \subsection{Global Approach}
-First we'll explain our general approach. The idea is to use a binary classifier, i.e. either true or false, multiple times. This way we can first decide whether a message is neutral and then we can decide between the non-neutral messages whether it is a positive or negative message. Maybe a tree structure shows the used approach more clearly:
+the general approach will be explained first. The idea is to use a binary classifier, i.e.\ either true or false, multiple times. This way it is possible to first decide whether a message is neutral and then decide between the non-neutral messages whether it is a positive or negative message. Maybe a tree structure shows the used approach more clearly:
 \begin{figure}[h]
 \Tree [.{All messages} {Neutral Messages} [.{Non-Neutral Messages} {Positive Messages} {Negative Messages} ] ]
 \end{figure}
 
-As you can see, with this approach we need only to distinguish between two classes at a time. This is very convenient, because there are a lot of techniques that can discriminate between two classes, whereas multi-class-classifiers are less common.
+As you can see, using this approach you have to distinguish between two classes at a time. This is very convenient, because there are a lot of techniques that can discriminate between two classes, whereas multi-class-classifiers are less common.
 
 \subsection{Binary Classification}
-In this section, we'll describe the method that we use to classify a message. The approach consists of a few steps:
+In this section, the method that we use to classify a message is described. The approach consists of a few steps:
 \begin{enumerate}
 \item The counting of word frequencies
 \item Calculation of word probabilities
@@ -150,9 +180,9 @@ In this section, we'll describe the method that we use to classify a message. Th
 \item Finding a good threshold
 \end{enumerate}
 
-First we count the frequency of each word, i.e. we count how many times it occurs in the training set. We also keep track of how many times this word was encountered in either class. For example, if we want to decide whether messages are neutral or not, we keep track of how many times each word has been seen in a neutral message. The number of times the word occurs in the opposite class, is equivalent to the total number of encounters, minus the encounters in the first class.
+First the frequency of each word, i.e. we count how many times it occurs in the training set, is counted. The number  The number of times the word occurs in the opposite class, is equivalent to the total number of encounters, minus the encounters in the first class.
 
-When the frequencies of all words\footnote{All words in the training set} are found, we can calculate a probability for each word, which gives us an idea of how likely it is to be encountered in a certain class. The formula for this probability is the following:
+When the frequencies of all words\footnote{All words in the training set} are found, the probability for each word can be calculated. This gives an idea of how likely it is to be encountered in a certain class. The formula for this probability is the following:
 
 \begin{equation}
 P(word) = \frac{ \sum word \in C_1}{\sum word \in C_1\cup C_2}
@@ -160,18 +190,15 @@ P(word) = \frac{ \sum word \in C_1}{\sum word \in C_1\cup C_2}
 
 So the probability that a word is in $C_1$, the first class, is the number of times it has been encountered in a sentence, which was tagged to be in $C_1$, divided by the total number of encounters.
 
-Now that all words have probabilities assigned to them, or at least all words in the training set, we can calculate the probabilities of the sentences.
+Now that all words have probabilities assigned to them, or at least all words in the training set, the probabilities of the sentences can be calculated.
 
 \begin{equation}
 P(s) = \frac{1}{n} \sum_{w \in s} P(w)
 \end{equation}
 
-Where $s$ is the sentence, $n$ the number of words in the sentence and $w$ a word in the sentence. As follows from the formula, we take the weighted sum of the word probabilities.
+Where $s$ is the sentence, $n$ the number of words in the sentence and $w$ a word in the sentence. As follows from the formula,  the weighted sum of the word probabilities is used.
 
-Now that every sentence has an associated probability, the real machine learning can begin. The goal is to find a threshold for the probabilities, i.e.\ when a sentence probability is higher than a certain amount, we classify it as $C_1$,  otherwise, we classify it as belonging to $C_2$.
-
-We tried several approaches to accomplish this task.
-
+Now that every sentence has an associated probability, the real machine learning can begin. The goal is to find a threshold for the probabilities; when a sentence probability is higher than a certain amount, it is classified it as $C_1$,  otherwise it belongs to $C_2$.
 
 \subsection{Algoritme 1}
 \subsubsection{Approach}
@@ -188,6 +215,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate molestie
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate molestie mi ac dignissim. Proin tristique convallis volutpat. Nunc semper erat id tortor fermentum ullamcorper. Donec sed erat quis erat condimentum pellentesque. Donec sed tristique quam. Proin dictum convallis velit a porttitor. Curabitur in tellus tortor. Proin aliquet blandit sagittis. Curabitur vitae mauris ac leo dignissim rhoncus nec ut orci. Praesent vulputate mollis auctor. Aenean in felis diam, quis dictum metus.
 
 \subsubsection{Results}
+
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate molestie mi ac dignissim. Proin tristique convallis volutpat. Nunc semper erat id tortor fermentum ullamcorper. Donec sed erat quis erat condimentum pellentesque. Donec sed tristique quam. Proin dictum convallis velit a porttitor. Curabitur in tellus tortor. Proin aliquet blandit sagittis. Curabitur vitae mauris ac leo dignissim rhoncus nec ut orci. Praesent vulputate mollis auctor. Aenean in felis diam, quis dictum metus.
 
 \subsubsection{Discussion}
