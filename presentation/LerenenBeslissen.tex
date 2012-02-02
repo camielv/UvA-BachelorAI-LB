@@ -10,7 +10,7 @@
 \usepackage[english]{babel}
 \usepackage[all]{xy}
 \usepackage[latin1]{inputenc}
-
+\usepackage{qtree}
 \usepackage{times}
 \usepackage[T1]{fontenc}
 
@@ -66,9 +66,15 @@ Performing sentiment analysis on messages about the EO
 \begin{itemize}
 \item Preprocessing of the data
 \item Perform machine learning algorithms on data
-\item Use the best algorithm to server
+\item Use best algorithms to classify real time on server
 \end{itemize}
 \end{frame}
+\begin{frame}{Hierarchical Classification}
+\begin{figure}[h]
+\Tree [.{All messages} {Neutral Messages} [.{Non-Neutral Messages} {Positive Messages} {Negative Messages} ] ]
+\end{figure}
+\end{frame}
+
 
 \section{Data Preprocessing}
 \begin{frame}<beamer>{Outline}
