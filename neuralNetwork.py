@@ -5,15 +5,14 @@ import random
 import math
 import sys
 import cPickle as pickle
-#from svmutil import *
 import os
-
 
 # Open a file
 file1 = csv.reader(open('DataCSV.csv', 'rb'), delimiter=',', quotechar='"')
 weights = dict()
     
 def clean( sentence ):
+    sentence = sentence.lower()
     sentence = sentence.replace( ':-)', " blijesmiley " )
     sentence = sentence.replace( ':)', " blijesmiley " )
     sentence = sentence.replace( ':(', " zieligesmiley " )
@@ -22,23 +21,24 @@ def clean( sentence ):
     sentence = sentence.replace( '?', " ? " )
     
     # Delete useless info, such as links, hashtags, twitteraccountnames 
-    sentence = re.sub('RT|@\w+|http.*', '', sentence)
+    sentence = re.sub('rt |@\w+|http.*', '', sentence)
     sentence = re.sub( r'\.|\,|\/|\\', '', sentence )
-    sentence = re.sub( r'\[|\]|&#39;s|\||#|:|;|\(|\)|\**', '', sentence )
+    sentence = re.sub( r'\[|\]|&#39;|\||#|:|;|\(|\)|\**', '', sentence )
     sentence = re.sub( ' +',' ', sentence )
 
     # delete non-expressive words
-    sentence = re.sub(' he | op | wie | uit | EO | eo | en | de | het | ik | jij | zij | wij | deze | dit | die | dat | is | je | na | zijn | uit | tot | te | sl | hierin | naar | onder | is ', ' ', sentence)
-
+    for x in ['bij','!','of','voor','in','een','he','op','wie','uit','eo','en','de','het','ik','jij','zij','wij','deze','dit','die','dat','is','je','na','zijn','uit','tot','te','sl','hierin','naar','onder','is']:
+        sentence = re.sub(' '+x+' ',' ',sentence)
+        sentence = re.sub('\A'+x+' ',' ',sentence)
     return sentence
     # print sentence
     # Werkt nog niet cleanup is nog niet goed genoeg
     #return __stemmer.stem( sentence )
 
 def tokenize( sentence ):
-    return re.findall('\w+', sentence)
+    return re.findall('\w+|\?|\!', sentence)
 
-def initializeCorpus(n, max_num = 1000,tweet_only=True):
+def initializeCorpus(n, max_num = 10000,tweet_only=True):
     sentence = {}
     sentiment = {}
 
@@ -93,9 +93,8 @@ def makeCorpus(n, num_sentences):
             testSet.append(i-1)
     return testSet, trainSet
 
-def neuralNetwork( iterations = 5000, filename = './weights500s5000i.txt'):
+def neuralNetwork( iterations = 1, filename = './weights500s5000i.txt'):
        
-    
     # Get current time
     now = time.time()
     
@@ -142,7 +141,7 @@ def neuralNetwork( iterations = 5000, filename = './weights500s5000i.txt'):
     # load weights from file, if possible, else randomize weights    
     if os.path.exists(filename):
         try:
-            weights = pickle.load( open('weights.txt', 'r') )
+            weights = pickle.load( open(filename, 'r') )
         except:
         
             print 'Randomized weights'
@@ -207,7 +206,7 @@ def neuralNetwork( iterations = 5000, filename = './weights500s5000i.txt'):
         print '\n:::::: Iteration', iteration + 1, 'of', iterations, '::::::'
         
         for t in trainSet:
-            if not( t % 10 ):
+            if not( t % 100 ):
                 sys.stdout.write('.')
     
             # initialize input
@@ -348,13 +347,17 @@ def neuralNetwork( iterations = 5000, filename = './weights500s5000i.txt'):
         #print '#',t, sentence[t],'--> output', outputNodes['v'][0]
         
         if (sentiment[t] != 0) and (outputNodes['v'][0] > 0.5):
+            print 'tp', outputNodes['v'][0], sentence[t]
             confusion['tp'] += 1
         elif (sentiment[t] != 0) and (outputNodes['v'][0] < 0.5):
             confusion['fn'] += 1
+            print 'fn', outputNodes['v'][0], sentence[t]
         elif (sentiment[t] == 0) and (outputNodes['v'][0] < 0.5):
             confusion['tn'] += 1
+            print 'tn', outputNodes['v'][0], sentence[t]
         else:
             confusion['fp'] += 1
+            print 'fp' ,outputNodes['v'][0], sentence[t]
     print ''
     print confusion
 
