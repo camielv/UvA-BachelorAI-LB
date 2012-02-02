@@ -5,7 +5,9 @@ import random
 import math
 import sys
 import cPickle as pickle
-from svmutil import *
+#from svmutil import *
+import os
+
 
 # Open a file
 file1 = csv.reader(open('DataCSV.csv', 'rb'), delimiter=',', quotechar='"')
@@ -36,7 +38,7 @@ def clean( sentence ):
 def tokenize( sentence ):
     return re.findall('\w+', sentence)
 
-def initializeCorpus(n, max_num = 10000,tweet_only=True):
+def initializeCorpus(n, max_num = 1000,tweet_only=True):
     sentence = {}
     sentiment = {}
 
@@ -91,13 +93,13 @@ def makeCorpus(n, num_sentences):
             testSet.append(i-1)
     return testSet, trainSet
 
-def neuralNetwork( iterations = 1000, filename = './weights.txt'):
+def neuralNetwork( iterations = 5000, filename = './weights500s5000i.txt'):
        
     
     # Get current time
     now = time.time()
     
-    senten = initializeCorpus( 1, 100 )
+    senten = initializeCorpus( 1, 500 )
 
     (sentence, sentiment, num_sentences) = senten
 
