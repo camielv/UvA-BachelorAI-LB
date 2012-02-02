@@ -11,9 +11,9 @@ class Classifier():
     __class_distribution = [0],[-1,-2],[1,2]
     __display_class = 1,2
     __num_classes = len( __class_distribution )
-    __corpus = pickle.load( open('FeatureProbs.txt') )
+    __corpus = pickle.load( open('weightsDayTraining.txt') )
     __n = 4
-    __weights = pickle.load( open('weights500s5000i.txt') )
+    __weights = pickle.load( open('.txt') )
     __sentiment = None
 
     def __init__( self ):
@@ -54,10 +54,13 @@ class Classifier():
         certainty_opinion = abs( P_opinion - 0.5 ) * 2
         certainty_negpos = abs( P_positive - P_negative ) * math.sqrt(2)
         
-        if( P_negative > P_positive):
-            return (P_opinion, certainty_opinion, success, False, P_negative, certainty_negpos)
+        if( P_opinion > 0.5 ):                
+            if( P_negative > P_positive):
+                return (success, -1, P_negative, certainty_negpos)
+            else:
+                return (success, 1, P_positive, certainty_negpos)
         else:
-            return (P_opinion, certainty_opinion, success, True, P_positive, certainty_negpos)
+            return (success, 0, P_opinion, certainty_opinion)
 
     ### ALGORITHMS ###
 

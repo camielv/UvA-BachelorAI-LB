@@ -15,16 +15,15 @@ exec("python sentiment.py $dataset \"$message\"", $output);
 
 /* Create XML File */
 $results = array();
-if (count($output) != 6 ) {
+if (count($output) != 5 ) {
 	/* BAD REQUEST */
 	$results [] = array(
 		'status' => 'BAD REQUEST',
 		'dataset' => 'unknown',
 		'message' => 'unknown',
+		'classify_status' => 'unknown',
 		'sentiment' => 'unknown',
-		'accuracy' => 'unknown',
-		'precision' => 'unknown',
-		'recall' => 'unknown'
+		'certainty' => 'unknown'
 	);
 } else {
 	/* GOOD REQUEST */
@@ -32,10 +31,9 @@ if (count($output) != 6 ) {
 		'status' => 'GOOD REQUEST',
 		'dataset' => $output[0],
 		'message' => $output[1],
-		'sentiment' => $output[2],
-		'accuracy' => $output[3],
-		'precision' => $output[4],
-		'recall' => $output[5]
+		'classify_status' => $output[2],
+		'sentiment' => $output[3],
+		'certainty' => $output[4]
 	);
 }
 $doc = new DOMDocument("1.0");

@@ -20,17 +20,18 @@ else:
     message = args[2]
 
     # Dataset ID
-    print "Dataset nummer: ", dataset
+    print dataset
+    
+    print message
         
     Classifier = CF.Classifier()
-    (P_opinion, certainty_opinion, success, sentiment, P_sentiment, certainty_sentiment) = Classifier.classify( message )
+    (success, sentiment, P_sentiment, certainty_sentiment) = Classifier.classify( message )
 
-    print "P Opinion: ", P_opinion
-
-    print "Certainty opinion: ", certainty_opinion
-
-    print "Sentiment: ", sentiment
-
-    print "P Sentiment: ", P_sentiment
-
-    print "Certainty sentiment: ", certainty_sentiment
+    if( sentiment == 0 or success ):
+        print "True"
+        print sentiment
+        print certainty_sentiment
+    else:
+        print "False"
+        for i in range(2):
+            print 0
