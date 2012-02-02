@@ -28,7 +28,7 @@ def clean( sentence ):
     #return __stemmer.stem( sentence )
 
 def tokenize( sentence ):
-    return re.findall('\w+|\?', sentence)
+    return re.findall('\w+|\?|\!', sentence)
 
 def classifyNewLine(sentence, filename = './weightsDayTraining.txt'):
     
@@ -115,7 +115,7 @@ def classifyNewLine(sentence, filename = './weightsDayTraining.txt'):
         
         layerNodes['v'][j] = (1  / (1 + math.exp( -inputValue )))  
 
-        print 'Hidden node',j,':  g(', inputValue, ')=', layerNodes['v'][j]
+        #print 'Hidden node',j,':  g(', inputValue, ')=', layerNodes['v'][j]
         
     for k in range( num_classes ):
         inputValue = 0
@@ -123,6 +123,6 @@ def classifyNewLine(sentence, filename = './weightsDayTraining.txt'):
             inputValue += layerNodes['v'][j] * layerNodes['w'][j][k]
         outputNodes['v'][k] = (1  / (1 + math.exp( -inputValue )))
 
-        print 'Output node',k,':  g(', inputValue, ')=', outputNodes['v'][k]
-
+        #print 'Output node',k,':  g(', inputValue, ')=', outputNodes['v'][k]
+    return outputNodes['v'][0]
     

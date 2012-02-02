@@ -1,4 +1,6 @@
 import cPickle as pickle
+import re
+import inputDevice as iD
 
 # Number of classes and distribution
 class_distribution = [0],[-1,-2],[1,2]
@@ -35,7 +37,6 @@ def clean( sentence ):
 
     return sentence
 
-print 'Testing'
 while 1:
     test_sentence = raw_input('Typ een zin: ')
     # Calculate probabilities for every sentence
@@ -88,13 +89,25 @@ while 1:
     except:
         print 'zero features found in following sentence:'
         print test_sentence
-
+    
     print test_sentence
+
+    opinion = iD.classifyNewLine(test_sentence)
+    print 'Opinion probability: {0}'.format(opinion)
     print 'Negative Probability: {0}\nPositive Probability: {1}'.format(classes[1],classes[2])
 
-    if classes[1] > classes[2]:
-        print 'Sentence is negative'
-    elif classes[1] < classes[2]:
-        print 'Sentence is positive'
+    if opinion > 0.5:
+        if classes[1] > classes[2]:
+            print 'Sentence is negative'
+        elif classes[1] < classes[2]:
+            print 'Sentence is positive'
+        else:
+            print 'Equal probability, unsure' 
     else:
-        print 'Equal probability, unsure' 
+        if classes[1] > classes[2]:
+            posneg = 'negative'
+        elif classes[1] < classes[2]:
+            posneg = 'positive'
+        else:
+            posneg = 'unsure whether it is positive or negative.'
+        print 'Sentence classified as neutral, but if it is not, it would be' + posneg + '.'
