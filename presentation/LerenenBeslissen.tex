@@ -229,16 +229,24 @@ Fit in featurespace that binds features to classes
 \subsection{Neural Network}
 \begin{frame}{Neural Network}
 \begin{block}{Algorithm}
+Backpropagation
 \end{block}
 \begin{description}
-\item[Input]: 
-\item[Output]:
+\item[Input]: Word vectors
+\item[Output]: Value for 
 \end{description}
 \end{frame}
 \begin{frame}{Results \& Conclusion}
 \begin{description}
-\item[Results]: 
-\item[Conclusion]: 
+\item[Results]: Training time = 2.85377444 hours.\\
+\begin{tabular}{c || c | c}\\
+Test \textbackslash Real & True & False \\
+\hline
+True & 14 & 6 \\
+False & 40 & 94 \\
+\end{tabular}
+
+\item[Conclusion]: Still many messages with sentiment incorrectly classified. \\Possible cause: ratio of messages with sentiment and nonsentiment.
 \end{description}
 \end{frame}
 
