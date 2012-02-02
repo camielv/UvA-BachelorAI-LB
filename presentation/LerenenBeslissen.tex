@@ -97,6 +97,7 @@ Ony 3 features used: \\
 \end{itemize}
 \end{frame}
 
+
 \subsection{Data Cleaning}
 \begin{frame}{Data Cleaning}
 \begin{itemize}
@@ -115,6 +116,7 @@ Ony 3 features used: \\
 \end{itemize}
 \end{frame}
 
+%%%%% CLASSIFICATION
 \section{Classification}
 \begin{frame}<beamer>{Outline}
     \setcounter{tocdepth}{2}
@@ -146,8 +148,10 @@ P(s) = \frac{1}{n} \sum_{w \in s} P(w)
 \begin{block}{Algorithm}
 Train lineair treshold
 \end{block}
-\textbf{Input}: sentence probabilities, sentence values\\
-\textbf{Output}: treshold
+\begin{description}
+\item[Input]: Sentence probabilities, sentence values
+\item[Output]: Treshold
+\end{description}
 \end{frame}
 \begin{frame}{Results \& Conclusion}
 \begin{description}
@@ -158,11 +162,18 @@ Train lineair treshold
 
 \subsection{Support Vector Machine}
 \begin{frame}{Support Vector Machine}
+\begin{block}{Algorithm}
+Fit in featurespace that binds features to classes
+\end{block}
+\begin{description}
+\item[Input]: Features in vector
+\item[Output]: Number belonging to class
+\end{description}
 \end{frame}
 \begin{frame}{Results \& Conclusion}
 \begin{description}
-\item[Results]: 
-\item[Conclusion]: 
+\item[Results]: Not very good recall/precision/accuracy
+\item[Conclusion]: Fit can not be made on these features\\ or more data needed to find clear boundary 
 \end{description}
 \end{frame}
 
