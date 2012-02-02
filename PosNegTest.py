@@ -92,7 +92,7 @@ while 1:
     
     print test_sentence
 
-    opinion = iD.classifyNewLine(test_sentence)
+    opinion = iD.classifyNewLine(test_sentence, './weights500s5000i.txt')
     print 'Opinion probability: {0}'.format(opinion)
     print 'Negative Probability: {0}\nPositive Probability: {1}'.format(classes[1],classes[2])
 
@@ -110,4 +110,4 @@ while 1:
             posneg = 'positive'
         else:
             posneg = 'unsure whether it is positive or negative.'
-        print 'Sentence classified as neutral, but if it is not, it would be' + posneg + '.'
+        print 'Sentence classified as neutral, but if it is not, it would be ' + posneg + '.'
