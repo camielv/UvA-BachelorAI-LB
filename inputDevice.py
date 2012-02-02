@@ -54,8 +54,6 @@ def classifyNewLine(sentence, filename = './weightsDayTraining.txt'):
     weights = pickle.load( open(filename, 'r') )    
 
     # remove hidden, bias
-    
-
     print 'Loading weights from file', filename
     number = 0
     # use all tokens as a bag of words to form a word vector containing all possible features
@@ -67,7 +65,7 @@ def classifyNewLine(sentence, filename = './weightsDayTraining.txt'):
                 # extract its weights to all hidden units 
                 inputNodes['w'][number][j] = weights[x][j]
             number += 1
-
+    
     # the n+1th unit is the bias node
     inputNodes['w'][ number ] = dict()
     for j in range( num_hidden ):
@@ -82,7 +80,8 @@ def classifyNewLine(sentence, filename = './weightsDayTraining.txt'):
     for k in range( num_classes ):
         # load hidden bias weights
         layerNodes['w'][num_hidden][k] = weights['hidden'+str( num_hidden )][k]
-
+    #print inputNodes
+    #print layerNodes
     #####################################################################################
 
     # Step 2: create wordVector from weights dictionary
@@ -94,7 +93,7 @@ def classifyNewLine(sentence, filename = './weightsDayTraining.txt'):
                 wordVector.append(1)
             else:
                 wordVector.append(0)
-
+    #print wordVector
     #####################################################################################
     
     # Step 3: forward propagate input through this network to retrieve output
@@ -110,7 +109,7 @@ def classifyNewLine(sentence, filename = './weightsDayTraining.txt'):
     # forward progapagation
     for j in range( num_hidden ):
         inputValue = 0
-        for i in range( len( wordVector ) ):
+        for i in range( len( wordVector ) + 1 ):
             inputValue += inputNodes['v'][i] * inputNodes['w'][i][j]
         
         layerNodes['v'][j] = (1  / (1 + math.exp( -inputValue )))  
