@@ -75,8 +75,12 @@ Universiteit van Amsterdam\\
 \newpage
 
 % CONTENTS
+
+%Net maarten gevraagd doel van dity verslag is om de opdracht gever zijn vraag te beantwoorden en hoe we dat hebben gedaan
+%geen academische paper alleen uitleg van theory die hij niet kent en hoe we probleem hebben aangepakt en waarom we dat zo hebben gedaan
+
 \section{Introduction} 
-With the growth of Social Media, such as social networks and blogs consumers gained a place to review, rate, recommend products on-line. Making on-line opinion important for companies who want to market their products, manage their reputations and identify new opportunities. Being able to automate the process of finding relevant content, filtering out noise and categorize the messages will speed up the process compared of doing it by hand. Research has shown that sentiment analysis is showing promising results to automate this process.
+With the growth of Social Media, such as social networks and blogs consumers gained a place to review, rate and recommend products on-line. Making on-line opinion important for companies who want to market their products, manage their reputations and identify new opportunities. Being able to automate the process of finding relevant content, filtering out noise and categorize the messages will speed up the process compared of doing it by hand. Research has shown that sentiment analysis is showing promising results to automate this process.
 
 Sentiment analysis is the application of natural language processing, computational linguistics and text analytics to identify and extract subjective information in source materials. Which makes the data from social media ready for further analysis. Using sentiment analysis we will group twitter messages into positive, negative and neutral messages
 
@@ -96,7 +100,7 @@ Making use of a Dutch stemmer found in the NLTK database (heb ik nog niet over g
 \subsection{Data Reduction}
 Because, of the difference between blogs, facebook post and twitter feeds, we decided to only focus on the twitter feeds. 
 Blogs, have larger text than the other two and have a good change that different topics and more opinons are discussed than with twitter. Increasing the need for a different aproach for blogs than twitter. 
-Facebook messages look more like twitter but, beacuse of the restriction on the size of twitter messages there is need for a short writting style that is not needed in the other 2 posts. 
+Facebook messages look more like twitter but, beacuse of the restriction on the size of twitter messages there is need for a short writting style which is not needed in the other 2 posts. 
 
 
 
@@ -106,20 +110,26 @@ Facebook messages look more like twitter but, beacuse of the restriction on the 
 %Neural Network, Naive Bayes, MaxEnt, Perceptron
 \subsection{Relevant Literature}
 
-%dit past atm meer bij theory en dus heb ik het daar bij gezet als niet mee eens bent zet het gerust terug :)
+%dit past atm meer bij theory en dus heb ik het daar bij gezet als niet mee eens bent zet het gerust terug in problem specifcation :)
 \subsection{Machine Learning} 
 Machine Learning is a branch in the field of artifical intellgence, which looks for a way to develep computer algoritmes cabable of improving predictions or behaviors based on a dataset. A algoritme can take example data to capture the "pattern" in the underlying probability distribution. A succesfull algoritme can automaticly find these complex patterns in "the training data" and make intelligent desisions in new (similar) data.
 
 %tod do: uitleg over verschillende soort machien learning (supervised unsupervised reinforcemnt etc)
 
+\subsubsection{Artificial Neural Network}
+ An artificial neural network which is a computational  model with the same functional aspects of biological neural networks. (plaatje? om uitleg duidelijker te maken)  An neural network is build up by a group of connected arifical neurons, which through their connections have an adaptive system that changes its structure based on internal and external information that flows through the network during the learning phase making it possible to find complex patterns in data.
+
+
+
 \subsubsection{Perceptron}
 
-An Perceptron is an supervised learning algoritme with reinforcemnt 
+An Perceptron is an example  supervised learning algoritme with reinforcemnt. It is a type of artificacial neural network, where their is a one way direction (each neuron in one layer has direct connection to the neurons in the subsequent layer. One learning technique used by an perceptron is the use of back-propagation, where the output values are compared with the correct answer. When there is an error between the output and the correct anwser, the error is fed back through the network. By adjusting the weights of a neuron the algoritme can decrease the margin of the error. This process is repeated until the error is gone or at its smallest. 
+(vertellen  hidden layers? miss te ingewikkeld en niet intressant voor ivo)
 
-
-\subsubsection{Artificial Neural Network}
 
 \subsubsection{Maximum Entropy}
+
+
 
 \subsubsection{Naive Bayes Classifier}
 
