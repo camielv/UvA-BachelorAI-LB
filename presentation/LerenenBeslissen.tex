@@ -10,7 +10,7 @@
 \usepackage[english]{babel}
 \usepackage[all]{xy}
 \usepackage[latin1]{inputenc}
-
+\usepackage{qtree}
 \usepackage{times}
 \usepackage[T1]{fontenc}
 
@@ -66,9 +66,15 @@ Performing sentiment analysis on messages about the EO
 \begin{itemize}
 \item Preprocessing of the data
 \item Perform machine learning algorithms on data
-\item Use the best algorithm to server
+\item Use best algorithms to classify real time on server
 \end{itemize}
 \end{frame}
+\begin{frame}{Hierarchical Classification}
+\begin{figure}[h]
+\Tree [.{All messages} {Neutral Messages} [.{Non-Neutral Messages} {Positive Messages} {Negative Messages} ] ]
+\end{figure}
+\end{frame}
+
 
 \section{Data Preprocessing}
 \begin{frame}<beamer>{Outline}
@@ -91,6 +97,7 @@ Ony 3 features used: \\
 \end{itemize}
 \end{frame}
 
+
 \subsection{Data Cleaning}
 \begin{frame}{Data Cleaning}
 \begin{itemize}
@@ -109,17 +116,7 @@ Ony 3 features used: \\
 \end{itemize}
 \end{frame}
 
-\subsection{Data Manipulation}
-\begin{frame}{Data Manipulation}
-\begin{itemize}
-\item Create tokens
-\item Assign sentiment probabilities to tokens
-\begin{equation}
-P(word) = \frac{ \sum word \in C_1}{\sum word \in C_1\cup C_2}
-\end{equation}
-\end{itemize}
-\end{frame}
-
+%%%%% CLASSIFICATION
 \section{Classification}
 \begin{frame}<beamer>{Outline}
     \setcounter{tocdepth}{2}
@@ -131,40 +128,118 @@ P(word) = \frac{ \sum word \in C_1}{\sum word \in C_1\cup C_2}
 \begin{frame}{Classification}
 \end{frame}
 
+\subsection{Weighted Sum Probability}
+\begin{frame}{Weighted Sum Probability}
+\begin{itemize}
+\item Create tokens
+\item Assign sentiment probabilities to tokens
+\begin{equation}
+P(word) = \frac{ \sum word \in C_1}{\sum word \in C_1\cup C_2}
+\end{equation}
+\item Assign sentiment probabilities to sentences
+\begin{equation}
+P(s) = \frac{1}{n} \sum_{w \in s} P(w)
+\end{equation}
+\end{itemize}
+\end{frame}
+
 \subsection{Perceptron}
 \begin{frame}{Perceptron}
+\begin{block}{Algorithm}
+Train lineair treshold
+\end{block}
+\begin{description}
+\item[Input]: Sentence probabilities, sentence values
+\item[Output]: Treshold
+\end{description}
 \end{frame}
-\begin{frame}{Results}
+\begin{frame}{Results \& Conclusion}
+\begin{description}
+\item[Results]: High precision OR recall, never both
+\item[Conclusion]: Lineaire threshold not good enough
+\end{description}
 \end{frame}
 
 \subsection{Support Vector Machine}
 \begin{frame}{Support Vector Machine}
+\begin{block}{Algorithm}
+Fit in featurespace that binds features to classes
+\end{block}
+\begin{description}
+\item[Input]: Features in vector
+\item[Output]: Number belonging to class
+\end{description}
 \end{frame}
-\begin{frame}{Results}
+\begin{frame}{Results \& Conclusion}
+\begin{description}
+\item[Results]: Not very good recall/precision/accuracy
+\item[Conclusion]: Fit can not be made on these features\\ or more data needed to find clear boundary 
+\end{description}
 \end{frame}
 
 \subsection{Naive Bayes}
 \begin{frame}{Naive Bayes}
+\begin{block}{Algorithm}
+\end{block}
+\begin{description}
+\item[Input]: 
+\item[Output]:
+\end{description}
 \end{frame}
-\begin{frame}{Results}
+\begin{frame}{Results \& Conclusion}
+\begin{description}
+\item[Results]:
+\item[Conclusion]:
+\end{description}
 \end{frame}
 
 \subsection{Multiclassification with Perceptron}
 \begin{frame}{Multiclassification with Perceptron}
+\begin{block}{Algorithm}
+\end{block}
+\begin{description}
+\item[Input]: 
+\item[Output]:
+\end{description}
 \end{frame}
-\begin{frame}{Results}
+\begin{frame}{Results \& Conclusion}
+\begin{description}
+\item[Results]: 
+\item[Conclusion]:
+\end{description}
 \end{frame}
-
+\
 \subsection{Entropy}
 \begin{frame}{Entropy}
+\begin{block}{Algorithm}
+\end{block}
+\begin{description}
+\item[Input]: 
+\item[Output]:
+\end{description}
 \end{frame}
-\begin{frame}{Results}
+\begin{frame}{Results \& Conclusion}
+\begin{description}
+\item[Results]: 
+\item[Conclusion]:
+\end{description}
 \end{frame}
 
+%Neural Network
 \subsection{Neural Network}
 \begin{frame}{Neural Network}
+\begin{block}{Algorithm}
+\end{block}
+\begin{description}
+\item[Input]: 
+\item[Output]:
+\end{description}
 \end{frame}
-\begin{frame}{Results}
+\begin{frame}{Results \& Conclusion}
+\begin{description}
+\item[Results]: 
+\item[Conclusion]: 
+\end{description}
 \end{frame}
 
 % Webserver Framework
@@ -187,7 +262,12 @@ Action...
 \section{Conclusion}
 
 \begin{frame}{Conclusion}
+\begin{itemize}
+\item All learning algorithms have their (dis)advantages
+\item No satisfying results
+\item Not enough data
+\end{itemize}
 \end{frame}
-\begin{frame}{Conclusion}
+\begin{frame}{Questions?}
 \end{frame}
 \end{document}
