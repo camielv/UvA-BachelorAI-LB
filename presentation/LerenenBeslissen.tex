@@ -115,17 +115,6 @@ Ony 3 features used: \\
 \end{itemize}
 \end{frame}
 
-\subsection{Data Manipulation}
-\begin{frame}{Data Manipulation}
-\begin{itemize}
-\item Create tokens
-\item Assign sentiment probabilities to tokens
-\begin{equation}
-P(word) = \frac{ \sum word \in C_1}{\sum word \in C_1\cup C_2}
-\end{equation}
-\end{itemize}
-\end{frame}
-
 \section{Classification}
 \begin{frame}<beamer>{Outline}
     \setcounter{tocdepth}{2}
@@ -137,40 +126,85 @@ P(word) = \frac{ \sum word \in C_1}{\sum word \in C_1\cup C_2}
 \begin{frame}{Classification}
 \end{frame}
 
+\subsection{Weighted Sum Probability}
+\begin{frame}{Weighted Sum Probability}
+\begin{itemize}
+\item Create tokens
+\item Assign sentiment probabilities to tokens
+\begin{equation}
+P(word) = \frac{ \sum word \in C_1}{\sum word \in C_1\cup C_2}
+\end{equation}
+\item Assign sentiment probabilities to sentences
+\begin{equation}
+P(s) = \frac{1}{n} \sum_{w \in s} P(w)
+\end{equation}
+\end{itemize}
+\end{frame}
+
 \subsection{Perceptron}
 \begin{frame}{Perceptron}
+\begin{block}{Algorithm}
+Train lineair treshold
+\end{block}
+\textbf{Input}: sentence probabilities, sentence values\\
+\textbf{Output}: treshold
 \end{frame}
-\begin{frame}{Results}
+\begin{frame}{Results \& Conclusion}
+\begin{description}
+\item[Results]: High precision OR recall, never both
+\item[Conclusion]: Lineaire threshold not good enough
+\end{description}
 \end{frame}
 
 \subsection{Support Vector Machine}
 \begin{frame}{Support Vector Machine}
 \end{frame}
-\begin{frame}{Results}
+\begin{frame}{Results \& Conclusion}
+\begin{description}
+\item[Results]: 
+\item[Conclusion]: 
+\end{description}
 \end{frame}
 
 \subsection{Naive Bayes}
 \begin{frame}{Naive Bayes}
 \end{frame}
-\begin{frame}{Results}
+\begin{frame}{Results \& Conclusion}
+\begin{description}
+\item[Results]:
+\item[Conclusion]:
+\end{description}
 \end{frame}
 
 \subsection{Multiclassification with Perceptron}
 \begin{frame}{Multiclassification with Perceptron}
 \end{frame}
-\begin{frame}{Results}
+\begin{frame}{Results \& Conclusion}
+\begin{description}
+\item[Results]: 
+\item[Conclusion]:
+\end{description}
 \end{frame}
-
+\
 \subsection{Entropy}
 \begin{frame}{Entropy}
 \end{frame}
-\begin{frame}{Results}
+\begin{frame}{Results \& Conclusion}
+\begin{description}
+\item[Results]: 
+\item[Conclusion]:
+\end{description}
 \end{frame}
 
+%Neural Network
 \subsection{Neural Network}
 \begin{frame}{Neural Network}
 \end{frame}
-\begin{frame}{Results}
+\begin{frame}{Results \& Conclusion}
+\begin{description}
+\item[Results]: 
+\item[Conclusion]: 
+\end{description}
 \end{frame}
 
 % Webserver Framework
