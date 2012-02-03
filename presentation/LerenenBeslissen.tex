@@ -193,26 +193,35 @@ Fit in featurespace that binds features to classes
 \subsection{Naive Bayes}
 \begin{frame}{Naive Bayes}
 \begin{block}{Algorithm}
+Prior and likelihood lead to posterior
 \end{block}
 \begin{description}
-\item[Input]: 
-\item[Output]:
+\item[Input]: Features from sentence
+\item[Output]: Probability
 \end{description}
 \end{frame}
 \begin{frame}{Results \& Conclusion}
 \begin{description}
 \item[Results]:
-\item[Conclusion]:
+\begin{tabular}{c || c | c | c}\\
+ & Recall & Accuracy & Precision \\
+\hline
+Positive & 0.43 & 0.81 & 0.39\\
+Negative & 0.40 & 0.71 & 0.17 \\
+Neutral & 0.61 & 0.59 & 0.79 \\
+\end{tabular}
+\item[Conclusion]: Low recall and precision
 \end{description}
 \end{frame}
 
 \subsection{Multiclassification with Perceptron}
 \begin{frame}{Multiclassification with Perceptron}
 \begin{block}{Algorithm}
+Specialized perceptron for each class, one vs. all
 \end{block}
 \begin{description}
-\item[Input]: 
-\item[Output]:
+\item[Input]: Sentence probability for class
+\item[Output]: Most likely class
 \end{description}
 \end{frame}
 \begin{frame}{Results \& Conclusion}
@@ -221,7 +230,7 @@ Fit in featurespace that binds features to classes
 \item[Conclusion]:
 \end{description}
 \end{frame}
-\
+
 \subsection{Entropy}
 \begin{frame}{Entropy}
 \begin{block}{Algorithm}
@@ -245,8 +254,8 @@ Fit in featurespace that binds features to classes
 Backpropagation
 \end{block}
 \begin{description}
-\item[Input]: Word vectors
-\item[Output]: Value for 
+\item[Input]: Features from sentence
+\item[Output]: Value for outputnodes (classes)
 \end{description}
 \end{frame}
 \begin{frame}{Results \& Conclusion}
