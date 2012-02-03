@@ -230,10 +230,13 @@ Specialized perceptron for each class, one vs. all
 \begin{tabular}{c || c | c}\\
 Test \textbackslash Real & True & False \\
 \hline
-True & 2050 & 510 \\
-False & 100 & 6339 \\
-\end{tabular}
-\item[Conclusion]:
+True & 41 & 22 \\
+False & 113 & 418 \\
+\end{tabular}\\
+Accuracy =  0.77\\
+Precision =  0.65\\
+Time taken:  33 sec
+\item[Conclusion]: Moderate results
 \end{description}
 \end{frame}
 
@@ -244,13 +247,20 @@ Words with highest likelihood for class
 \end{block}
 \begin{description}
 \item[Input]: Corpus
-\item[Output]:
+\item[Output]: Most likely class
 \end{description}
 \end{frame}
 \begin{frame}{Results \& Conclusion}
 \begin{description}
 \item[Results]: 
-\item[Conclusion]:
+\begin{tabular}{c || c | c | c}\\
+ & Recall & Accuracy & Precision \\
+\hline
+Positive & 0.42 & 0.74 & 0.25\\
+Negative & 0.22 & 0.88 & 0.47 \\
+Neutral & 0.76 & 0.69 & 0.80 \\
+\end{tabular}
+\item[Conclusion]: No satisfying results for positive and negative classification
 \end{description}
 \end{frame}
 
@@ -267,7 +277,7 @@ Backpropagation
 \end{frame}
 \begin{frame}{Results \& Conclusion}
 \begin{description}
-\item[Results]: Training time = 2.85377444 hours.\\
+\item[Results]: Training time = 2.85 hours for 500 sentences.\\
 \begin{tabular}{c || c | c}\\
 Test \textbackslash Real & True & False \\
 \hline
@@ -297,11 +307,10 @@ Action...
 % End Webserver Framework
 
 \section{Conclusion}
-
 \begin{frame}{Conclusion}
 \begin{itemize}
 \item All learning algorithms have their (dis)advantages
-\item No satisfying results
+\item Multiclassification with perceptron and Neural Networks give best results
 \item Not enough data
 \end{itemize}
 \end{frame}
