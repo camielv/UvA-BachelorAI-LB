@@ -12,6 +12,7 @@
 \usepackage[latin1]{inputenc}
 \usepackage{qtree}
 \usepackage{times}
+\usepackage{graphics}
 \usepackage[T1]{fontenc}
 
 
@@ -101,7 +102,7 @@ Ony 3 features used: \\
 \subsection{Data Cleaning}
 \begin{frame}{Data Cleaning}
 \begin{itemize}
-\item Shorten words, ex. hahaha to haha
+\item Shorten words, e.g.\ `saaaaaaai' to `saaai'
 \item Stemmer
 \end{itemize}
 \end{frame}
@@ -112,7 +113,7 @@ Ony 3 features used: \\
 \item Only use Twitter messages (83\% of all messages)
 \item Remove articles, reference words and prepositions
 \item Substitute smileys with words
-\item Remove some punctuation marks (ex. not ! ? )
+\item Remove some punctuation marks (e.g.\ not ! ? )
 \end{itemize}
 \end{frame}
 
@@ -131,16 +132,28 @@ Ony 3 features used: \\
 \subsection{Weighted Sum Probability}
 \begin{frame}{Weighted Sum Probability}
 \begin{itemize}
-\item Create tokens
-\item Assign sentiment probabilities to tokens
+\item Extract features
+\item Assign sentiment probabilities to features
 \begin{equation}
-P(word) = \frac{ \sum word \in C_1}{\sum word \in C_1\cup C_2}
+P(feature) = \frac{ \sum feature \in C_1}{\sum feature \in C_1\cup C_2}
 \end{equation}
 \item Assign sentiment probabilities to sentences
 \begin{equation}
-P(s) = \frac{1}{n} \sum_{w \in s} P(w)
+P(s) = \frac{1}{n} \sum_{f \in s} P(f)
 \end{equation}
 \end{itemize}
+\end{frame}
+
+\begin{frame}{WSP: Neutral vs Non-Neutral}
+\centering
+\includegraphics[scale=0.25]{NeuNonNeuScatter1.pdf}
+\includegraphics[scale=0.25]{NeuNonNeuScatter2.pdf}
+\end{frame}
+
+\begin{frame}{WSP:Positive vs Negative}
+\centering
+\includegraphics[scale=0.25]{PosNegScatter1.pdf}
+\includegraphics[scale=0.25]{PosNegScatter2.pdf}
 \end{frame}
 
 \subsection{Perceptron}
@@ -254,7 +267,7 @@ False & 40 & 94 \\
 \section{Webserver Framework}
 \begin{frame}{Webserver Framework}
 \begin{center}
-Request (HTML) $\rightarrow$ Server (PHP/PYTHON) $\rightarrow$ Result (XML)
+Request $\rightarrow$ Server (PHP/PYTHON) $\rightarrow$ Result (XML)
 \end{center}
 
 \begin{description}
