@@ -111,9 +111,9 @@ Ony 3 features used: \\
 \begin{frame}{Data Reduction}
 \begin{itemize}
 \item Only use Twitter messages (83\% of all messages)
-\item Remove articles, reference words and prepositions
+\item Remove articles, personal pronouns and prepositions
 \item Substitute smileys with words
-\item Remove some punctuation marks (e.g.\ not ! ? )
+\item Remove some punctuation marks ( not ! ? )
 \end{itemize}
 \end{frame}
 
@@ -227,6 +227,12 @@ Specialized perceptron for each class, one vs. all
 \begin{frame}{Results \& Conclusion}
 \begin{description}
 \item[Results]: 
+\begin{tabular}{c || c | c}\\
+Test \textbackslash Real & True & False \\
+\hline
+True & 2050 & 510 \\
+False & 100 & 6339 \\
+\end{tabular}
 \item[Conclusion]:
 \end{description}
 \end{frame}
