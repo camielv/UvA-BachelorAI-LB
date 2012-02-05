@@ -1,0 +1,322 @@
+\documentclass{beamer}
+
+\mode<presentation>
+{
+  \usetheme{Berlin}
+  \usecolortheme{default}
+  \setbeamercovered{transparent}
+}
+
+\usepackage[english]{babel}
+\usepackage[all]{xy}
+\usepackage[latin1]{inputenc}
+\usepackage{qtree}
+\usepackage{times}
+\usepackage{graphics}
+\usepackage[T1]{fontenc}
+
+
+\title[Leren en Beslissen - Sentiment Analisys]
+{Sentiment Analysis}
+
+\subtitle{A Probabilistic Approach}
+
+\author[Gieske, Laan, ten Velthuis, Verschoor, Wiggers ] % (optional, use only with lots of authors)
+{S.~A.~Gieske \and S.~Laan \and D.~S.~Ten Velthuis \and C.~R.~Verschoor \and A.~J.~Wiggers}
+
+\institute[University of Amsterdam] % (optional, but mostly needed)
+{
+  Faculty of Science (FNWI) \\
+  University of Amsterdam
+  }
+
+\AtBeginSection[]
+{
+  \begin{frame}<beamer>{Outline}  
+    \setcounter{tocdepth}{1}
+    \tableofcontents[currentsection,currentsubsection]
+  \end{frame}
+}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Outline}
+  \setcounter{tocdepth}{1}
+  \tableofcontents
+\end{frame}
+
+
+\section{The goal}
+
+\begin{frame}{The goal of the project}
+\begin{block}{Project Description}
+Performing sentiment analysis on messages about the EO
+\end{block}
+\begin{itemize}
+\item Classification Sentiment vs. Non Sentiment
+\item Classification Positive vs. Negative
+\end{itemize}
+\end{frame}
+
+\section{Approach}
+\begin{frame}{Approach}
+\begin{itemize}
+\item Preprocessing of the data
+\item Perform machine learning algorithms on data
+\item Use best algorithms to classify real time on server
+\end{itemize}
+\end{frame}
+\begin{frame}{Hierarchical Classification}
+\begin{figure}[h]
+\Tree [.{All messages} {Neutral Messages} [.{Non-Neutral Messages} {Positive Messages} {Negative Messages} ] ]
+\end{figure}
+\end{frame}
+
+
+\section{Data Preprocessing}
+\begin{frame}<beamer>{Outline}
+    \setcounter{tocdepth}{2}
+    \tableofcontents[
+    currentsubsection, 
+    hideothersubsections, 
+    sectionstyle=show/hide] 
+  \end{frame}
+\subsection{Dataset Analysis}
+\begin{frame}{Dataset Analysis}
+\begin{block}{Dataset messages EO}
+10.000 messages, 19 features per message
+\end{block}
+Ony 3 features used: \\
+\begin{itemize}
+\item Source
+\item Sentiment
+\item Message contents
+\end{itemize}
+\end{frame}
+
+
+\subsection{Data Cleaning}
+\begin{frame}{Data Cleaning}
+\begin{itemize}
+\item Shorten words, e.g.\ `saaaaaaai' to `saaai'
+\item Stemmer
+\end{itemize}
+\end{frame}
+
+\subsection{Data Reduction}
+\begin{frame}{Data Reduction}
+\begin{itemize}
+\item Only use Twitter messages (83\% of all messages)
+\item Remove articles, personal pronouns and prepositions
+\item Substitute smileys with words
+\item Remove some punctuation marks ( not ! ? )
+\end{itemize}
+\end{frame}
+
+%%%%% CLASSIFICATION
+\section{Classification}
+\begin{frame}<beamer>{Outline}
+    \setcounter{tocdepth}{2}
+    \tableofcontents[
+    currentsubsection, 
+    hideothersubsections, 
+    sectionstyle=show/hide] 
+  \end{frame}
+
+\subsection{Naive Bayes}
+\begin{frame}{Naive Bayes}
+\begin{block}{Algorithm}
+Prior and likelihood lead to posterior
+\end{block}
+\begin{description}
+\item[Input]: Features from sentence
+\item[Output]: Probability
+\end{description}
+\end{frame}
+\begin{frame}{Results \& Conclusion}
+\begin{description}
+\item[Results]:
+\begin{tabular}{c || c | c | c}\\
+ & Recall & Accuracy & Precision \\
+\hline
+Positive & 0.43 & 0.81 & 0.39\\
+Negative & 0.40 & 0.71 & 0.17 \\
+Neutral & 0.61 & 0.59 & 0.79 \\
+\end{tabular}
+\item[Conclusion]: Low recall and precision
+\end{description}
+\end{frame}
+
+\subsection{Weighted Sum Probability}
+\begin{frame}{Weighted Sum Probability}
+\begin{itemize}
+\item Extract features
+\item Assign sentiment probabilities to features
+\begin{equation}
+P(feature) = \frac{ \sum feature \in C_1}{\sum feature \in C_1\cup C_2}
+\end{equation}
+\item Assign sentiment probabilities to sentences
+\begin{equation}
+P(s) = \frac{1}{n} \sum_{f \in s} P(f)
+\end{equation}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{WSP: Neutral vs Non-Neutral}
+\centering
+\includegraphics[scale=0.25]{NeuNonNeuScatter1.pdf}
+\includegraphics[scale=0.25]{NeuNonNeuScatter2.pdf}
+\end{frame}
+
+\begin{frame}{WSP:Positive vs Negative}
+\centering
+\includegraphics[scale=0.25]{PosNegScatter1.pdf}
+\includegraphics[scale=0.25]{PosNegScatter2.pdf}
+\end{frame}
+
+\subsection{Perceptron}
+\begin{frame}{Perceptron}
+\begin{block}{Algorithm}
+Train linear treshold
+\end{block}
+\begin{description}
+\item[Input]: Sentence probabilities, sentence values
+\item[Output]: Treshold
+\end{description}
+\end{frame}
+\begin{frame}{Results \& Conclusion}
+\begin{description}
+\item[Results]: High precision OR recall, never both
+\item[Conclusion]: Linear threshold not good enough
+\end{description}
+\end{frame}
+
+\subsection{Multiclassification with Perceptron}
+\begin{frame}{Multiclassification with Perceptron}
+\begin{block}{Algorithm}
+Specialized perceptron for each class, one vs. all
+\end{block}
+\begin{description}
+\item[Input]: Sentence probability for class
+\item[Output]: Most likely class
+\end{description}
+\end{frame}
+\begin{frame}{Results \& Conclusion}
+\begin{description}
+\item[Results]: 
+\begin{tabular}{c || c | c}\\
+Test \textbackslash Real & True & False \\
+\hline
+True & 41 & 22 \\
+False & 113 & 418 \\
+\end{tabular}\\
+Accuracy =  0.77\\
+Precision =  0.65\\
+Time taken:  33 sec
+\item[Conclusion]: Moderate results
+\end{description}
+\end{frame}
+
+%Neural Network
+\subsection{Neural Network}
+\begin{frame}{Neural Network}
+\begin{block}{Algorithm}
+Backpropagation
+\end{block}
+\begin{description}
+\item[Input]: Features from sentence
+\item[Output]: Value for outputnodes (classes)
+\end{description}
+\end{frame}
+\begin{frame}{Results \& Conclusion}
+\begin{description}
+\item[Results]: Training time = 3 hours for 500 sentences, 5000 iterations.\\
+\begin{tabular}{c || c | c}\\
+Test \textbackslash Real & True & False \\
+\hline
+True & 14 & 6 \\
+False & 40 & 94 \\
+\end{tabular}
+
+\item[Conclusion]: Still many messages with sentiment incorrectly classified. \\Possible cause: ratio of messages with sentiment and nonsentiment.\\
+\end{description}
+\end{frame}
+
+\subsection{Support Vector Machine}
+\begin{frame}{Support Vector Machine}
+\begin{block}{Algorithm}
+Fit in featurespace that binds features to classes
+\end{block}
+\begin{description}
+\item[Input]: Features in vector
+\item[Output]: Number belonging to class
+\end{description}
+\end{frame}
+\begin{frame}{Results \& Conclusion}
+\begin{description}
+\item[Results]: Mediocre recall/precision/accuracy
+\item[Conclusion]: Fit can not be made on these features\\ or more data needed to find clear boundary 
+\end{description}
+\end{frame}
+
+\subsection{Maximum Entropy}
+\begin{frame}{Maximum Entropy}
+\begin{block}{Algorithm}
+Words with highest likelihood for class
+\end{block}
+\begin{description}
+\item[Input]: Corpus
+\item[Output]: Most likely class
+\end{description}
+\end{frame}
+\begin{frame}{Results \& Conclusion}
+\begin{description}
+\item[Results]: 
+\begin{tabular}{c || c | c | c}\\
+ & Recall & Accuracy & Precision \\
+\hline
+Positive & 0.42 & 0.74 & 0.25\\
+Negative & 0.22 & 0.88 & 0.47 \\
+Neutral & 0.76 & 0.69 & 0.80 \\
+\end{tabular}
+\item[Conclusion]: No satisfying results for positive and negative classification
+\end{description}
+\end{frame}
+
+\subsection{DEMO}
+\begin{frame}{Demo}
+Action...
+\end{frame}
+
+
+% Webserver Framework
+\section{Webserver Framework}
+\begin{frame}{Webserver Framework}
+\begin{center}
+Request $\rightarrow$ Server (PHP/PYTHON) $\rightarrow$ Result (XML)
+\end{center}
+
+\begin{description}
+\item[Request] http://url.com/?\textbf{dataset}=1\&\textbf{message}=De EO is cool!\\
+\item[Result] XML File (Containing: Status, Message, Sentiment, Accuracy, Precision, Recall)
+\end{description}
+\end{frame}
+
+% End Webserver Framework
+
+\section{Conclusion}
+\begin{frame}{Conclusion}
+\begin{itemize}
+\item All learning algorithms have their (dis)advantages
+\item Decent positive vs negative classifier
+\item Multiclassification with perceptron and Neural Networks give best results
+\item More data may lead to more satisfying results
+\end{itemize}
+\end{frame}
+\begin{frame}{Questions?}
+\end{frame}
+\end{document}
