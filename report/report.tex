@@ -80,60 +80,68 @@ Universiteit van Amsterdam\\
 %geen academische paper alleen uitleg van theory die hij niet kent en hoe we probleem hebben aangepakt en waarom we dat zo hebben gedaan
 
 \section{Introduction} 
-With the growth of Social Media, such as social networks and blogs consumers gained a place to review, rate and recommend products on-line. Making on-line opinion important for companies who want to market their products, manage their reputations and identify new opportunities. Being able to automate the process of finding relevant content, filtering out noise and categorize the messages will speed up the process compared of doing it by hand. Research has shown that sentiment analysis is showing promising results to automate this process.
+With the growth of Social Media, such as Facebook, Twitter and blogs, consumers gained a place to review, rate and recommend products online. This online opinion is important for companies who want to market their products, manage their reputations and identify new opportunities. The process of finding relevant content, filtering out noise and categorization of messages can be automated, making it several times faster than manual processing.
 
-Sentiment analysis is the application of natural language processing, computational linguistics and text analytics to identify and extract subjective information in source materials. Which makes the data from social media ready for further analysis. Using sentiment analysis we will group twitter messages into positive, negative and neutral messages
+Sentiment analysis is the application of natural language processing, computational linguistics and text analytics to identify and extract subjective information in source materials. It readies data from social media for further analysis. Through use of sentiment analysis, messages can be clustered into categories (e.g. positive, negative and neutral messages). 
 
 \section{Problem Specification}
-Our dataset was provided by our client, a excel file existing of around 10.000 messages from social media\footnote{ Data contained posts from blogs, posts from facebook  and tweets}. All messages were graded by hand into 5 categories, ranging from very negative to very positive. The goal of our project is to build a learning algorithm that can classify these messages.
+The dataset was provided by our client, a spreadsheet of 10.000 messages from social media\footnote{ Data contained posts from blogs, facebook, hyves, fora and tweets}. All messages were manually placed into 5 categories, ranging from very negative to very positive. The goal of this project is to create a method to classify these messages automatically.
 
 % By loading the .csv version of the excel file we where able to access the data in Python. 
 
 \subsection{Data Cleaning}
-A tweet can only contain 140 characters, so to still be able to express yourself users mostly use slang and emoticons. Which increases the value of cleaning the messages first.
-For example punctuations such as: dot's, comma's and list's dont add anything to the sentiment of a messages so we deleted all useless information. Exclamation and question marks do give value to the sentiment of a sentence because, they can tell something about the emotion of the sentence so we left those in our corpus. 
+A tweet can only contain 140 characters. To still be able to express oneself, slang and emoticons are used. It is also common to find spelling errors in the messages. This increases the value of cleaning the messages before classifying them.
+Punctuation usually does not add to the sentiment of the message. Therefore, all punctuation except exclamation marks and question marks are ignored. These two do give value to the sentiment of a sentence because it says something about the emotion of the user. 
 
-Making use of a Dutch stemmer found in the NLTK database (heb ik nog niet over gehad uitleg nodig), we are able to reduce inflected words to their stem, base or root form. Most words have the same meaning, for example "FUCK and Fucking"  are related to each other and by stemming the 2 words to their base form "fuck"  we decrease the amount of different words in our corpus and gain more same words (moet beter verwoord worden).
-
-(iets vertellen over tokenizen? dat we een lijst maken van onze woorden?)
+A Dutch stemmer, found in the natural language processing package for Python, enables reducing inflected words to their stem, base or root form. Two words that lead to the same classification, for example "Evangelisch" and "Evangelische", are related to each other. By stemming the last word to its base form "Evangelisch", the amount of different words in the corpus is decreased. This makes classification much easier, AS WILL BE SHOWN IN WAAAR!???
 
 \subsection{Data Reduction}
-Because, of the difference between blogs, facebook post and twitter feeds, we decided to only focus on the twitter feeds. 
-Blogs, have larger text than the other two and have a good change that different topics and more opinons are discussed than with twitter. Increasing the need for a different aproach for blogs than twitter. 
-Facebook messages look more like twitter but, beacuse of the restriction on the size of twitter messages there is need for a short writting style which is not needed in the other 2 posts. 
+The dataset contains mostly tweets. These short messages usually contain a single subject, whereas blog and facebook posts are in general longer messages that may contain several opinions about several subjects. Twitter being the largest source of information, it was decided that only these posts would be used for classification. 
 
-
-
-
+There are several methods to further decrease the vast amount of data:
+\begin{itemize}
+\item Remove words that occur only once in the corpus.
+\item Remove duplicate messages
+\item Remove words that do not contribute to classification (personal pronouns, so-called stopwords, etc.)
+\end{itemize}
+Which of these methods would be useful depends on the machine learning method, e.g. an approach that considers grammar to be an important feature for classification makes it impossible to remove words from a sentence without affecting the results.
 
 \section{Theory}
 %Neural Network, Naive Bayes, MaxEnt, Perceptron
 \subsection{Relevant Literature}
 
-%dit past atm meer bij theory en dus heb ik het daar bij gezet als niet mee eens bent zet het gerust terug in problem specifcation :)
 \subsection{Machine Learning} 
-Machine Learning is a branch in the field of artifical intellgence, which looks for a way to develep computer algoritmes cabable of improving predictions or behaviors based on a dataset. A algoritme can take example data to capture the "pattern" in the underlying probability distribution. A succesfull algoritme can automaticly find these complex patterns in "the training data" and make intelligent desisions in new (similar) data.
+Machine Learning is a branch in the field of artifical intellgence that researches and develops algorithms cabable of improving predictions or behaviors based on a dataset. An algorithm can take example data to capture the pattern in the underlying probability distribution. A succesful algorithm can automatically find these complex patterns in the training data and make intelligent desisions in new (similar) data. The type of machine learning methods that are used in this assignment is called `supervised learning'. This type requires that the desired decision, in this case the sentiment of the messages, is already known.  
 
 %tod do: uitleg over verschillende soort machien learning (supervised unsupervised reinforcemnt etc)
-
-\subsubsection{Artificial Neural Network}
- An artificial neural network which is a computational  model with the same functional aspects of biological neural networks. (plaatje? om uitleg duidelijker te maken)  An neural network is build up by a group of connected arifical neurons, which through their connections have an adaptive system that changes its structure based on internal and external information that flows through the network during the learning phase making it possible to find complex patterns in data.
-
 
 
 \subsubsection{Perceptron}
 
-An Perceptron is an example  supervised learning algoritme with reinforcemnt. It is a type of artificacial neural network, where their is a one way direction (each neuron in one layer has direct connection to the neurons in the subsequent layer. One learning technique used by an perceptron is the use of back-propagation, where the output values are compared with the correct answer. When there is an error between the output and the correct anwser, the error is fed back through the network. By adjusting the weights of a neuron the algoritme can decrease the margin of the error. This process is repeated until the error is gone or at its smallest. 
-(vertellen  hidden layers? miss te ingewikkeld en niet intressant voor ivo)
+A perceptron is an example of a supervised learning algorithm. It is an artificial neuron that has one or more inputs $s_i$ with corresponding weights $w_i$, a threshold function $t$ and an output $o$. This output can be defined as $o = t(\sum_i(w_i * s_i))$. The algorithm that enables `learning' a correct threshold goes through these steps:
+\begin{enumerate}
+\item Select training data from the dataset: input and it's corresponding (correct) output
+\item Feed the perceptron the input
+\item Calculate the output
+\item Compare the output to the desired output
+\item Adjust weights and go to step 2 until satisfied
+\end{enumerate}
 
+This algorithm adjusts the weights $w_i$, trying to maximize the number of correct outcomes. It should be noted that a perceptron has only a single output, making it hard to perform classification when there is more than one class. 
+
+\subsubsection{Artificial Neural Network}
+ An artificial neural network is a computational model with the same functional aspects of biological neural networks. It consists of a group of connected artificial neurons that changes its structure based on internal and external information. These neurons are similar to perceptrons, the only difference being that an output can be the input for another neuron. A typical network consists of an input layer, one or more so-called hidden layers and an output layer. The number of nodes per layer can vary. The learning process is very similar to that of a perceptron but is slightly more difficult since the weights are not independent.
 
 \subsubsection{Maximum Entropy}
-
-
 
 \subsubsection{Naive Bayes Classifier}
 
 \subsubsection{Weighted Probability Sum}
+This method is a variation on the classic Naive Bayes classifier in that it calculates the probability for a sentence to belong to a certain class by the sum of its elements, e.g. the probability that the sentence `Ik hou van de eo' contains a positive sentiment can be defined as the sum of the probabilities of the words `Ik', `hou', `van', `de' and `eo' to contain positive sentiment. Mathematically, this looks like:
+$\displaystyle P(s, C) = \sum_{i=0}^n P( s[i], C )$, where $C$ is the class, $s $ is the sentence and $s[i]$ is the $i^{th}$ element of s. 
+
+This approach uses each word in the sentence as a feature. It is however possible to take multiple words as a feature. A sentence of length $l$ where $l \leq n$ words contains $l - (n-1)$ sequences of $n$ words. Negations can be included for $n \leq 2$, double negations for $n \leq 3$, etc. 
+
 
 \subsection{Classification Measures}
 %Waarschijnlijk deze substecion voor machine learning

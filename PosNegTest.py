@@ -90,7 +90,7 @@ while 1:
         print 'zero features found in following sentence:'
         print test_sentence
     
-    print test_sentence
+    #print test_sentence
 
     opinion = iD.classifyNewLine(test_sentence, './weights500s5000i.txt')
     print 'Opinion probability: {0}'.format(opinion)
@@ -98,16 +98,20 @@ while 1:
 
     if opinion > 0.5:
         if classes[1] > classes[2]:
-            print 'Sentence is negative'
+            print 'Sentence classified as negative.\n'
         elif classes[1] < classes[2]:
-            print 'Sentence is positive'
+            print 'Sentence classified as positive.\n'
         else:
-            print 'Equal probability, unsure' 
+            print 'Equal probability, unsure.\n' 
     else:
+    
         if classes[1] > classes[2]:
             posneg = 'negative'
         elif classes[1] < classes[2]:
             posneg = 'positive'
         else:
             posneg = 'unsure whether it is positive or negative.'
-        print 'Sentence classified as neutral, but if it is not, it would be ' + posneg + '.'
+        if abs(classes[1] - classes[2]) > 0.05:
+            print 'Sentence classified as ' + posneg + '.\n'
+        else:            
+            print 'Sentence classified as neutral, but if it is not, it would be ' + posneg + '.\n'

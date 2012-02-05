@@ -54,7 +54,7 @@ def classifyNewLine(sentence, filename = './weightsDayTraining.txt'):
     weights = pickle.load( open(filename, 'r') )    
 
     # remove hidden, bias
-    print 'Loading weights from file', filename
+    #print 'Loading weights from file', filename
     number = 0
     # use all tokens as a bag of words to form a word vector containing all possible features
     for x in weights:
