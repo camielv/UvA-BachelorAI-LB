@@ -140,8 +140,7 @@ This algorithm adjusts the weights $w_i$, trying to maximize the number of corre
 This method is a variation on the classic Naive Bayes classifier in that it calculates the probability for a sentence to belong to a certain class by the sum of its elements, e.g. the probability that the sentence `Ik hou van de eo' contains a positive sentiment can be defined as the sum of the probabilities of the words `Ik', `hou', `van', `de' and `eo' to contain positive sentiment. Mathematically, this looks like:
 $\displaystyle P(s, C) = \sum_{i=0}^n P( s[i], C )$, where $C$ is the class, $s $ is the sentence and $s[i]$ is the $i^{th}$ element of s. 
 
-This approach uses each word in the sentence as a feature. It is however possible to take multiple words as a feature. A sentence of length $l$ where $l \leq n$ words contains $l - (n-1)$ sequences of $n$ words. Negations can be included for $n \leq 2$, double negations for $n \leq 3$, etc. 
-
+This approach uses each word in the sentence as a feature. It is however possible to take $n$ words as a feature, called an $n$-gram. A sentence of length $l$ where $l \leq n$ words contains $l - (n-1)$ sequences of $n$ words. Negations can be included for $n \leq 2$, double negations for $n \leq 3$, etc. The use of $n$-grams as well as 1-grams greatly improves the result of the method. 
 
 \subsection{Classification Measures}
 %Waarschijnlijk deze substecion voor machine learning
@@ -165,19 +164,24 @@ In order to test how well a specific algorithm performs, a couple of measurement
 
 
 \subsubsection{Accuracy}
+The accuracy of a method is a measure of how much correct classifications took place = $\frac{TP+TN}{TP+FP+FN+TN}$. 
 
 \subsubsection{Precision}
-
-The precision is defined as follows:
+The precision is a measure telling how many items that are classified as relevant (positive) are actually positive. It is defined as follows:
 
 \begin{equation*}
 \textit{Precision} = \frac{ \textit{TP}}{\textit{TP} + \textit{FP}}
 \end{equation*}
 
 \subsubsection{Recall}
+The recall is a measure telling how many relevant items are actually classified as positive. It is defined as follows:
+
+\begin{equation*}
+\textit{Recall} = \frac{ \textit{TP}}{\textit{TP} + \textit{FN}}
+\end{equation*}
 
 \subsubsection{F-Measure}
-
+ 
 
 
 \section{Usage and User Guide}
@@ -247,11 +251,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate molestie
 
 
 \section{Discussion}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate molestie mi ac dignissim. Proin tristique convallis volutpat. Nunc semper erat id tortor fermentum ullamcorper. Donec sed erat quis erat condimentum pellentesque. Donec sed tristique quam. Proin dictum convallis velit a porttitor. Curabitur in tellus tortor. Proin aliquet blandit sagittis. Curabitur vitae mauris ac leo dignissim rhoncus nec ut orci. Praesent vulputate mollis auctor. Aenean in felis diam, quis dictum metus.
+The several implemented methods each have their own advantages and disadvantages. The most important two are the neural network and the multiclass perceptron, since these two were used for the final classification method. The neural network takes relatively long to train. An advantage is that the networked can be saved so that each training will become shorter, but online learning is simply not possible as it is now. 
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate molestie mi ac dignissim. Proin tristique convallis volutpat. Nunc semper erat id tortor fermentum ullamcorper. Donec sed erat quis erat condimentum pellentesque. Donec sed tristique quam. Proin dictum convallis velit a porttitor. Curabitur in tellus tortor. Proin aliquet blandit sagittis. Curabitur vitae mauris ac leo dignissim rhoncus nec ut orci. Praesent vulputate mollis auctor. Aenean in felis diam, quis dictum metus.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate molestie mi ac dignissim. Proin tristique convallis volutpat. Nunc semper erat id tortor fermentum ullamcorper. Donec sed erat quis erat condimentum pellentesque. Donec sed tristique quam. Proin dictum convallis velit a porttitor. Curabitur in tellus tortor. Proin aliquet blandit sagittis. Curabitur vitae mauris ac leo dignissim rhoncus nec ut orci. Praesent vulputate mollis auctor. Aenean in felis diam, quis dictum metus.
 
 \section{Conclusion}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate molestie mi ac dignissim. Proin tristique convallis volutpat. Nunc semper erat id tortor fermentum ullamcorper. Donec sed erat quis erat condimentum pellentesque. Donec sed tristique quam. Proin dictum convallis velit a porttitor. Curabitur in tellus tortor. Proin aliquet blandit sagittis. Curabitur vitae mauris ac leo dignissim rhoncus nec ut orci. Praesent vulputate mollis auctor. Aenean in felis diam, quis dictum metus.
