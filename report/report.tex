@@ -185,7 +185,7 @@ This section provides and discusses, the results of the Naive Bayes multi-classi
 \hline
 \end{tabular}\\\\\\
 \textbf{Conclusion}\\
-The Naive Bayes multi-classification algorithm results in a low recall and precision for the messages containing sentiment. This is the case for both implementations eventhough the self-made implementation performs beter, than the NLTK implementation. Therefore, it is not a suitable classification algorithm to solve the sentiment analysis problem.
+The Naive Bayes multi-classification algorithm results in a low recall and precision for the messages containing sentiment. This is the case for both implementations eventhough the self-made implementation performs better than the NLTK implementation. Therefore, it is not a suitable classification algorithm to solve the sentiment analysis problem.
 
 \subsection{Weighted Probability Sum}
 This section provides and discusses, the results of the Weighted Probability Sum binary-classification algorithm. The algorithm gave the following results:\\\\
@@ -243,7 +243,7 @@ This section provides and discusses, the results of the Perceptron binary-classi
 \hline
 \end{tabular}\\\\\\
 \textbf{Conclusion}\\
-The Perceptron binary-classification algorithm results in a either a low recall or precision for the messages containing sentiment. This means that a linear threshold is not good enough. Therefore, this is not a suitable classification algorithm to solve the sentiment analysis problem.
+The Perceptron binary-classification algorithm results in either a low recall or a low precision for the messages containing sentiment. This means that a linear threshold is not good enough. Therefore, this is not a suitable classification algorithm to solve the sentiment analysis problem.
 
 \subsection{Multi-classification with a Perceptron}
 This section provides and discusses, the results of the Perceptron multi-classification algorithm. The algorithm gave the following results:\\\\
@@ -260,7 +260,7 @@ This section provides and discusses, the results of the Perceptron multi-classif
 \hline
 \end{tabular}\\\\\\
 \textbf{Conclusion}\\
-The Perceptron multi-classification algorithm results in a low recall. This means that a great amount of the messages containing sentiment are thrown away. Therefore, this is not a suitable classification algorithm to solve the sentiment analysis problem.
+The Perceptron multi-classification algorithm results in a low recall for all classes. This means that a great amount of the messages containing sentiment are thrown away. Therefore, this is not a suitable classification algorithm to solve the sentiment analysis problem.
 
 \subsection{Neural Network}
 This section provides and discusses, the results of the Neural Network binary-classification algorithm. The algorithm gave the following results:\\\\
@@ -275,7 +275,7 @@ This section provides and discusses, the results of the Neural Network binary-cl
 \hline
 \end{tabular}\\\\\\
 \textbf{Conclusion}\\
-The Neural Network binary-classification algorithm classifies many messages incorrectly. This might come due to the skewed distribution of the messages. The Neural Network will perform better in classifying, when the dataset is distributed more evenly. Therefore, this still can be suitable classification algorithm to solve the sentiment analysis problem.
+The Neural Network binary-classification algorithm classifies many messages incorrectly. This might come due to the skewed distribution of the messages. The Neural Network will perform better in classifying, when the dataset is distributed more evenly. A larger dataset can also increase the performance of this algorithm. Therefore, this still can be suitable classification algorithm to solve the sentiment analysis problem.
 
 \subsection{Support Vector Machine}
 This section provides and discusses, the results of the Support Vector Machine binary-classification algorithm. The algorithm gave the following results:\\\\
@@ -290,7 +290,7 @@ This section provides and discusses, the results of the Support Vector Machine b
 \hline
 \end{tabular}\\\\\\
 \textbf{Conclusion}\\
-The Support Vector Machine binary-classification algorithm results in a low recall. This means that many messages containing sentiment are thrown away in the classifying proces. Therefore, this is not a suitable classification algorithm to solve the sentiment analysis problem.
+The Support Vector Machine binary-classification algorithm results in a low recall. This means that many messages containing sentiment are thrown away in the classifying proces. This means that the algorithm performs poorly overall. Therefore, this is not a suitable classification algorithm to solve the sentiment analysis problem.
 
 \subsection{Maximum Entropy}
 This section provides and discusses, the results of the Maximum Entropy multi-classification algorithm. The algorithm gave the following results:\\\\
@@ -368,7 +368,7 @@ Properties of weighted sum probability method:
 \item Use of n-grams takes negations into consideration.
 \item Needs somewhat larger datasets than neural networks.
 \end{itemize}
-It should also be noted that these approaches were focused on a single subject. If a more general classifier is needed, the first thing necessary is generalization of data. While domain-specific datasets such as the given one contain keywords that lead to classification (e.g. the word `christen’ often leads to negative sentiment in a sentence in this dataset, this does not have to be the case for other datasets) words such as `leuk’ or `slecht’ should be prioritized. It is, for that reason, possible to create a general-purpose sentiment analyzer, i.e subject independent sentiment classification. This may however decrease the performance, as sentences are often context dependent. To be able to cope with this problem a more sophisticated approach has to be taken. We would suggest to look more into the semantic analysis of sentences, i.e. build a tree representation of the sentence.
+It should also be noted that these approaches were focused on a single subject. If a more general classifier is needed, the first thing necessary is generalization of data. While domain-specific datasets such as the given one contain keywords that lead to classification (e.g. the word `christen' often leads to negative sentiment in a sentence in this dataset, this does not have to be the case for other datasets) words such as `leuk' or `slecht' should be prioritized. It is, for that reason, possible to create a general-purpose sentiment analyzer, i.e subject independent sentiment classification. This may however decrease the performance, as sentences are often context dependent. To be able to cope with this problem a more sophisticated approach has to be taken. We would suggest to look more into the semantic analysis of sentences, i.e. build a tree representation of the sentence.
 \section{Conclusion}
 The manual classification process of online messages is more accurate when compared to automatic classification. The problem is that classification time is as important as accuracy, if not more, especially when thousands of messages per hour have to be processed. The methods discussed in this report are only a few approaches to the problem, with quite satisfying results. More data will almost always lead to more correct classifications, but it is also important to make correct predictions when little data is available. Neural networks may be able to do this, more so than any of the other approaches. The weighted sum method, that relies on frequencies, will perform much better when more data is involved. However, simple keywords can be used instead of the entire text to make an estimate of the sentiment in a sentence.
 \section{References}
